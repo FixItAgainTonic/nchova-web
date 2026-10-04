@@ -316,7 +316,7 @@ const en: Dict = {
       thanks: 'Thank you, and happy dictating.',
     },
     trial: '30 days of everything · no card · no account',
-    cta: 'Download the free trial',
+    cta: 'Download and start the free trial',
     buy: 'Buy Pro',
     after: 'Payment is handled by Polar; your licence key arrives by email.',
     needsTitle: 'You need',

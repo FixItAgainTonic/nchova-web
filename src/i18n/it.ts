@@ -320,7 +320,7 @@ const it = {
       thanks: 'Grazie e buona dettatura.',
     },
     trial: '30 giorni con tutto · senza carta · senza account',
-    cta: 'Scarica la prova gratuita',
+    cta: 'Scarica e inizia la prova gratuita',
     buy: 'Compra Pro',
     after: 'Il pagamento lo gestisce Polar; la chiave di licenza arriva per email.',
     needsTitle: 'Ti serve',
