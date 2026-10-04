@@ -685,69 +685,72 @@
   backdrop-filter: blur(8px);
 }
 
-.ledger__label {
-  margin: 0 0 14px;
+.ledger__title {
+  margin: 0 0 18px;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  font-weight: 520;
+  line-height: 1.2;
+  color: var(--paper);
+}
+
+.ledger__title em {
   color: var(--lilac);
 }
 
-.ledger__never ul {
-  list-style: none;
+.ledger dl {
   margin: 0;
-  padding: 0;
 }
 
-.ledger__never li {
-  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
-  line-height: 1.15;
+.ledger__never dl > div {
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ledger__never dt {
+  font-size: clamp(1.6rem, 2.6vw, 2.1rem);
   font-weight: 500;
-  padding: 4px 0;
+  line-height: 1.1;
+  color: var(--lilac);
 }
 
-.ledger__never li::before {
-  content: '';
-  display: inline-block;
-  width: 0.5em;
-  height: 0.5em;
-  margin-right: 0.4em;
-  border: 2px solid var(--lilac);
-  border-radius: 50%;
-  vertical-align: 0.06em;
+.ledger__never dd {
+  margin: 4px 0 0;
+  font-style: italic;
+  font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  color: rgba(242, 238, 230, 0.7);
 }
 
-.ledger table {
-  width: 100%;
-  border-collapse: collapse;
+.ledger__out dl > div {
+  display: grid;
+  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
+  gap: 4px 20px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.ledger th,
-.ledger td {
-  padding: 11px 14px 11px 0;
-  text-align: left;
-  vertical-align: baseline;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.ledger tr:last-child th,
-.ledger tr:last-child td {
-  border-bottom: 0;
-}
-
-.ledger th {
-  font-family: var(--mono);
+.ledger__out dt {
   font-size: 0.8125rem;
   font-weight: 500;
   color: var(--lilac);
-  white-space: nowrap;
 }
 
-.ledger td {
-  color: rgba(242, 238, 230, 0.88);
+.ledger__out dd {
+  margin: 0;
+  line-height: 1.5;
+  color: rgba(242, 238, 230, 0.9);
 }
 
-.ledger__when {
-  font-style: italic;
-  font-variation-settings: 'SOFT' 100, 'WONK' 1;
-  color: rgba(242, 238, 230, 0.55) !important;
+.ledger__out dd em {
+  color: var(--lilac);
+}
+
+.ledger__in {
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9375rem;
+  color: rgba(242, 238, 230, 0.6);
 }
 
 @media (max-width: 800px) {
@@ -766,16 +769,8 @@
   .ledger {
     grid-template-columns: minmax(0, 1fr);
   }
-  .ledger tr {
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  .ledger th,
-  .ledger td {
-    padding: 0;
-    border: 0;
+  .ledger__out dl > div {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

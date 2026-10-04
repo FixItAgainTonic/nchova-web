@@ -264,16 +264,19 @@ const en: Dict = {
       ['0', 'seconds of audio off the Mac'],
       ['0', 'bots in your calls'],
     ],
-    never: ['Audio', 'Voiceprints'],
-    neverLabel: 'Never leave',
-    ledgerLabel: 'Leave, and why',
-    ledger: [
-      ['Polar', 'the licence key and the Mac’s name', 'when you activate Pro'],
-      ['nchova.com', 'the question “is there an update?”', 'now and then'],
-      ['Hugging Face', 'the model downloads', 'once per model'],
-      ['Your iCloud', 'transcripts and notes', 'if you turn on sync (coming soon)'],
-      ['Claude Code or Codex', 'the meeting’s transcript', 'only if you pick them for notes'],
+    neverLabel: 'Never leaves your Mac',
+    never: [
+      ['The audio', 'of every dictation and every meeting.'],
+      ['Voiceprints', 'how nchova knows who is speaking.'],
     ],
+    ledgerLabel: 'Leaves your Mac *only* in these cases',
+    ledger: [
+      ['Polar', '*When you activate Pro:* your licence key and your Mac’s name, to check the licence.'],
+      ['Your iCloud', '*If you turn on sync (coming soon):* your transcripts and notes, in your own account.'],
+      ['Anthropic or OpenAI', '*Only if your Claude Code or Codex writes the notes:* the meeting’s transcript, under your subscription.'],
+      ['Your AI assistant', '*Only if you connect one:* the meetings it reads. Never your dictation.'],
+    ],
+    downloads: 'Everything else only comes in: the models nchova runs and its updates.',
   },
   price: {
     id: 'price',
@@ -352,7 +355,8 @@ const en: Dict = {
     sections: [
       ['This site', 'No cookies, no analytics, nothing loaded from anyone else: the fonts are served from here. The service hosting it (GitHub Pages) may keep the usual technical logs, such as IP addresses, to run it.'],
       ['The app', 'nchova has no servers of its own and asks for no account. Audio and voiceprints never leave your Mac. Transcripts and notes stay on the Mac, or in your iCloud if you turn on sync (coming soon).'],
-      ['What leaves the Mac', 'For the Pro licence, nchova sends Polar the key and the Mac’s name. For updates it asks nchova.com whether there is a new one. Models are downloaded from Hugging Face, once. If your own Claude Code or Codex writes the notes, the transcript goes to their cloud, under your subscription. If you connect an assistant through the MCP server, that assistant reads your meetings (never your dictation).'],
+      ['What leaves the Mac', 'For the Pro licence, nchova sends Polar the key and the Mac’s name. If your own Claude Code or Codex writes the notes, the meeting’s transcript goes to Anthropic or OpenAI, under your subscription. If you connect an AI assistant through the MCP server, that assistant reads your meetings (never your dictation). If you turn on iCloud sync (coming soon), transcripts and notes go to your own iCloud.'],
+      ['What only comes in', 'nchova downloads its models from Hugging Face, once per model, and checks nchova.com for updates. Nothing of yours goes with these requests beyond what any connection carries, such as the IP address.'],
       ['Purchases', 'Pro is sold through Polar, which sells on our behalf (merchant of record): payment, invoice and VAT are handled by Polar, under its own privacy policy.'],
       ['Contact', 'For any question:'],
     ],

@@ -268,16 +268,19 @@ const it = {
       ['0', 'secondi di audio fuori dal Mac'],
       ['0', 'bot nelle call'],
     ],
-    never: ['L’audio', 'Le impronte vocali'],
-    neverLabel: 'Non escono mai',
-    ledgerLabel: 'Escono, e perché',
-    ledger: [
-      ['Polar', 'la chiave di licenza e il nome del Mac', 'quando attivi Pro'],
-      ['nchova.com', 'la domanda «c’è un aggiornamento?»', 'ogni tanto'],
-      ['Hugging Face', 'il download dei modelli', 'una volta per modello'],
-      ['Il tuo iCloud', 'transcript e note', 'se attivi la sync (in arrivo)'],
-      ['Claude Code o Codex', 'il transcript del meeting', 'solo se scegli loro per le note'],
+    neverLabel: 'Non esce mai dal tuo Mac',
+    never: [
+      ['L’audio', 'di ogni dettatura e di ogni meeting.'],
+      ['Le impronte vocali', 'con cui nchova riconosce chi parla.'],
     ],
+    ledgerLabel: 'Esce dal tuo Mac *solo* in questi casi',
+    ledger: [
+      ['Polar', '*Quando attivi Pro:* la chiave di licenza e il nome del Mac, per controllare la licenza.'],
+      ['Il tuo iCloud', '*Se attivi la sync (in arrivo):* transcript e note, nel tuo account.'],
+      ['Anthropic o OpenAI', '*Solo se le note le scrive il tuo Claude Code o Codex:* il transcript del meeting, col tuo abbonamento.'],
+      ['Il tuo assistente AI', '*Solo se ne colleghi uno:* i meeting che legge. Mai le dettature.'],
+    ],
+    downloads: 'Tutto il resto entra soltanto: i modelli che nchova usa e i suoi aggiornamenti.',
   },
   price: {
     id: 'price',
@@ -360,7 +363,8 @@ const it = {
     sections: [
       ['Questo sito', 'Non usa cookie, non ha statistiche, non carica niente da altri: i caratteri sono serviti da qui. Il servizio che lo ospita (GitHub Pages) può tenere i normali log tecnici, come l’indirizzo IP, per farlo funzionare.'],
       ['L’app', 'nchova non ha server propri e non chiede un account. L’audio e le impronte vocali non lasciano mai il tuo Mac. Transcript e note restano sul Mac, o nel tuo iCloud se attivi la sync (in arrivo).'],
-      ['Cosa esce dal Mac', 'Per la licenza Pro, nchova manda a Polar la chiave e il nome del Mac. Per gli aggiornamenti chiede a nchova.com se ce n’è uno nuovo. I modelli si scaricano da Hugging Face, una volta. Se fai scrivere le note al tuo Claude Code o al tuo Codex, il transcript va al loro cloud, con il tuo abbonamento. Se colleghi un assistente col server MCP, quell’assistente legge i tuoi meeting (mai le dettature).'],
+      ['Cosa esce dal Mac', 'Per la licenza Pro, nchova manda a Polar la chiave e il nome del Mac. Se le note le scrive il tuo Claude Code o il tuo Codex, il transcript del meeting va ad Anthropic o a OpenAI, col tuo abbonamento. Se colleghi un assistente AI col server MCP, quell’assistente legge i tuoi meeting (mai le dettature). Se attivi la sync iCloud (in arrivo), transcript e note vanno nel tuo iCloud.'],
+      ['Cosa entra soltanto', 'nchova scarica i suoi modelli da Hugging Face, una volta per modello, e chiede a nchova.com se ci sono aggiornamenti. Con queste richieste non parte niente di tuo, oltre a quello che porta qualsiasi connessione, come l’indirizzo IP.'],
       ['Gli acquisti', 'Pro si compra tramite Polar, che vende per nostro conto (merchant of record): pagamento, fattura e IVA li gestisce Polar, con la sua informativa.'],
       ['Contatti', 'Per qualsiasi domanda:'],
     ],
