@@ -1,0 +1,31 @@
+---
+import { json } from '../../lib/json';
+import type { Dict } from '../../i18n';
+
+interface Props {
+  t: Dict;
+}
+const d = Astro.props.t.assistants.demo;
+---
+
+<div class="ad" data-assistant>
+  <script type="application/json" data-script set:html={json(d)} />
+  <div class="ad__win" aria-hidden="true">
+    <div class="win__bar">
+      <span class="lights"><i></i><i></i><i></i></span>
+      <span class="win__title">{d.window}</span>
+    </div>
+    <div class="ad__log" data-log></div>
+    <div class="ad__input">
+      <span class="ad__ph" data-ph>{d.placeholder}</span>
+      <span class="ad__typed"><span data-input></span><i class="ad__caret"></i></span>
+      <span class="ad__send" data-send>
+        <svg viewBox="0 0 16 16"><path d="M8 13V3.5M3.8 7.6 8 3.4l4.2 4.2"></path></svg>
+      </span>
+    </div>
+  </div>
+</div>
+
+<script>
+  import '../../scripts/demos/assistant';
+</script>

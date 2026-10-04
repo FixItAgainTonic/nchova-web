@@ -1,0 +1,29 @@
+---
+import Bracket from './Bracket.astro';
+import Mark from './Mark.astro';
+import { DOWNLOAD_URL } from '../config';
+import type { Dict } from '../i18n';
+
+interface Props {
+  t: Dict;
+}
+const { t } = Astro.props;
+const home = t.lang === 'it' ? '/' : '/en/';
+---
+
+<a class="skip" href="#main">{t.nav.skip}</a>
+<header class="nav" data-nav>
+  <div class="wrap nav__in">
+    <a class="nav__brand" href={home} aria-label="nchova">
+      <Mark class="nav__mark" />
+      <span class="nav__word">nchova</span>
+    </a>
+    <nav class="nav__links mono" aria-label="nchova">
+      {t.nav.items.map(([id, label]) => <a href={`#${id}`}>{label}</a>)}
+    </nav>
+    <div class="nav__end">
+      <a class="nav__lang mono" href={t.nav.other.href} hreflang={t.lang === 'it' ? 'en' : 'it'} title={t.nav.other.title}>{t.nav.other.label}</a>
+      <a class="btn btn--sm" href={DOWNLOAD_URL}><Bracket>{t.nav.cta}</Bracket></a>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,77 @@
+---
+import Mark from '../Mark.astro';
+import { json } from '../../lib/json';
+import type { Dict } from '../../i18n';
+
+interface Props {
+  t: Dict;
+}
+const d = Astro.props.t.meeting.demo;
+---
+
+<div class="md" data-meeting>
+  <script type="application/json" data-script set:html={json(d)} />
+  <div class="stage stage--desk" aria-hidden="true">
+    <div class="stage__in">
+      <div class="menubar" aria-hidden="true">
+        <span class="menubar__left"></span>
+        <span class="menubar__right">
+          <span class="menubar__item"><Mark class="menubar__mark" /> {d.menubar}</span>
+          <span class="menubar__clock">{d.clock}</span>
+        </span>
+      </div>
+
+      <div class="call" aria-hidden="true">
+        {
+          d.tiles.map((name, i) => (
+            <div class="call__tile" data-tile={i === 3 ? 'me' : name}>
+              <span class="call__face">{name[0]}</span>
+              <span class="call__name">{name}</span>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="prompt" data-prompt aria-hidden="true">
+        <n-fish fit></n-fish>
+        <span class="prompt__text">
+          <b>{d.promptTitle}</b>
+          <small>{d.promptSub}</small>
+        </span>
+        <span class="prompt__no">{d.notNow}</span>
+        <span class="prompt__yes" data-yes>{d.transcribe}</span>
+      </div>
+
+      <div class="mcard" data-card aria-hidden="true">
+        <div class="mcard__head">
+          <b>{d.card}</b>
+          <span class="mcard__clock" data-clock>0:00</span>
+        </div>
+        <div class="mcard__bar">
+          <span class="mcard__face on" data-face="live">{d.live}</span>
+          <span class="mcard__face" data-face="notes" data-notes-tab>{d.mine}</span>
+          <span class="mcard__sp"></span>
+          <span class="mcard__btn">{d.pause}</span>
+          <span class="mcard__btn mcard__btn--stop">{d.stop}</span>
+        </div>
+        <div class="mcard__body">
+          <div class="mcard__chat" data-chat></div>
+          <div class="mcard__pad" data-pad></div>
+        </div>
+      </div>
+
+      <div class="mpill" data-pill aria-hidden="true">
+        <i class="pill__dot"></i>
+        <n-fish fit></n-fish>
+      </div>
+
+      <svg class="cursor" data-cursor viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 2.5v17.2l4.3-4.1 2.9 6.6 2.7-1.2-2.9-6.5 6-.4z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  import '../../scripts/demos/meeting';
+</script>

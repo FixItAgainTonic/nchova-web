@@ -1,0 +1,75 @@
+---
+import Bracket from './Bracket.astro';
+import { rich, type Dict } from '../i18n';
+
+interface Props {
+  t: Dict;
+}
+const p = Astro.props.t.privacy;
+---
+
+<section class="deep" id="privacy-mac" aria-labelledby="privacy-title" data-deep>
+  <div class="wrap deep__in">
+    <p class="kicker rise"><Bracket>{p.kicker}</Bracket></p>
+    <h2 id="privacy-title" class="deep__title rise" set:html={rich(p.title)} />
+    <p class="deep__lead rise">{p.lead}</p>
+
+    <dl class="deep__stats">
+      {
+        p.stats.map(([n, label], i) => (
+          <div class="rise" style={`--d:${i * 0.08}s`}>
+            <dt>{n}</dt>
+            <dd>{label}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <div class="ledger rise">
+      <div class="ledger__never">
+        <p class="ledger__label mono">{p.neverLabel}</p>
+        <ul>{p.never.map((x) => <li>{x}</li>)}</ul>
+      </div>
+      <div class="ledger__out">
+        <p class="ledger__label mono">{p.ledgerLabel}</p>
+        <table>
+          <tbody>
+            {
+              p.ledger.map(([who, what, when]) => (
+                <tr>
+                  <th scope="row">{who}</th>
+                  <td>{what}</td>
+                  <td class="ledger__when">{when}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { Tank } from '../scripts/fish/tank';
+
+  const deep = document.querySelector<HTMLElement>('[data-deep]');
+  if (deep) {
+    new Tank(deep, {
+      edges: 'turn',
+      school: true,
+      pointer: true,
+      fish: (w) => {
+        const n = w < 700 ? 9 : 16;
+        return Array.from({ length: n }, (_, i) => {
+          const near = i / (n - 1);
+          return {
+            size: 16 + near * (w < 700 ? 26 : 40),
+            alpha: 0.28 + near * 0.6,
+            paint: near > 0.7 ? { bones: '#9184d9', ribs: '#d2cefd' } : {},
+          };
+        });
+      },
+    });
+  }
+</script>

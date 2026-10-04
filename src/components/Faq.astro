@@ -1,0 +1,41 @@
+---
+import Bracket from './Bracket.astro';
+import Mark from './Mark.astro';
+import { rich, type Dict } from '../i18n';
+
+interface Props {
+  t: Dict;
+}
+const f = Astro.props.t.faq;
+const stamp = (n: number) => `00:${String(Math.floor(n / 60)).padStart(2, '0')}:${String(n % 60).padStart(2, '0')}`;
+---
+
+<section class="faq" id={f.id} aria-labelledby="faq-title">
+  <div class="wrap">
+    <header class="faq__head">
+      <p class="kicker rise"><Bracket><span class="num">07</span> {f.kicker}</Bracket></p>
+      <h2 id="faq-title" class="feature__title rise" set:html={rich(f.title)} />
+    </header>
+    <dl class="faq__list">
+      {
+        f.items.map(([q, a], i) => (
+          <div class="faq__pair rise">
+            <dt>
+              <span class="faq__time mono">{stamp(4 + i * 23)}</span>
+              <span class="faq__who mono">{f.you}</span>
+              <span class="faq__q spoken">{q}</span>
+            </dt>
+            <dd>
+              <span class="faq__time mono">{stamp(9 + i * 23)}</span>
+              <span class="faq__who faq__who--us mono">
+                <Mark class="faq__mark" />
+                {f.us}
+              </span>
+              <span class="faq__a">{a}</span>
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>

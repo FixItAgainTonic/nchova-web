@@ -1,0 +1,22 @@
+---
+// The flat mark, cropped to its ink.
+interface Props {
+  class?: string;
+  title?: string;
+}
+const { class: cls, title } = Astro.props;
+---
+
+<svg class:list={['mark', cls]} viewBox="177 315 660 394" role={title ? 'img' : undefined} aria-hidden={title ? undefined : 'true'}>
+  {title && <title>{title}</title>}
+  <g fill="none" stroke="#796cbf" stroke-width="54" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 204 362 C 240 362 246 376 246 406 L 246 474 C 246 498 254 506 272 512 C 254 518 246 526 246 550 L 246 618 C 246 648 240 662 204 662"></path>
+    <path d="M 700 342 C 766.9 372.1 810 438.6 810 512 C 810 585.4 766.9 651.9 700 682"></path>
+  </g>
+  <g fill="#9184d9">
+    <rect x="342" y="447" width="42" height="130" rx="21"></rect>
+    <rect x="430" y="397" width="42" height="230" rx="21"></rect>
+    <rect x="518" y="362" width="42" height="300" rx="21"></rect>
+    <rect x="606" y="407" width="42" height="210" rx="21"></rect>
+  </g>
+</svg>

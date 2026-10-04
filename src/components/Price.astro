@@ -1,0 +1,76 @@
+---
+import Bracket from './Bracket.astro';
+import Mark from './Mark.astro';
+import { CHECKOUT_URL, DOWNLOAD_URL } from '../config';
+import { rich, type Dict } from '../i18n';
+
+interface Props {
+  t: Dict;
+}
+const p = Astro.props.t.price;
+
+// A barcode drawn with the mark's ribs: the four heights, over and over, a little off each time.
+const code = Array.from({ length: 34 }, (_, i) => {
+  const base = [130, 230, 300, 210][i % 4] / 300;
+  return Math.round((0.55 + 0.45 * base * (0.8 + 0.2 * Math.sin(i * 2.7))) * 100);
+});
+const receipts = [
+  { kind: 'free', r: p.free, thanks: '' },
+  { kind: 'pro', r: p.pro, thanks: p.pro.thanks },
+];
+---
+
+<section class="price" id={p.id} aria-labelledby="price-title">
+  <div class="wrap">
+    <header class="price__head">
+      <p class="kicker rise"><Bracket><span class="num">06</span> {p.kicker}</Bracket></p>
+      <h2 id="price-title" class="feature__title rise" set:html={rich(p.title)} />
+      <p class="feature__lead rise" style="--d:.08s">{p.lead}</p>
+    </header>
+
+    <div class="price__body">
+      {
+        receipts.map(({ kind, r, thanks }, i) => (
+          <div class:list={['receipt', `receipt--${kind}`, 'rise']} style={`--d:${0.1 + i * 0.1}s`}>
+            <div class="receipt__paper">
+              <Mark class="receipt__mark" />
+              <p class="receipt__head">{r.head}</p>
+              <p class="receipt__sub">{r.sub}</p>
+              <ul class="receipt__lines">
+                {r.lines.map(([item, value]) => (
+                  <li>
+                    <span>{item}</span>
+                    <i />
+                    <span>{value}</span>
+                  </li>
+                ))}
+              </ul>
+              <p class="receipt__total">
+                <span>{r.total[0]}</span>
+                <i />
+                <span>{r.total[1]}</span>
+              </p>
+              {thanks && <p class="receipt__thanks">{thanks}</p>}
+              {thanks && (
+                <div class="receipt__code" aria-hidden="true">
+                  {code.map((h) => <span style={`--h:${h}%`} />)}
+                </div>
+              )}
+            </div>
+          </div>
+        ))
+      }
+
+      <div class="price__act rise" style="--d:.3s">
+        <p class="price__trial mono">{p.trial}</p>
+        <a class="btn btn--lg" href={DOWNLOAD_URL}><Bracket>{p.cta}</Bracket></a>
+        <a class="btn btn--ghost" href={CHECKOUT_URL}>{p.buy}</a>
+        <p class="price__after">{p.after}</p>
+        <div class="price__needs">
+          <p class="mono">{p.needsTitle}</p>
+          <ul>{p.needs.map((n) => <li>{n}</li>)}</ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

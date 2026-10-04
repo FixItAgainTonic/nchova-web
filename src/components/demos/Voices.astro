@@ -1,0 +1,68 @@
+---
+import { json } from '../../lib/json';
+import type { Dict } from '../../i18n';
+
+interface Props {
+  t: Dict;
+}
+const d = Astro.props.t.voices.demo;
+---
+
+<div class="vd" data-voices>
+  <script type="application/json" data-script set:html={json(d)} />
+  <div class="vd__sheet" aria-hidden="true">
+    <div class="vd__top">
+      <p class="vd__event"><span class="mono">{d.invited}</span> <b>{d.event}</b></p>
+      <ul class="vd__invited">
+        {
+          d.people.map((name, i) => (
+            <li data-person={i}>
+              <span class="vd__av">{name[0]}</span>
+              <span>{name}</span>
+              <svg class="vd__ok" viewBox="0 0 16 16" aria-hidden="true">
+                <path d="M3.5 8.5l3 3 6-7" />
+              </svg>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="vd__score" data-score aria-hidden="true">
+      {
+        [d.me, `${d.voice} 1`, `${d.voice} 2`, `${d.voice} 3`].map((label, i) => (
+          <div class="vd__lane" data-lane={i}>
+            <div class="vd__label">
+              <span class="vd__name" data-name>{i === 0 ? label : ''}</span>
+              <span class="vd__badge mono" data-badge />
+              {i === 2 && (
+                <span class="vd__maybe" data-maybe>
+                  <span class="spoken" data-maybe-text />
+                  <span class="vd__chip vd__chip--yes" data-yes>{d.yes}</span>
+                  <span class="vd__chip">{d.no}</span>
+                </span>
+              )}
+            </div>
+            <div class="vd__track" data-track />
+          </div>
+        ))
+      }
+      <div class="vd__over"><div class="vd__playhead" data-playhead></div></div>
+    </div>
+
+    <div class="vd__ask" data-ask aria-hidden="true">
+      <p class="vd__ask-title">{d.ask}</p>
+      <p class="vd__ask-hint">{d.askHint}</p>
+      <div class="vd__ask-row">
+        <span class="vd__ask-voice mono">{d.voice} 3</span>
+        <span class="vd__input"><span data-input></span><i class="vd__caret"></i></span>
+        <span class="vd__save" data-save>{d.save}</span>
+      </div>
+    </div>
+  </div>
+  <p class="vd__foot mono">{d.footnote}</p>
+</div>
+
+<script>
+  import '../../scripts/demos/voices';
+</script>

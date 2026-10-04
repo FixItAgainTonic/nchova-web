@@ -1,0 +1,46 @@
+---
+import Bracket from './Bracket.astro';
+import { rich } from '../i18n';
+
+interface Props {
+  id: string;
+  num: string;
+  kicker: string;
+  title: string;
+  lead: string;
+  notes: string[][];
+  pro?: boolean;
+  flip?: boolean;
+}
+const { id, num, kicker, title, lead, notes, pro, flip } = Astro.props;
+---
+
+<section class:list={['feature', flip && 'feature--flip']} id={id} aria-labelledby={`${id}-title`}>
+  <div class="wrap">
+    <header class="feature__head">
+      <p class="kicker rise">
+        <Bracket><span class="num">{num}</span> {kicker}</Bracket>
+        {pro && <span class="pro">pro</span>}
+      </p>
+      <h2 id={`${id}-title`} class="feature__title rise" set:html={rich(title)} />
+      <p class="feature__lead rise" style="--d:.08s">{lead}</p>
+    </header>
+    <div class="feature__body">
+      <div class="feature__demo rise" style="--d:.12s"><slot /></div>
+      <aside class="feature__notes">
+        {
+          notes.map(([label, text, tag], i) => (
+            <div class="note rise" style={`--d:${0.1 + i * 0.07}s`}>
+              <p class="note__label mono">
+                {label}
+                {tag && <span class="pro">pro</span>}
+              </p>
+              <p class="note__text">{text}</p>
+            </div>
+          ))
+        }
+      </aside>
+    </div>
+    <slot name="after" />
+  </div>
+</section>

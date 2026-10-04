@@ -1,0 +1,15 @@
+---
+// The mark's tail and head around whatever is inside: { like this ).
+interface Props {
+  class?: string;
+}
+---
+
+<span class:list={['bracket', Astro.props.class]}>
+  <svg class="b-tail" viewBox="177 315 122 394" aria-hidden="true"
+    ><path d="M 204 362 C 240 362 246 376 246 406 L 246 474 C 246 498 254 506 272 512 C 254 518 246 526 246 550 L 246 618 C 246 648 240 662 204 662"
+    ></path></svg
+  ><slot /><svg class="b-head" viewBox="673 315 164 394" aria-hidden="true"
+    ><path d="M 700 342 C 766.9 372.1 810 438.6 810 512 C 810 585.4 766.9 651.9 700 682"></path></svg
+  >
+</span>

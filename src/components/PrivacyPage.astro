@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import Mark from './Mark.astro';
+import { CONTACT_EMAIL } from '../config';
+import { dicts, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const t = dicts[Astro.props.lang];
+const p = t.privacyPage;
+const home = Astro.props.lang === 'it' ? '/' : '/en/';
+---
+
+<Base lang={Astro.props.lang} title={p.metaTitle} description={t.meta.description} alternate={t.footer.other[0] + 'privacy/'} ocean={false}>
+  <main id="main" class="legal">
+    <div class="wrap legal__in">
+      <a class="legal__home" href={home}><Mark class="nav__mark" /> <span class="nav__word">nchova</span></a>
+      <h1 class="feature__title">{p.title}</h1>
+      {
+        p.sections.map(([h, body], i) => (
+          <section class="legal__sec">
+            <h2 class="mono">{h}</h2>
+            <p>
+              {body}
+              {i === p.sections.length - 1 && (
+                <>
+                  {' '}
+                  <a class="link" href={`mailto:${CONTACT_EMAIL}`}>
+                    {CONTACT_EMAIL}
+                  </a>
+                </>
+              )}
+            </p>
+          </section>
+        ))
+      }
+      <p><a class="link" href={home}>{p.back}</a></p>
+    </div>
+  </main>
+</Base>

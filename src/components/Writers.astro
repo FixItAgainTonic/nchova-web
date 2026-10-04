@@ -1,0 +1,30 @@
+---
+import type { Dict } from '../i18n';
+
+interface Props {
+  t: Dict;
+}
+const w = Astro.props.t.notes.writers;
+---
+
+<div class="writers rise">
+  <p class="writers__title kicker">{w.title}</p>
+  <table class="writers__table">
+    <thead>
+      <tr>{w.cols.map((c) => <th scope="col">{c}</th>)}</tr>
+    </thead>
+    <tbody>
+      {
+        w.rows.map(([who, where, quality, transcript, plan]) => (
+          <tr>
+            <th scope="row">{who}</th>
+            <td>{where}</td>
+            <td class="writers__q">{quality}</td>
+            <td class:list={['writers__t', transcript.includes('cloud') && 'writers__t--out']}>{transcript}</td>
+            <td>{plan === 'pro' ? <span class="pro">pro</span> : <span class="writers__free mono">{plan}</span>}</td>
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>

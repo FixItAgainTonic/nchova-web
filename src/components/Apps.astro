@@ -1,0 +1,38 @@
+---
+import type { Dict } from '../i18n';
+
+interface Props {
+  t: Dict;
+}
+const { apps, tools } = Astro.props.t.assistants;
+---
+
+<div class="apps">
+  <div class="apps__names rise">
+    <p class="kicker">{apps.label}</p>
+    <p class="apps__list">
+      {
+        apps.list.map((name, i) => (
+          <>
+            <span class="apps__name">{name}</span>
+            {i < apps.list.length - 1 && <span class="apps__sep" aria-hidden="true" />}
+          </>
+        ))
+      }
+      <span class="apps__tail spoken">{apps.tail}</span>
+    </p>
+  </div>
+  <div class="apps__tools rise" style="--d:.08s">
+    <p class="kicker">{tools.label}</p>
+    <ul>
+      {
+        tools.list.map(([name, what]) => (
+          <li>
+            <code>{name}</code>
+            <span>{what}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

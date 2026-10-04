@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nchova.com/sitemap-index.xml

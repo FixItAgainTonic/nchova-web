@@ -1,0 +1,86 @@
+---
+import Bracket from './Bracket.astro';
+import { DOWNLOAD_URL } from '../config';
+import { json } from '../lib/json';
+import type { Dict } from '../i18n';
+
+interface Props {
+  t: Dict;
+}
+const { t } = Astro.props;
+const spoken = t.hero.spoken.split(' ');
+const written = [...t.hero.written];
+---
+
+<section class="hero" data-hero>
+  <script type="application/json" data-field set:html={json(t.hero.field)} />
+  <div class="wrap hero__in">
+    <p class="kicker hero__kicker" data-avoid>{t.hero.kicker}</p>
+    <h1 class="hero__title">
+      <span class="hero__spoken spoken" data-avoid="lines">
+        {spoken.map((w, i) => (
+          <>
+            <span class="w" style={`--i:${i}`}>{w}</span>
+            {i < spoken.length - 1 && ' '}
+          </>
+        ))}
+      </span>
+      <span class="sr">{t.hero.written}</span>
+      <span class="hero__written" data-avoid="lines" aria-hidden="true">
+        {written.map((ch) => <span class="t">{ch}</span>)}<span class="caret"></span>
+      </span>
+    </h1>
+    <p class="hero__lead" data-avoid="lines">{t.hero.lead}</p>
+    <div class="hero__cta" data-avoid>
+      <a class="btn btn--lg" href={DOWNLOAD_URL}><Bracket>{t.hero.cta}</Bracket></a>
+      <span class="hero__price mono">{t.hero.price}</span>
+    </div>
+    <p class="hero__meta mono" data-avoid>{t.hero.meta}</p>
+  </div>
+</section>
+
+<script>
+  import { TextField } from '../scripts/fish/field';
+  import { reducedMotion } from '../scripts/fish/ticker';
+
+  const hero = document.querySelector<HTMLElement>('[data-hero]');
+  if (hero) {
+    const lines = JSON.parse(hero.querySelector('[data-field]')!.textContent!);
+    new TextField(
+      hero,
+      {
+        edges: 'turn',
+        pointer: true,
+        fish: (w) => {
+          const big = Math.min(230, Math.max(120, w * 0.17));
+          const sizes = w < 700 ? [big * 0.8, 44] : [big, 78, 52, 38];
+          return sizes.map((size, i) => ({ size, cruise: (size * 1.36) * (i ? 0.42 : 0.28) }));
+        },
+        start: (i, w, h) =>
+          [
+            { x: w * 0.76, y: h * 0.42, dir: -1 as const },
+            { x: w * 0.88, y: h * 0.8, dir: 1 as const },
+            { x: w * 0.55, y: h * 0.9, dir: -1 as const },
+            { x: w * 0.93, y: h * 0.16, dir: -1 as const },
+          ][i] ?? { x: w * 0.8, y: h * 0.5 },
+      },
+      lines,
+    );
+
+    // The written line types itself, after the spoken one has been said.
+    const chars = [...hero.querySelectorAll<HTMLElement>('.hero__written .t')];
+    const caret = hero.querySelector<HTMLElement>('.hero__written .caret')!;
+    if (reducedMotion()) chars.forEach((c) => c.classList.add('on'));
+    else {
+      let i = 0;
+      const next = () => {
+        if (i >= chars.length) return caret.classList.add('idle');
+        chars[i].classList.add('on');
+        chars[i].after(caret);
+        i++;
+        setTimeout(next, 38 + Math.random() * 46);
+      };
+      setTimeout(next, 900);
+    }
+  }
+</script>

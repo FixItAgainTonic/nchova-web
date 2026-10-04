@@ -1,0 +1,38 @@
+---
+import { CONTACT_EMAIL } from '../config';
+import type { Dict } from '../i18n';
+
+interface Props {
+  t: Dict;
+}
+const f = Astro.props.t.footer;
+---
+
+<footer class="footer" data-footer>
+  <div class="wrap">
+    <p class="footer__word" aria-hidden="true">nchova</p>
+    <div class="footer__row">
+      <p class="footer__colophon">{f.colophon}</p>
+      <nav class="footer__links mono" aria-label="footer">
+        <a href={f.privacy[0]}>{f.privacy[1]}</a>
+        <a href={`mailto:${CONTACT_EMAIL}`}>{f.contact}</a>
+        <a href={f.other[0]}>{f.other[1]}</a>
+        <span>{f.rights}</span>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+  import { Tank } from '../scripts/fish/tank';
+
+  const footer = document.querySelector<HTMLElement>('[data-footer]');
+  if (footer) {
+    new Tank(footer, {
+      edges: 'turn',
+      pointer: true,
+      fish: (w) => (w < 700 ? [34] : [30, 52]).map((size) => ({ size, alpha: 0.9 })),
+      start: (i, w, h) => ({ x: [0.2, 0.7][i] * w, y: [0.35, 0.55][i] * h }),
+    });
+  }
+</script>

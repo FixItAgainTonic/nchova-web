@@ -1,0 +1,56 @@
+<!doctype html>
+<!-- The link preview (1200×630). Rendered by tools/og.sh into public/og.png and public/og-en.png. -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face { font-family: F; src: url(../node_modules/@fontsource-variable/fraunces/files/fraunces-latin-full-normal.woff2) format('woff2-variations'); font-weight: 100 900; font-display: block; }
+  @font-face { font-family: F; font-style: italic; src: url(../node_modules/@fontsource-variable/fraunces/files/fraunces-latin-full-italic.woff2) format('woff2-variations'); font-weight: 100 900; font-display: block; }
+  @font-face { font-family: M; src: url(../node_modules/@fontsource/dm-mono/files/dm-mono-latin-400-normal.woff2) format('woff2'); font-display: block; }
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  body { position: relative; background: #f2eee6; color: #1d1a2b; font-family: F; font-variation-settings: 'SOFT' 100; }
+  .field { position: absolute; inset: 0; padding: 26px 30px; font: 400 15px/26px M; color: rgba(29,26,43,.13); word-spacing: 2px; }
+  .field b { color: rgba(121,108,191,.35); font-weight: 400; }
+  .clear { position: absolute; left: 0; top: 0; bottom: 0; width: 860px; background: linear-gradient(90deg, #f2eee6 82%, rgba(242,238,230,0)); }
+  .in { position: absolute; left: 80px; top: 92px; }
+  .kicker { font: 400 20px M; color: #4a4560; }
+  h1 { margin: 26px 0 0; font-size: 148px; line-height: .9; letter-spacing: -.04em; font-weight: 400; }
+  .s { display: block; font-style: italic; font-weight: 300; color: #5a4ea6; font-variation-settings: 'SOFT' 100, 'WONK' 1; }
+  .w { display: block; font-weight: 640; letter-spacing: -.05em; }
+  .w i { display: inline-block; width: 9px; height: 112px; margin-left: 8px; background: #796cbf; border-radius: 4px; vertical-align: -10px; }
+  .foot { position: absolute; left: 80px; bottom: 54px; font: 400 20px M; color: #4a4560; }
+  .mark { position: absolute; right: 64px; top: 236px; width: 220px; filter: drop-shadow(0 0 18px #f2eee6) drop-shadow(0 0 10px #f2eee6); }
+</style>
+</head>
+<body>
+  <div class="field" id="field"></div>
+  <div class="clear"></div>
+  <svg class="mark" viewBox="177 315 660 394">
+    <g fill="none" stroke="#796cbf" stroke-width="54" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 204 362 C 240 362 246 376 246 406 L 246 474 C 246 498 254 506 272 512 C 254 518 246 526 246 550 L 246 618 C 246 648 240 662 204 662"/>
+      <path d="M 700 342 C 766.9 372.1 810 438.6 810 512 C 810 585.4 766.9 651.9 700 682"/>
+    </g>
+    <g fill="#9184d9">
+      <rect x="342" y="447" width="42" height="130" rx="21"/><rect x="430" y="397" width="42" height="230" rx="21"/>
+      <rect x="518" y="362" width="42" height="300" rx="21"/><rect x="606" y="407" width="42" height="210" rx="21"/>
+    </g>
+  </svg>
+  <div class="in">
+    <div class="kicker" id="kicker"></div>
+    <h1><span class="s" id="spoken"></span><span class="w"><span id="written"></span><i></i></span></h1>
+  </div>
+  <div class="foot" id="foot"></div>
+<script>
+  const en = location.search.includes('en');
+  const t = en
+    ? { k: 'Dictation and meetings · for Mac', s: 'You talk,', w: 'nchova writes.', f: 'nchova.com · audio never leaves your Mac',
+        lines: [['Me', 'Let’s start with the launch.'], ['Julia', 'The page copy is done, only the fish animation is missing.'], ['Mark', 'I’ll finish it by Thursday, no wait, Friday.'], ['Sarah', 'I’ll send the newsletter Monday at ten.']] }
+    : { k: 'Dettatura e meeting · per Mac', s: 'Tu parli,', w: 'nchova scrive.', f: 'nchova.com · l’audio non lascia mai il tuo Mac',
+        lines: [['Io', 'Partiamo dal lancio.'], ['Giulia', 'Il testo è pronto, mancano solo le animazioni del pesce.'], ['Marco', 'Le chiudo entro giovedì, anzi no, venerdì.'], ['Sara', 'La newsletter la mando lunedì alle dieci.']] };
+  kicker.textContent = t.k; spoken.textContent = t.s; written.textContent = t.w; foot.textContent = t.f;
+  let html = '', n = 0;
+  while (html.length < 9000) for (const [who, line] of t.lines) html += `00:0${n % 10}:${String((n++ * 7) % 60).padStart(2, '0')} <b>${who}</b> ${line} `;
+  field.innerHTML = html;
+</script>
+</body>
+</html>

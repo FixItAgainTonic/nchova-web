@@ -1,0 +1,63 @@
+---
+import { json } from '../../lib/json';
+import type { Dict } from '../../i18n';
+
+interface Props {
+  t: Dict;
+}
+const d = Astro.props.t.notes.demo;
+---
+
+<div class="nd" data-notes>
+  <script type="application/json" data-script set:html={json(d)} />
+  <div class="nd__win" aria-hidden="true">
+    <div class="win__bar nd__bar">
+      <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="nd__tabs" aria-hidden="true">
+        {d.tabs.map((tab, i) => <span class:list={['nd__tab', i === 0 && 'on']}>{tab}</span>)}
+      </span>
+    </div>
+    <div class="nd__page" aria-hidden="true">
+      <aside class="nd__margin">
+        <p class="nd__margin-label mono">{d.mine}</p>
+        {d.jotted.map((line, i) => <p class="nd__jot" data-jot={i}>{line}</p>)}
+      </aside>
+      <article class="nd__doc">
+        <p class="nd__title">{d.title}</p>
+        <p class="nd__meta mono">{d.meta}</p>
+        <div class="nd__writing" data-writing>
+          <span class="mono"><i class="nd__spin"></i>{d.writing}</span>
+          <i class="nd__ghost"></i><i class="nd__ghost"></i><i class="nd__ghost nd__ghost--short"></i>
+        </div>
+        <div class="nd__sec" data-sec>
+          <p class="nd__h">{d.summaryH}</p>
+          <p class="nd__p" data-summary></p>
+        </div>
+        <div class="nd__sec" data-sec>
+          <p class="nd__h">{d.decisionsH}</p>
+          <ul class="nd__list" data-decisions></ul>
+        </div>
+        <div class="nd__sec" data-sec>
+          <p class="nd__h">{d.actionsH}</p>
+          <ul class="nd__list nd__list--todo" data-actions></ul>
+        </div>
+      </article>
+    </div>
+    <div class="nd__chat" data-chat aria-hidden="true">
+      <div class="nd__chips">
+        {d.chips.map((chip, i) => <span class="nd__chip" data-chip={i}>{chip}</span>)}
+      </div>
+      <div class="nd__qa">
+        <p class="nd__q" data-q>{d.ask}</p>
+        <p class="nd__a" data-a></p>
+      </div>
+    </div>
+    <p class="nd__foot mono" data-foot aria-hidden="true">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7"></path></svg>{d.footer}
+    </p>
+  </div>
+</div>
+
+<script>
+  import '../../scripts/demos/notes';
+</script>

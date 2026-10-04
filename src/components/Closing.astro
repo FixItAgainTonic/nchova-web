@@ -1,0 +1,35 @@
+---
+import Bracket from './Bracket.astro';
+import { DOWNLOAD_URL } from '../config';
+import { rich, type Dict } from '../i18n';
+
+interface Props {
+  t: Dict;
+}
+const c = Astro.props.t.closing;
+---
+
+<section class="closing" data-closing aria-labelledby="closing-title">
+  <div class="wrap closing__in">
+    <p class="closing__key rise" aria-hidden="true">
+      <span class="closing__cap">fn</span>
+    </p>
+    <h2 id="closing-title" class="closing__title rise" set:html={rich(c.title)} />
+    <p class="closing__lead rise">{c.lead}</p>
+    <p class="rise"><a class="btn btn--lg" href={DOWNLOAD_URL}><Bracket>{c.cta}</Bracket></a></p>
+  </div>
+</section>
+
+<script>
+  import { Tank } from '../scripts/fish/tank';
+
+  const closing = document.querySelector<HTMLElement>('[data-closing]');
+  if (closing) {
+    new Tank(closing, {
+      edges: 'turn',
+      pointer: true,
+      fish: (w) => (w < 700 ? [30, 46] : [28, 40, 56, 84]).map((size) => ({ size, alpha: 0.85 })),
+      start: (i, w, h) => ({ x: [0.12, 0.86, 0.2, 0.8][i] * w, y: [0.25, 0.3, 0.75, 0.7][i] * h }),
+    });
+  }
+</script>

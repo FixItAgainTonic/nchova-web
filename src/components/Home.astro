@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from './Nav.astro';
+import Hero from './Hero.astro';
+import Index from './Index.astro';
+import Feature from './Feature.astro';
+import Dictation from './demos/Dictation.astro';
+import Meeting from './demos/Meeting.astro';
+import Voices from './demos/Voices.astro';
+import Notes from './demos/Notes.astro';
+import Assistants from './demos/Assistants.astro';
+import Writers from './Writers.astro';
+import Apps from './Apps.astro';
+import Privacy from './Privacy.astro';
+import Price from './Price.astro';
+import Faq from './Faq.astro';
+import Closing from './Closing.astro';
+import Footer from './Footer.astro';
+import { dicts, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const t = dicts[Astro.props.lang];
+---
+
+<Base lang={t.lang as Lang} title={t.meta.title} description={t.meta.description} alternate={t.nav.other.href}>
+  <Nav t={t} />
+  <main id="main">
+    <Hero t={t} />
+    <Index t={t} />
+    <Feature {...t.dictation} num="01">
+      <Dictation t={t} />
+    </Feature>
+    <Feature {...t.meeting} num="02" flip>
+      <Meeting t={t} />
+    </Feature>
+    <Feature {...t.voices} num="03">
+      <Voices t={t} />
+    </Feature>
+    <Feature {...t.notes} num="04" flip>
+      <Notes t={t} />
+      <Writers slot="after" t={t} />
+    </Feature>
+    <Feature {...t.assistants} num="05">
+      <Assistants t={t} />
+      <Apps slot="after" t={t} />
+    </Feature>
+    <Privacy t={t} />
+    <Price t={t} />
+    <Faq t={t} />
+    <Closing t={t} />
+  </main>
+  <Footer t={t} />
+</Base>

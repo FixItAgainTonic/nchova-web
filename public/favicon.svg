@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>nchova icon</title>
+  <defs>
+    <linearGradient id="plate" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#292933"/><stop offset="1" stop-color="#121217"/>
+    </linearGradient>
+  </defs>
+  <rect x="51" y="51" width="922" height="922" rx="225" fill="url(#plate)"
+        stroke="#ffffff" stroke-opacity="0.08" stroke-width="12"/>
+  <!-- the mark at 85% of the plate, centred: its ink spans x 177…837, centre 507 -->
+  <g transform="translate(81.05 76.8) scale(0.85)">
+    <g fill="none" stroke="#796cbf" stroke-width="54" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M 204 362 C 240 362 246 376 246 406 L 246 474 C 246 498 254 506 272 512 C 254 518 246 526 246 550 L 246 618 C 246 648 240 662 204 662"/>
+      <path d="M 700 342 C 766.9 372.1 810 438.6 810 512 C 810 585.4 766.9 651.9 700 682"/>
+    </g>
+    <g fill="#9184d9">
+      <rect x="342" y="447" width="42" height="130" rx="21"/>
+      <rect x="430" y="397" width="42" height="230" rx="21"/>
+      <rect x="518" y="362" width="42" height="300" rx="21"/>
+      <rect x="606" y="407" width="42" height="210" rx="21"/>
+    </g>
+  </g>
+</svg>

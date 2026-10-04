@@ -1,0 +1,37 @@
+---
+import Bracket from './Bracket.astro';
+import { rich, type Dict } from '../i18n';
+
+interface Props {
+  t: Dict;
+}
+const { t } = Astro.props;
+---
+
+<section class="index" aria-labelledby="index-title">
+  <div class="wrap">
+    <div class="index__head">
+      <p class="kicker rise"><Bracket>{t.index.kicker}</Bracket></p>
+      <h2 id="index-title" class="index__title rise" set:html={rich(t.index.title)} />
+    </div>
+    <ol class="index__list">
+      {
+        t.index.items.map(([id, name, desc, tag], i) => (
+          <li class="rise" style={`--d:${i * 0.07}s`}>
+            <a href={`#${id}`} class="index__row">
+              <span class="index__name">
+                {name}
+                {tag && <span class="pro">pro</span>}
+              </span>
+              <span class="index__leader" aria-hidden="true">
+                <n-fish size="26" class="index__fish" />
+              </span>
+              <span class="index__num mono">0{i + 1}</span>
+              <span class="index__desc spoken">{desc}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
