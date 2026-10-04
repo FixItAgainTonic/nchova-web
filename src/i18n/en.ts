@@ -348,12 +348,13 @@ const en: Dict = {
     colophon: 'Set in Fraunces and DM Mono. This site uses no cookies and follows you nowhere.',
     privacy: 'Privacy',
     contact: 'Contact',
-    rights: '© 2026 nchova',
+    rights: '© 2026 nchova · {company}, VAT IT{vat}',
   },
   privacyPage: {
     title: 'Privacy',
     metaTitle: 'Privacy — nchova',
     sections: [
+      ['Who we are', 'nchova is made by {company} (VAT IT{vat}), which is responsible for the data described on this page.'],
       ['This site', 'No cookies, no analytics, nothing loaded from anyone else: the fonts are served from here. The service hosting it (GitHub Pages) may keep the usual technical logs, such as IP addresses, to run it.'],
       ['The app', 'nchova has no servers of its own and asks for no account. Audio and voiceprints never leave your Mac. Transcripts and notes stay on the Mac, or in your iCloud if you turn on sync (coming soon).'],
       ['What leaves the Mac', 'For the Pro licence, nchova sends Polar the key and the Mac’s name. If your own Claude Code or Codex writes the notes, the meeting’s transcript goes to Anthropic or OpenAI, under your subscription. If you connect an AI assistant through the MCP server, that assistant reads your meetings (never your dictation). If you turn on iCloud sync (coming soon), transcripts and notes go to your own iCloud.'],

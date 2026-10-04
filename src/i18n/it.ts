@@ -356,12 +356,13 @@ const it = {
     colophon: 'Composto in Fraunces e DM Mono. Questo sito non usa cookie e non ti segue da nessuna parte.',
     privacy: 'Privacy',
     contact: 'Contatti',
-    rights: '© 2026 nchova',
+    rights: '© 2026 nchova · {company}, P.IVA {vat}',
   },
   privacyPage: {
     title: 'Privacy',
     metaTitle: 'Privacy — nchova',
     sections: [
+      ['Chi siamo', 'nchova è fatta da {company} (P.IVA {vat}), titolare dei dati di cui parla questa pagina.'],
       ['Questo sito', 'Non usa cookie, non ha statistiche, non carica niente da altri: i caratteri sono serviti da qui. Il servizio che lo ospita (GitHub Pages) può tenere i normali log tecnici, come l’indirizzo IP, per farlo funzionare.'],
       ['L’app', 'nchova non ha server propri e non chiede un account. L’audio e le impronte vocali non lasciano mai il tuo Mac. Transcript e note restano sul Mac, o nel tuo iCloud se attivi la sync (in arrivo).'],
       ['Cosa esce dal Mac', 'Per la licenza Pro, nchova manda a Polar la chiave e il nome del Mac. Se le note le scrive il tuo Claude Code o il tuo Codex, il transcript del meeting va ad Anthropic o a OpenAI, col tuo abbonamento. Se colleghi un assistente AI col server MCP, quell’assistente legge i tuoi meeting (mai le dettature). Se attivi la sync iCloud (in arrivo), transcript e note vanno nel tuo iCloud.'],
