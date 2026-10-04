@@ -1,5 +1,8 @@
 # nchova.com su GitHub Pages — DNS su Register.it
 
+> Da fare solo quando si decide di pubblicare. Fino ad allora il DNS resta com'è: Pages è attivo
+> ma, senza questi record, nchova.com mostra ancora la pagina di Register.it.
+
 Il sito è pubblicato da GitHub Pages (`.github/workflows/pages.yml`), dominio personalizzato
 `nchova.com`. Su Register.it, nella gestione DNS del dominio:
 

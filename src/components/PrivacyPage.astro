@@ -18,8 +18,8 @@ const home = Astro.props.lang === 'it' ? '/' : '/en/';
       <a class="legal__home" href={home}><Mark class="nav__mark" /> <span class="nav__word">nchova</span></a>
       <h1 class="feature__title">{p.title}</h1>
       {
-        p.sections.map(([h, body], i) => (
-          <section class="legal__sec">
+        p.sections.map(([h, body, anchor], i) => (
+          <section class="legal__sec" id={anchor}>
             <h2 class="mono">{h}</h2>
             <p>
               {body}

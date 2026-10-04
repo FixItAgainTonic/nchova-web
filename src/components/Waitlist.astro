@@ -1,0 +1,70 @@
+---
+// Until launch, the download and buy buttons are this: an email, sent straight to the mailing
+// service, which asks for confirmation (double opt-in) and later sends the launch email.
+import Bracket from './Bracket.astro';
+import { WAITLIST } from '../config';
+import type { Dict } from '../i18n';
+
+interface Props {
+  t: Dict;
+  id?: string;
+  /** Leave room for it in the hero's field of text. */
+  avoid?: boolean;
+}
+const { t, id, avoid } = Astro.props;
+const w = t.waitlist;
+const privacy = t.lang === 'it' ? '/privacy/#lista' : '/en/privacy/#lista';
+---
+
+<form
+  class="wl"
+  id={id}
+  method="post"
+  action={WAITLIST.action || undefined}
+  data-waitlist
+  data-avoid={avoid ? '' : undefined}
+  data-sending={w.sending}
+  data-done={w.done}
+  data-error={w.error}
+  data-closed={w.closed}
+>
+  <div class="wl__row">
+    <label class="wl__field">
+      <span class="sr">{w.label}</span>
+      <input type="email" name={WAITLIST.field} required autocomplete="email" spellcheck="false" placeholder={w.placeholder} />
+    </label>
+    {Object.entries(WAITLIST.hidden).map(([name, value]) => <input type="hidden" name={name} value={value} />)}
+    <button class="btn" type="submit"><Bracket>{w.button}</Bracket></button>
+  </div>
+  <p class="wl__status mono" role="status" aria-live="polite" data-status></p>
+  <p class="wl__privacy">{w.privacy} <a class="link" href={privacy}>{w.privacyLink}</a></p>
+</form>
+
+<script>
+  // Sent from here so the visitor stays on the page; the service's answer cannot be read across
+  // origins, so a request that went out counts as done. Without JavaScript the form posts normally.
+  for (const form of document.querySelectorAll<HTMLFormElement>('[data-waitlist]')) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const status = form.querySelector<HTMLElement>('[data-status]')!;
+      const button = form.querySelector<HTMLButtonElement>('button')!;
+      const action = form.getAttribute('action');
+      if (!action) {
+        status.textContent = form.dataset.closed!;
+        return;
+      }
+      status.textContent = form.dataset.sending!;
+      button.disabled = true;
+      try {
+        await fetch(action, { method: 'POST', body: new FormData(form), mode: 'no-cors' });
+        form.classList.add('done');
+        status.textContent = form.dataset.done!;
+        form.reset();
+      } catch {
+        status.textContent = form.dataset.error!;
+      } finally {
+        button.disabled = false;
+      }
+    });
+  }
+</script>

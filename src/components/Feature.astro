@@ -11,8 +11,10 @@ interface Props {
   notes: string[][];
   pro?: boolean;
   flip?: boolean;
+  /** A title, then lines: set small under the notes. */
+  footnote?: string[];
 }
-const { id, num, kicker, title, lead, notes, pro, flip } = Astro.props;
+const { id, num, kicker, title, lead, notes, pro, flip, footnote } = Astro.props;
 ---
 
 <section class:list={['feature', flip && 'feature--flip']} id={id} aria-labelledby={`${id}-title`}>
@@ -38,6 +40,16 @@ const { id, num, kicker, title, lead, notes, pro, flip } = Astro.props;
               <p class="note__text">{text}</p>
             </div>
           ))
+        }
+        {
+          footnote && (
+            <div class="footnote rise" id={`${id}-lingue`}>
+              <p class="footnote__title mono">{footnote[0]}</p>
+              {footnote.slice(1).map((line) => (
+                <p>{line}</p>
+              ))}
+            </div>
+          )
         }
       </aside>
     </div>

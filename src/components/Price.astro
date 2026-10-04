@@ -1,13 +1,15 @@
 ---
 import Bracket from './Bracket.astro';
 import Mark from './Mark.astro';
-import { CHECKOUT_URL, DOWNLOAD_URL } from '../config';
+import Waitlist from './Waitlist.astro';
+import { CHECKOUT_URL, DOWNLOAD_URL, LAUNCHED } from '../config';
 import { rich, type Dict } from '../i18n';
 
 interface Props {
   t: Dict;
 }
-const p = Astro.props.t.price;
+const { t } = Astro.props;
+const p = t.price;
 
 // A barcode drawn with the mark's ribs: the four heights, over and over, a little off each time.
 const code = Array.from({ length: 34 }, (_, i) => {
@@ -63,9 +65,25 @@ const receipts = [
 
       <div class="price__act rise" style="--d:.3s">
         <p class="price__trial mono">{p.trial}</p>
-        <a class="btn btn--lg" href={DOWNLOAD_URL}><Bracket>{p.cta}</Bracket></a>
-        <a class="btn btn--ghost" href={CHECKOUT_URL}>{p.buy}</a>
-        <p class="price__after">{p.after}</p>
+        {
+          LAUNCHED ? (
+            <>
+              <a class="btn btn--lg" href={DOWNLOAD_URL}>
+                <Bracket>{p.cta}</Bracket>
+              </a>
+              <a class="btn btn--ghost" href={CHECKOUT_URL}>
+                {p.buy}
+              </a>
+              <p class="price__after">{p.after}</p>
+            </>
+          ) : (
+            <>
+              <p class="price__soon">{t.waitlist.priceTitle}</p>
+              <p class="price__after">{t.waitlist.priceLead}</p>
+              <Waitlist t={t} id="lista" />
+            </>
+          )
+        }
         <div class="price__needs">
           <p class="mono">{p.needsTitle}</p>
           <ul>{p.needs.map((n) => <li>{n}</li>)}</ul>

@@ -1,6 +1,7 @@
 ---
 import Bracket from './Bracket.astro';
-import { DOWNLOAD_URL } from '../config';
+import Waitlist from './Waitlist.astro';
+import { DOWNLOAD_URL, LAUNCHED } from '../config';
 import { json } from '../lib/json';
 import type { Dict } from '../i18n';
 
@@ -31,10 +32,21 @@ const written = [...t.hero.written];
       </span>
     </h1>
     <p class="hero__lead" data-avoid="lines">{t.hero.lead}</p>
-    <div class="hero__cta" data-avoid>
-      <a class="btn btn--lg" href={DOWNLOAD_URL}><Bracket>{t.hero.cta}</Bracket></a>
-      <span class="hero__price mono">{t.hero.price}</span>
-    </div>
+    {
+      LAUNCHED ? (
+        <div class="hero__cta" data-avoid>
+          <a class="btn btn--lg" href={DOWNLOAD_URL}>
+            <Bracket>{t.hero.cta}</Bracket>
+          </a>
+          <span class="hero__price mono">{t.hero.price}</span>
+        </div>
+      ) : (
+        <div class="hero__wl">
+          <p class="hero__note mono" data-avoid>{t.waitlist.heroNote}</p>
+          <Waitlist t={t} avoid />
+        </div>
+      )
+    }
     <p class="hero__meta mono" data-avoid>{t.hero.meta}</p>
   </div>
 </section>

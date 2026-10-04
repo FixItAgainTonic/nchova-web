@@ -30,8 +30,20 @@ npm run check      # tipi e template
 Niente cookie, niente statistiche, niente risorse di terzi: i caratteri sono serviti dal sito.
 Con «riduci movimento» attivo i pesci stanno fermi e le demo mostrano subito il risultato.
 
+## Prima del lancio
+
+Finché `LAUNCHED` in `src/config.ts` è `false`, al posto di «Scarica» e «Compra» c'è la lista
+d'attesa: il modulo manda l'email direttamente al servizio di newsletter (`WAITLIST`), che chiede la
+conferma (doppio opt-in) e poi manda la mail del lancio. Finché `WAITLIST.action` è vuoto il modulo
+risponde che la lista non è ancora aperta.
+
+Le lingue di dettatura e meeting stanno in un posto solo, `src/i18n/languages.ts`: gratis coi
+modelli Apple, le europee di Parakeet con Pro. Ogni frase del sito che le conta o le elenca nasce da
+lì (`{free}`, `{pro}`, `{nFree}`… nei testi).
+
 ## Cosa manca
 
+- Il servizio per la lista d'attesa e il suo indirizzo in `WAITLIST.action`.
 - `CHECKOUT_URL` in `src/config.ts`: il checkout Polar, quando c'è.
 - Il download punta a `releases/latest/download/Nchova.dmg` di questa repo: funziona dalla prima
   release con quel file allegato.

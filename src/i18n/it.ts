@@ -21,7 +21,7 @@ const it = {
     skip: 'Vai al contenuto',
   },
   hero: {
-    kicker: 'Dettatura e meeting · per Mac · italiano e inglese',
+    kicker: 'Dettatura e meeting · per Mac',
     spoken: 'Tu parli,',
     written: 'nchova scrive.',
     lead:
@@ -62,10 +62,16 @@ const it = {
     lead:
       'Il testo compare dove c’è il cursore: una mail, Slack, Notion, il terminale. Qualsiasi app, senza cambiare finestra.',
     notes: [
-      ['Italiano e inglese', 'anche nella stessa frase: la lingua la capisce da sola.'],
+      ['Le tue lingue', 'ne scegli fino a tre e nchova capisce da sola quale stai parlando, anche a metà frase.'],
       ['Ripensamenti', '«giovedì, anzi no, venerdì» diventa «venerdì». La pulizia può solo togliere parole, mai aggiungerne.'],
       ['Il tuo vocabolario', 'nomi e sigle scritti come vuoi tu: «gira» diventa Jira, «Jason» diventa JSON.'],
-      ['Parakeet', 'circa metà degli errori e quattro volte più veloce (misurato su 101 frasi).', 'pro'],
+      ['Parakeet', 'circa metà degli errori, quattro volte più veloce (misurato su 101 frasi) e {nPro} lingue europee.', 'pro'],
+    ],
+    footnote: [
+      'Le lingue, come saranno al lancio',
+      'Gratis, coi modelli Apple: {free}.',
+      'Con Pro, coi modelli Parakeet, più precisi e più veloci: {pro}.',
+      'Le {nProOnly} lingue che conosce solo Parakeet, come {proOnly}, funzionano solo con Pro.',
     ],
     demo: {
       app: 'Note',
@@ -285,6 +291,7 @@ const it = {
         ['Dettatura in ogni app', 'sì'],
         ['Transcript dei meeting', 'sì'],
         ['Note coi modelli Apple', 'sì'],
+        ['Lingue, coi modelli Apple', '{nFree}'],
         ['Assistenti AI (MCP)', 'sì'],
         ['Export in Markdown', 'sì'],
         ['Sync iCloud', 'in arrivo'],
@@ -297,6 +304,7 @@ const it = {
       lines: [
         ['Tutto il gratuito', 'sì'],
         ['Parakeet: metà errori, 4× veloce', 'sì'],
+        ['Lingue europee, con Parakeet', '{nPro}'],
         ['Le voci degli altri, distinte', 'sì'],
         ['I nomi, riconosciuti dalla voce', 'sì'],
         ['Note con Qwen, sul Mac', 'sì'],
@@ -318,6 +326,22 @@ const it = {
       'Apple Intelligence attivo, per le note gratuite e per pulire i ripensamenti',
     ],
   },
+  waitlist: {
+    nav: 'Lista d’attesa',
+    hero: 'Avvisami al lancio',
+    heroNote: 'nchova non è ancora uscita',
+    label: 'La tua email',
+    placeholder: 'tu@esempio.it',
+    button: 'Avvisami',
+    sending: 'Un attimo…',
+    done: 'Fatto. Ti è arrivata una mail: conferma da lì, e al lancio ti scriviamo.',
+    error: 'Non è partita. Riprova tra poco.',
+    closed: 'La lista d’attesa non è ancora aperta.',
+    privacy: 'Prima una mail per confermare, poi una sola: quando nchova esce. Ti cancelli con un clic.',
+    privacyLink: 'Come trattiamo il tuo indirizzo',
+    priceTitle: 'Non è ancora in vendita.',
+    priceLead: 'Lascia l’email e ti scriviamo quando esce, con i 30 giorni di prova.',
+  },
   faq: {
     id: 'domande',
     kicker: 'domande',
@@ -326,10 +350,10 @@ const it = {
     us: 'nchova',
     items: [
       ['Funziona senza internet?', 'Sì: dettatura e meeting girano sul Mac. La rete serve per scaricare i modelli la prima volta, per gli aggiornamenti e per attivare Pro.'],
-      ['Che lingue capisce?', 'Italiano e inglese, anche mescolati nella stessa frase. Puoi aggiungerne altre: in automatico ne ascolta fino a tre insieme.'],
+      ['Che lingue capisce?', 'Al lancio: {nFree} lingue gratis coi modelli Apple ({free}) e, con Pro, le {nPro} lingue europee di Parakeet. Quelle che conosce solo Parakeet, come {proOnly}, funzionano solo con Pro. Ne scegli fino a tre e nchova riconosce da sola quale stai parlando. L’app, invece, è in italiano e in inglese.'],
       ['Devo invitare un bot nella call?', 'No. nchova sente la call dal tuo Mac, come la senti tu. Nella call non entra nessuno.'],
       ['Con quali app di videochiamata funziona?', 'Con tutte: Zoom, Meet, Teams, Slack, anche nel browser. Si accorge che un’app sta usando il microfono e ti chiede se trascrivere.'],
-      ['Dove finiscono registrazioni e trascrizioni?', 'L’audio resta sul Mac e, se lo tieni, sparisce dopo 30 giorni. Transcript e note restano sul Mac, o nel tuo iCloud se attivi la sync (in arrivo).'],
+      ['Dove finiscono le trascrizioni?', 'Sul tuo Mac, o nel tuo iCloud se attivi la sync (in arrivo). L’audio non lascia mai il Mac.'],
       ['E dopo i 30 giorni?', 'nchova resta gratis: dettatura, transcript, note coi modelli Apple, assistenti AI ed export. Pro aggiunge Parakeet, le voci, i nomi e le note migliori: 29,99 €, una volta sola, fino a 3 Mac.'],
       ['Come si compra Pro?', 'Dal sito: il pagamento lo gestisce Polar e la chiave di licenza ti arriva per email. Nessun account da creare.'],
       ['Che Mac serve?', 'Un Mac con chip Apple e macOS 26 o successivo. Per le note gratuite serve Apple Intelligence attivo.'],
@@ -354,6 +378,7 @@ const it = {
       ['Questo sito', 'Non usa cookie, non ha statistiche, non carica niente da altri: i caratteri sono serviti da qui. Il servizio che lo ospita (GitHub Pages) può tenere i normali log tecnici, come l’indirizzo IP, per farlo funzionare.'],
       ['L’app', 'nchova non ha server propri e non chiede un account. L’audio e le impronte vocali non lasciano mai il tuo Mac. Transcript e note restano sul Mac, o nel tuo iCloud se attivi la sync (in arrivo).'],
       ['Cosa esce dal Mac', 'Per la licenza Pro, nchova manda a Polar la chiave e il nome del Mac. Per gli aggiornamenti chiede a nchova.com se ce n’è uno nuovo. I modelli si scaricano da Hugging Face, una volta. Se fai scrivere le note al tuo Claude Code o al tuo Codex, il transcript va al loro cloud, con il tuo abbonamento. Se colleghi un assistente col server MCP, quell’assistente legge i tuoi meeting (mai le dettature).'],
+      ['La lista d’attesa', 'Se ti iscrivi, il tuo indirizzo email lo conserva {waitlistProvider} per nostro conto, solo per mandarti la mail di conferma e quella del lancio. Puoi cancellarti dal link in ogni mail o scrivendoci, e l’indirizzo viene eliminato.', 'lista'],
       ['Gli acquisti', 'Pro si compra tramite Polar, che vende per nostro conto (merchant of record): pagamento, fattura e IVA li gestisce Polar, con la sua informativa.'],
       ['Contatti', 'Per qualsiasi domanda:'],
     ],

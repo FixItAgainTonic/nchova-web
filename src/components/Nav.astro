@@ -1,7 +1,7 @@
 ---
 import Bracket from './Bracket.astro';
 import Mark from './Mark.astro';
-import { DOWNLOAD_URL } from '../config';
+import { DOWNLOAD_URL, LAUNCHED } from '../config';
 import type { Dict } from '../i18n';
 
 interface Props {
@@ -23,7 +23,7 @@ const home = t.lang === 'it' ? '/' : '/en/';
     </nav>
     <div class="nav__end">
       <a class="nav__lang mono" href={t.nav.other.href} hreflang={t.lang === 'it' ? 'en' : 'it'} title={t.nav.other.title}>{t.nav.other.label}</a>
-      <a class="btn btn--sm" href={DOWNLOAD_URL}><Bracket>{t.nav.cta}</Bracket></a>
+      <a class="btn btn--sm" href={LAUNCHED ? DOWNLOAD_URL : '#lista'}><Bracket>{LAUNCHED ? t.nav.cta : t.waitlist.nav}</Bracket></a>
     </div>
   </div>
 </header>
