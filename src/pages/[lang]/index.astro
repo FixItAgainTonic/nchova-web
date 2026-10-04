@@ -1,0 +1,12 @@
+---
+// Every published language but the default one, in its own folder (/it/).
+import Home from '../../components/Home.astro';
+import { LANGUAGES } from '../../config';
+import type { Lang } from '../../i18n';
+
+export function getStaticPaths() {
+  return LANGUAGES.slice(1).map((lang) => ({ params: { lang } }));
+}
+---
+
+<Home lang={Astro.params.lang as Lang} />

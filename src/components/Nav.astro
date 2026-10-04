@@ -1,14 +1,16 @@
 ---
 import Bracket from './Bracket.astro';
 import Mark from './Mark.astro';
-import { DOWNLOAD_URL, LAUNCHED } from '../config';
-import type { Dict } from '../i18n';
+import { DOWNLOAD_URL, LANGUAGES, LAUNCHED } from '../config';
+import { dicts, path, type Dict, type Lang } from '../i18n';
 
 interface Props {
   t: Dict;
 }
 const { t } = Astro.props;
-const home = t.lang === 'it' ? '/' : '/en/';
+const home = path(t.lang as Lang);
+// The language switch appears once there is more than one language.
+const others = LANGUAGES.filter((l) => l !== t.lang);
 ---
 
 <a class="skip" href="#main">{t.nav.skip}</a>
@@ -22,8 +24,14 @@ const home = t.lang === 'it' ? '/' : '/en/';
       {t.nav.items.map(([id, label]) => <a href={`#${id}`}>{label}</a>)}
     </nav>
     <div class="nav__end">
-      <a class="nav__lang mono" href={t.nav.other.href} hreflang={t.lang === 'it' ? 'en' : 'it'} title={t.nav.other.title}>{t.nav.other.label}</a>
-      <a class="btn btn--sm" href={LAUNCHED ? DOWNLOAD_URL : '#lista'}><Bracket>{LAUNCHED ? t.nav.cta : t.waitlist.nav}</Bracket></a>
+      {
+        others.map((l) => (
+          <a class="nav__lang mono" href={path(l)} hreflang={l} lang={l} title={dicts[l].langName}>
+            {l.toUpperCase()}
+          </a>
+        ))
+      }
+      <a class="btn btn--sm" href={LAUNCHED ? DOWNLOAD_URL : '#waitlist'}><Bracket>{LAUNCHED ? t.nav.cta : t.waitlist.nav}</Bracket></a>
     </div>
   </div>
 </header>

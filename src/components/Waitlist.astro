@@ -3,7 +3,7 @@
 // service, which asks for confirmation (double opt-in) and later sends the launch email.
 import Bracket from './Bracket.astro';
 import { WAITLIST } from '../config';
-import type { Dict } from '../i18n';
+import { path, type Dict, type Lang } from '../i18n';
 
 interface Props {
   t: Dict;
@@ -13,7 +13,7 @@ interface Props {
 }
 const { t, id, avoid } = Astro.props;
 const w = t.waitlist;
-const privacy = t.lang === 'it' ? '/privacy/#lista' : '/en/privacy/#lista';
+const privacy = `${path(t.lang as Lang, 'privacy/')}#waitlist`;
 ---
 
 <form

@@ -2,6 +2,7 @@
 
 const it = {
   lang: 'it',
+  langName: 'Italiano',
   meta: {
     title: 'nchova — Tu parli, nchova scrive. Dettatura e meeting sul tuo Mac',
     description:
@@ -9,15 +10,14 @@ const it = {
   },
   nav: {
     items: [
-      ['dettatura', 'Dettatura'],
-      ['meeting', 'Meeting'],
-      ['voci', 'Voci'],
-      ['note', 'Note'],
-      ['assistenti', 'Assistenti AI'],
-      ['prezzo', 'Prezzo'],
+      ['dictation', 'Dettatura'],
+      ['meetings', 'Meeting'],
+      ['voices', 'Voci'],
+      ['notes', 'Note'],
+      ['assistants', 'Assistenti AI'],
+      ['price', 'Prezzo'],
     ],
     cta: 'Prova gratis',
-    other: { href: '/en/', label: 'EN', title: 'English' },
     skip: 'Vai al contenuto',
   },
   hero: {
@@ -48,15 +48,15 @@ const it = {
     kicker: 'Indice',
     title: 'Cinque cose. *Una lisca sola.*',
     items: [
-      ['dettatura', 'Dettatura', 'Tieni premuto Fn, parla, rilascia.'],
-      ['meeting', 'Meeting', 'Trascritti dal vivo, senza bot.'],
-      ['voci', 'Voci', 'Sa chi sta parlando.', 'pro'],
-      ['note', 'Note', 'Scritte quando chiudi la call.'],
-      ['assistenti', 'Assistenti AI', 'I meeting dentro Claude, ChatGPT, Cursor…'],
+      ['dictation', 'Dettatura', 'Tieni premuto Fn, parla, rilascia.'],
+      ['meetings', 'Meeting', 'Trascritti dal vivo, senza bot.'],
+      ['voices', 'Voci', 'Sa chi sta parlando.', 'pro'],
+      ['notes', 'Note', 'Scritte quando chiudi la call.'],
+      ['assistants', 'Assistenti AI', 'I meeting dentro Claude, ChatGPT, Cursor…'],
     ],
   },
   dictation: {
-    id: 'dettatura',
+    id: 'dictation',
     kicker: 'dettatura',
     title: 'Tieni premuto *Fn*. Parla. Rilascia.',
     lead:
@@ -108,7 +108,7 @@ const it = {
     },
   },
   meeting: {
-    id: 'meeting',
+    id: 'meetings',
     kicker: 'meeting',
     title: 'I meeting si trascrivono *da soli*.',
     lead:
@@ -144,7 +144,7 @@ const it = {
     },
   },
   voices: {
-    id: 'voci',
+    id: 'voices',
     kicker: 'voci',
     pro: true,
     title: 'Sa *chi* sta parlando.',
@@ -172,7 +172,7 @@ const it = {
     },
   },
   notes: {
-    id: 'note',
+    id: 'notes',
     kicker: 'note',
     title: 'Le note si scrivono *quando chiudi* la call.',
     lead: 'Riassunto, decisioni, chi fa cosa. Scritte attorno ai tuoi appunti, dal modello che scegli tu.',
@@ -216,7 +216,7 @@ const it = {
     },
   },
   assistants: {
-    id: 'assistenti',
+    id: 'assistants',
     kicker: 'assistenti AI',
     title: 'I tuoi meeting, *dentro* il tuo assistente.',
     lead:
@@ -280,7 +280,7 @@ const it = {
     ],
   },
   price: {
-    id: 'prezzo',
+    id: 'price',
     kicker: 'prezzo',
     title: 'Prova tutto. *Poi scegli.*',
     lead: 'Trenta giorni con tutto, senza carta e senza account. Poi nchova resta gratis, per sempre. Pro costa 29,99 €, una volta sola.',
@@ -343,7 +343,7 @@ const it = {
     priceLead: 'Lascia l’email e ti scriviamo quando esce, con i 30 giorni di prova.',
   },
   faq: {
-    id: 'domande',
+    id: 'questions',
     kicker: 'domande',
     title: 'Domande, *a voce*.',
     you: 'Tu',
@@ -366,9 +366,8 @@ const it = {
   },
   footer: {
     colophon: 'Composto in Fraunces e DM Mono. Questo sito non usa cookie e non ti segue da nessuna parte.',
-    privacy: ['/privacy/', 'Privacy'],
+    privacy: 'Privacy',
     contact: 'Contatti',
-    other: ['/en/', 'English'],
     rights: '© 2026 nchova',
   },
   privacyPage: {
@@ -378,7 +377,7 @@ const it = {
       ['Questo sito', 'Non usa cookie, non ha statistiche, non carica niente da altri: i caratteri sono serviti da qui. Il servizio che lo ospita (GitHub Pages) può tenere i normali log tecnici, come l’indirizzo IP, per farlo funzionare.'],
       ['L’app', 'nchova non ha server propri e non chiede un account. L’audio e le impronte vocali non lasciano mai il tuo Mac. Transcript e note restano sul Mac, o nel tuo iCloud se attivi la sync (in arrivo).'],
       ['Cosa esce dal Mac', 'Per la licenza Pro, nchova manda a Polar la chiave e il nome del Mac. Per gli aggiornamenti chiede a nchova.com se ce n’è uno nuovo. I modelli si scaricano da Hugging Face, una volta. Se fai scrivere le note al tuo Claude Code o al tuo Codex, il transcript va al loro cloud, con il tuo abbonamento. Se colleghi un assistente col server MCP, quell’assistente legge i tuoi meeting (mai le dettature).'],
-      ['La lista d’attesa', 'Se ti iscrivi, il tuo indirizzo email lo conserva {waitlistProvider} per nostro conto, solo per mandarti la mail di conferma e quella del lancio. Puoi cancellarti dal link in ogni mail o scrivendoci, e l’indirizzo viene eliminato.', 'lista'],
+      ['La lista d’attesa', 'Se ti iscrivi, il tuo indirizzo email lo conserva {waitlistProvider} per nostro conto, solo per mandarti la mail di conferma e quella del lancio. Puoi cancellarti dal link in ogni mail o scrivendoci, e l’indirizzo viene eliminato.', 'waitlist'],
       ['Gli acquisti', 'Pro si compra tramite Polar, che vende per nostro conto (merchant of record): pagamento, fattura e IVA li gestisce Polar, con la sua informativa.'],
       ['Contatti', 'Per qualsiasi domanda:'],
     ],

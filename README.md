@@ -1,6 +1,10 @@
 # nchova.com
 
-Il sito di **nchova**: dettatura e meeting trascritti sul Mac. Italiano su `/`, inglese su `/en/`.
+Il sito di **nchova**: dettatura e meeting trascritti sul Mac. Oggi in inglese, su `/`.
+
+Le lingue pubblicate sono in `LANGUAGES` (`src/config.ts`): la prima sta alla radice, ogni altra
+nella sua cartella. I testi italiani sono già pronti in `src/i18n/it.ts`: per pubblicarli su `/it/`
+basta `LANGUAGES = ['en', 'it']`.
 
 Il logo è fatto di segni tipografici (una graffa, quattro barre, una parentesi), quindi il sito è
 tipografico: carta e inchiostro viola, *Fraunces corsivo* per la voce, Fraunces tondo e DM Mono per
@@ -25,7 +29,7 @@ npm run check      # tipi e template
 | `src/scripts/fish/` | il nuoto: `mark.ts` (il marchio e la sua onda), `swimmer.ts`, `tank.ts`, `field.ts` (il testo che si scosta) |
 | `src/scripts/demos/` | i copioni delle demo |
 | `src/styles/` | `global.css` (colori, caratteri), `sections.css`, `demos.css` |
-| `tools/og.sh` | rigenera le anteprime dei link (`public/og.png`, `public/og-en.png`) con Chrome headless |
+| `tools/og.sh` | rigenera le anteprime dei link (`public/og-en.png`, `public/og-it.png`) con Chrome headless |
 
 Niente cookie, niente statistiche, niente risorse di terzi: i caratteri sono serviti dal sito.
 Con «riduci movimento» attivo i pesci stanno fermi e le demo mostrano subito il risultato.

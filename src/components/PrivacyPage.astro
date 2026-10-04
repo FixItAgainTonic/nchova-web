@@ -2,17 +2,17 @@
 import Base from '../layouts/Base.astro';
 import Mark from './Mark.astro';
 import { CONTACT_EMAIL } from '../config';
-import { dicts, type Lang } from '../i18n';
+import { dicts, path, type Lang } from '../i18n';
 
 interface Props {
   lang: Lang;
 }
 const t = dicts[Astro.props.lang];
 const p = t.privacyPage;
-const home = Astro.props.lang === 'it' ? '/' : '/en/';
+const home = path(Astro.props.lang);
 ---
 
-<Base lang={Astro.props.lang} title={p.metaTitle} description={t.meta.description} alternate={t.footer.other[0] + 'privacy/'} ocean={false}>
+<Base lang={Astro.props.lang} title={p.metaTitle} description={t.meta.description} page="privacy/" ocean={false}>
   <main id="main" class="legal">
     <div class="wrap legal__in">
       <a class="legal__home" href={home}><Mark class="nav__mark" /> <span class="nav__word">nchova</span></a>

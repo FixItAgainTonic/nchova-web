@@ -6,22 +6,24 @@ import '@fontsource/dm-mono/500.css';
 import '../styles/global.css';
 import '../styles/sections.css';
 import '../styles/demos.css';
-import { SITE } from '../config';
-import type { Lang } from '../i18n';
+import { LANGUAGES, SITE } from '../config';
+import { DEFAULT, path, type Lang } from '../i18n';
 
 interface Props {
   lang: Lang;
   title: string;
   description: string;
-  /** The same page in the other language. */
-  alternate: string;
+  /** The page within its language: '' for home, 'privacy/'. */
+  page?: string;
   ocean?: boolean;
 }
 
-const { lang, title, description, alternate, ocean = true } = Astro.props;
-const canonical = new URL(Astro.url.pathname, SITE).href;
-const other = new URL(alternate, SITE).href;
-const ogImage = new URL(lang === 'it' ? '/og.png' : '/og-en.png', SITE).href;
+const { lang, title, description, page = '', ocean = true } = Astro.props;
+const canonical = new URL(path(lang, page), SITE).href;
+// The same page in every published language, once there is more than one.
+const alternates = LANGUAGES.length > 1 ? LANGUAGES.map((l) => ({ l, href: new URL(path(l, page), SITE).href })) : [];
+const ogImage = new URL(`/og-${lang}.png`, SITE).href;
+const locale = { en: 'en_GB', it: 'it_IT' }[lang];
 ---
 
 <!doctype html>
@@ -33,9 +35,8 @@ const ogImage = new URL(lang === 'it' ? '/og.png' : '/og-en.png', SITE).href;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang={lang === 'it' ? 'it' : 'en'} href={canonical} />
-    <link rel="alternate" hreflang={lang === 'it' ? 'en' : 'it'} href={other} />
-    <link rel="alternate" hreflang="x-default" href={new URL(lang === 'it' ? Astro.url.pathname : alternate, SITE).href} />
+    {alternates.map((a) => <link rel="alternate" hreflang={a.l} href={a.href} />)}
+    {alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(path(DEFAULT, page), SITE).href} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#f2eee6" />
@@ -45,7 +46,7 @@ const ogImage = new URL(lang === 'it' ? '/og.png' : '/og-en.png', SITE).href;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content={lang === 'it' ? 'it_IT' : 'en_GB'} />
+    <meta property="og:locale" content={locale} />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>

@@ -43,7 +43,7 @@ const { id, num, kicker, title, lead, notes, pro, flip, footnote } = Astro.props
         }
         {
           footnote && (
-            <div class="footnote rise" id={`${id}-lingue`}>
+            <div class="footnote rise" id={`${id}-languages`}>
               <p class="footnote__title mono">{footnote[0]}</p>
               {footnote.slice(1).map((line) => (
                 <p>{line}</p>

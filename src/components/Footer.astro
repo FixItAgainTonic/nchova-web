@@ -1,11 +1,13 @@
 ---
-import { CONTACT_EMAIL } from '../config';
-import type { Dict } from '../i18n';
+import { CONTACT_EMAIL, LANGUAGES } from '../config';
+import { dicts, path, type Dict, type Lang } from '../i18n';
 
 interface Props {
   t: Dict;
 }
-const f = Astro.props.t.footer;
+const { t } = Astro.props;
+const f = t.footer;
+const others = LANGUAGES.filter((l) => l !== t.lang);
 ---
 
 <footer class="footer" data-footer>
@@ -14,9 +16,15 @@ const f = Astro.props.t.footer;
     <div class="footer__row">
       <p class="footer__colophon">{f.colophon}</p>
       <nav class="footer__links mono" aria-label="footer">
-        <a href={f.privacy[0]}>{f.privacy[1]}</a>
+        <a href={path(t.lang as Lang, 'privacy/')}>{f.privacy}</a>
         <a href={`mailto:${CONTACT_EMAIL}`}>{f.contact}</a>
-        <a href={f.other[0]}>{f.other[1]}</a>
+        {
+          others.map((l) => (
+            <a href={path(l)} hreflang={l} lang={l}>
+              {dicts[l].langName}
+            </a>
+          ))
+        }
         <span>{f.rights}</span>
       </nav>
     </div>

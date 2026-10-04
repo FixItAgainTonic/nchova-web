@@ -2,6 +2,7 @@ import type { Dict } from './it';
 
 const en: Dict = {
   lang: 'en',
+  langName: 'English',
   meta: {
     title: 'nchova — You talk, nchova writes. Dictation and meetings on your Mac',
     description:
@@ -9,15 +10,14 @@ const en: Dict = {
   },
   nav: {
     items: [
-      ['dettatura', 'Dictation'],
-      ['meeting', 'Meetings'],
-      ['voci', 'Voices'],
-      ['note', 'Notes'],
-      ['assistenti', 'AI assistants'],
-      ['prezzo', 'Price'],
+      ['dictation', 'Dictation'],
+      ['meetings', 'Meetings'],
+      ['voices', 'Voices'],
+      ['notes', 'Notes'],
+      ['assistants', 'AI assistants'],
+      ['price', 'Price'],
     ],
     cta: 'Try it free',
-    other: { href: '/', label: 'IT', title: 'Italiano' },
     skip: 'Skip to content',
   },
   hero: {
@@ -48,15 +48,15 @@ const en: Dict = {
     kicker: 'Contents',
     title: 'Five things. *One fishbone.*',
     items: [
-      ['dettatura', 'Dictation', 'Hold Fn, speak, let go.'],
-      ['meeting', 'Meetings', 'Transcribed live, no bot.'],
-      ['voci', 'Voices', 'Knows who is speaking.', 'pro'],
-      ['note', 'Notes', 'Written when the call ends.'],
-      ['assistenti', 'AI assistants', 'Meetings inside Claude, ChatGPT, Cursor…'],
+      ['dictation', 'Dictation', 'Hold Fn, speak, let go.'],
+      ['meetings', 'Meetings', 'Transcribed live, no bot.'],
+      ['voices', 'Voices', 'Knows who is speaking.', 'pro'],
+      ['notes', 'Notes', 'Written when the call ends.'],
+      ['assistants', 'AI assistants', 'Meetings inside Claude, ChatGPT, Cursor…'],
     ],
   },
   dictation: {
-    id: 'dettatura',
+    id: 'dictation',
     kicker: 'dictation',
     title: 'Hold *Fn*. Speak. Let go.',
     lead: 'The text appears where your cursor is: an email, Slack, Notion, the terminal. Any app, without switching windows.',
@@ -106,7 +106,7 @@ const en: Dict = {
     },
   },
   meeting: {
-    id: 'meeting',
+    id: 'meetings',
     kicker: 'meetings',
     title: 'Meetings transcribe *themselves*.',
     lead: 'No bot to let into the call: nchova listens from your Mac. Your microphone is “Me”, the Mac’s audio is “Others”.',
@@ -141,7 +141,7 @@ const en: Dict = {
     },
   },
   voices: {
-    id: 'voci',
+    id: 'voices',
     kicker: 'voices',
     pro: true,
     title: 'It knows *who* is speaking.',
@@ -169,7 +169,7 @@ const en: Dict = {
     },
   },
   notes: {
-    id: 'note',
+    id: 'notes',
     kicker: 'notes',
     title: 'Notes write themselves *when the call ends*.',
     lead: 'Summary, decisions, who does what. Written around your own notes, by the model you choose.',
@@ -212,7 +212,7 @@ const en: Dict = {
     },
   },
   assistants: {
-    id: 'assistenti',
+    id: 'assistants',
     kicker: 'AI assistants',
     title: 'Your meetings, *inside* your assistant.',
     lead:
@@ -276,7 +276,7 @@ const en: Dict = {
     ],
   },
   price: {
-    id: 'prezzo',
+    id: 'price',
     kicker: 'price',
     title: 'Try everything. *Then choose.*',
     lead: 'Thirty days of everything, no card and no account. After that nchova stays free, forever. Pro is €29.99, once.',
@@ -335,7 +335,7 @@ const en: Dict = {
     priceLead: 'Leave your email and we will write when it is out, with the 30-day trial.',
   },
   faq: {
-    id: 'domande',
+    id: 'questions',
     kicker: 'questions',
     title: 'Questions, *out loud*.',
     you: 'You',
@@ -358,9 +358,8 @@ const en: Dict = {
   },
   footer: {
     colophon: 'Set in Fraunces and DM Mono. This site uses no cookies and follows you nowhere.',
-    privacy: ['/en/privacy/', 'Privacy'],
+    privacy: 'Privacy',
     contact: 'Contact',
-    other: ['/', 'Italiano'],
     rights: '© 2026 nchova',
   },
   privacyPage: {
@@ -370,7 +369,7 @@ const en: Dict = {
       ['This site', 'No cookies, no analytics, nothing loaded from anyone else: the fonts are served from here. The service hosting it (GitHub Pages) may keep the usual technical logs, such as IP addresses, to run it.'],
       ['The app', 'nchova has no servers of its own and asks for no account. Audio and voiceprints never leave your Mac. Transcripts and notes stay on the Mac, or in your iCloud if you turn on sync (coming soon).'],
       ['What leaves the Mac', 'For the Pro licence, nchova sends Polar the key and the Mac’s name. For updates it asks nchova.com whether there is a new one. Models are downloaded from Hugging Face, once. If your own Claude Code or Codex writes the notes, the transcript goes to their cloud, under your subscription. If you connect an assistant through the MCP server, that assistant reads your meetings (never your dictation).'],
-      ['The waitlist', 'If you sign up, your email address is kept by {waitlistProvider} on our behalf, only to send you the confirmation and the launch email. Unsubscribe from the link in any email or by writing to us, and the address is deleted.', 'lista'],
+      ['The waitlist', 'If you sign up, your email address is kept by {waitlistProvider} on our behalf, only to send you the confirmation and the launch email. Unsubscribe from the link in any email or by writing to us, and the address is deleted.', 'waitlist'],
       ['Purchases', 'Pro is sold through Polar, which sells on our behalf (merchant of record): payment, invoice and VAT are handled by Polar, under its own privacy policy.'],
       ['Contact', 'For any question:'],
     ],

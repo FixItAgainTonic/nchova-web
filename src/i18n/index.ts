@@ -1,7 +1,7 @@
 import it, { type Dict } from './it';
 import en from './en';
 import { languageTokens } from './languages';
-import { WAITLIST } from '../config';
+import { LANGUAGES, WAITLIST } from '../config';
 
 export type Lang = 'it' | 'en';
 export type { Dict };
@@ -14,6 +14,12 @@ function fill<T>(value: T, tokens: Record<string, string>): T {
     return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, fill(v, tokens)])) as T;
   return value;
 }
+
+/** The default language, served at the root. */
+export const DEFAULT: Lang = LANGUAGES[0];
+
+/** Where a page lives in a language: /privacy/ in the default one, /it/privacy/ in the others. */
+export const path = (lang: Lang, page = '') => (lang === DEFAULT ? '/' : `/${lang}/`) + page;
 
 export const dicts: Record<Lang, Dict> = {
   it: fill(it, { ...languageTokens('it'), waitlistProvider: WAITLIST.provider }),
