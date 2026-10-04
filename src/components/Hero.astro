@@ -15,8 +15,8 @@ const written = [...t.hero.written];
 <section class="hero" data-hero>
   <script type="application/json" data-field set:html={json(t.hero.field)} />
   <div class="wrap hero__in">
-    <p class="kicker hero__kicker" data-avoid>{t.hero.kicker}</p>
-    <h1 class="hero__title" aria-label={`${t.hero.spoken} ${t.hero.written}`}>
+    <h1 class="hero__title" aria-label={`${t.hero.kicker}. ${t.hero.spoken} ${t.hero.written}`}>
+      <span class="kicker hero__kicker" data-avoid>{t.hero.kicker}</span>
       <span class="hero__spoken spoken" data-avoid="lines">
         {spoken.map((w, i) => (
           <>

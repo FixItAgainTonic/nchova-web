@@ -4,7 +4,7 @@ const it = {
   lang: 'it',
   langName: 'Italiano',
   meta: {
-    title: 'nchova — Tu parli, nchova scrive. Dettatura e meeting sul tuo Mac',
+    title: 'nchova — Dettatura e trascrizione dei meeting per Mac',
     description:
       'Detta in qualsiasi app e trascrivi i meeting senza bot nella call. nchova riconosce chi parla e scrive le note, sul tuo Mac. Prova gratuita di 30 giorni.',
   },
@@ -21,11 +21,11 @@ const it = {
     skip: 'Vai al contenuto',
   },
   hero: {
-    kicker: 'Dettatura e meeting · per Mac',
+    kicker: 'Dettatura e trascrizione dei meeting per Mac',
     spoken: 'Tu parli,',
     written: 'nchova scrive.',
     lead:
-      'Detta in qualsiasi app. Trascrive i meeting senza bot nella call, riconosce chi parla, scrive le note e le passa al tuo assistente AI. L’audio non lascia mai il tuo Mac.',
+      'Da voce a testo in qualsiasi app, sul tuo Mac. Trascrizione dei meeting senza bot nella call: riconosce chi parla, scrive le note e le passa al tuo assistente AI. L’audio non lascia mai il tuo Mac.',
     cta: 'Prova gratis per 30 giorni',
     price: 'senza carta, senza account',
     meta: 'macOS 26 · Mac con chip Apple',
@@ -60,7 +60,7 @@ const it = {
     kicker: 'dettatura',
     title: 'Tieni premuto *Fn*. Parla. Rilascia.',
     lead:
-      'Il testo compare dove c’è il cursore: una mail, Slack, Notion, il terminale. Qualsiasi app, senza cambiare finestra.',
+      'Da voce a testo sul tuo Mac, anche offline. Il testo compare dove c’è il cursore: una mail, Slack, Notion, il terminale. Qualsiasi app, senza cambiare finestra.',
     notes: [
       ['Le tue lingue', 'ne scegli fino a tre e nchova capisce da sola quale stai parlando, anche a metà frase.'],
       ['Ripensamenti', '«giovedì, anzi no, venerdì» diventa «venerdì». La pulizia può solo togliere parole, mai aggiungerne.'],
@@ -107,7 +107,7 @@ const it = {
     kicker: 'meeting',
     title: 'I meeting si trascrivono *da soli*.',
     lead:
-      'Nessun bot da far entrare nella call: nchova ascolta dal tuo Mac. Il tuo microfono è «Io», l’audio del Mac sono «Altri».',
+      'Nessun bot da far entrare nella call: nchova trascrive il meeting dal tuo Mac. Il tuo microfono è «Io», l’audio del Mac sono «Altri».',
     notes: [
       ['Si accorge della call', 'Zoom, Meet, Teams, Slack: appena un’app prende il microfono, ti chiede se trascrivere.'],
       ['Col calendario', 'il meeting prende il nome dell’evento e gli invitati, e l’avviso arriva due minuti prima.'],
@@ -170,7 +170,7 @@ const it = {
     id: 'notes',
     kicker: 'note',
     title: 'Le note si scrivono *quando chiudi* la call.',
-    lead: 'Riassunto, decisioni, chi fa cosa. Scritte attorno ai tuoi appunti, dal modello che scegli tu.',
+    lead: 'Note dei meeting scritte dall’AI: riassunto, decisioni, chi fa cosa. Attorno ai tuoi appunti, col modello che scegli tu.',
     notes: [
       ['Attorno ai tuoi appunti', 'due parole durante la call bastano: le note crescono da lì.'],
       ['Chiedi al meeting', '«Cosa abbiamo deciso?», «Cosa devo fare io?», «Scrivi il follow-up».'],
@@ -335,6 +335,7 @@ const it = {
       ['Funziona senza internet?', 'Sì: dettatura e meeting girano sul Mac. La rete serve per scaricare i modelli la prima volta, per gli aggiornamenti e per attivare Pro.'],
       ['Che lingue capisce?', '{nFree} gratis, coi modelli Apple; con Pro, le {nPro} lingue europee di Parakeet. Quelle che conosce solo Parakeet, come {proOnly}, richiedono Pro. Ne scegli fino a tre e nchova sente da sola quale stai parlando. L’app invece è in italiano e in inglese.'],
       ['Devo invitare un bot nella call?', 'No. nchova sente la call dal tuo Mac, come la senti tu. Nella call non entra nessuno.'],
+      ['In cosa è diversa da Wispr Flow, Otter o Granola?', 'Quelli mandano la tua voce nel cloud per trascriverla, e i loro piani a pagamento sono abbonamenti; Otter in più mette un bot nelle tue call. nchova trascrive sul tuo Mac, non entra in nessuna call e fa dettatura, meeting e note in un’app sola: gratis, o 29,99 € una volta per Pro.'],
       ['Con quali app di videochiamata funziona?', 'Con tutte: Zoom, Meet, Teams, Slack, anche nel browser. Si accorge che un’app sta usando il microfono e ti chiede se trascrivere.'],
       ['Dove finiscono le trascrizioni?', 'Sul tuo Mac, o nel tuo iCloud se attivi la sync (in arrivo). L’audio non lascia mai il Mac.'],
       ['E dopo i 30 giorni?', 'nchova resta gratis: dettatura, transcript, note coi modelli Apple, assistenti AI ed export. Pro aggiunge Parakeet, le voci, i nomi e le note migliori: 29,99 €, una volta sola, fino a 3 Mac.'],

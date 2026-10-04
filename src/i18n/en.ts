@@ -4,7 +4,7 @@ const en: Dict = {
   lang: 'en',
   langName: 'English',
   meta: {
-    title: 'nchova — You talk, nchova writes. Dictation and meetings on your Mac',
+    title: 'nchova — Dictation and meeting transcription for Mac',
     description:
       'Dictate into any app and transcribe meetings with no bot in the call. nchova knows who is speaking and writes the notes, on your Mac. Free 30-day trial.',
   },
@@ -21,11 +21,11 @@ const en: Dict = {
     skip: 'Skip to content',
   },
   hero: {
-    kicker: 'Dictation and meetings · for Mac',
+    kicker: 'Dictation and meeting transcription for Mac',
     spoken: 'You talk,',
     written: 'nchova writes.',
     lead:
-      'Dictate into any app. Transcribe meetings with no bot in the call, know who is speaking, get the notes written and hand them to your AI assistant. Audio never leaves your Mac.',
+      'On-device speech to text for any app. Meeting transcription with no bot in the call: it knows who is speaking, writes the notes and hands them to your AI assistant. Audio never leaves your Mac.',
     cta: 'Try it free for 30 days',
     price: 'no card, no account',
     meta: 'macOS 26 · Apple silicon Mac',
@@ -59,7 +59,7 @@ const en: Dict = {
     id: 'dictation',
     kicker: 'dictation',
     title: 'Hold *Fn*. Speak. Let go.',
-    lead: 'The text appears where your cursor is: an email, Slack, Notion, the terminal. Any app, without switching windows.',
+    lead: 'Speech to text that runs on your Mac, even offline. The text appears where your cursor is: an email, Slack, Notion, the terminal. Any app, without switching windows.',
     notes: [
       ['Your languages', 'pick up to three and nchova works out which one you are speaking, even mid-sentence.'],
       ['Second thoughts', '“Thursday, no wait, Friday” becomes “Friday”. The cleanup can only take words out, never put any in.'],
@@ -104,7 +104,7 @@ const en: Dict = {
     id: 'meetings',
     kicker: 'meetings',
     title: 'Meetings transcribe *themselves*.',
-    lead: 'No bot to let into the call: nchova listens from your Mac. Your microphone is “Me”, the Mac’s audio is “Others”.',
+    lead: 'No bot to let into the call: nchova transcribes the meeting from your Mac. Your microphone is “Me”, the Mac’s audio is “Others”.',
     notes: [
       ['It notices the call', 'Zoom, Meet, Teams, Slack: as soon as an app takes the microphone, it asks whether to transcribe.'],
       ['With your calendar', 'the meeting takes the event’s name and its invitees, and the prompt comes two minutes early.'],
@@ -167,7 +167,7 @@ const en: Dict = {
     id: 'notes',
     kicker: 'notes',
     title: 'Notes write themselves *when the call ends*.',
-    lead: 'Summary, decisions, who does what. Written around your own notes, by the model you choose.',
+    lead: 'AI meeting notes: summary, decisions, who does what. Written around your own notes, by the model you choose.',
     notes: [
       ['Around your notes', 'a couple of words during the call are enough: the notes grow from there.'],
       ['Ask the meeting', '“What did we decide?”, “What do I have to do?”, “Write the follow-up”.'],
@@ -327,6 +327,7 @@ const en: Dict = {
       ['Does it work offline?', 'Yes: dictation and meetings run on the Mac. It needs the network to download the models the first time, for updates and to activate Pro.'],
       ['Which languages?', '{nFree} free, with Apple’s models; with Pro, Parakeet’s {nPro} European languages. Those only Parakeet knows, like {proOnly}, need Pro. You pick up to three and nchova hears which one you are speaking. The app itself is in English and Italian.'],
       ['Do I have to invite a bot to the call?', 'No. nchova hears the call from your Mac, the way you do. Nobody joins the call.'],
+      ['How is it different from Wispr Flow, Otter or Granola?', 'Those send your voice to the cloud to transcribe it, and their paid plans are subscriptions; Otter also puts a bot in your calls. nchova transcribes on your Mac, joins no call, and does dictation, meetings and notes in one app: free, or €29.99 once for Pro.'],
       ['Which video call apps does it work with?', 'All of them: Zoom, Meet, Teams, Slack, in the browser too. It notices an app using the microphone and asks whether to transcribe.'],
       ['Where do transcripts go?', 'On your Mac, or in your iCloud if you turn on sync (coming soon). Audio never leaves the Mac.'],
       ['And after the 30 days?', 'nchova stays free: dictation, transcripts, notes with Apple’s models, AI assistants and export. Pro adds Parakeet, voices, names and the best notes: €29.99, once, up to 3 Macs.'],

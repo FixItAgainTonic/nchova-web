@@ -43,9 +43,9 @@
 <script>
   const en = location.search.includes('en');
   const t = en
-    ? { k: 'Dictation and meetings · for Mac', s: 'You talk,', w: 'nchova writes.', f: 'nchova.com · audio never leaves your Mac',
+    ? { k: 'Dictation and meeting transcription for Mac', s: 'You talk,', w: 'nchova writes.', f: 'nchova.com · audio never leaves your Mac',
         lines: [['Me', 'Let’s start with the launch.'], ['Julia', 'The page copy is done, only the fish animation is missing.'], ['Mark', 'I’ll finish it by Thursday, no wait, Friday.'], ['Sarah', 'I’ll send the newsletter Monday at ten.']] }
-    : { k: 'Dettatura e meeting · per Mac', s: 'Tu parli,', w: 'nchova scrive.', f: 'nchova.com · l’audio non lascia mai il tuo Mac',
+    : { k: 'Dettatura e trascrizione dei meeting per Mac', s: 'Tu parli,', w: 'nchova scrive.', f: 'nchova.com · l’audio non lascia mai il tuo Mac',
         lines: [['Io', 'Partiamo dal lancio.'], ['Giulia', 'Il testo è pronto, mancano solo le animazioni del pesce.'], ['Marco', 'Le chiudo entro giovedì, anzi no, venerdì.'], ['Sara', 'La newsletter la mando lunedì alle dieci.']] };
   kicker.textContent = t.k; spoken.textContent = t.s; written.textContent = t.w; foot.textContent = t.f;
   let html = '', n = 0;
