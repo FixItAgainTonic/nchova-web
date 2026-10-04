@@ -720,29 +720,46 @@
   color: rgba(242, 238, 230, 0.7);
 }
 
-.ledger__out dl > div {
-  display: grid;
-  grid-template-columns: minmax(0, 11rem) minmax(0, 1fr);
-  gap: 4px 20px;
-  align-items: baseline;
-  padding: 14px 0;
+.ledger__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ledger__table th,
+.ledger__table td {
+  padding: 13px 16px 13px 0;
+  text-align: left;
+  vertical-align: baseline;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.ledger__out dt {
-  font-size: 0.8125rem;
+.ledger__table thead th {
+  padding-top: 0;
+  padding-bottom: 8px;
+  border-top: 0;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(242, 238, 230, 0.5);
+}
+
+/* What leaves: the subject of every row. */
+.ledger__table tbody th {
   font-weight: 500;
-  color: var(--lilac);
+  color: var(--paper);
 }
 
-.ledger__out dd {
-  margin: 0;
-  line-height: 1.5;
-  color: rgba(242, 238, 230, 0.9);
+.ledger__to {
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--lilac);
+  white-space: nowrap;
 }
 
-.ledger__out dd em {
-  color: var(--lilac);
+.ledger__when {
+  font-style: italic;
+  font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  color: rgba(242, 238, 230, 0.62);
 }
 
 .ledger__in {
@@ -769,8 +786,19 @@
   .ledger {
     grid-template-columns: minmax(0, 1fr);
   }
-  .ledger__out dl > div {
-    grid-template-columns: minmax(0, 1fr);
+  .ledger__table thead {
+    display: none;
+  }
+  .ledger__table tr {
+    display: grid;
+    gap: 2px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .ledger__table th,
+  .ledger__table td {
+    padding: 0;
+    border: 0;
   }
 }
 
