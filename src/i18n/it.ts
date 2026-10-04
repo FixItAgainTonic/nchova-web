@@ -67,12 +67,7 @@ const it = {
       ['Il tuo vocabolario', 'nomi e sigle scritti come vuoi tu: «gira» diventa Jira, «Jason» diventa JSON.'],
       ['Parakeet', 'circa metà degli errori, quattro volte più veloce (misurato su 101 frasi) e {nPro} lingue europee.', 'pro'],
     ],
-    footnote: [
-      'Le lingue, come saranno al lancio',
-      'Gratis, coi modelli Apple: {free}.',
-      'Con Pro, coi modelli Parakeet, più precisi e più veloci: {pro}.',
-      'Le {nProOnly} lingue che conosce solo Parakeet, come {proOnly}, funzionano solo con Pro.',
-    ],
+    languages: { title: 'Lingue', free: 'Gratis', pro: 'Pro aggiunge' },
     demo: {
       app: 'Note',
       doc: 'Lancio',
@@ -338,7 +333,7 @@ const it = {
     us: 'nchova',
     items: [
       ['Funziona senza internet?', 'Sì: dettatura e meeting girano sul Mac. La rete serve per scaricare i modelli la prima volta, per gli aggiornamenti e per attivare Pro.'],
-      ['Che lingue capisce?', 'Al lancio: {nFree} lingue gratis coi modelli Apple ({free}) e, con Pro, le {nPro} lingue europee di Parakeet. Quelle che conosce solo Parakeet, come {proOnly}, funzionano solo con Pro. Ne scegli fino a tre e nchova riconosce da sola quale stai parlando. L’app, invece, è in italiano e in inglese.'],
+      ['Che lingue capisce?', '{nFree} gratis, coi modelli Apple; con Pro, le {nPro} lingue europee di Parakeet. Quelle che conosce solo Parakeet, come {proOnly}, richiedono Pro. Ne scegli fino a tre e nchova sente da sola quale stai parlando. L’app invece è in italiano e in inglese.'],
       ['Devo invitare un bot nella call?', 'No. nchova sente la call dal tuo Mac, come la senti tu. Nella call non entra nessuno.'],
       ['Con quali app di videochiamata funziona?', 'Con tutte: Zoom, Meet, Teams, Slack, anche nel browser. Si accorge che un’app sta usando il microfono e ti chiede se trascrivere.'],
       ['Dove finiscono le trascrizioni?', 'Sul tuo Mac, o nel tuo iCloud se attivi la sync (in arrivo). L’audio non lascia mai il Mac.'],

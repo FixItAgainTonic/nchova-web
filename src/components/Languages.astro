@@ -1,0 +1,24 @@
+---
+// The languages, short: ISO codes, the name on hover. Free with Apple's models; what Pro adds.
+import { languageCodes } from '../i18n/languages';
+import type { Dict, Lang } from '../i18n';
+
+interface Props {
+  t: Dict;
+}
+const { t } = Astro.props;
+const l = t.dictation.languages;
+const { free, proOnly } = languageCodes(t.lang as Lang);
+---
+
+<div class="langs rise" id="languages">
+  <p class="langs__title mono">{l.title}</p>
+  <p class="langs__row">
+    <span class="langs__label">{l.free}</span>
+    <span class="langs__codes">{free.map(({ code, name }) => <abbr title={name}>{code}</abbr>)}</span>
+  </p>
+  <p class="langs__row">
+    <span class="langs__label">{l.pro}</span>
+    <span class="langs__codes langs__codes--pro">{proOnly.map(({ code, name }) => <abbr title={name}>{code}</abbr>)}</span>
+  </p>
+</div>

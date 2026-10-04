@@ -66,12 +66,7 @@ const en: Dict = {
       ['Your vocabulary', 'names and acronyms written your way: “jeera” becomes Jira, “Jason” becomes JSON.'],
       ['Parakeet', 'about half the mistakes, four times faster (measured on 101 phrases) and {nPro} European languages.', 'pro'],
     ],
-    footnote: [
-      'Languages, as planned for launch',
-      'Free, with Apple’s models: {free}.',
-      'With Pro, with Parakeet’s models, more accurate and faster: {pro}.',
-      'The {nProOnly} languages only Parakeet knows, such as {proOnly}, work only with Pro.',
-    ],
+    languages: { title: 'Languages', free: 'Free', pro: 'Pro adds' },
     demo: {
       app: 'Notes',
       doc: 'Launch',
@@ -330,7 +325,7 @@ const en: Dict = {
     us: 'nchova',
     items: [
       ['Does it work offline?', 'Yes: dictation and meetings run on the Mac. It needs the network to download the models the first time, for updates and to activate Pro.'],
-      ['Which languages?', 'At launch: {nFree} languages free with Apple’s models ({free}) and, with Pro, Parakeet’s {nPro} European languages. The ones only Parakeet knows, such as {proOnly}, work only with Pro. You pick up to three and nchova recognises which one you are speaking. The app itself is in English and Italian.'],
+      ['Which languages?', '{nFree} free, with Apple’s models; with Pro, Parakeet’s {nPro} European languages. Those only Parakeet knows, like {proOnly}, need Pro. You pick up to three and nchova hears which one you are speaking. The app itself is in English and Italian.'],
       ['Do I have to invite a bot to the call?', 'No. nchova hears the call from your Mac, the way you do. Nobody joins the call.'],
       ['Which video call apps does it work with?', 'All of them: Zoom, Meet, Teams, Slack, in the browser too. It notices an app using the microphone and asks whether to transcribe.'],
       ['Where do transcripts go?', 'On your Mac, or in your iCloud if you turn on sync (coming soon). Audio never leaves the Mac.'],

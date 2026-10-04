@@ -30,6 +30,15 @@ const NAMES: Record<'it' | 'en', Record<string, string>> = {
 const join = (names: string[], lang: 'it' | 'en') =>
   new Intl.ListFormat(lang, { style: 'long', type: 'conjunction' }).format(names);
 
+/** The two short lists: Apple's languages, then the ones only Parakeet (Pro) adds, as ISO codes. */
+export function languageCodes(lang: 'it' | 'en') {
+  const named = (code: string) => ({ code, name: NAMES[lang][code] });
+  return {
+    free: APPLE.map(named),
+    proOnly: PARAKEET.filter((c) => !APPLE.includes(c)).sort().map(named),
+  };
+}
+
 /** The tokens the copy uses: {free}, {pro}, {nFree}, {nPro}, {proOnly}, {nProOnly}. */
 export function languageTokens(lang: 'it' | 'en'): Record<string, string> {
   const name = (code: string) => NAMES[lang][code];

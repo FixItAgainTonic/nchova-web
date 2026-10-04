@@ -1311,21 +1311,47 @@
   pointer-events: none;
 }
 
-/* ---------- A footnote under the notes: the language lists ---------- */
+/* ---------- The languages, as ISO codes ---------- */
 
-.footnote {
+.langs {
   padding-top: 16px;
   border-top: 1px dashed var(--rule-strong);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--ink-3);
 }
 
-.footnote__title {
-  margin: 0 0 6px;
+.langs__title {
+  margin: 0 0 8px;
   color: var(--violet-ink);
 }
 
-.footnote p:not(.footnote__title) {
+.langs__row {
+  display: grid;
+  grid-template-columns: 6.5em minmax(0, 1fr);
+  gap: 10px;
+  align-items: baseline;
   margin: 0 0 6px;
+}
+
+.langs__label {
+  font-size: 0.9375rem;
+  font-style: italic;
+  font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  color: var(--ink-2);
+}
+
+.langs__codes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 9px;
+  font-family: var(--mono);
+  font-size: 0.8125rem;
+  color: var(--ink-2);
+}
+
+.langs__codes abbr {
+  text-decoration: none;
+  cursor: help;
+}
+
+.langs__codes--pro {
+  color: var(--violet-ink);
 }

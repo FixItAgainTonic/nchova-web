@@ -10,6 +10,7 @@ import Voices from './demos/Voices.astro';
 import Notes from './demos/Notes.astro';
 import Assistants from './demos/Assistants.astro';
 import Writers from './Writers.astro';
+import Languages from './Languages.astro';
 import Apps from './Apps.astro';
 import Privacy from './Privacy.astro';
 import Price from './Price.astro';
@@ -31,6 +32,7 @@ const t = dicts[Astro.props.lang];
     <Index t={t} />
     <Feature {...t.dictation} num="01">
       <Dictation t={t} />
+      <Languages slot="aside" t={t} />
     </Feature>
     <Feature {...t.meeting} num="02" flip>
       <Meeting t={t} />
