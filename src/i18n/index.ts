@@ -1,12 +1,12 @@
 import it, { type Dict } from './it';
 import en from './en';
 import { languageTokens } from './languages';
-import { LANGUAGES, WAITLIST } from '../config';
+import { LANGUAGES } from '../config';
 
 export type Lang = 'it' | 'en';
 export type { Dict };
 
-/** Fills `{token}`s (the language lists, the waitlist's service) in every string of the dictionary. */
+/** Fills `{token}`s (the language lists) in every string of the dictionary. */
 function fill<T>(value: T, tokens: Record<string, string>): T {
   if (typeof value === 'string') return value.replace(/\{(\w+)\}/g, (all, key) => tokens[key] ?? all) as T;
   if (Array.isArray(value)) return value.map((v) => fill(v, tokens)) as T;
@@ -22,8 +22,8 @@ export const DEFAULT: Lang = LANGUAGES[0];
 export const path = (lang: Lang, page = '') => (lang === DEFAULT ? '/' : `/${lang}/`) + page;
 
 export const dicts: Record<Lang, Dict> = {
-  it: fill(it, { ...languageTokens('it'), waitlistProvider: WAITLIST.provider }),
-  en: fill(en, { ...languageTokens('en'), waitlistProvider: WAITLIST.provider }),
+  it: fill(it, languageTokens('it')),
+  en: fill(en, languageTokens('en')),
 };
 
 const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');

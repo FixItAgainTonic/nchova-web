@@ -1,14 +1,12 @@
 ---
 import Bracket from './Bracket.astro';
-import Waitlist from './Waitlist.astro';
-import { DOWNLOAD_URL, LAUNCHED } from '../config';
+import { DOWNLOAD_URL } from '../config';
 import { rich, type Dict } from '../i18n';
 
 interface Props {
   t: Dict;
 }
-const { t } = Astro.props;
-const c = t.closing;
+const c = Astro.props.t.closing;
 ---
 
 <section class="closing" data-closing aria-labelledby="closing-title">
@@ -18,19 +16,7 @@ const c = t.closing;
     </p>
     <h2 id="closing-title" class="closing__title rise" set:html={rich(c.title)} />
     <p class="closing__lead rise">{c.lead}</p>
-    {
-      LAUNCHED ? (
-        <p class="rise">
-          <a class="btn btn--lg" href={DOWNLOAD_URL}>
-            <Bracket>{c.cta}</Bracket>
-          </a>
-        </p>
-      ) : (
-        <div class="closing__wl rise">
-          <Waitlist t={t} />
-        </div>
-      )
-    }
+    <p class="rise"><a class="btn btn--lg" href={DOWNLOAD_URL}><Bracket>{c.cta}</Bracket></a></p>
   </div>
 </section>
 

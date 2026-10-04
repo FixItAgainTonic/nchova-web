@@ -1,7 +1,7 @@
 ---
 import Bracket from './Bracket.astro';
 import Mark from './Mark.astro';
-import { DOWNLOAD_URL, LANGUAGES, LAUNCHED } from '../config';
+import { DOWNLOAD_URL, LANGUAGES } from '../config';
 import { dicts, path, type Dict, type Lang } from '../i18n';
 
 interface Props {
@@ -31,7 +31,7 @@ const others = LANGUAGES.filter((l) => l !== t.lang);
           </a>
         ))
       }
-      <a class="btn btn--sm" href={LAUNCHED ? DOWNLOAD_URL : '#waitlist'}><Bracket>{LAUNCHED ? t.nav.cta : t.waitlist.nav}</Bracket></a>
+      <a class="btn btn--sm" href={DOWNLOAD_URL}><Bracket>{t.nav.cta}</Bracket></a>
     </div>
   </div>
 </header>
