@@ -51,5 +51,10 @@ lì (`{free}`, `{pro}`, `{nFree}`… nei testi).
 
 ## Pubblicazione
 
-GitHub Pages con GitHub Actions (`.github/workflows/pages.yml`) a ogni push su `main`, dominio
-`nchova.com`. Il job salta finché la repo è privata. DNS su Register.it: [`docs/DNS.md`](docs/DNS.md).
+Il sito va online solo al lancio. Fino ad allora GitHub Pages è spento e il workflow
+(`.github/workflows/pages.yml`) salta. Per pubblicare:
+
+1. Settings › Pages: *Source* «GitHub Actions», *Custom domain* `nchova.com`.
+2. Settings › Secrets and variables › Actions › Variables: `PUBLISH_SITE` = `true`.
+3. Un push su `main`, o *Run workflow* su «Pubblica il sito».
+4. Il DNS su Register.it, come in [`docs/DNS.md`](docs/DNS.md), poi *Enforce HTTPS*.

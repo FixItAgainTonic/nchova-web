@@ -1,5 +1,6 @@
 # Builds the site and publishes it on GitHub Pages (custom domain: nchova.com).
-# Skipped while the repository is private: Pages serves it once it is public.
+# Off until launch: it runs only when the repository variable PUBLISH_SITE is 'true'
+# (Settings › Secrets and variables › Actions › Variables), with Pages turned on.
 name: Pubblica il sito
 
 on:
@@ -18,7 +19,7 @@ concurrency:
 
 jobs:
   build:
-    if: github.event.repository.visibility == 'public'
+    if: vars.PUBLISH_SITE == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
