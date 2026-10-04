@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Reserved for the app's Sparkle updates: the app's release script rewrites this file on every
+     release. Until the first one it is a valid feed with nothing in it. -->
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
+  <channel>
+    <title>nchova</title>
+    <link>https://nchova.com/updates/appcast.xml</link>
+    <description>Aggiornamenti di nchova</description>
+    <language>it</language>
+  </channel>
+</rss>

@@ -35,5 +35,11 @@ Con «riduci movimento» attivo i pesci stanno fermi e le demo mostrano subito i
 - `CHECKOUT_URL` in `src/config.ts`: il checkout Polar, quando c'è.
 - Il download punta a `releases/latest/download/Nchova.dmg` di questa repo: funziona dalla prima
   release con quel file allegato.
-- `public/updates/` è riservato al file degli aggiornamenti dell'app (`appcast.xml`), che scrive lo
-  script di rilascio dell'app: il sito non usa quel percorso.
+- `public/updates/appcast.xml` → `https://nchova.com/updates/appcast.xml`, definitivo: è dentro
+  l'app. Lo riscrive lo script di rilascio dell'app a ogni versione; finché non c'è una release è un
+  feed vuoto. Il sito non usa nient'altro sotto `/updates/`.
+
+## Pubblicazione
+
+GitHub Pages con GitHub Actions (`.github/workflows/pages.yml`) a ogni push su `main`, dominio
+`nchova.com`. Il job salta finché la repo è privata. DNS su Register.it: [`docs/DNS.md`](docs/DNS.md).
