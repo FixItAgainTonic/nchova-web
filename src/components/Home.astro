@@ -25,7 +25,7 @@ interface Props {
 const t = dicts[Astro.props.lang];
 ---
 
-<Base lang={t.lang as Lang} title={t.meta.title} description={t.meta.description}>
+<Base lang={t.lang as Lang} title={t.meta.title} description={t.meta.description} product>
   <Nav t={t} />
   <main id="main">
     <Hero t={t} />

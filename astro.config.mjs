@@ -5,6 +5,7 @@ export default defineConfig({
   site: 'https://nchova.com',
   trailingSlash: 'ignore',
   devToolbar: { enabled: false },
+  build: { inlineStylesheets: 'always' },
   integrations: [
     sitemap(),
   ],

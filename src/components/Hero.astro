@@ -16,7 +16,7 @@ const written = [...t.hero.written];
   <script type="application/json" data-field set:html={json(t.hero.field)} />
   <div class="wrap hero__in">
     <p class="kicker hero__kicker" data-avoid>{t.hero.kicker}</p>
-    <h1 class="hero__title">
+    <h1 class="hero__title" aria-label={`${t.hero.spoken} ${t.hero.written}`}>
       <span class="hero__spoken spoken" data-avoid="lines">
         {spoken.map((w, i) => (
           <>
@@ -25,9 +25,8 @@ const written = [...t.hero.written];
           </>
         ))}
       </span>
-      <span class="sr">{t.hero.written}</span>
-      <span class="hero__written" data-avoid="lines" aria-hidden="true">
-        {written.map((ch) => <span class="t">{ch}</span>)}<span class="caret"></span>
+      <span class="hero__written" data-avoid="lines">
+        {written.map((ch) => <span class="t">{ch}</span>)}<span class="caret" aria-hidden="true"></span>
       </span>
     </h1>
     <p class="hero__lead" data-avoid="lines">{t.hero.lead}</p>

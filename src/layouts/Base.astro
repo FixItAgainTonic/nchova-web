@@ -6,7 +6,8 @@ import '@fontsource/dm-mono/500.css';
 import '../styles/global.css';
 import '../styles/sections.css';
 import '../styles/demos.css';
-import { LANGUAGES, SITE } from '../config';
+import { COMPANY, CONTACT_EMAIL, LANGUAGES, PRO_PRICE, SITE } from '../config';
+import { json } from '../lib/json';
 import { DEFAULT, path, type Lang } from '../i18n';
 
 interface Props {
@@ -16,14 +17,38 @@ interface Props {
   /** The page within its language: '' for home, 'privacy/'. */
   page?: string;
   ocean?: boolean;
+  /** Describe nchova to search engines (the home page). */
+  product?: boolean;
 }
 
-const { lang, title, description, page = '', ocean = true } = Astro.props;
+const { lang, title, description, page = '', ocean = true, product = false } = Astro.props;
 const canonical = new URL(path(lang, page), SITE).href;
 // The same page in every published language, once there is more than one.
 const alternates = LANGUAGES.length > 1 ? LANGUAGES.map((l) => ({ l, href: new URL(path(l, page), SITE).href })) : [];
 const ogImage = new URL(`/og-${lang}.png`, SITE).href;
 const locale = { en: 'en_GB', it: 'it_IT' }[lang];
+const org = { '@type': 'Organization', '@id': `${SITE}/#org`, name: COMPANY.name, vatID: `IT${COMPANY.vat}`, email: CONTACT_EMAIL, url: `${SITE}/` };
+const structured = product && {
+  '@context': 'https://schema.org',
+  '@graph': [
+    org,
+    {
+      '@type': 'SoftwareApplication',
+      name: 'nchova',
+      url: canonical,
+      description,
+      image: ogImage,
+      inLanguage: lang,
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'macOS 26 or later',
+      publisher: { '@id': org['@id'] },
+      offers: [
+        { '@type': 'Offer', name: 'nchova', price: '0', priceCurrency: PRO_PRICE.currency },
+        { '@type': 'Offer', name: 'nchova Pro', price: PRO_PRICE.amount, priceCurrency: PRO_PRICE.currency },
+      ],
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -48,6 +73,7 @@ const locale = { en: 'en_GB', it: 'it_IT' }[lang];
     <meta property="og:image" content={ogImage} />
     <meta property="og:locale" content={locale} />
     <meta name="twitter:card" content="summary_large_image" />
+    {structured && <script type="application/ld+json" set:html={json(structured)} />}
   </head>
   <body>
     {ocean && <div class="ocean" data-ocean aria-hidden="true"></div>}

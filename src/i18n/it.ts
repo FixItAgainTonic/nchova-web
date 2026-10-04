@@ -6,7 +6,7 @@ const it = {
   meta: {
     title: 'nchova — Tu parli, nchova scrive. Dettatura e meeting sul tuo Mac',
     description:
-      'Dettatura in ogni app, meeting trascritti senza bot, voci riconosciute, note scritte da sole e i tuoi meeting nel tuo assistente AI. L’audio non lascia mai il tuo Mac. 30 giorni con tutto, gratis; Pro a 29,99 € una volta sola.',
+      'Detta in qualsiasi app e trascrivi i meeting senza bot nella call. nchova riconosce chi parla e scrive le note, sul tuo Mac. Prova gratuita di 30 giorni.',
   },
   nav: {
     items: [

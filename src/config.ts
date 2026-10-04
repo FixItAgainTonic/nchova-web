@@ -17,4 +17,7 @@ export const CONTACT_EMAIL = 'ciao@nchova.com';
 /** Who sells nchova. Italian law (art. 35 DPR 633/1972) wants the VAT number on the site. */
 export const COMPANY = { name: 'Forcelab', vat: '14481340967' };
 
+/** Pro's price, for search engines (the copy writes it in each language). */
+export const PRO_PRICE = { amount: '29.99', currency: 'EUR' };
+
 export const SITE = 'https://nchova.com';

@@ -6,7 +6,7 @@ const en: Dict = {
   meta: {
     title: 'nchova — You talk, nchova writes. Dictation and meetings on your Mac',
     description:
-      'Dictation in every app, meetings transcribed with no bot, voices recognised, notes that write themselves and your meetings inside your AI assistant. Audio never leaves your Mac. 30 days of everything, free; Pro is €29.99, once.',
+      'Dictate into any app and transcribe meetings with no bot in the call. nchova knows who is speaking and writes the notes, on your Mac. Free 30-day trial.',
   },
   nav: {
     items: [
