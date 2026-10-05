@@ -65,7 +65,7 @@ const it = {
       ['Le tue lingue', 'ne scegli fino a tre e nchova capisce da sola quale stai parlando, anche a metà frase.'],
       ['Ripensamenti', '«giovedì, anzi no, venerdì» diventa «venerdì». La pulizia può solo togliere parole, mai aggiungerne.'],
       ['Il tuo vocabolario', 'nomi e sigle scritti come vuoi tu: «gira» diventa Jira, «Jason» diventa JSON.'],
-      ['Parakeet', 'circa metà degli errori, quattro volte più veloce (misurato su 101 frasi) e {nPro} lingue europee.', 'pro'],
+      ['Parakeet', 'il modello vocale di NVIDIA, sul tuo Mac, in {nPro} lingue europee.', 'pro'],
     ],
     languages: { title: 'Lingue', free: 'Gratis', pro: 'Pro aggiunge' },
     demo: {
@@ -302,7 +302,7 @@ const it = {
       sub: 'una tantum',
       lines: [
         ['Tutto il gratuito', 'sì'],
-        ['Parakeet: metà errori, 4× veloce', 'sì'],
+        ['Parakeet, il modello di NVIDIA sul Mac', 'sì'],
         ['Lingue europee, con Parakeet', '{nPro}'],
         ['Le voci degli altri, distinte', 'sì'],
         ['I nomi, riconosciuti dalla voce', 'sì'],

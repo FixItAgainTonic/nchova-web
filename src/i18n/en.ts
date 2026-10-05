@@ -64,7 +64,7 @@ const en: Dict = {
       ['Your languages', 'pick up to three and nchova works out which one you are speaking, even mid-sentence.'],
       ['Second thoughts', '“Thursday, no wait, Friday” becomes “Friday”. The cleanup can only take words out, never put any in.'],
       ['Your vocabulary', 'names and acronyms written your way: “jeera” becomes Jira, “Jason” becomes JSON.'],
-      ['Parakeet', 'about half the mistakes, four times faster (measured on 101 phrases) and {nPro} European languages.', 'pro'],
+      ['Parakeet', 'NVIDIA’s speech model, on your Mac, in {nPro} European languages.', 'pro'],
     ],
     languages: { title: 'Languages', free: 'Free', pro: 'Pro adds' },
     demo: {
@@ -298,7 +298,7 @@ const en: Dict = {
       sub: 'one-off',
       lines: [
         ['Everything free', 'yes'],
-        ['Parakeet: half the errors, 4× fast', 'yes'],
+        ['Parakeet, NVIDIA’s model on your Mac', 'yes'],
         ['European languages, Parakeet', '{nPro}'],
         ['Other voices, told apart', 'yes'],
         ['Names, recognised by voice', 'yes'],
