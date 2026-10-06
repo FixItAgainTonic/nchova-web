@@ -215,7 +215,7 @@ const it = {
     kicker: 'assistenti AI',
     title: 'I tuoi meeting, *dentro* il tuo assistente.',
     lead:
-      'nchova ha un server MCP locale: Claude, ChatGPT, Cursor e gli altri cercano nelle trascrizioni, le leggono, seguono il meeting in corso e ci salvano i riassunti.',
+      'nchova ha un server MCP locale: Claude, ChatGPT, Cursor e gli altri cercano e leggono i tuoi meeting, seguono quello in corso, ci salvano i riassunti e li guardano tutti insieme: il riepilogo della settimana, chi deve fare cosa, tutto su una persona.',
     notes: [
       ['Un clic', 'Impostazioni › Assistenti › Collega. nchova trova le app che hai e le configura.'],
       ['Solo i meeting', 'mai le dettature.'],
@@ -249,6 +249,10 @@ const it = {
         ['search_transcripts', 'cerca nelle trascrizioni'],
         ['get_meeting', 'legge un meeting'],
         ['get_live_meeting', 'segue quello in corso'],
+        ['digest', 'riassume una settimana o un mese'],
+        ['list_action_items', 'chi deve fare cosa'],
+        ['find_person', 'tutto su una persona'],
+        ['search_notes', 'cerca nelle note'],
         ['save_meeting_notes', 'salva note e azioni'],
         ['update_meeting', 'corregge titolo e voci'],
       ],

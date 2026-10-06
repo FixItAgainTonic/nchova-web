@@ -211,7 +211,7 @@ const en: Dict = {
     kicker: 'AI assistants',
     title: 'Your meetings, *inside* your assistant.',
     lead:
-      'nchova runs a local MCP server: Claude, ChatGPT, Cursor and the rest search your transcripts, read them, follow the meeting in progress and save summaries back.',
+      'nchova runs a local MCP server: Claude, ChatGPT, Cursor and the rest search and read your meetings, follow the one in progress, save summaries back and look across them all: the week’s recap, who has to do what, everything about one person.',
     notes: [
       ['One click', 'Settings › Assistants › Connect. nchova finds the apps you have and sets them up.'],
       ['Meetings only', 'never your dictation.'],
@@ -245,6 +245,10 @@ const en: Dict = {
         ['search_transcripts', 'searches transcripts'],
         ['get_meeting', 'reads a meeting'],
         ['get_live_meeting', 'follows the one in progress'],
+        ['digest', 'recaps a week or a month'],
+        ['list_action_items', 'who has to do what'],
+        ['find_person', 'everything about one person'],
+        ['search_notes', 'searches the notes'],
         ['save_meeting_notes', 'saves notes and action items'],
         ['update_meeting', 'fixes titles and voices'],
       ],
