@@ -6,8 +6,11 @@
  */
 export const LANGUAGES: ('en' | 'it')[] = ['en'];
 
-/** The trial DMG: always the latest release, with the same file name every time. */
-export const DOWNLOAD_URL = 'https://github.com/FixItAgainTonic/nchova-web/releases/latest/download/Nchova.dmg';
+/** The trial DMG: always the latest release, with the same file name every time. Sparkle's updates go straight here. */
+export const DMG_URL = 'https://github.com/FixItAgainTonic/nchova-web/releases/latest/download/Nchova.dmg';
+
+/** What the site's download buttons point to: src/pages/download.ts counts the download, then sends on to DMG_URL. */
+export const DOWNLOAD_URL = '/download';
 
 /** Polar checkout of nchova Pro (organisation nchova, 29.99 EUR tax included). Today the same link as the app's. */
 export const CHECKOUT_URL = 'https://buy.polar.sh/polar_cl_ZECtqsONpN8DgSE6iOJmWdMOqu2iQ7VyAfYGM2Rqn9s';

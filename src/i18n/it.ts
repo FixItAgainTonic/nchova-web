@@ -353,7 +353,7 @@ const it = {
     cta: 'Scarica nchova',
   },
   footer: {
-    colophon: 'Composto in Fraunces e DM Mono. Questo sito non usa cookie e non ti segue da nessuna parte.',
+    colophon: 'Composto in Fraunces e DM Mono. Questo sito non usa cookie e non sa chi sei.',
     privacy: 'Privacy',
     contact: 'Contatti',
     rights: '© 2026 nchova · {company}, P.IVA {vat}',
@@ -363,7 +363,7 @@ const it = {
     metaTitle: 'Privacy — nchova',
     sections: [
       ['Chi siamo', 'nchova è fatta da {company} (P.IVA {vat}), titolare dei dati di cui parla questa pagina.'],
-      ['Questo sito', 'Non usa cookie, non ha statistiche, non carica niente da altri: i caratteri sono serviti da qui. Il servizio che lo ospita (GitHub Pages) può tenere i normali log tecnici, come l’indirizzo IP, per farlo funzionare.'],
+      ['Questo sito', 'Non usa cookie e non carica niente da altri: i caratteri sono serviti da qui. Conta visite e download con Vercel Web Analytics, che distingue una visita dall’altra con un codice che cambia ogni giorno e non salva indirizzi IP, cookie o altro che ti identifichi. Vercel, che ospita il sito, può tenere i normali log tecnici, come l’indirizzo IP, per farlo funzionare.'],
       ['L’app', 'nchova non ha server propri e non chiede un account. L’audio e le impronte vocali non lasciano mai il tuo Mac. Transcript e note restano sul Mac, e vanno nel tuo iCloud solo se attivi la sync (Pro).'],
       ['Cosa esce dal Mac', 'Per la licenza Pro, nchova manda a Polar la chiave e il nome del Mac. Se le note le scrive il tuo Claude Code o il tuo Codex, il transcript del meeting va ad Anthropic o a OpenAI, col tuo abbonamento. Se colleghi un assistente AI col server MCP, quell’assistente legge i tuoi meeting (mai le dettature). Se attivi la sync iCloud (Pro), transcript e note vanno nel tuo iCloud.'],
       ['Cosa entra soltanto', 'nchova scarica i suoi modelli da Hugging Face, una volta per modello, e chiede a nchova.com se ci sono aggiornamenti. Con queste richieste non parte niente di tuo, oltre a quello che porta qualsiasi connessione, come l’indirizzo IP.'],

@@ -31,7 +31,7 @@ const written = [...t.hero.written];
     </h1>
     <p class="hero__lead" data-avoid="lines">{t.hero.lead}</p>
     <div class="hero__cta" data-avoid>
-      <a class="btn btn--lg" href={DOWNLOAD_URL}><Bracket>{t.hero.cta}</Bracket></a>
+      <a class="btn btn--lg" href={`${DOWNLOAD_URL}?from=hero`}><Bracket>{t.hero.cta}</Bracket></a>
       <span class="hero__price mono">{t.hero.price}</span>
     </div>
     <p class="hero__meta mono" data-avoid>{t.hero.meta}</p>

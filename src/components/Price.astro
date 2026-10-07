@@ -63,7 +63,7 @@ const receipts = [
 
       <div class="price__act rise" style="--d:.3s">
         <p class="price__trial mono">{p.trial}</p>
-        <a class="btn btn--lg" href={DOWNLOAD_URL}><Bracket>{p.cta}</Bracket></a>
+        <a class="btn btn--lg" href={`${DOWNLOAD_URL}?from=price`}><Bracket>{p.cta}</Bracket></a>
         <a class="btn btn--ghost" href={CHECKOUT_URL}>{p.buy}</a>
         <p class="price__after">{p.after}</p>
         <div class="price__needs">

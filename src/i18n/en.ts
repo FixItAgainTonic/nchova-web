@@ -345,7 +345,7 @@ const en: Dict = {
     cta: 'Download nchova',
   },
   footer: {
-    colophon: 'Set in Fraunces and DM Mono. This site uses no cookies and follows you nowhere.',
+    colophon: 'Set in Fraunces and DM Mono. This site uses no cookies and does not know who you are.',
     privacy: 'Privacy',
     contact: 'Contact',
     rights: '© 2026 nchova · {company}, VAT IT{vat}',
@@ -355,7 +355,7 @@ const en: Dict = {
     metaTitle: 'Privacy — nchova',
     sections: [
       ['Who we are', 'nchova is made by {company} (VAT IT{vat}), which is responsible for the data described on this page.'],
-      ['This site', 'No cookies, no analytics, nothing loaded from anyone else: the fonts are served from here. The service hosting it (GitHub Pages) may keep the usual technical logs, such as IP addresses, to run it.'],
+      ['This site', 'No cookies, and nothing loaded from anyone else: the fonts are served from here. It counts visits and downloads with Vercel Web Analytics, which tells one visit from another by a code that changes every day and stores no IP address, no cookie, nothing that identifies you. Vercel, which hosts the site, may keep the usual technical logs, such as IP addresses, to run it.'],
       ['The app', 'nchova has no servers of its own and asks for no account. Audio and voiceprints never leave your Mac. Transcripts and notes stay on the Mac, and go to your own iCloud only if you turn on sync (Pro).'],
       ['What leaves the Mac', 'For the Pro licence, nchova sends Polar the key and the Mac’s name. If your own Claude Code or Codex writes the notes, the meeting’s transcript goes to Anthropic or OpenAI, under your subscription. If you connect an AI assistant through the MCP server, that assistant reads your meetings (never your dictation). If you turn on iCloud sync (Pro), transcripts and notes go to your own iCloud.'],
       ['What only comes in', 'nchova downloads its models from Hugging Face, once per model, and checks nchova.com for updates. Nothing of yours goes with these requests beyond what any connection carries, such as the IP address.'],
