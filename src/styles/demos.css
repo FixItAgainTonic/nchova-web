@@ -1310,318 +1310,496 @@
 
 /* ---------- 04 Notes ---------- */
 
+/* The Meetings window (Fn+M), as MeetingsView lays it out, in the Mac's light appearance: the meetings by day in an
+   inset sidebar, the chosen one on white in the middle, the chat on the window's grey on the right. Every size is in
+   em of the window, which scales with the room it has. */
+.nd {
+  container-type: inline-size;
+}
+
 .nd__win {
+  --side: 13.6em;
+  --panel: 17em;
+  --label: #1d1d1f;
+  --secondary: #86868b;
+  --tertiary: #aeaeb2;
+  --hair: rgba(0, 0, 0, 0.09);
+  position: relative;
   overflow: hidden;
-  border-radius: 16px;
-  background: #fdfcf9;
-  box-shadow: 0 30px 50px -34px rgba(29, 26, 43, 0.5), 0 0 0 1px rgba(29, 26, 43, 0.08);
-}
-
-.nd__bar {
-  justify-content: center;
-  height: 44px;
-  border-bottom: 1px solid var(--rule);
-  font-size: 16px;
-}
-
-.nd__bar .lights {
-  position: absolute;
-  left: 14px;
-}
-
-.nd__tabs {
-  display: flex;
-  gap: 2px;
-  padding: 2px;
-  border-radius: 8px;
-  background: rgba(29, 26, 43, 0.06);
-}
-
-.nd__tab {
-  padding: 3px 12px;
-  border-radius: 6px;
-  font-size: 0.8125rem;
-  color: var(--ink-2);
-}
-
-.nd__tab.on {
-  background: #fff;
-  color: var(--ink);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-.nd__page {
-  display: grid;
-  grid-template-columns: 160px minmax(0, 1fr);
-  min-height: 360px;
-}
-
-/* The margin of a school notebook, with what you jotted during the call. */
-.nd__margin {
-  padding: 22px 16px;
-  border-right: 1.5px solid rgba(220, 90, 90, 0.35);
-}
-
-.nd__margin-label {
-  margin: 0 0 10px;
-  font-size: 0.6875rem;
-  color: var(--ink-3);
-}
-
-.nd__jot {
-  margin: 0 0 8px;
-  width: fit-content;
-  font-style: italic;
-  font-size: 1.0625rem;
-  line-height: 1.3;
-  font-variation-settings: 'SOFT' 100, 'WONK' 1;
-  color: var(--violet-ink);
-  background: linear-gradient(transparent 58%, var(--lilac) 58%) no-repeat 0 0 / 0% 100%;
-  transition: background-size 0.6s var(--ease);
-}
-
-.nd__jot.linked {
-  background-size: 100% 100%;
-}
-
-.nd__doc {
-  padding: 20px clamp(18px, 3vw, 30px) 22px;
-}
-
-.nd__title {
-  margin: 0;
-  font-size: 1.45rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
-}
-
-.nd__meta {
-  margin: 2px 0 10px;
-  font-size: 0.75rem;
-  color: var(--ink-3);
-}
-
-.nd__writing {
-  display: none;
-  gap: 9px;
-  margin-top: 16px;
-}
-
-.nd__writing.show {
-  display: grid;
-}
-
-.nd__writing .mono {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--ink-3);
-}
-
-.nd__spin {
-  width: 12px;
-  height: 12px;
-  border: 2px solid var(--rule);
-  border-top-color: var(--deep);
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
-}
-
-.nd__ghost {
-  height: 10px;
-  border-radius: 5px;
-  background: linear-gradient(90deg, var(--paper-2) 0%, var(--paper-3) 50%, var(--paper-2) 100%) 0 0 / 200% 100%;
-  animation: shimmer 1.4s linear infinite;
-}
-
-.nd__ghost--short {
-  width: 60%;
-}
-
-@keyframes shimmer {
-  to {
-    background-position: -200% 0;
-  }
-}
-
-.nd__sec {
-  display: none;
-  animation: bubble 0.4s var(--ease) both;
-}
-
-.nd__sec.show {
-  display: block;
-}
-
-.nd__h {
-  margin: 14px 0 4px;
-  font-family: var(--mono);
-  font-size: 0.6875rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--violet-ink);
-}
-
-.nd__p {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.nd__list {
-  margin: 0;
-  padding-left: 1.1em;
-  font-size: 1rem;
-  line-height: 1.55;
-}
-
-.nd__list li {
-  width: fit-content;
-  background: linear-gradient(transparent 60%, var(--lilac) 60%) no-repeat 0 0 / 0% 100%;
-  transition: background-size 0.6s var(--ease);
-}
-
-.nd__list li.linked {
-  background-size: 100% 100%;
-}
-
-.nd__list--todo {
-  padding: 0;
-  list-style: none;
-}
-
-.nd__list--todo li {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.nd__list--todo i {
-  flex: none;
-  width: 12px;
-  height: 12px;
-  border: 1.5px solid var(--ink-3);
-  border-radius: 4px;
-  transform: translateY(1px);
-}
-
-.nd__list--todo b {
-  font-weight: 620;
-}
-
-.nd__chat {
-  display: none;
-  padding: 14px 18px 4px;
-  border-top: 1px solid var(--rule);
-  animation: bubble 0.4s var(--ease) both;
-}
-
-.nd__chat.show {
-  display: block;
-}
-
-.nd__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
-.nd__chip {
-  padding: 4px 11px;
-  border: 1px solid var(--rule-strong);
-  border-radius: 999px;
   font-family: var(--ui);
-  font-size: 0.8125rem;
-  color: var(--ink-2);
-  transition: background-color 0.2s, color 0.2s;
+  font-size: clamp(10px, 100cqw / 62, 14.5px);
+  line-height: 1.35;
+  color: var(--label);
+  border-radius: 1.05em;
+  background: #f3f2f6;
+  box-shadow: 0 30px 50px -34px rgba(29, 26, 43, 0.5), 0 0 0 1px rgba(29, 26, 43, 0.1);
 }
 
-.nd__chip.pressed {
-  background: var(--ink);
-  color: var(--paper);
-  border-color: var(--ink);
-  scale: 1;
-  filter: none;
-}
-
-.nd__qa {
-  display: grid;
-  gap: 8px;
-  margin-top: 10px;
-}
-
-.nd__q {
-  justify-self: end;
-  margin: 0;
-  padding: 6px 12px;
-  border-radius: 12px 12px 4px 12px;
-  background: var(--deep);
-  color: #fff;
-  font-family: var(--ui);
-  font-size: 0.875rem;
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.3s, transform 0.3s var(--ease);
-}
-
-.nd__q.show {
-  opacity: 1;
-  transform: none;
-}
-
-.nd__a {
-  min-height: 1.5em;
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.45;
-}
-
-.nd__foot {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin: 0;
-  padding: 10px 18px 14px;
-  color: var(--ink-3);
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-
-.nd__foot.show {
-  opacity: 1;
-}
-
-.nd__foot svg {
-  width: 14px;
+.nd svg {
   fill: none;
-  stroke: var(--violet-ink);
-  stroke-width: 2.2;
+  stroke: currentColor;
+  stroke-width: 1.4;
   stroke-linecap: round;
   stroke-linejoin: round;
 }
 
-@media (max-width: 600px) {
-  .nd__page {
+.nd__bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.1em;
+  height: 3.1em;
+  padding: 0 1.15em;
+}
+
+.nd__wtitle {
+  font-size: 1.05em;
+  font-weight: 600;
+  color: #3a3a3c;
+}
+
+.nd__toggle {
+  position: absolute;
+  left: calc(var(--side) + 0.3em);
+  top: 50%;
+  width: 1.45em;
+  height: 1.15em;
+  color: #6e6e73;
+  transform: translateY(-50%);
+}
+
+.nd__body {
+  display: grid;
+  grid-template-columns: var(--side) minmax(0, 1fr) var(--panel);
+  height: 36em;
+}
+
+/* The list: an inset panel, as the sidebar is on macOS 26. */
+.nd__side {
+  margin: 0 0.6em 0.6em;
+  padding: 0.6em 0.45em;
+  overflow: hidden;
+  border-radius: 0.95em;
+  background: rgba(0, 0, 0, 0.045);
+}
+
+.nd__search {
+  display: flex;
+  align-items: center;
+  gap: 0.45em;
+  height: 2.05em;
+  padding: 0 0.6em;
+  border-radius: 0.65em;
+  font-size: 0.92em;
+  color: var(--secondary);
+  background: rgba(0, 0, 0, 0.055);
+}
+
+.nd__search svg {
+  width: 1em;
+  height: 1em;
+}
+
+.nd__day {
+  margin: 1.15em 0.6em 0.35em;
+  font-size: 0.78em;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.nd__row {
+  display: grid;
+  gap: 0.1em;
+  padding: 0.42em 0.6em;
+  border-radius: 0.55em;
+}
+
+.nd__row.on {
+  background: rgba(0, 0, 0, 0.075);
+}
+
+.nd__row-title {
+  overflow: hidden;
+  font-size: 0.92em;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.nd__row-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.35em;
+  font-size: 0.76em;
+  color: var(--secondary);
+  white-space: nowrap;
+}
+
+.nd__row-notes {
+  display: none;
+  width: 0.95em;
+  height: 0.8em;
+}
+
+.nd__row-writing {
+  display: none;
+}
+
+.nd__row-notes.show,
+.nd__row-writing.show {
+  display: inline;
+}
+
+/* The meeting: white, like the app's text background. */
+.nd__doc {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.45em 1.9em;
+  border-top: 1px solid var(--hair);
+  background: #fff;
+}
+
+.nd__head {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+}
+
+.nd__title {
+  margin: 0;
+  font-size: 1.72em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.nd__more {
+  width: 1.15em;
+  height: 1.15em;
+  color: var(--secondary);
+}
+
+.nd__more .dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+.nd__meta {
+  margin: 0.45em 0 0;
+  font-size: 0.86em;
+  color: var(--secondary);
+}
+
+.nd__rule {
+  width: 100%;
+  margin: 0.95em 0;
+  border: 0;
+  border-top: 1px solid var(--hair);
+}
+
+.nd__nhead {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  min-height: 1.6em;
+}
+
+.nd__nhead b {
+  font-size: 0.92em;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.nd__by {
+  display: none;
+  font-size: 0.78em;
+  color: var(--tertiary);
+}
+
+.nd__sp {
+  flex: 1;
+}
+
+.nd__busy,
+.nd__tools {
+  display: none;
+  align-items: center;
+  gap: 0.6em;
+  color: #6e6e73;
+}
+
+.nd__by.show {
+  display: inline;
+}
+
+.nd__busy.show,
+.nd__tools.show {
+  display: inline-flex;
+}
+
+.nd__tools svg {
+  width: 1.05em;
+  height: 1.05em;
+}
+
+.nd__rewrite {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: 0.86em;
+}
+
+.nd__rewrite svg {
+  width: 1.05em;
+  height: 1.05em;
+  fill: currentColor;
+  stroke: none;
+}
+
+.nd__small {
+  padding: 0.12em 0.6em;
+  border-radius: 0.4em;
+  font-size: 0.78em;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.13), 0 0.05em 0.1em rgba(0, 0, 0, 0.06);
+}
+
+/* macOS's small spinner, in the grey it takes on a light window. */
+.nd__spin {
+  display: inline-block;
+  width: 1.05em;
+  height: 1.05em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg stroke='%23737378' stroke-width='2.3' stroke-linecap='round'%3E%3Cline x1='12.00' y1='7.40' x2='12.00' y2='2.80' opacity='1.0'/%3E%3Cline x1='9.70' y1='8.02' x2='7.40' y2='4.03' opacity='0.925'/%3E%3Cline x1='8.02' y1='9.70' x2='4.03' y2='7.40' opacity='0.85'/%3E%3Cline x1='7.40' y1='12.00' x2='2.80' y2='12.00' opacity='0.775'/%3E%3Cline x1='8.02' y1='14.30' x2='4.03' y2='16.60' opacity='0.7'/%3E%3Cline x1='9.70' y1='15.98' x2='7.40' y2='19.97' opacity='0.625'/%3E%3Cline x1='12.00' y1='16.60' x2='12.00' y2='21.20' opacity='0.55'/%3E%3Cline x1='14.30' y1='15.98' x2='16.60' y2='19.97' opacity='0.475'/%3E%3Cline x1='15.98' y1='14.30' x2='19.97' y2='16.60' opacity='0.4'/%3E%3Cline x1='16.60' y1='12.00' x2='21.20' y2='12.00' opacity='0.325'/%3E%3Cline x1='15.98' y1='9.70' x2='19.97' y2='7.40' opacity='0.25'/%3E%3Cline x1='14.30' y1='8.02' x2='16.60' y2='4.03' opacity='0.175'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
+  animation: spin 1s steps(12) infinite;
+}
+
+.nd__reading {
+  display: none;
+  margin: 0.4em 0 0;
+  font-size: 0.88em;
+  color: var(--secondary);
+}
+
+.nd__reading.show {
+  display: block;
+}
+
+.nd__sec {
+  display: none;
+  margin-top: 0.55em;
+  font-size: 0.92em;
+}
+
+.nd__sec.show {
+  display: block;
+  animation: bubble 0.35s var(--ease) both;
+}
+
+.nd__h {
+  margin: 0.35em 0 0.2em;
+  font-weight: 700;
+}
+
+.nd__p {
+  margin: 0;
+  line-height: 1.45;
+}
+
+.nd__list {
+  margin: 0;
+  padding-left: 1.2em;
+  line-height: 1.45;
+}
+
+.nd__list li {
+  width: fit-content;
+}
+
+.nd__list li::marker {
+  color: var(--secondary);
+}
+
+.nd__list b {
+  font-weight: 600;
+}
+
+/* What grew from your own notes lights up with them. */
+.nd__list li.linked,
+.nd__jot.linked {
+  background: linear-gradient(rgba(145, 132, 217, 0.22), rgba(145, 132, 217, 0.22)) 0 85% / 100% 0.5em no-repeat;
+  transition: background-size 0.4s;
+}
+
+.nd__mine {
+  display: grid;
+  gap: 0.4em;
+  margin-top: auto;
+  padding-top: 0.9em;
+}
+
+.nd__mine b {
+  font-size: 0.92em;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.nd__minebox {
+  padding: 0.5em 0.7em;
+  border-radius: 0.55em;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.nd__jot {
+  margin: 0;
+  width: fit-content;
+  font-size: 0.92em;
+  line-height: 1.5;
+}
+
+.nd__caption {
+  margin: 0;
+  font-size: 0.76em;
+  color: var(--tertiary);
+}
+
+/* The chat on the right, under Chat | Transcript. */
+.nd__panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-left: 1px solid var(--hair);
+  border-top: 1px solid var(--hair);
+  background: #f5f5f7;
+}
+
+.nd__seg {
+  display: inline-flex;
+  align-self: center;
+  margin: 0.7em 0;
+  padding: 0.14em;
+  border-radius: 0.55em;
+  background: rgba(0, 0, 0, 0.065);
+}
+
+.nd__seg span {
+  padding: 0.22em 1.15em;
+  border-radius: 0.42em;
+  font-size: 0.86em;
+}
+
+.nd__seg span.on {
+  background: #fff;
+  box-shadow: 0 0.05em 0.15em rgba(0, 0, 0, 0.16);
+}
+
+.nd__chat {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.6em;
+  min-height: 0;
+  overflow: hidden;
+  padding: 0.9em 0.95em;
+  border-top: 1px solid var(--hair);
+}
+
+.nd__ask p {
+  margin: 0 0 0.35em;
+  font-size: 0.88em;
+  color: var(--secondary);
+}
+
+.nd__link {
+  display: block;
+  margin: 0.25em 0;
+  font-size: 0.88em;
+  color: #0a6ed1;
+  transition: opacity 0.15s;
+}
+
+.nd__link.pressed {
+  opacity: 0.45;
+}
+
+.nd__ask.gone {
+  display: none;
+}
+
+.nd__q {
+  display: none;
+  align-self: flex-end;
+  max-width: 85%;
+  margin: 0;
+  padding: 0.38em 0.7em;
+  border-radius: 0.7em;
+  font-size: 0.9em;
+  color: #fff;
+  background: rgba(121, 108, 191, 0.9);
+}
+
+.nd__wait {
+  display: none;
+}
+
+.nd__a {
+  display: none;
+  margin: 0;
+  font-size: 0.9em;
+  line-height: 1.45;
+}
+
+.nd__q.show,
+.nd__a.show {
+  display: block;
+  animation: bubble 0.35s var(--ease) both;
+}
+
+.nd__wait.show {
+  display: inline-block;
+}
+
+.nd__input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6em;
+  padding: 0.75em 0.9em;
+  border-top: 1px solid var(--hair);
+  font-size: 0.9em;
+  color: var(--tertiary);
+}
+
+.nd__input svg {
+  flex: none;
+  width: 1.45em;
+  height: 1.45em;
+  color: #fff;
+}
+
+.nd__input svg circle {
+  fill: #c7c7cc;
+  stroke: none;
+}
+
+/* Narrow: no room for the list, and the chat goes under the meeting. */
+@container (max-width: 700px) {
+  .nd__win {
+    font-size: clamp(10px, 100cqw / 36, 14px);
+  }
+  .nd__body {
     grid-template-columns: minmax(0, 1fr);
+    height: auto;
   }
-  .nd__margin {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 14px;
-    padding: 12px 18px;
-    border-right: 0;
-    border-bottom: 1.5px solid rgba(220, 90, 90, 0.35);
+  .nd__side,
+  .nd__toggle {
+    display: none;
   }
-  .nd__margin-label {
-    width: 100%;
-    margin: 0;
+  .nd__doc {
+    min-height: 34em;
+    padding: 1.2em 1.3em;
   }
-  .nd__jot {
-    margin: 0;
-  }
-  .nd__page {
-    min-height: 420px;
+  .nd__panel {
+    height: 15em;
+    border-left: 0;
   }
 }
 

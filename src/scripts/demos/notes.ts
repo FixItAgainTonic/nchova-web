@@ -1,6 +1,7 @@
-// The notes, written when the call ends: a moment of "writing notes…", then summary, decisions and
-// action items appear, built around what you jotted in the margin (the two light up together).
-// Then a question to the meeting, and the Markdown copy saved in your folder.
+// The Meetings window as the app shows it once a call has ended: the writer reads the meeting (a spinner and Stop in
+// the notes' header, "writing notes…" in the list), the notes come in, built around what you jotted (the two light up
+// together), the list row gets its notes mark and the header its buttons. Then a question in the chat on the right:
+// the suggestions go, your question on the right in violet, the answer under it.
 
 import { film } from './run';
 
@@ -19,8 +20,10 @@ for (const root of document.querySelectorAll<HTMLElement>('[data-notes]')) setup
 function setup(root: HTMLElement) {
   const data: Data = JSON.parse(root.querySelector('[data-script]')!.textContent!);
   const $ = <T extends HTMLElement>(s: string) => root.querySelector<T>(s)!;
-  const writing = $('[data-writing]'), summary = $('[data-summary]'), decisions = $('[data-decisions]'), actions = $('[data-actions]');
-  const chat = $('[data-chat]'), q = $('[data-q]'), a = $('[data-a]'), foot = $('[data-foot]');
+  const reading = $('[data-reading]'), summary = $('[data-summary]'), decisions = $('[data-decisions]'), actions = $('[data-actions]');
+  const busy = $('[data-busy]'), tools = $('[data-tools]'), by = $('[data-by]');
+  const rowWriting = $('[data-row-writing]'), rowNotes = $('[data-row-notes]');
+  const askList = $('[data-asklist]'), q = $('[data-q]'), wait = $('[data-wait]'), a = $('[data-a]');
   const sections = [...root.querySelectorAll<HTMLElement>('[data-sec]')];
   const jots = [...root.querySelectorAll<HTMLElement>('[data-jot]')];
   const chips = [...root.querySelectorAll<HTMLElement>('[data-chip]')];
@@ -32,25 +35,30 @@ function setup(root: HTMLElement) {
     li.classList.add('linked');
   };
 
+  const writing = (on: boolean) => {
+    for (const el of [busy, reading, rowWriting]) el.classList.toggle('show', on);
+    for (const el of [tools, by, rowNotes]) el.classList.toggle('show', !on);
+  };
+
   film(root, {
     reset() {
-      writing.classList.remove('show');
+      writing(true);
       sections.forEach((s) => s.classList.remove('show'));
       summary.textContent = '';
       decisions.textContent = '';
       actions.textContent = '';
       jots.forEach((j) => j.classList.remove('linked'));
-      chat.classList.remove('show');
-      q.classList.remove('show');
-      a.textContent = '';
+      askList.classList.remove('gone');
       chips.forEach((c) => c.classList.remove('pressed'));
-      foot.classList.remove('show');
+      for (const el of [q, wait, a]) el.classList.remove('show');
+      a.textContent = '';
     },
     async play(run) {
-      writing.classList.add('show');
-      await run.wait(1700);
-      writing.classList.remove('show');
+      writing(true);
+      await run.wait(1900);
+      reading.classList.remove('show');
 
+      // A model that streams: the notes appear as they are written, the spinner still going.
       sections[0].classList.add('show');
       await run.type(summary, data.summary, 110);
       await run.wait(250);
@@ -67,27 +75,27 @@ function setup(root: HTMLElement) {
       sections[2].classList.add('show');
       for (const [i, [who, what]] of data.actions.entries()) {
         const li = document.createElement('li');
-        const box = document.createElement('i');
         const name = document.createElement('b');
         const rest = document.createElement('span');
         name.textContent = who;
-        li.append(box, name, rest);
+        li.append(name, rest);
         actions.append(li);
         link(`action:${i}`, li);
         await run.type(rest, ` — ${what}`, 90);
         await run.wait(150);
       }
+      writing(false);
 
-      await run.wait(700);
-      chat.classList.add('show');
-      await run.wait(900);
+      await run.wait(1100);
       chips[1].classList.add('pressed');
-      await run.wait(300);
+      await run.wait(350);
+      askList.classList.add('gone');
       q.classList.add('show');
-      await run.wait(600);
+      wait.classList.add('show');
+      await run.wait(1100);
+      wait.classList.remove('show');
+      a.classList.add('show');
       await run.type(a, data.answer, 60);
-      await run.wait(500);
-      foot.classList.add('show');
     },
     rest: 3600,
   });
