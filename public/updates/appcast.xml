@@ -7,5 +7,22 @@
     <link>https://nchova.com/updates/appcast.xml</link>
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
+    <item>
+      <title>nchova 1.0.0</title>
+      <pubDate>Wed, 07 Oct 2026 22:05:55 +0000</pubDate>
+      <sparkle:version>189</sparkle:version>
+      <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- **nchova 1.0.** Firmata con un certificato Apple Developer ID e notarizzata da Apple: si apre con un doppio clic.
+- **nchova Pro è in vendita**: 29,99 € una volta sola, IVA inclusa, su un massimo di 3 Mac. Aggiunge Parakeet, le voci distinte e riconosciute per nome, note migliori (Qwen sul tuo Mac, o il tuo Claude Code o Codex) e i meeting su tutti i tuoi Mac via iCloud. La chiave arriva per email: incollala in Impostazioni › Licenza.
+- Chi installa nchova ha **30 giorni di tutto**. Poi nchova resta gratuita con i modelli di Apple, e niente di quello che hai si perde. Se usavi già nchova, i 30 giorni partono da questo aggiornamento.
+- Se aggiorni da una versione precedente alla 0.19.8, macOS chiede di nuovo i permessi, una volta sola: meglio non durante una call.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- **nchova 1.0.** Signed with an Apple Developer ID certificate and notarised by Apple: it opens with a double click.
+- **nchova Pro is on sale**: €29.99 once, VAT included, on up to 3 Macs. It adds Parakeet, the voices told apart and named, better notes (Qwen on your Mac, or your own Claude Code or Codex) and your meetings on all your Macs through iCloud. The key arrives by email: paste it in Settings › Licence.
+- Everyone who installs nchova gets **30 days of everything**. After that nchova stays free with Apple's models, and nothing you have is lost. If you were already using nchova, the 30 days start with this update.
+- Updating from a version older than 0.19.8, macOS asks for the permissions again, once: better not during a call.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.0.0/Nchova.dmg" length="21362166" type="application/octet-stream" sparkle:edSignature="OGpxP2AxFAQSStPqnR0R6gIBSDkZyyRdsOQ2n5QO548LyqXAphA/B+Y4pENcARRq3q8tMLgQAgjb5zgEuH5oCw=="/>
+    </item>
   </channel>
 </rss>
