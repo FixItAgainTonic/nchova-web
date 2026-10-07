@@ -9,8 +9,8 @@ export const LANGUAGES: ('en' | 'it')[] = ['en'];
 /** The trial DMG: always the latest release, with the same file name every time. */
 export const DOWNLOAD_URL = 'https://github.com/FixItAgainTonic/nchova-web/releases/latest/download/Nchova.dmg';
 
-/** Polar checkout. Not created yet: until then the buy buttons point to the price section. */
-export const CHECKOUT_URL = '#price';
+/** Polar checkout of nchova Pro (organisation nchova, 29.99 EUR tax included). Today the same link as the app's. */
+export const CHECKOUT_URL = 'https://buy.polar.sh/polar_cl_ZECtqsONpN8DgSE6iOJmWdMOqu2iQ7VyAfYGM2Rqn9s';
 
 export const CONTACT_EMAIL = 'ciao@nchova.com';
 
