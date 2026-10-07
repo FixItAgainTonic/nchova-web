@@ -1,55 +1,25 @@
-# nchova.com su GitHub Pages — DNS su Register.it
+# nchova.com su Vercel — DNS su Register.it
 
-> Da fare solo quando si decide di pubblicare, insieme ad accendere Pages e a `PUBLISH_SITE`
-> (vedi il README). Fino ad allora il DNS resta com'è e nchova.com mostra la pagina di Register.it.
+Il sito sta su Vercel dal lancio (7 ottobre 2026). Su Register.it, nella gestione DNS del dominio:
 
-Il sito è pubblicato da GitHub Pages (`.github/workflows/pages.yml`), dominio personalizzato
-`nchova.com`. Su Register.it, nella gestione DNS del dominio:
+## 1. Togliere quello che c'era
 
-## 1. Togliere quello che c'è
+Il record **A** di `nchova.com` verso `195.110.124.133` (la pagina di cortesia di Register.it) e il record di `www`.
 
-Oggi `nchova.com` punta alla pagina di cortesia di Register.it (`195.110.124.133`) e `www` è un
-alias di `nchova.com`. Cancellare il record **A** di `nchova.com` verso `195.110.124.133` e il
-record di `www`.
-
-## 2. Apex `nchova.com`: quattro record A (e, se il pannello lo permette, quattro AAAA)
+## 2. I due record di Vercel
 
 | Tipo | Nome | Valore |
 |---|---|---|
-| A | `@` (nchova.com) | `185.199.108.153` |
-| A | `@` | `185.199.109.153` |
-| A | `@` | `185.199.110.153` |
-| A | `@` | `185.199.111.153` |
-| AAAA | `@` | `2606:50c0:8000::153` |
-| AAAA | `@` | `2606:50c0:8001::153` |
-| AAAA | `@` | `2606:50c0:8002::153` |
-| AAAA | `@` | `2606:50c0:8003::153` |
+| A | `@` (nchova.com) | `216.150.1.1` |
+| CNAME | `www` | `b5322d7f22c6c5cd.vercel-dns-016.com.` |
 
-## 3. `www`: un CNAME
+Sono quelli che Vercel mostra in progetto › Settings › Domains: se un giorno li cambia, valgono i suoi.
 
-| Tipo | Nome | Valore |
-|---|---|---|
-| CNAME | `www` | `fixitagaintonic.github.io.` |
+## 3. Non toccare
 
-GitHub reindirizza da solo `www.nchova.com` a `nchova.com`.
+I record **MX** (`mail.register.it`): sono la posta di nchova.com.
 
-## 4. Verifica del dominio (consigliata)
+## Controllo
 
-GitHub › Settings (dell'account) › Pages › *Add a domain* › `nchova.com`: GitHub mostra un
-record **TXT** (`_github-pages-challenge-fixitagaintonic.nchova.com` con un valore suo) da
-aggiungere su Register.it. Così nessun altro può usare il dominio su Pages.
-
-## 5. Su GitHub
-
-Nella repo › Settings › Pages: *Source* «GitHub Actions», *Custom domain* `nchova.com`, poi,
-quando il certificato è pronto (di solito entro un'ora dalla propagazione del DNS),
-*Enforce HTTPS*.
-
-## Controllare
-
-```bash
-dig +short nchova.com A        # i quattro 185.199.10x.153
-dig +short www.nchova.com      # fixitagaintonic.github.io. e poi gli stessi indirizzi
-```
-
-`https://nchova.com/updates/appcast.xml` deve rispondere con l'XML degli aggiornamenti.
+`dig +short nchova.com A` deve dire `216.150.1.1`; Vercel › Domains segna i due domini «Valid Configuration» e
+rilascia da solo il certificato HTTPS.
