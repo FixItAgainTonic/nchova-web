@@ -92,6 +92,12 @@ function setup(root: HTMLElement) {
         const p = document.createElement('p');
         p.textContent = line;
         b.append(p);
+        // As the app: when it was said, from the start of the meeting, under the sentence.
+        const at = document.createElement('span');
+        at.className = 'bubble__at';
+        const s = Math.max(0, Math.floor((Date.now() - started) / 1000) - 1);
+        at.textContent = `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+        b.append(at);
         chat.append(b);
         chat.scrollTo({ top: chat.scrollHeight, behavior: run.fast ? 'auto' : 'smooth' });
         await run.wait(600);

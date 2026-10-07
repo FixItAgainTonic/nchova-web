@@ -1,5 +1,6 @@
 ---
 import Mark from '../Mark.astro';
+import Dock from './Dock.astro';
 import { json } from '../../lib/json';
 import type { Dict } from '../../i18n';
 
@@ -59,6 +60,8 @@ const d = Astro.props.t.meeting.demo;
           <div class="mcard__pad" data-pad></div>
         </div>
       </div>
+
+      <Dock />
 
       <div class="mpill" data-pill aria-hidden="true">
         <i class="pill__dot"></i>

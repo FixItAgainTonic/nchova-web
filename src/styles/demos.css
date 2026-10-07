@@ -307,6 +307,8 @@
 
 /* The pill at the bottom of the screen. */
 .dd__pill {
+  /* The app's dictation pill: black at 72%, a touch lighter than the meeting's. */
+  background: rgba(0, 0, 0, 0.72);
   position: absolute;
   left: 50%;
   bottom: 1.2em;
@@ -356,10 +358,9 @@
 }
 
 .pill__icon[data-icon='spin'] {
-  border: 0.15em solid rgba(255, 255, 255, 0.25);
-  border-top-color: #fff;
-  border-radius: 50%;
-  animation: spin 0.8s linear infinite;
+  /* macOS's small spinner (the app's ProgressView): twelve spokes stepping round. */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg stroke='white' stroke-width='2.3' stroke-linecap='round'%3E%3Cline x1='12.00' y1='7.40' x2='12.00' y2='2.80' opacity='1.0'/%3E%3Cline x1='9.70' y1='8.02' x2='7.40' y2='4.03' opacity='0.925'/%3E%3Cline x1='8.02' y1='9.70' x2='4.03' y2='7.40' opacity='0.85'/%3E%3Cline x1='7.40' y1='12.00' x2='2.80' y2='12.00' opacity='0.775'/%3E%3Cline x1='8.02' y1='14.30' x2='4.03' y2='16.60' opacity='0.7'/%3E%3Cline x1='9.70' y1='15.98' x2='7.40' y2='19.97' opacity='0.625'/%3E%3Cline x1='12.00' y1='16.60' x2='12.00' y2='21.20' opacity='0.55'/%3E%3Cline x1='14.30' y1='15.98' x2='16.60' y2='19.97' opacity='0.475'/%3E%3Cline x1='15.98' y1='14.30' x2='19.97' y2='16.60' opacity='0.4'/%3E%3Cline x1='16.60' y1='12.00' x2='21.20' y2='12.00' opacity='0.325'/%3E%3Cline x1='15.98' y1='9.70' x2='19.97' y2='7.40' opacity='0.25'/%3E%3Cline x1='14.30' y1='8.02' x2='16.60' y2='4.03' opacity='0.175'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
+  animation: spin 1s steps(12) infinite;
 }
 
 .pill__icon[data-icon='check'] {
@@ -379,16 +380,9 @@
   transform: rotate(42deg);
 }
 
-.pill__icon[data-icon='cursor']::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0.05em;
-  bottom: 0.05em;
-  width: 0.12em;
-  background: #fff;
-  transform: translateX(-50%);
-  box-shadow: -0.18em -0.48em 0 -0.01em #fff, 0.18em -0.48em 0 -0.01em #fff;
+.pill__icon[data-icon='cursor'] {
+  /* SF Symbols' text.cursor, the I-beam the app shows while it types. */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.9' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M8 3.6c1.9 0 3.4.6 4 1.8.6-1.2 2.1-1.8 4-1.8M12 5.4v13.2M8 20.4c1.9 0 3.4-.6 4-1.8.6 1.2 2.1 1.8 4 1.8'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 @keyframes spin {
@@ -632,43 +626,114 @@
   filter: brightness(1.2);
 }
 
-/* The pill while a meeting is transcribed: a red dot and the fish. */
+/* The pill while a meeting is transcribed: a red dot and the fish, as MeetingPillPanel draws it. Every size below
+   comes from the app's points, at 1em = 20.7 pt (the card's 372 pt = 18em). It sits 22 pt over the Dock, where the
+   app anchors it, and fades in. */
 .mpill {
   position: absolute;
   left: 50%;
-  bottom: 0.9em;
+  bottom: 4.3em;
   display: flex;
   align-items: center;
-  gap: 0.6em;
-  padding: 0.45em 0.85em;
+  gap: 0.44em;
+  padding: 0.34em 0.63em;
   border-radius: 999px;
-  transform: translate(-50%, 170%);
-  transition: transform 0.4s var(--ease);
+  background: rgba(0, 0, 0, 0.78);
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.25s var(--ease);
 }
 
 .mpill.show {
-  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
+.mpill .pill__dot {
+  width: 0.44em;
+  height: 0.44em;
 }
 
 .mpill n-fish {
-  height: 1.45em;
+  height: 1.06em;
 }
 
-/* The card above it: live transcript as a chat, and the notepad. */
+/* The Dock: what the pill sits on, and what makes the desktop a Mac. */
+.dock {
+  position: absolute;
+  left: 50%;
+  bottom: 0.35em;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.32em;
+  padding: 0.32em 0.4em;
+  border-radius: 1.05em;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 0 0.05em rgba(255, 255, 255, 0.45), 0 0.6em 1.4em -0.6em rgba(20, 14, 60, 0.45);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3);
+  backdrop-filter: blur(14px) saturate(1.3);
+  transform: translateX(-50%);
+}
+
+.dock__app {
+  position: relative;
+  display: block;
+  width: 2.3em;
+  height: 2.3em;
+}
+
+.dock__app svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 0.08em 0.12em rgba(0, 0, 0, 0.18));
+}
+
+.dock__app i {
+  position: absolute;
+  left: 50%;
+  bottom: -0.27em;
+  width: 0.17em;
+  height: 0.17em;
+  border-radius: 50%;
+  background: rgba(29, 29, 31, 0.7);
+  transform: translateX(-50%);
+}
+
+.dock__app--nchova {
+  display: grid;
+  place-items: center;
+  border-radius: 0.52em;
+  background: linear-gradient(#292933, #121217);
+  box-shadow: 0 0.08em 0.12em rgba(0, 0, 0, 0.18);
+}
+
+.dock__app--nchova .dock__mark {
+  width: 76%;
+  height: auto;
+}
+
+.dock__sep {
+  align-self: stretch;
+  width: 0.05em;
+  margin: 0.2em 0.1em;
+  background: rgba(29, 29, 31, 0.2);
+}
+
+/* The card above it: live transcript as a chat, and the notepad. The app's 372 x 420 pt, 8 pt over the pill. */
 .mcard {
   position: absolute;
   left: 50%;
-  bottom: 3.5em;
+  bottom: 6.45em;
   display: flex;
   flex-direction: column;
-  width: 21em;
-  height: 18.6em;
-  border-radius: 1em;
-  background: rgba(0, 0, 0, 0.86);
+  width: 18em;
+  height: 20.3em;
+  border-radius: 0.77em;
+  background: rgba(0, 0, 0, 0.84);
   opacity: 0;
-  transform: translate(-50%, 0.8em) scale(0.97);
+  transform: translate(-50%, 0.8em);
   transform-origin: 50% 100%;
-  transition: opacity 0.25s var(--ease), transform 0.3s var(--ease);
+  transition: opacity 0.18s ease-out, transform 0.18s ease-out;
 }
 
 .mcard.show {
@@ -680,16 +745,16 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0.75em 1em 0;
+  padding: 0.58em 0.77em 0;
 }
 
 .mcard__head b {
-  font-size: 0.8em;
-  font-weight: 600;
+  font-size: 0.6em;
+  font-weight: 500;
 }
 
 .mcard__clock {
-  font-size: 0.74em;
+  font-size: 0.58em;
   color: rgba(255, 255, 255, 0.6);
   font-variant-numeric: tabular-nums;
 }
@@ -697,15 +762,15 @@
 .mcard__bar {
   display: flex;
   align-items: center;
-  gap: 0.15em;
-  padding: 0.6em 0.8em 0.55em;
+  gap: 0.1em;
+  padding: 0.53em 0.68em 0.39em;
   border-bottom: 0.05em solid rgba(255, 255, 255, 0.1);
 }
 
 .mcard__face {
-  padding: 0.25em 0.6em;
+  padding: 0.36em 0.82em;
   border-radius: 999px;
-  font-size: 0.66em;
+  font-size: 0.53em;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.5);
   transition: background-color 0.2s, color 0.2s, scale 0.12s;
@@ -721,16 +786,16 @@
 }
 
 .mcard__btn {
-  margin-left: 0.3em;
-  padding: 0.25em 0.65em;
+  margin-left: 0.4em;
+  padding: 0.36em 0.9em;
   border-radius: 999px;
-  font-size: 0.66em;
+  font-size: 0.53em;
   font-weight: 600;
   background: rgba(255, 255, 255, 0.18);
 }
 
 .mcard__btn--stop {
-  background: rgba(255, 69, 58, 0.82);
+  background: rgba(255, 59, 48, 0.8);
 }
 
 .mcard__body {
@@ -744,8 +809,8 @@
   inset: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.45em;
-  padding: 0.7em 0.75em;
+  gap: 0.34em;
+  padding: 0.58em;
   overflow-y: auto;
   scrollbar-width: none;
 }
@@ -758,8 +823,8 @@
   position: absolute;
   inset: 0;
   display: none;
-  padding: 0.8em 1em;
-  font-size: 0.82em;
+  padding: 0.8em 0.95em;
+  font-size: 0.63em;
   line-height: 1.6;
   white-space: pre-wrap;
   color: rgba(255, 255, 255, 0.92);
@@ -786,7 +851,8 @@
 
 .bubble {
   display: grid;
-  max-width: 80%;
+  gap: 0.1em;
+  max-width: 82%;
   animation: bubble 0.35s var(--ease) both;
 }
 
@@ -796,23 +862,30 @@
 }
 
 .bubble__who {
-  margin: 0 0 0.15em 0.2em;
-  font-size: 0.58em;
+  margin-left: 0.1em;
+  font-size: 0.46em;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.55);
 }
 
 .bubble p {
   margin: 0;
-  padding: 0.38em 0.65em;
-  border-radius: 0.7em;
-  font-size: 0.76em;
-  line-height: 1.35;
+  padding: 0.48em 0.8em;
+  border-radius: 0.88em;
+  font-size: 0.6em;
+  line-height: 1.3;
   background: rgba(255, 255, 255, 0.13);
 }
 
 .bubble--me p {
-  background: rgba(121, 108, 191, 0.95);
+  background: rgba(121, 108, 191, 0.9);
+}
+
+/* When it was said, from the start of the meeting, under every sentence. */
+.bubble__at {
+  font-size: 0.46em;
+  color: rgba(255, 255, 255, 0.4);
+  font-variant-numeric: tabular-nums;
 }
 
 @keyframes bubble {
@@ -865,8 +938,8 @@
     text-overflow: ellipsis;
   }
   .mcard {
-    width: 26em;
-    height: 26em;
+    width: 22em;
+    height: 24.8em;
   }
 }
 
