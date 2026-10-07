@@ -42,19 +42,16 @@ lì (`{free}`, `{pro}`, `{nFree}`… nei testi).
 
 ## Cosa manca
 
-- `CHECKOUT_URL` in `src/config.ts`: il checkout Polar, quando c'è.
-- Il download punta a `releases/latest/download/Nchova.dmg` di questa repo: funziona dalla prima
-  release con quel file allegato.
+- `CHECKOUT_URL` in `src/config.ts`: il checkout Polar di nchova Pro.
+- I pulsanti di download puntano a `/download` (`src/pages/download.ts`): conta il download in Vercel Web
+  Analytics e rimanda a `releases/latest/download/Nchova.dmg` di questa repo (`DMG_URL`).
 - `public/updates/appcast.xml` → `https://nchova.com/updates/appcast.xml`, definitivo: è dentro
-  l'app. Lo riscrive lo script di rilascio dell'app a ogni versione; finché non c'è una release è un
-  feed vuoto. Il sito non usa nient'altro sotto `/updates/`.
+  l'app. Lo riscrive lo script di rilascio dell'app a ogni versione. Il sito non usa nient'altro sotto `/updates/`.
 
 ## Pubblicazione
 
-Il sito va online solo al lancio. Fino ad allora GitHub Pages è spento e il workflow
-(`.github/workflows/pages.yml`) salta. Per pubblicare:
-
-1. Settings › Pages: *Source* «GitHub Actions», *Custom domain* `nchova.com`.
-2. Settings › Secrets and variables › Actions › Variables: `PUBLISH_SITE` = `true`.
-3. Un push su `main`, o *Run workflow* su «Pubblica il sito».
-4. Il DNS su Register.it, come in [`docs/DNS.md`](docs/DNS.md), poi *Enforce HTTPS*.
+Dal lancio (7 ottobre 2026) il sito sta su **Vercel** (progetto `nchova-web`, team Pro di FixItAgainTonic): ogni push
+su `main` lo ripubblica, appcast compreso. DNS su Register.it: `A @ 216.150.1.1`, `CNAME www
+b5322d7f22c6c5cd.vercel-dns-016.com.`; gli MX della posta restano quelli di Register.it. Statistiche: Vercel ›
+progetto › Analytics (visite, provenienze, evento «Download» con il pulsante di partenza). GitHub conta a parte ogni
+download del DMG, aggiornamenti di Sparkle compresi.
