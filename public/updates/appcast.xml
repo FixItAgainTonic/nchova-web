@@ -8,6 +8,19 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.0.2</title>
+      <pubDate>Thu, 08 Oct 2026 15:39:06 +0000</pubDate>
+      <sparkle:version>193</sparkle:version>
+      <sparkle:shortVersionString>1.0.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Se aggiorni da una versione precedente alla 0.19.8 e i permessi risultavano già accesi nelle Impostazioni di Sistema ma nchova non li vedeva, ora nchova li azzera da sola al primo avvio e te li richiede puliti, una volta sola.
+- Se l'Accessibilità resta bloccata, il benvenuto spiega come sbloccarla: toglierla dall'elenco con − e premere di nuovo Consenti.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- Updating from a version older than 0.19.8, if System Settings showed the permissions already on but nchova did not see them, nchova now clears them by itself at the first launch and asks for them again cleanly, once.
+- If Accessibility stays stuck, the welcome window explains how to free it: remove nchova from the list with − and press Allow again.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.0.2/Nchova.dmg" length="21365790" type="application/octet-stream" sparkle:edSignature="MUuxyqEYSXn7X9o1paHz2TK1RQG7QKXzF+gRaN8/T2CVzVatZN9oXDVY8JEhhlfI1vPw+uhURpuGDMXX28Y5BA=="/>
+    </item>
+    <item>
       <title>nchova 1.0.1</title>
       <pubDate>Thu, 08 Oct 2026 15:00:22 +0000</pubDate>
       <sparkle:version>191</sparkle:version>
