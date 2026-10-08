@@ -4,14 +4,36 @@ import type { Dict } from '../../i18n';
 
 interface Props {
   t: Dict;
+  /** The same scene with other words (the guides: another call app, other sentences). */
+  demo?: Dict['dictation']['demo'];
+  /** The menu bar says the Mac is offline, with these words: dictation goes on all the same. */
+  offline?: string;
 }
-const d = Astro.props.t.dictation.demo;
+const d = Astro.props.demo ?? Astro.props.t.dictation.demo;
+const { offline } = Astro.props;
 ---
 
 <div class="dd" data-dictation>
   <script type="application/json" data-script set:html={json(d)} />
   <div class="stage" aria-hidden="true">
     <div class="stage__in">
+      {
+        offline && (
+          <div class="menubar dd__menubar">
+            <span class="menubar__left" />
+            <span class="menubar__right">
+              <span class="menubar__item dd__offline">
+                <svg viewBox="0 0 20 16">
+                  <path d="M2.2 6.2a11 11 0 0 1 15.6 0M4.9 8.9a7.2 7.2 0 0 1 10.2 0M7.6 11.6a3.4 3.4 0 0 1 4.8 0" />
+                  <circle cx="10" cy="14" r="1.1" />
+                  <path class="dd__slash" d="M3.5 1.5 16.5 15.5" />
+                </svg>
+                {offline}
+              </span>
+            </span>
+          </div>
+        )
+      }
       <div class="win dd__win">
         <div class="win__bar">
           <span class="lights" aria-hidden="true"><i></i><i></i><i></i></span>

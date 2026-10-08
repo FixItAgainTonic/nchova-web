@@ -1518,3 +1518,42 @@
 .langs__codes--pro {
   color: var(--violet-ink);
 }
+
+/* ---------- The guides, listed in the footer of every page ---------- */
+
+.footer__guides {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px clamp(24px, 4vw, 56px);
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+}
+
+.footer__guides p {
+  margin: 0 0 8px;
+  color: var(--violet-ink);
+}
+
+.footer__guides p a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer__guides ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__guides li a {
+  color: var(--ink-2);
+  text-decoration: none;
+}
+
+.footer__guides a:hover {
+  color: var(--violet-ink);
+}

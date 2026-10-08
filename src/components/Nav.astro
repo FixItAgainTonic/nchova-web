@@ -6,9 +6,14 @@ import { dicts, path, type Dict, type Lang } from '../i18n';
 
 interface Props {
   t: Dict;
+  /** Off the home page the sections are links back to it. */
+  away?: boolean;
+  /** The download button's source, for the count (src/pages/download.ts). */
+  from?: string;
 }
-const { t } = Astro.props;
+const { t, away = false, from = 'nav' } = Astro.props;
 const home = path(t.lang as Lang);
+const to = away ? home : '';
 // The language switch appears once there is more than one language.
 const others = LANGUAGES.filter((l) => l !== t.lang);
 ---
@@ -21,7 +26,7 @@ const others = LANGUAGES.filter((l) => l !== t.lang);
       <span class="nav__word">nchova</span>
     </a>
     <nav class="nav__links mono" aria-label="nchova">
-      {t.nav.items.map(([id, label]) => <a href={`#${id}`}>{label}</a>)}
+      {t.nav.items.map(([id, label]) => <a href={`${to}#${id}`}>{label}</a>)}
     </nav>
     <div class="nav__end">
       {
@@ -31,7 +36,7 @@ const others = LANGUAGES.filter((l) => l !== t.lang);
           </a>
         ))
       }
-      <a class="btn btn--sm" href={`${DOWNLOAD_URL}?from=nav`}><Bracket>{t.nav.cta}</Bracket></a>
+      <a class="btn btn--sm" href={`${DOWNLOAD_URL}?from=${from}`}><Bracket>{t.nav.cta}</Bracket></a>
     </div>
   </div>
 </header>

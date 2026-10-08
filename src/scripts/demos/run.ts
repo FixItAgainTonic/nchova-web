@@ -65,6 +65,7 @@ interface Film {
 export function film(root: HTMLElement, f: Film) {
   const fast = reducedMotion();
   let controller: AbortController | null = null;
+  let onScreen = false;
 
   const start = async () => {
     controller?.abort();
@@ -92,6 +93,7 @@ export function film(root: HTMLElement, f: Film) {
   };
 
   whenVisible(root, (visible) => {
+    onScreen = visible;
     if (visible && !controller) start();
     if (!visible && !fast) stop();
   }, '-15% 0px');
@@ -99,6 +101,7 @@ export function film(root: HTMLElement, f: Film) {
   return {
     /** Takes over: stops the film so the visitor can play with the demo. */
     interrupt: stop,
-    restart: start,
+    /** From the top, now if the demo is on screen, or when it comes back. */
+    restart: () => (onScreen || fast ? start() : stop()),
   };
 }

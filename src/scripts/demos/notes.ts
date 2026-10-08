@@ -1,26 +1,26 @@
 // The Meetings window as the app shows it once a call has ended: the writer reads the meeting (a spinner and Stop in
-// the notes' header, "writing notes…" in the list), the notes come in, built around what you jotted (the two light up
-// together), the list row gets its notes mark and the header its buttons. Then a question in the chat on the right:
+// the notes' header, "writing notes…" in the list), the notes come in topic by topic, then who does what, built around
+// what you jotted (the two light up together), the list row gets its notes mark and the header its buttons. Then a question in the chat on the right:
 // the suggestions go, your question on the right in violet, the answer under it.
 
 import { film } from './run';
 
 interface Data {
-  summary: string;
-  decisions: string[];
-  actions: [string, string][];
+  topics: [string, string[]][];
+  next: [string, string][];
   answer: string;
 }
 
-/** Which jotted line each decision or action grew from. */
-const FROM_JOT: Record<string, number> = { 'decision:0': 0, 'action:1': 1 };
+/** Which jotted line a bullet grew from: the first point of the first topic, and the second task. */
+const FROM_JOT: Record<string, number> = { 'topic:0:0': 0, 'next:1': 1 };
 
 for (const root of document.querySelectorAll<HTMLElement>('[data-notes]')) setup(root);
 
 function setup(root: HTMLElement) {
   const data: Data = JSON.parse(root.querySelector('[data-script]')!.textContent!);
   const $ = <T extends HTMLElement>(s: string) => root.querySelector<T>(s)!;
-  const reading = $('[data-reading]'), summary = $('[data-summary]'), decisions = $('[data-decisions]'), actions = $('[data-actions]');
+  const reading = $('[data-reading]'), next = $('[data-next]');
+  const topics = [...root.querySelectorAll<HTMLElement>('[data-topic]')];
   const busy = $('[data-busy]'), tools = $('[data-tools]'), by = $('[data-by]');
   const rowWriting = $('[data-row-writing]'), rowNotes = $('[data-row-notes]');
   const askList = $('[data-asklist]'), q = $('[data-q]'), wait = $('[data-wait]'), a = $('[data-a]');
@@ -44,9 +44,8 @@ function setup(root: HTMLElement) {
     reset() {
       writing(true);
       sections.forEach((s) => s.classList.remove('show'));
-      summary.textContent = '';
-      decisions.textContent = '';
-      actions.textContent = '';
+      topics.forEach((t) => (t.textContent = ''));
+      next.textContent = '';
       jots.forEach((j) => j.classList.remove('linked'));
       askList.classList.remove('gone');
       chips.forEach((c) => c.classList.remove('pressed'));
@@ -59,28 +58,27 @@ function setup(root: HTMLElement) {
       reading.classList.remove('show');
 
       // A model that streams: the notes appear as they are written, the spinner still going.
-      sections[0].classList.add('show');
-      await run.type(summary, data.summary, 110);
-      await run.wait(250);
-
-      sections[1].classList.add('show');
-      for (const [i, line] of data.decisions.entries()) {
-        const li = document.createElement('li');
-        decisions.append(li);
-        link(`decision:${i}`, li);
-        await run.type(li, line, 90);
-        await run.wait(150);
+      for (const [t, [, bullets]] of data.topics.entries()) {
+        sections[t].classList.add('show');
+        for (const [i, line] of bullets.entries()) {
+          const li = document.createElement('li');
+          topics[t].append(li);
+          link(`topic:${t}:${i}`, li);
+          await run.type(li, line, 100);
+          await run.wait(150);
+        }
+        await run.wait(200);
       }
 
-      sections[2].classList.add('show');
-      for (const [i, [who, what]] of data.actions.entries()) {
+      sections[data.topics.length].classList.add('show');
+      for (const [i, [who, what]] of data.next.entries()) {
         const li = document.createElement('li');
         const name = document.createElement('b');
         const rest = document.createElement('span');
         name.textContent = who;
         li.append(name, rest);
-        actions.append(li);
-        link(`action:${i}`, li);
+        next.append(li);
+        link(`next:${i}`, li);
         await run.type(rest, ` — ${what}`, 90);
         await run.wait(150);
       }

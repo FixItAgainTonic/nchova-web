@@ -1,14 +1,17 @@
 ---
 // The Meetings window (Fn+M) as the app draws it (MeetingsView): the meetings by day on the left with the search field,
 // the chosen one in the middle (title, when and who, the notes with their writer and their buttons, "My notes" under
-// them), and the chat about it on the right, under the Chat | Transcript picker.
+// them), and the chat about it on the right, under the Chat | Transcript picker. The notes have the app's shape: a few
+// topics, your own points first and in your words, then who does what.
 import { json } from '../../lib/json';
 import type { Dict } from '../../i18n';
 
 interface Props {
   t: Dict;
+  /** The same scene with other words (the guides: another call app, other sentences). */
+  demo?: Dict['notes']['demo'];
 }
-const d = Astro.props.t.notes.demo;
+const d = Astro.props.demo ?? Astro.props.t.notes.demo;
 ---
 
 <div class="nd" data-notes>
@@ -72,17 +75,18 @@ const d = Astro.props.t.notes.demo;
           </span>
         </div>
         <p class="nd__reading" data-reading>{d.reading}</p>
+        {
+          // As the app writes them (MeetingNotesWriter): a "###" section per topic, then who does what under "Next steps".
+          d.topics.map(([heading], i) => (
+            <div class="nd__sec" data-sec>
+              <p class="nd__h">{heading}</p>
+              <ul class="nd__list" data-topic={i} />
+            </div>
+          ))
+        }
         <div class="nd__sec" data-sec>
-          <p class="nd__h">{d.summaryH}</p>
-          <p class="nd__p" data-summary></p>
-        </div>
-        <div class="nd__sec" data-sec>
-          <p class="nd__h">{d.decisionsH}</p>
-          <ul class="nd__list" data-decisions></ul>
-        </div>
-        <div class="nd__sec" data-sec>
-          <p class="nd__h">{d.actionsH}</p>
-          <ul class="nd__list" data-actions></ul>
+          <p class="nd__h">{d.nextH}</p>
+          <ul class="nd__list" data-next></ul>
         </div>
         <div class="nd__mine">
           <b>{d.mine}</b>

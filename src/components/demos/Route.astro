@@ -1,0 +1,97 @@
+---
+// Where your voice goes. The violet desktop is your Mac, with a note and the dictation pill; outside it, on the paper,
+// the other app's servers. Their way: while you speak your voice leaves the Mac along the wire, the seconds sent add up,
+// the text comes back and is typed. nchova's way: the voice goes to the model on the Mac and straight into the note, and
+// the servers outside get nothing. The switch picks one; left alone the film shows both (scripts/demos/route.ts).
+import { json } from '../../lib/json';
+import type { Dict } from '../../i18n';
+import type { Route } from '../../i18n/guides/types';
+
+interface Props {
+  route: Route;
+  t: Dict;
+}
+const { route: r, t } = Astro.props;
+const modes = [
+  ['them', r.them.tab],
+  ['us', r.us.tab],
+] as const;
+---
+
+<div class:list={['route', r.meeting && 'route--meeting']} data-route data-mode="them">
+  <script type="application/json" data-script set:html={json({ ...r, states: t.dictation.demo.states })} />
+  <div class="ia__switch mono" role="group" aria-label={r.words.switchLabel}>
+    {
+      modes.map(([id, tab], i) => (
+        <button type="button" data-pick={id} aria-pressed={i === 0 ? 'true' : 'false'}>
+          {tab}
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="route__scene" role="img" aria-label={r.words.label}>
+    <div class="stage route__stage" aria-hidden="true">
+      <div class="stage__in">
+        <div class="win route__win">
+          <div class="win__bar">
+            <span class="lights"><i></i><i></i><i></i></span>
+            <span class="win__title">{r.title ?? 'Notes'}</span>
+          </div>
+          <div class="win__body route__body">
+            <p class="route__said spoken" data-said>{r.words.said}</p>
+            <p class="route__text"><span data-text></span><span class="dd__caret"></span></p>
+          </div>
+        </div>
+
+        <div class="route__chip" data-chip>
+          <n-fish fit data-chip-fish></n-fish>
+          <span>{r.us.place}</span>
+        </div>
+
+        {
+          r.meeting ? (
+            <div class="mpill route__pill" data-pill>
+              <i class="pill__dot" />
+              <n-fish fit data-wave />
+            </div>
+          ) : (
+            <div class="pill dd__pill route__pill" data-pill data-state="">
+              <span class="pill__rec">
+                <i class="pill__dot" />
+                <n-fish fit still data-wave />
+              </span>
+              <span class="pill__state">
+                <i class="pill__icon" data-icon />
+                <span data-state />
+              </span>
+            </div>
+          )
+        }
+
+        <span class="route__mac mono">{r.words.mac}</span>
+      </div>
+    </div>
+
+    <div class="route__cloud" data-cloud aria-hidden="true">
+      <svg class="route__cloud-icon" viewBox="0 0 64 40">
+        <path d="M17 36h31a11 11 0 0 0 1.5-21.9A16 16 0 0 0 19.3 10 13 13 0 0 0 17 36z"></path>
+      </svg>
+      <p class="route__place">{r.them.place}</p>
+      <p class="route__what mono" data-what>{r.them.what}</p>
+      <p class="route__sent mono"><b data-sent>0.0</b> <span data-sent-label>{r.them.sent}</span></p>
+      <i class="route__busy" data-busy></i>
+    </div>
+
+    <svg class="route__wires" data-wires aria-hidden="true">
+      <path class="route__wire" data-wire="out"></path>
+      <path class="route__wire" data-wire="back"></path>
+      <path class="route__wire route__wire--local" data-wire="local"></path>
+      <g data-packets></g>
+    </svg>
+  </div>
+</div>
+
+<script>
+  import '../../scripts/demos/route';
+</script>

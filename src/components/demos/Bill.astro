@@ -1,0 +1,102 @@
+---
+// A subscription's receipt printing month after month, next to Pro's, which prints once: the home page's receipts, with
+// a clock above them. The other app's way of billing is picked from the switch (monthly or yearly); every few seconds
+// a year goes by and Pro adds a line of updates at €0.00 (scripts/demos/bill.ts). Without the film: three years, summed.
+import Mark from '../Mark.astro';
+import { json } from '../../lib/json';
+import type { Dict, Lang } from '../../i18n';
+import type { Bill } from '../../i18n/guides/types';
+
+interface Props {
+  bill: Bill;
+  t: Dict;
+}
+const { bill: b, t } = Astro.props;
+const pro = t.price.pro;
+const money = (n: number) => `${b.currency.before ?? ''}${n.toFixed(2)}${b.currency.after ?? ''}`;
+const plan = b.plans[0];
+const years = Math.ceil(b.months / 12);
+// The last frame, written out: each year's charges summed, and the total.
+const yearly = Array.from({ length: years }, (_, y) => {
+  let sum = 0;
+  for (let m = y * 12; m < Math.min(b.months, (y + 1) * 12); m++) if (m % plan.every === 0) sum += plan.amount;
+  return sum;
+});
+const total = yearly.reduce((a, s) => a + s, 0);
+const year = (n: number) => b.words.year.replace('{n}', String(n));
+---
+
+<div class="bill" data-bill>
+  <script type="application/json" data-script set:html={json({ ...b, lang: t.lang as Lang, ours: pro.total[1] })} />
+  {
+    b.plans.length > 1 && (
+      <div class="ia__switch mono" role="group" aria-label={b.words.switchLabel}>
+        {b.plans.map((p, i) => (
+          <button type="button" data-plan={i} aria-pressed={i === 0 ? 'true' : 'false'}>
+            {p.tab}
+          </button>
+        ))}
+      </div>
+    )
+  }
+  <p class="bill__clock" aria-hidden="true">
+    <b data-count>{b.months}</b>
+    <span data-unit>{b.words.months}</span>
+  </p>
+  <div class="bill__body" role="img" aria-label={b.words.label}>
+    <div class="receipt bill__them" aria-hidden="true">
+      <div class="receipt__paper">
+        <p class="receipt__head">{b.head}</p>
+        <p class="receipt__sub" data-sub>{plan.sub}</p>
+        <ul class="receipt__lines bill__feed" data-feed>
+          {
+            yearly.map((sum, y) => (
+              <li>
+                <span>{year(y + 1)}</span>
+                <i />
+                <span>{money(sum)}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="receipt__total">
+          <span>{b.words.total}</span>
+          <i />
+          <span data-total>{money(total)}</span>
+        </p>
+      </div>
+    </div>
+    <div class="receipt receipt--pro bill__us" aria-hidden="true">
+      <div class="receipt__paper">
+        <Mark class="receipt__mark" />
+        <p class="receipt__head">{pro.head}</p>
+        <p class="receipt__sub">{pro.sub}</p>
+        <ul class="receipt__lines bill__feed" data-ours>
+          <li>
+            <span>{b.words.once}</span>
+            <i />
+            <span>{pro.total[1]}</span>
+          </li>
+          {
+            yearly.slice(1).map((_, y) => (
+              <li data-year>
+                <span>{year(y + 2)}</span>
+                <i />
+                <span>{b.words.nothing}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="receipt__total">
+          <span>{pro.total[0]}</span>
+          <i />
+          <span>{pro.total[1]}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import '../../scripts/demos/bill';
+</script>

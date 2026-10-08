@@ -1,23 +1,51 @@
 ---
 import { CONTACT_EMAIL, LANGUAGES } from '../config';
 import { dicts, path, type Dict, type Lang } from '../i18n';
+import { guides } from '../i18n/guides';
 
 interface Props {
   t: Dict;
 }
 const { t } = Astro.props;
 const f = t.footer;
+const lang = t.lang as Lang;
 const others = LANGUAGES.filter((l) => l !== t.lang);
+// The guides, from every page: nchova next to the others, and the jobs it does.
+const g = guides(lang);
+const groups = g
+  ? ([
+      [g.words.compare, g.hub.page, g.list.filter((x) => x.group === 'compare')],
+      [g.words.use, '', g.list.filter((x) => x.group === 'use')],
+    ] as const).filter(([, , list]) => list.length > 0)
+  : [];
 ---
 
 <footer class="footer" data-footer>
   <div class="wrap">
     <p class="footer__word" aria-hidden="true">nchova</p>
+    {
+      groups.length > 0 && (
+        <nav class="footer__guides" aria-label="guides">
+          {groups.map(([label, hub, list]) => (
+            <div>
+              <p class="mono">{hub ? <a href={path(lang, hub)}>{label}</a> : label}</p>
+              <ul>
+                {list.map((x) => (
+                  <li>
+                    <a href={path(lang, x.page)}>{x.short}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </nav>
+      )
+    }
     <div class="footer__row">
       <p class="footer__colophon">{f.colophon}</p>
       <nav class="footer__links mono" aria-label="footer">
-        <a href={path(t.lang as Lang, 'privacy/')}>{f.privacy}</a>
-        <a href={path(t.lang as Lang, 'terms/')}>{f.terms}</a>
+        <a href={path(lang, 'privacy/')}>{f.privacy}</a>
+        <a href={path(lang, 'terms/')}>{f.terms}</a>
         <a href={`mailto:${CONTACT_EMAIL}`}>{f.contact}</a>
         {
           others.map((l) => (

@@ -6,8 +6,12 @@ import type { Dict } from '../../i18n';
 
 interface Props {
   t: Dict;
+  /** The same scene with other words (the guides: another call app, other sentences). */
+  demo?: Dict['meeting']['demo'];
+  /** The call is in the browser (Google Meet): the Dock shows the browser running. */
+  browser?: boolean;
 }
-const d = Astro.props.t.meeting.demo;
+const d = Astro.props.demo ?? Astro.props.t.meeting.demo;
 ---
 
 <div class="md" data-meeting>
@@ -61,7 +65,7 @@ const d = Astro.props.t.meeting.demo;
         </div>
       </div>
 
-      <Dock />
+      <Dock browser={Astro.props.browser} />
 
       <div class="mpill" data-pill aria-hidden="true">
         <i class="pill__dot"></i>

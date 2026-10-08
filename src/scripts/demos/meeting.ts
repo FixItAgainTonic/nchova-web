@@ -6,7 +6,8 @@ import { film, type Run } from './run';
 
 interface Data {
   me: string;
-  bubbles: [string, string][];
+  /** Who speaks (their tile lights up), what they say, and how the card labels them: Voice 1, Voice 2… */
+  bubbles: [string, string, string?][];
   jotted: string;
 }
 
@@ -76,7 +77,7 @@ function setup(root: HTMLElement) {
       cursor.classList.remove('show');
       await run.wait(700);
 
-      for (const [who, line] of data.bubbles) {
+      for (const [who, line, label] of data.bubbles) {
         const tile = tiles.find((t) => t.dataset.tile === (who || 'me'));
         tiles.forEach((t) => t.classList.toggle('talking', t === tile));
         // Each sentence appears a few seconds after it is said: here, a beat.
@@ -86,7 +87,7 @@ function setup(root: HTMLElement) {
         if (who) {
           const name = document.createElement('span');
           name.className = 'bubble__who';
-          name.textContent = who;
+          name.textContent = label ?? who;
           b.append(name);
         }
         const p = document.createElement('p');

@@ -1,0 +1,133 @@
+---
+// A guide: one page for one search. nchova next to another app (Wispr Flow, Otter…), or one job done with it (a Zoom
+// call transcribed, dictation offline). The title and the answer in three lines first, then blocks of prose, the home
+// page's demos with other words, and the animations made for these pages; the closing and the footer as everywhere.
+import Base from '../layouts/Base.astro';
+import Nav from './Nav.astro';
+import Bracket from './Bracket.astro';
+import Closing from './Closing.astro';
+import Footer from './Footer.astro';
+import GuideBlock from './GuideBlock.astro';
+import { DOWNLOAD_URL, SITE } from '../config';
+import { dicts, md, path, plain, rich, type Lang } from '../i18n';
+import { guideLangs, guides, type Guide } from '../i18n/guides';
+import '../styles/guides.css';
+
+interface Props {
+  lang: Lang;
+  guide: Guide;
+}
+const { lang, guide: g } = Astro.props;
+const t = dicts[lang];
+const all = guides(lang)!;
+const w = all.words;
+const url = (page: string) => new URL(path(lang, page), SITE).href;
+
+// Home › Compare › Wispr Flow, or Home › Offline dictation.
+const crumbs: [string, string][] = [
+  ['nchova', ''],
+  ...(g.group === 'compare' ? [[w.compare, all.hub.page] as [string, string]] : []),
+  [g.short, g.page],
+];
+const faqs = g.blocks.flatMap((b) => (b.kind === 'faq' ? b.items : []));
+const graph = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map(([name, page], i) => ({ '@type': 'ListItem', position: i + 1, name, item: url(page) })),
+  },
+  ...(faqs.length
+    ? [
+        {
+          '@type': 'FAQPage',
+          mainEntity: faqs.map(([q, a]) => ({ '@type': 'Question', name: plain(q), acceptedAnswer: { '@type': 'Answer', text: plain(a) } })),
+        },
+      ]
+    : []),
+];
+// The other pages of the same kind first, then the rest.
+const related = [...all.list.filter((o) => o.group === g.group), ...all.list.filter((o) => o.group !== g.group)].filter((o) => o.id !== g.id);
+---
+
+<Base lang={lang} title={g.metaTitle} description={g.description} page={g.page} langs={guideLangs(g.id)} graph={graph}>
+  <Nav t={t} away from={`${g.id}-nav`} />
+  <main id="main" class="guide">
+    <header class="ghero">
+      <div class="wrap">
+        <nav class="crumbs mono" aria-label="breadcrumbs">
+          {
+            crumbs.map(([name, page], i) =>
+              i < crumbs.length - 1 ? (
+                <>
+                  <a href={path(lang, page)}>{name}</a>
+                  <span aria-hidden="true">›</span>
+                </>
+              ) : (
+                <span aria-current="page">{name}</span>
+              ),
+            )
+          }
+        </nav>
+        <p class="kicker"><Bracket>{g.kicker}</Bracket></p>
+        <h1 class="ghero__title" set:html={rich(g.title)} />
+        <p class="ghero__lead" set:html={md(g.lead, lang)} />
+        <div class="ghero__cta">
+          <a class="btn btn--lg" href={`${DOWNLOAD_URL}?from=${g.id}-hero`}><Bracket>{w.cta}</Bracket></a>
+          <span class="mono ghero__note">{w.ctaNote}</span>
+        </div>
+        <p class="mono ghero__meta">{w.meta}</p>
+        {
+          g.short3 && (
+            <div class="short">
+              <p class="short__label mono">{w.inShort}</p>
+              <dl class="short__list">
+                {g.short3.map(([label, text]) => (
+                  <div>
+                    <dt set:html={rich(label)} />
+                    <dd set:html={md(text, lang)} />
+                  </div>
+                ))}
+              </dl>
+            </div>
+          )
+        }
+      </div>
+    </header>
+
+    {g.blocks.map((block, i) => <GuideBlock block={block} t={t} lang={lang} n={i} />)}
+
+    <section class="gsec gmore">
+      <div class="wrap">
+        {
+          g.sources && (
+            <p class="gmore__sources mono">
+              {w.sources} {g.checked}:{' '}
+              {g.sources.map(([label, href], i) => (
+                <>
+                  <a href={href} rel="nofollow noopener">
+                    {label}
+                  </a>
+                  {i < g.sources!.length - 1 && ' · '}
+                </>
+              ))}
+            </p>
+          )
+        }
+        <h2 class="gmore__title mono">{w.more}</h2>
+        <ul class="gmore__list">
+          {
+            related.map((o) => (
+              <li>
+                <a href={path(lang, o.page)}>
+                  <span class="gmore__kind mono">{o.group === 'compare' ? w.compare : w.use}</span>
+                  <span class="gmore__name">{o.short}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+  </main>
+  <Closing t={t} from={`${g.id}-closing`} />
+  <Footer t={t} />
+</Base>

@@ -1,17 +1,24 @@
 ---
 // The Dock at the bottom of the demo's desktop: what makes it read as a Mac, and what the meeting pill sits just above,
 // as on a real screen (the app anchors it 22 pt over the visible frame, the Dock excluded). Generic icons drawn here:
-// no other company's logo. A dot under the apps that are running: the call, and nchova.
+// no other company's logo. A dot under the apps that are running: the call (its own app, or the browser), and nchova.
 import Mark from '../Mark.astro';
+
+interface Props {
+  /** The call runs in the browser (Google Meet), not in an app of its own. */
+  browser?: boolean;
+}
+const { browser = false } = Astro.props;
 ---
 
 <div class="dock" aria-hidden="true">
   <span class="dock__app">
-    <svg viewBox="0 0 40 40"><defs><linearGradient id="dk-f" x1="0" y1="0" x2="1" y2="0"><stop offset=".5" stop-color="#e9f2ff" /><stop offset=".5" stop-color="#3d8cf0" /></linearGradient></defs><rect width="40" height="40" rx="9" fill="url(#dk-f)" /><path d="M13 14v4M27 14v4M11 26c5 4 13 4 18 0" stroke="#1f2a44" stroke-width="2.4" fill="none" stroke-linecap="round" /></svg>
+    <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#3d8cf0" /><path d="M9 0H20V40H9A9 9 0 0 1 0 31V9A9 9 0 0 1 9 0Z" fill="#e9f2ff" /><path d="M13 14v4M27 14v4M11 26c5 4 13 4 18 0" stroke="#1f2a44" stroke-width="2.4" fill="none" stroke-linecap="round" /></svg>
     <i></i>
   </span>
   <span class="dock__app">
     <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#f4f6f9" /><circle cx="20" cy="20" r="13" fill="#2f86eb" /><path d="M20 9.5 23 20 20 30.5 17 20Z" fill="#fff" transform="rotate(40 20 20)" /><path d="M20 9.5 23 20H17Z" fill="#ff4d4d" transform="rotate(40 20 20)" /></svg>
+    {browser && <i></i>}
   </span>
   <span class="dock__app">
     <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#3b8bf5" /><rect x="8" y="12" width="24" height="16" rx="2.5" fill="#fff" /><path d="M8.8 13 20 21.5 31.2 13" stroke="#3b8bf5" stroke-width="2" fill="none" /></svg>
@@ -21,7 +28,7 @@ import Mark from '../Mark.astro';
   </span>
   <span class="dock__app">
     <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#2e7ff6" /><rect x="8" y="14" width="16" height="12" rx="3" fill="#fff" /><path d="M25 18.5 32 14.5v11l-7-4z" fill="#fff" /></svg>
-    <i></i>
+    {!browser && <i></i>}
   </span>
   <span class="dock__app">
     <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#fffdf6" /><path d="M0 9a9 9 0 0 1 9-9h22a9 9 0 0 1 9 9v4H0z" fill="#ffd34d" /><path d="M8 20h24M8 26h24M8 32h16" stroke="#d9d4c7" stroke-width="1.6" /></svg>

@@ -1,0 +1,21 @@
+---
+// The guides in the default language: nchova.com/alternatives/wispr-flow/, /transcribe/zoom/… and the list of
+// comparisons, /alternatives/. Their words are in src/i18n/guides/.
+import Guide from '../components/Guide.astro';
+import GuideHub from '../components/GuideHub.astro';
+import { DEFAULT } from '../i18n';
+import { guides } from '../i18n/guides';
+
+export function getStaticPaths() {
+  const g = guides(DEFAULT);
+  if (!g) return [];
+  return [
+    { params: { guide: g.hub.page.replace(/\/$/, '') }, props: { id: 'hub' } },
+    ...g.list.map((guide) => ({ params: { guide: guide.page.replace(/\/$/, '') }, props: { id: guide.id } })),
+  ];
+}
+const g = guides(DEFAULT)!;
+const guide = g.list.find((x) => x.id === Astro.props.id);
+---
+
+{guide ? <Guide lang={DEFAULT} guide={guide} /> : <GuideHub lang={DEFAULT} />}

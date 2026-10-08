@@ -1,0 +1,120 @@
+---
+// nchova.com/alternatives/: every app nchova is compared with, on one table (what it does, where it transcribes,
+// whether a bot joins the call, how it is paid), each name a link to its own page; then the other guides.
+import Base from '../layouts/Base.astro';
+import Nav from './Nav.astro';
+import Bracket from './Bracket.astro';
+import Mark from './Mark.astro';
+import Closing from './Closing.astro';
+import Footer from './Footer.astro';
+import { DOWNLOAD_URL, SITE } from '../config';
+import { dicts, md, path, rich, type Lang } from '../i18n';
+import { guideLangs, guides } from '../i18n/guides';
+import '../styles/guides.css';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const t = dicts[lang];
+const all = guides(lang)!;
+const h = all.hub;
+const w = all.words;
+const byId = new Map(all.list.map((g) => [g.id, g]));
+const graph = [
+  {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'nchova', item: new URL(path(lang), SITE).href },
+      { '@type': 'ListItem', position: 2, name: w.compare, item: new URL(path(lang, h.page), SITE).href },
+    ],
+  },
+];
+const uses = all.list.filter((g) => g.group === 'use');
+---
+
+<Base lang={lang} title={h.metaTitle} description={h.description} page={h.page} langs={guideLangs('hub')} graph={graph}>
+  <Nav t={t} away from="alternatives-nav" />
+  <main id="main" class="guide">
+    <header class="ghero">
+      <div class="wrap">
+        <nav class="crumbs mono" aria-label="breadcrumbs">
+          <a href={path(lang)}>nchova</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">{w.compare}</span>
+        </nav>
+        <p class="kicker"><Bracket>{h.kicker}</Bracket></p>
+        <h1 class="ghero__title" set:html={rich(h.title)} />
+        <p class="ghero__lead" set:html={md(h.lead, lang)} />
+        <div class="ghero__cta">
+          <a class="btn btn--lg" href={`${DOWNLOAD_URL}?from=alternatives-hero`}><Bracket>{w.cta}</Bracket></a>
+          <span class="mono ghero__note">{w.ctaNote}</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="gsec">
+      <div class="wrap">
+        <div class="vs">
+          <table class="vs__table hub__table">
+            <thead>
+              <tr>
+                {h.cols.map((c) => <th scope="col">{c}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hub__us">
+                <th scope="row">
+                  <Mark class="vs__mark" />
+                  nchova
+                </th>
+                <td data-label={h.cols[1]}>{h.us.does}</td>
+                <td data-label={h.cols[2]}>{h.us.where}</td>
+                <td data-label={h.cols[3]}>{h.us.bot}</td>
+                <td data-label={h.cols[4]}>{h.us.price}</td>
+              </tr>
+              {
+                h.rows.map((r) => {
+                  const g = byId.get(r.id)!;
+                  return (
+                    <tr>
+                      <th scope="row">
+                        <a class="link" href={path(lang, g.page)}>
+                          {g.short}
+                        </a>
+                      </th>
+                      <td data-label={h.cols[1]}>{r.does}</td>
+                      <td data-label={h.cols[2]}>{r.where}</td>
+                      <td data-label={h.cols[3]}>{r.bot}</td>
+                      <td data-label={h.cols[4]}>{r.price}</td>
+                    </tr>
+                  );
+                })
+              }
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="gsec gmore">
+      <div class="wrap">
+        <h2 class="gmore__title mono">{w.more}</h2>
+        <ul class="gmore__list">
+          {
+            uses.map((o) => (
+              <li>
+                <a href={path(lang, o.page)}>
+                  <span class="gmore__kind mono">{w.use}</span>
+                  <span class="gmore__name">{o.short}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+  </main>
+  <Closing t={t} from="alternatives-closing" />
+  <Footer t={t} />
+</Base>

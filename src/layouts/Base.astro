@@ -8,7 +8,7 @@ import '../styles/sections.css';
 import '../styles/demos.css';
 import { COMPANY, CONTACT_EMAIL, LANGUAGES, PRO_PRICE, SITE } from '../config';
 import { json } from '../lib/json';
-import { DEFAULT, path, type Lang } from '../i18n';
+import { path, type Lang } from '../i18n';
 
 interface Props {
   lang: Lang;
@@ -21,36 +21,36 @@ interface Props {
   product?: boolean;
   /** Keep the page out of search results (nchova.com/meet, reached from a card handed out in person). */
   noindex?: boolean;
+  /** The languages this page is published in, when not all of them (the guides, written in English first). */
+  langs?: Lang[];
+  /** More for search engines: the guides' breadcrumbs and questions. */
+  graph?: Record<string, unknown>[];
 }
 
-const { lang, title, description, page = '', ocean = true, product = false, noindex = false } = Astro.props;
+const { lang, title, description, page = '', ocean = true, product = false, noindex = false, langs = LANGUAGES, graph = [] } = Astro.props;
 const canonical = new URL(path(lang, page), SITE).href;
-// The same page in every published language, once there is more than one.
-const alternates = LANGUAGES.length > 1 ? LANGUAGES.map((l) => ({ l, href: new URL(path(l, page), SITE).href })) : [];
+// The same page in every language it is published in, once there is more than one.
+const alternates = langs.length > 1 ? langs.map((l) => ({ l, href: new URL(path(l, page), SITE).href })) : [];
 const ogImage = new URL(`/og-${lang}.png`, SITE).href;
 const locale = { en: 'en_GB', it: 'it_IT' }[lang];
 const org = { '@type': 'Organization', '@id': `${SITE}/#org`, name: COMPANY.name, vatID: `IT${COMPANY.vat}`, email: CONTACT_EMAIL, url: `${SITE}/` };
-const structured = product && {
-  '@context': 'https://schema.org',
-  '@graph': [
-    org,
-    {
-      '@type': 'SoftwareApplication',
-      name: 'nchova',
-      url: canonical,
-      description,
-      image: ogImage,
-      inLanguage: lang,
-      applicationCategory: 'BusinessApplication',
-      operatingSystem: 'macOS 26 or later',
-      publisher: { '@id': org['@id'] },
-      offers: [
-        { '@type': 'Offer', name: 'nchova', price: '0', priceCurrency: PRO_PRICE.currency },
-        { '@type': 'Offer', name: 'nchova Pro', price: PRO_PRICE.amount, priceCurrency: PRO_PRICE.currency },
-      ],
-    },
+const app = {
+  '@type': 'SoftwareApplication',
+  name: 'nchova',
+  url: canonical,
+  description,
+  image: ogImage,
+  inLanguage: lang,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'macOS 26 or later',
+  publisher: { '@id': org['@id'] },
+  offers: [
+    { '@type': 'Offer', name: 'nchova', price: '0', priceCurrency: PRO_PRICE.currency },
+    { '@type': 'Offer', name: 'nchova Pro', price: PRO_PRICE.amount, priceCurrency: PRO_PRICE.currency },
   ],
 };
+const nodes = [...(product ? [org, app] : []), ...graph];
+const structured = nodes.length > 0 && { '@context': 'https://schema.org', '@graph': nodes };
 ---
 
 <!doctype html>
@@ -64,7 +64,7 @@ const structured = product && {
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     {alternates.map((a) => <link rel="alternate" hreflang={a.l} href={a.href} />)}
-    {alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(path(DEFAULT, page), SITE).href} />}
+    {alternates.length > 0 && <link rel="alternate" hreflang="x-default" href={new URL(path(langs[0], page), SITE).href} />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#f2eee6" />

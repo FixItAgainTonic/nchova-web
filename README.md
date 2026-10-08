@@ -24,6 +24,7 @@ npm run check      # tipi e template
 | | |
 |---|---|
 | `src/i18n/it.ts`, `en.ts` | tutti i testi, demo comprese. `*parola*` è in corsivo |
+| `src/i18n/guides/` | le guide, una pagina per ricerca: nchova accanto agli altri (`/alternatives/…`) e i lavori che fa (`/transcribe/zoom/`, `/dictation/offline/`, `/mcp/`…). Per ora in inglese; una lingua senza file non ha guide |
 | `src/config.ts` | link di download e di acquisto, contatti |
 | `src/components/` | le sezioni della pagina; `demos/` le cinque demo animate |
 | `src/scripts/fish/` | il nuoto: `mark.ts` (il marchio e la sua onda), `swimmer.ts`, `tank.ts`, `field.ts` (il testo che si scosta) |

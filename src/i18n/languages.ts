@@ -39,7 +39,8 @@ export function languageCodes(lang: 'it' | 'en') {
   };
 }
 
-/** The tokens the copy uses: {free}, {pro}, {nFree}, {nPro}, {proOnly}, {nProOnly}. */
+/** The tokens the copy uses: {free}, {pro}, {nFree}, {nPro}, {proOnly}, {nProOnly}, and {nAll}, every language either
+ *  engine knows (Apple's and Parakeet's together, each counted once). */
 export function languageTokens(lang: 'it' | 'en'): Record<string, string> {
   const name = (code: string) => NAMES[lang][code];
   const byName = (a: string, b: string) => name(a).localeCompare(name(b), lang);
@@ -50,6 +51,7 @@ export function languageTokens(lang: 'it' | 'en'): Record<string, string> {
     nFree: String(APPLE.length),
     nPro: String(PARAKEET.length),
     nProOnly: String(proOnly.length),
+    nAll: String(APPLE.length + proOnly.length),
     proOnly: join(EXAMPLES.filter((c) => proOnly.includes(c)).map(name), lang),
   };
 }

@@ -4,8 +4,10 @@ import type { Dict } from '../../i18n';
 
 interface Props {
   t: Dict;
+  /** The same scene with other words (the guides: another call app, other sentences). */
+  demo?: Dict['voices']['demo'];
 }
-const d = Astro.props.t.voices.demo;
+const d = Astro.props.demo ?? Astro.props.t.voices.demo;
 ---
 
 <div class="vd" data-voices>

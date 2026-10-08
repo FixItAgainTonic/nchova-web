@@ -7,7 +7,7 @@ export type Lang = 'it' | 'en';
 export type { Dict };
 
 /** Fills `{token}`s (the language lists, the company) in every string of the dictionary. */
-function fill<T>(value: T, tokens: Record<string, string>): T {
+export function fill<T>(value: T, tokens: Record<string, string>): T {
   if (typeof value === 'string') return value.replace(/\{(\w+)\}/g, (all, key) => tokens[key] ?? all) as T;
   if (Array.isArray(value)) return value.map((v) => fill(v, tokens)) as T;
   if (value && typeof value === 'object')
@@ -21,9 +21,12 @@ export const DEFAULT: Lang = LANGUAGES[0];
 /** Where a page lives in a language: /privacy/ in the default one, /it/privacy/ in the others. */
 export const path = (lang: Lang, page = '') => (lang === DEFAULT ? '/' : `/${lang}/`) + page;
 
+/** What `{token}`s become in a language. */
+export const tokens = (lang: Lang) => ({ ...languageTokens(lang), company: COMPANY.name, vat: COMPANY.vat });
+
 export const dicts: Record<Lang, Dict> = {
-  it: fill(it, { ...languageTokens('it'), company: COMPANY.name, vat: COMPANY.vat }),
-  en: fill(en, { ...languageTokens('en'), company: COMPANY.name, vat: COMPANY.vat }),
+  it: fill(it, tokens('it')),
+  en: fill(en, tokens('en')),
 };
 
 const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -38,7 +41,20 @@ export function ui(s: string): string {
   return escape(s).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
 }
 
+/** The guides' paragraphs: `*italic*`, `**on screen**`, `[a link](@page/)` to a page of the site in `lang`, or
+ *  `[a link](https://…)` out of it. Everything else escaped. */
+export function md(s: string, lang: Lang): string {
+  return escape(s)
+    .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, text: string, href: string) =>
+      href.startsWith('@')
+        ? `<a class="link" href="${path(lang, href.slice(1))}">${text}</a>`
+        : `<a class="link" href="${href}" rel="nofollow noopener">${text}</a>`,
+    )
+    .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+    .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+}
+
 /** The same text without the markup, for attributes and titles. */
 export function plain(s: string): string {
-  return s.replace(/\*/g, '');
+  return s.replace(/\[([^\]]+)\]\([^)\s]+\)/g, '$1').replace(/\*/g, '');
 }

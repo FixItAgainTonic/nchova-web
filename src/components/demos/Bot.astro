@@ -1,0 +1,87 @@
+---
+// A notetaker bot next to nchova, in a call. The bot's way: a tile more joins the call, with its name and a red dot, and
+// everyone is told; the transcript is the bot's. nchova's way: nobody joins; the pill appears on your own screen only,
+// and the transcript writes itself in the card above it. The switch picks one; left alone the film shows both.
+import Mark from '../Mark.astro';
+import Dock from './Dock.astro';
+import { json } from '../../lib/json';
+import type { Bot } from '../../i18n/guides/types';
+
+interface Props {
+  bot: Bot;
+}
+const { bot: b } = Astro.props;
+const w = b.words;
+const modes = [
+  ['them', b.them.tab],
+  ['us', b.us.tab],
+] as const;
+---
+
+<div class="bot" data-bot data-mode="them">
+  <script type="application/json" data-script set:html={json({ bubbles: w.bubbles })} />
+  <div class="ia__switch mono" role="group" aria-label={w.switchLabel}>
+    {
+      modes.map(([id, tab], i) => (
+        <button type="button" data-pick={id} aria-pressed={i === 0 ? 'true' : 'false'}>
+          {tab}
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="stage stage--desk bot__stage" role="img" aria-label={w.label}>
+    <div class="stage__in" aria-hidden="true">
+      <div class="bot__call">
+        <div class="win__bar bot__bar">
+          <span class="lights"><i></i><i></i><i></i></span>
+          <span class="win__title">{w.call}</span>
+          {b.them.banner && <span class="bot__rec" data-rec><i></i>REC</span>}
+        </div>
+        <div class="bot__grid" data-grid>
+          {
+            w.tiles.map((name, i) => (
+              <div class="call__tile bot__tile" data-tile={i === w.tiles.length - 1 ? 'me' : name}>
+                <span class="call__face">{name[0]}</span>
+                <span class="call__name">{name}</span>
+              </div>
+            ))
+          }
+          <div class="call__tile bot__tile bot__tile--bot" data-bot-tile>
+            <span class="bot__face">
+              <svg viewBox="0 0 24 24"><rect x="5" y="8" width="14" height="10" rx="3"></rect><path d="M12 8V5M9.5 13h.01M14.5 13h.01"></path></svg>
+            </span>
+            <span class="call__name"><i class="bot__dot"></i>{b.them.name}</span>
+          </div>
+        </div>
+        <div class="bot__toast" data-toast>{b.them.joined}</div>
+        {b.them.banner && <div class="bot__banner" data-banner><i></i>{b.them.banner}</div>}
+      </div>
+
+      <div class="mcard bot__card" data-card>
+        <div class="mcard__head">
+          <b>{w.call}</b>
+          <span class="mcard__clock">{w.live}</span>
+        </div>
+        <div class="mcard__body">
+          <div class="mcard__chat" data-chat></div>
+        </div>
+      </div>
+
+      <Dock />
+
+      <div class="mpill" data-pill>
+        <i class="pill__dot"></i>
+        <n-fish fit></n-fish>
+      </div>
+    </div>
+  </div>
+  <p class="bot__caption mono" aria-hidden="true">
+    <span data-only="them">{b.them.caption}</span>
+    <span data-only="us"><Mark class="bot__mark" />{b.us.caption}</span>
+  </p>
+</div>
+
+<script>
+  import '../../scripts/demos/bot';
+</script>

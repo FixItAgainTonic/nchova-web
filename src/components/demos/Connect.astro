@@ -1,0 +1,64 @@
+---
+// nchova's Settings › Assistants, as the app draws it (SettingsView): the apps on this Mac with a Connect button each,
+// the others under a disclosure, the footer that says what is shared. The pointer connects two of them: a spinner, then
+// "Connected", the button turns to Reconnect and the line under the list says what to do next, in the app's words.
+import { json } from '../../lib/json';
+import type { Connect } from '../../i18n/guides/types';
+
+interface Props {
+  connect: Connect;
+}
+const { connect: c } = Astro.props;
+---
+
+<div class="cn" data-connect>
+  <script type="application/json" data-script set:html={json(c)} />
+  <div class="stage cn__stage" role="img" aria-label={c.label}>
+    <div class="stage__in" aria-hidden="true">
+      <div class="win cn__win">
+        <div class="win__bar">
+          <span class="lights"><i></i><i></i><i></i></span>
+          <span class="win__title">{c.tab}</span>
+        </div>
+        <div class="ia__tabs">
+          {c.tabs.map((tab) => <span class:list={[tab === c.tab && 'on']}>{tab}</span>)}
+        </div>
+        <div class="ia__form cn__form">
+          <p class="ia__fhead">{c.section}</p>
+          <div class="ia__group">
+            {
+              c.rows.map((row, i) => (
+                <div class="ia__row cn__row" data-row={i}>
+                  <span class="cn__icon">{row.name[0]}</span>
+                  <span class="cn__name">{row.name}</span>
+                  <span class="cn__status" data-status>
+                    <i class="ia__spin" data-spin />
+                    <small data-ok>{c.connected}</small>
+                  </span>
+                  <span class="ia__btn" data-button data-click={row.click ? '' : undefined}>
+                    <span data-label-first>{c.button}</span>
+                    <span data-label-again>{c.again}</span>
+                  </span>
+                </div>
+              ))
+            }
+            <div class="ia__row cn__others">
+              <svg class="ia__disc" viewBox="0 0 12 12"><path d="M4.2 2.5 7.8 6l-3.6 3.5"></path></svg>
+              {c.others}
+            </div>
+          </div>
+          <p class="cn__notice" data-notice></p>
+          <p class="cn__footer">{c.footer}</p>
+        </div>
+      </div>
+
+      <svg class="cursor" data-cursor viewBox="0 0 24 24">
+        <path d="M5 2.5v17.2l4.3-4.1 2.9 6.6 2.7-1.2-2.9-6.5 6-.4z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  import '../../scripts/demos/connect';
+</script>

@@ -1,0 +1,160 @@
+---
+// One block of a guide (src/i18n/guides/types.ts says which kinds there are).
+import Mark from './Mark.astro';
+import Dictation from './demos/Dictation.astro';
+import Meeting from './demos/Meeting.astro';
+import Voices from './demos/Voices.astro';
+import Notes from './demos/Notes.astro';
+import Assistants from './demos/Assistants.astro';
+import Bill from './demos/Bill.astro';
+import Route from './demos/Route.astro';
+import Bot from './demos/Bot.astro';
+import Connect from './demos/Connect.astro';
+import { md, rich, type Dict, type Lang } from '../i18n';
+import type { Block } from '../i18n/guides';
+
+interface Props {
+  block: Block;
+  t: Dict;
+  lang: Lang;
+  n: number;
+}
+const { block: b, t, lang, n } = Astro.props;
+const h = 'h' in b ? b.h : undefined;
+const lead = 'lead' in b ? b.lead : undefined;
+const id = b.id ?? `s${n + 1}`;
+const stamp = (s: number) => `00:${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`;
+---
+
+<section class:list={['gsec', `gsec--${b.kind}`, b.kind === 'demo' && b.flip && 'feature--flip']} id={id} aria-labelledby={h ? `${id}-title` : undefined}>
+  <div class="wrap">
+    {
+      (h || lead) && (
+        <header class:list={['gsec__head', b.kind === 'prose' && 'gsec__head--prose']}>
+          {h && <h2 id={`${id}-title`} class="gsec__title" set:html={rich(h)} />}
+          {lead && <p class="gsec__lead" set:html={md(lead, lang)} />}
+        </header>
+      )
+    }
+
+    {
+      b.kind === 'prose' && (
+        <div class="gsec__prose">
+          {b.p.map((p) => (
+            <p set:html={md(p, lang)} />
+          ))}
+        </div>
+      )
+    }
+
+    {
+      b.kind === 'points' && (
+        <div class="gpoints">
+          {b.items.map(([label, text, tag]) => (
+            <div class="note">
+              <p class="note__label mono">
+                {label}
+                {tag && <span class="pro">pro</span>}
+              </p>
+              <p class="note__text" set:html={md(text, lang)} />
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    {
+      b.kind === 'steps' && (
+        <ol class="gsteps">
+          {b.steps.map((s) => (
+            <li set:html={md(s, lang)} />
+          ))}
+        </ol>
+      )
+    }
+
+    {
+      b.kind === 'demo' && (
+        <div class:list={['feature__body', !b.notes && 'feature__body--solo']}>
+          <div class="feature__demo">
+            {b.demo.name === 'dictation' && <Dictation t={t} demo={b.demo.data} offline={b.demo.offline} />}
+            {b.demo.name === 'meeting' && <Meeting t={t} demo={b.demo.data} browser={b.demo.browser} />}
+            {b.demo.name === 'voices' && <Voices t={t} demo={b.demo.data} />}
+            {b.demo.name === 'notes' && <Notes t={t} demo={b.demo.data} />}
+            {b.demo.name === 'assistants' && <Assistants t={t} demo={b.demo.data} />}
+          </div>
+          {b.notes && (
+            <aside class="feature__notes">
+              {b.notes.map(([label, text, tag]) => (
+                <div class="note">
+                  <p class="note__label mono">
+                    {label}
+                    {tag && <span class="pro">pro</span>}
+                  </p>
+                  <p class="note__text" set:html={md(text, lang)} />
+                </div>
+              ))}
+            </aside>
+          )}
+        </div>
+      )
+    }
+
+    {
+      b.kind === 'table' && (
+        <div class="vs">
+          <table class="vs__table">
+            <thead>
+              <tr>
+                <td />
+                <th scope="col">{b.them}</th>
+                <th scope="col" class="vs__us">
+                  <Mark class="vs__mark" />
+                  nchova
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {b.rows.map(([what, them, us]) => (
+                <tr>
+                  <th scope="row">{what}</th>
+                  <td data-label={b.them} set:html={md(them, lang)} />
+                  <td class="vs__us" data-label="nchova" set:html={md(us, lang)} />
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )
+    }
+
+    {b.kind === 'bill' && <Bill bill={b.bill} t={t} />}
+    {b.kind === 'route' && <Route route={b.route} t={t} />}
+    {b.kind === 'bot' && <Bot bot={b.bot} />}
+    {b.kind === 'connect' && <Connect connect={b.connect} />}
+
+    {
+      b.kind === 'faq' && (
+        <dl class="faq__list gfaq">
+          {b.items.map(([q, a], i) => (
+            <div class="faq__pair">
+              <dt>
+                <span class="faq__time mono">{stamp(4 + i * 23)}</span>
+                <span class="faq__who mono">{t.faq.you}</span>
+                <span class="faq__q spoken">{q}</span>
+              </dt>
+              <dd>
+                <span class="faq__time mono">{stamp(9 + i * 23)}</span>
+                <span class="faq__who faq__who--us mono">
+                  <Mark class="faq__mark" />
+                  {t.faq.us}
+                </span>
+                <span class="faq__a" set:html={md(a, lang)} />
+              </dd>
+            </div>
+          ))}
+        </dl>
+      )
+    }
+  </div>
+</section>
