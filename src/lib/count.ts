@@ -12,7 +12,7 @@ export async function count(request: Request, event: string, properties: Record<
   // Left to itself the SDK sends the event to VERCEL_URL, the deployment's own *.vercel.app address, which Vercel
   // Authentication guards: 401, and the event is lost without a word (8 Oct 2026). The site's own domain is public.
   // Written out, not taken from the request: without security.allowedDomains Astro sees the host as http://localhost.
-  process.env.VERCEL_WEB_ANALYTICS_ENDPOINT ||= 'https://www.nchova.com/_vercel/insights/event';
+  process.env.VERCEL_WEB_ANALYTICS_ENDPOINT ||= 'https://nchova.com/_vercel/insights/event';
   try {
     await track(event, properties, { request });
   } catch {
