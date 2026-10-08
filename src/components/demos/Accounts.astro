@@ -1,0 +1,214 @@
+---
+// System Settings › Internet Accounts as macOS 26 draws it (light), for nchova.com/help/calendar: the sidebar scrolled down
+// to Internet Accounts, the Add Account sheet (address, or a list of providers), the sign-in, the apps the account may
+// serve with only Calendars left on, then nchova's Settings › Meetings ticking the new calendar. Google or Outlook, from
+// the switch above; the steps written on the page light up as the film reaches them (scripts/demos/accounts.ts).
+import { json } from '../../lib/json';
+import type { Dict } from '../../i18n';
+
+interface Props {
+  t: Dict;
+}
+const d = Astro.props.t.calendarPage.demo;
+const providers = [
+  ['google', d.google],
+  ['outlook', d.outlook],
+] as const;
+const glyphs: Record<number, string> = {
+  0: 'M8 7V5.5a2 2 0 0 1 4 0V7M6.5 7h7v6h-7z',
+  1: 'M10 3.5c2 1.4 3.6 1.6 4.5 1.6 0 4.8-1.8 8-4.5 9.4-2.7-1.4-4.5-4.6-4.5-9.4.9 0 2.5-.2 4.5-1.6z',
+  2: 'M7 13.5c-.6-1-1-2.2-1-3.5a4 4 0 0 1 8 0c0 1.6-.2 2.6-.7 3.6M8.6 14c-.4-1.1-.6-2.5-.6-4a2 2 0 0 1 4 0c0 1.2-.1 2.1-.4 3',
+  3: 'M7.5 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM4.5 14c0-2 1.3-3.3 3-3.3s3 1.3 3 3.3M12.5 9a1.7 1.7 0 1 0 0-3.4M12.5 10.7c1.6 0 3 1.2 3 3.3',
+  5: 'M8.5 10.5a2.5 2.5 0 1 1 2-2.5M10.3 9.6 15 14.3M13.3 12.6l1-1',
+  6: 'M12.2 10.6c0 1.6.6 2.3 1.4 2.3 1.2 0 2-1.5 2-3.4A5.6 5.6 0 1 0 10 15.1M12.2 10a2.2 2.2 0 1 1-4.4 0 2.2 2.2 0 0 1 4.4 0zM12.2 7.6v3',
+  7: 'M6.5 8.5h7M6.5 11.5h7M8.3 6.7v6.6M11.7 6.7v6.6',
+  8: 'M4.5 7h11v7h-11zM4.5 9.5h11',
+};
+const tints = ['#1c1c1e', '#2f7cf6', '#f25366', '#7d8a99', '', '#8e8e93', '#2f7cf6', '#6b5bd6', '#1c1c1e'];
+---
+
+<div class="ia" data-accounts data-provider="google">
+  <script type="application/json" data-script set:html={json({ google: d.google, outlook: d.outlook })} />
+  <div class="ia__switch mono" role="group" aria-label={d.switchLabel}>
+    {
+      providers.map(([id, p], i) => (
+        <button type="button" data-pick={id} aria-pressed={i === 0 ? 'true' : 'false'}>
+          {p.tab}
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="stage ia__stage" role="img" aria-label={d.label}>
+    <div class="stage__in" aria-hidden="true">
+      <div class="win ia__win">
+        <aside class="ia__side">
+          <span class="lights"><i></i><i></i><i></i></span>
+          <div class="ia__search">
+            <svg viewBox="0 0 16 16"><circle cx="6.8" cy="6.8" r="4.6"></circle><path d="M10.3 10.3 14 14"></path></svg>
+            {d.search}
+          </div>
+          <div class="ia__me">
+            <span class="ia__face"></span>
+            <span><b>{d.me}</b><small>{d.apple}</small></span>
+          </div>
+          <div class="ia__items">
+            {
+              d.side.map((label, i) =>
+                label ? (
+                  <div class:list={['ia__item', label === d.before && 'on']} data-side={label === d.pane ? 'accounts' : label === d.before ? 'before' : undefined}>
+                    <span class="ia__icon" style={`background:${tints[i]}`}>
+                      <svg viewBox="0 0 20 20"><path d={glyphs[i]}></path></svg>
+                    </span>
+                    {label}
+                  </div>
+                ) : (
+                  <div class="ia__gap" />
+                ),
+              )
+            }
+          </div>
+        </aside>
+
+        <section class="ia__main">
+          <div class="ia__bar">
+            <span class="ia__nav"><svg viewBox="0 0 20 12"><path d="M5 2 1.5 6 5 10M15 2l3.5 4-3.5 4"></path></svg></span>
+            <span class="ia__ptitle" data-title>{d.before}</span>
+          </div>
+
+          <div class="ia__pane" data-pane="before">
+            <div class="ia__group">
+              <div class="ia__row ia__row--ghost"><i></i><span><em></em><em class="short"></em></span></div>
+              <div class="ia__row ia__row--ghost"><i></i><span><em class="short"></em></span></div>
+            </div>
+            <div class="ia__group">
+              <div class="ia__row ia__row--ghost"><span><em></em></span></div>
+              <div class="ia__row ia__row--ghost"><span><em class="short"></em></span></div>
+            </div>
+          </div>
+
+          <div class="ia__pane" data-pane="accounts">
+            <div class="ia__group">
+              <div class="ia__row">
+                <span class="ia__logo ia__logo--icloud"><svg viewBox="0 0 24 16"><path d="M6.5 14h11a4 4 0 0 0 .6-8 5.5 5.5 0 0 0-10.4-1.4A4.8 4.8 0 0 0 6.5 14z"></path></svg></span>
+                <span><b>{d.icloud}</b><small>{d.icloudApps}</small></span>
+                <svg class="ia__chev" viewBox="0 0 8 12"><path d="M2 1.5 6.5 6 2 10.5"></path></svg>
+              </div>
+              <div class="ia__row ia__new" data-new>
+                <span class="ia__logo ia__logo--letter">
+                  {providers.map(([id, p]) => <span data-only={id}>{p.account[0]}</span>)}
+                </span>
+                <span>
+                  <b>{providers.map(([id, p]) => <span data-only={id}>{p.account}</span>)}</b>
+                  <small>{d.calendars}</small>
+                </span>
+                <svg class="ia__chev" viewBox="0 0 8 12"><path d="M2 1.5 6.5 6 2 10.5"></path></svg>
+              </div>
+            </div>
+            <div class="ia__actions">
+              <span class="ia__btn" data-add>{d.add}</span>
+              <span class="ia__help">?</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="ia__sheet" data-sheet>
+          <div class="ia__view" data-view="email">
+            <p class="ia__stitle">{d.addTitle}</p>
+            <p class="ia__lead">{d.addLead}</p>
+            <div class="ia__field ia__field--empty">{d.email}</div>
+            <span class="ia__link" data-from-list>{d.fromList}</span>
+            <div class="ia__buttons"><span class="ia__btn">{d.cancel}</span><span class="ia__btn ia__btn--off">{d.next}</span></div>
+          </div>
+
+          <div class="ia__view" data-view="list">
+            <p class="ia__stitle">{d.addTitle}</p>
+            <div class="ia__list">
+              {d.list.map((name, i) => <div class="ia__provider" data-provider-row={i}>{name}</div>)}
+            </div>
+            <div class="ia__buttons"><span class="ia__btn">{d.cancel}</span><span class="ia__btn ia__btn--blue" data-continue>{d.next}</span></div>
+          </div>
+
+          {
+            providers.map(([id, p]) => (
+              <div class="ia__view" data-view="signin" data-only={id}>
+                <p class="ia__stitle">{p.title}</p>
+                {id === 'outlook' && (
+                  <div class="ia__form-row">
+                    <span>{d.nameLabel}</span>
+                    <div class="ia__field" data-type-name />
+                  </div>
+                )}
+                <div class="ia__form-row">
+                  <span>{d.emailLabel}</span>
+                  <div class="ia__field" data-type-address />
+                </div>
+                <div class="ia__buttons">
+                  <i class="ia__spin" data-spin />
+                  <span class="ia__btn">{d.cancel}</span>
+                  <span class="ia__btn ia__btn--blue" data-sign-in>{p.signIn}</span>
+                </div>
+              </div>
+            ))
+          }
+
+          {
+            providers.map(([id, p]) => (
+              <div class="ia__view" data-view="apps" data-only={id}>
+                <p class="ia__lead">{d.appsLead}</p>
+                <div class="ia__apps">
+                  {p.apps.map((app) => (
+                    <div class="ia__check" data-app={app === d.calendars ? 'keep' : 'drop'}>
+                      <span class="ia__box">
+                        <svg viewBox="0 0 12 12"><path d="M2.5 6.3 5 8.6 9.6 3.4"></path></svg>
+                      </span>
+                      {app}
+                    </div>
+                  ))}
+                </div>
+                <div class="ia__buttons"><span class="ia__btn ia__btn--blue" data-done>{d.done}</span></div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="win ia__app" data-app-win>
+        <div class="win__bar">
+          <span class="lights"><i></i><i></i><i></i></span>
+          <span class="win__title">{d.app.title}</span>
+        </div>
+        <div class="ia__tabs">
+          {d.app.tabs.map((tab) => <span class:list={[tab === d.app.title && 'on']}>{tab}</span>)}
+        </div>
+        <div class="ia__form">
+          <p class="ia__fhead">{d.app.section}</p>
+          <div class="ia__group">
+            <div class="ia__row ia__row--kv"><span>{d.app.calendar}</span><small>{d.app.connected}</small></div>
+            <div class="ia__row ia__row--kv">
+              <span><svg class="ia__disc" viewBox="0 0 12 12"><path d="M2.5 4.2 6 7.8l3.5-3.6"></path></svg>{d.app.toRead}</span>
+            </div>
+            <div class="ia__row ia__row--cal">
+              <span>{d.app.home} <small>{d.app.homeAccount}</small></span>
+              <span class="ia__toggle on"></span>
+            </div>
+            <div class="ia__row ia__row--cal ia__new" data-new-cal>
+              <span>
+                {providers.map(([id, p]) => <span data-only={id}>{p.calendar} <small>{p.account}</small></span>)}
+              </span>
+              <span class="ia__toggle" data-toggle></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <svg class="cursor" data-cursor viewBox="0 0 24 24">
+        <path d="M5 2.5v17.2l4.3-4.1 2.9 6.6 2.7-1.2-2.9-6.5 6-.4z"></path>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<script>
+  import '../../scripts/demos/accounts';
+</script>

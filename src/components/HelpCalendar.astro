@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import Mark from './Mark.astro';
 import Footer from './Footer.astro';
+import Accounts from './demos/Accounts.astro';
 import { CONTACT_EMAIL } from '../config';
 import { dicts, path, rich, ui, type Lang } from '../i18n';
 
@@ -22,19 +23,21 @@ const home = path(Astro.props.lang);
       <a class="legal__home" href={home}><Mark class="nav__mark" /> <span class="nav__word">nchova</span></a>
       <h1 class="feature__title" set:html={rich(p.title)} />
       <p class="help__lead">{p.lead}</p>
+      <Accounts t={t} />
       {
         p.providers.map((provider) => (
           <section class="legal__sec" id={provider.id}>
             <h2 class="mono">{provider.name}</h2>
-            <ol class="help__steps">
+            <ol class="help__steps" data-steps={provider.id}>
               {provider.steps.map((step) => <li set:html={ui(step)} />)}
             </ol>
           </section>
         ))
       }
       {
-        p.sections.map(([h, body], i) => (
-          <section class="legal__sec">
+        // 'app' marks the section the animation's last scene stands for (ticking the calendar in nchova).
+        p.sections.map(([h, body, mark], i) => (
+          <section class="legal__sec" data-step-app={mark === 'app' ? '' : undefined}>
             <h2 class="mono">{h}</h2>
             <p>
               <Fragment set:html={ui(body)} />

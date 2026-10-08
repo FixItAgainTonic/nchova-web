@@ -1329,6 +1329,22 @@
   margin-top: 8px;
 }
 
+/* The step the animation above is showing. */
+.help__steps li,
+[data-step-app] p {
+  transition: color 0.4s;
+}
+
+.help__steps li.help__now,
+[data-step-app].help__now p {
+  color: var(--ink);
+}
+
+.help__steps li.help__now::marker {
+  color: var(--violet-ink);
+  font-weight: 600;
+}
+
 .help b {
   font-weight: 600;
   color: var(--ink);
