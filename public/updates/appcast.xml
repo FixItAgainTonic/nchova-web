@@ -8,6 +8,19 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.0.1</title>
+      <pubDate>Thu, 08 Oct 2026 15:00:22 +0000</pubDate>
+      <sparkle:version>191</sparkle:version>
+      <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Con lo spazio iCloud pieno, la sincronizzazione dei meeting lo dice chiaramente e spiega dove fare posto, invece di mostrare un errore tecnico in inglese.
+- Dopo aver fatto posto, «Sincronizza ora» riprova subito, senza aspettare mezz'ora.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- When your iCloud storage is full, meeting sync now says so plainly and tells you where to make room, instead of showing a technical error.
+- Once you have made room, "Sync Now" tries again at once, without waiting half an hour.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.0.1/Nchova.dmg" length="21360498" type="application/octet-stream" sparkle:edSignature="F1C6gAXIP2LubdLrZkg+07t8uapwjrLWeOt6hF09SB9xNb1p06dsie6MKl/rYMKGhvE3tKOutZ6RdcfDLhToAQ=="/>
+    </item>
+    <item>
       <title>nchova 1.0.0</title>
       <pubDate>Wed, 07 Oct 2026 22:05:55 +0000</pubDate>
       <sparkle:version>189</sparkle:version>
