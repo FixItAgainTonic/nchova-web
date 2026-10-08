@@ -8,6 +8,17 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.0.3</title>
+      <pubDate>Thu, 08 Oct 2026 16:41:50 +0000</pubDate>
+      <sparkle:version>194</sparkle:version>
+      <sparkle:shortVersionString>1.0.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Non vedi il calendario Google o Outlook? In Impostazioni › Meeting c'è «Come aggiungere Google o Outlook»: una pagina che spiega come aggiungere l'account al Mac solo per il calendario, senza posta né contatti.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- Can't see your Google or Outlook calendar? Settings › Meetings now has "How to add Google or Outlook": a page that shows how to add the account to your Mac for its calendar alone, without mail or contacts.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.0.3/Nchova.dmg" length="21371924" type="application/octet-stream" sparkle:edSignature="8hlQ30NzUE9AS/Em+hNht4dH8qZvfQLidx23+6zTfee83FVHPe3QTr0mRlWGfYOnbjmv6Ss8AH7rKKq3rCGkAA=="/>
+    </item>
+    <item>
       <title>nchova 1.0.2</title>
       <pubDate>Thu, 08 Oct 2026 15:39:06 +0000</pubDate>
       <sparkle:version>193</sparkle:version>
