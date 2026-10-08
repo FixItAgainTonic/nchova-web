@@ -1291,6 +1291,11 @@
   margin-bottom: 40px;
 }
 
+.legal__date {
+  margin: -24px 0 40px;
+  color: var(--ink-2);
+}
+
 .legal__sec {
   padding: 20px 0;
   border-top: 1px solid var(--rule);

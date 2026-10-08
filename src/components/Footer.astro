@@ -17,6 +17,7 @@ const others = LANGUAGES.filter((l) => l !== t.lang);
       <p class="footer__colophon">{f.colophon}</p>
       <nav class="footer__links mono" aria-label="footer">
         <a href={path(t.lang as Lang, 'privacy/')}>{f.privacy}</a>
+        <a href={path(t.lang as Lang, 'terms/')}>{f.terms}</a>
         <a href={`mailto:${CONTACT_EMAIL}`}>{f.contact}</a>
         {
           others.map((l) => (
