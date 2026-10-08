@@ -33,6 +33,11 @@ export function rich(s: string): string {
   return escape(s).replace(/\*([^*]+)\*/g, '<em>$1</em>');
 }
 
+/** `**label**` → the name of something on screen (a button, a setting), in bold. Everything else escaped. */
+export function ui(s: string): string {
+  return escape(s).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
+}
+
 /** The same text without the markup, for attributes and titles. */
 export function plain(s: string): string {
   return s.replace(/\*/g, '');

@@ -1312,6 +1312,28 @@
   color: var(--ink-2);
 }
 
+/* ---------- Help (nchova.com/help/calendar): the legal page's look, with numbered steps ---------- */
+
+.help__lead {
+  margin: -16px 0 40px;
+  color: var(--ink-2);
+}
+
+.help__steps {
+  margin: 0;
+  padding-left: 1.4em;
+  color: var(--ink-2);
+}
+
+.help__steps li + li {
+  margin-top: 8px;
+}
+
+.help b {
+  font-weight: 600;
+  color: var(--ink);
+}
+
 /* ---------- Meet (nchova.com/meet, from the card handed out at events) ---------- */
 
 .meet {

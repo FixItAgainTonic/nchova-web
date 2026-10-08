@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import Mark from './Mark.astro';
+import Footer from './Footer.astro';
+import { CONTACT_EMAIL } from '../config';
+import { dicts, path, rich, ui, type Lang } from '../i18n';
+
+// nchova.com/help/calendar, linked from Settings › Meetings in the app: how to hand macOS a Google or Outlook account
+// for its calendar alone. nchova reads only what EventKit has, so a calendar lived in the browser has to get there first.
+
+interface Props {
+  lang: Lang;
+}
+const t = dicts[Astro.props.lang];
+const p = t.calendarPage;
+const home = path(Astro.props.lang);
+---
+
+<Base lang={Astro.props.lang} title={p.metaTitle} description={p.description} page="help/calendar/" ocean={false}>
+  <main id="main" class="legal help">
+    <div class="wrap legal__in">
+      <a class="legal__home" href={home}><Mark class="nav__mark" /> <span class="nav__word">nchova</span></a>
+      <h1 class="feature__title" set:html={rich(p.title)} />
+      <p class="help__lead">{p.lead}</p>
+      {
+        p.providers.map((provider) => (
+          <section class="legal__sec" id={provider.id}>
+            <h2 class="mono">{provider.name}</h2>
+            <ol class="help__steps">
+              {provider.steps.map((step) => <li set:html={ui(step)} />)}
+            </ol>
+          </section>
+        ))
+      }
+      {
+        p.sections.map(([h, body], i) => (
+          <section class="legal__sec">
+            <h2 class="mono">{h}</h2>
+            <p>
+              <Fragment set:html={ui(body)} />
+              {i === p.sections.length - 1 && (
+                <>
+                  {' '}
+                  <a class="link" href={`mailto:${CONTACT_EMAIL}`}>
+                    {CONTACT_EMAIL}
+                  </a>
+                </>
+              )}
+            </p>
+          </section>
+        ))
+      }
+      <p><a class="link" href={home}>{p.back}</a></p>
+    </div>
+  </main>
+  <Footer t={t} />
+</Base>

@@ -1,12 +1,13 @@
 ---
 import Bracket from './Bracket.astro';
 import Mark from './Mark.astro';
-import { rich, type Dict } from '../i18n';
+import { path, rich, type Dict, type Lang } from '../i18n';
 
 interface Props {
   t: Dict;
 }
 const f = Astro.props.t.faq;
+const lang = Astro.props.t.lang as Lang;
 const stamp = (n: number) => `00:${String(Math.floor(n / 60)).padStart(2, '0')}:${String(n % 60).padStart(2, '0')}`;
 ---
 
@@ -18,7 +19,7 @@ const stamp = (n: number) => `00:${String(Math.floor(n / 60)).padStart(2, '0')}:
     </header>
     <dl class="faq__list">
       {
-        f.items.map(([q, a], i) => (
+        f.items.map(([q, a, more], i) => (
           <div class="faq__pair rise">
             <dt>
               <span class="faq__time mono">{stamp(4 + i * 23)}</span>
@@ -31,7 +32,15 @@ const stamp = (n: number) => `00:${String(Math.floor(n / 60)).padStart(2, '0')}:
                 <Mark class="faq__mark" />
                 {f.us}
               </span>
-              <span class="faq__a">{a}</span>
+              <span class="faq__a">
+                {a}
+                {more && (
+                  <>
+                    {' '}
+                    <a class="link" href={path(lang, more)}>{f.more}</a>
+                  </>
+                )}
+              </span>
             </dd>
           </div>
         ))

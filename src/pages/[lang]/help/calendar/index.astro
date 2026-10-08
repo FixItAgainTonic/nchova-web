@@ -1,0 +1,11 @@
+---
+import HelpCalendar from '../../../../components/HelpCalendar.astro';
+import { LANGUAGES } from '../../../../config';
+import type { Lang } from '../../../../i18n';
+
+export function getStaticPaths() {
+  return LANGUAGES.slice(1).map((lang) => ({ params: { lang } }));
+}
+---
+
+<HelpCalendar lang={Astro.params.lang as Lang} />

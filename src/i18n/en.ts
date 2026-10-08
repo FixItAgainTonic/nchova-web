@@ -344,12 +344,14 @@ const en: Dict = {
     title: 'Questions, *out loud*.',
     you: 'You',
     us: 'nchova',
+    more: 'Here’s how',
     items: [
       ['Does it work offline?', 'Yes: dictation and meetings run on the Mac. It needs the network to download the models the first time, for updates and to activate Pro.'],
       ['Which languages?', '{nFree} free, with Apple’s models; with Pro, Parakeet’s {nPro} European languages. Those only Parakeet knows, like {proOnly}, need Pro. You pick up to three and nchova hears which one you are speaking. The app itself is in English and Italian.'],
       ['Do I have to invite a bot to the call?', 'No. nchova hears the call from your Mac, the way you do. Nobody joins the call.'],
       ['How is it different from Wispr Flow, Otter or Granola?', 'Those send your voice to the cloud to transcribe it, and their paid plans are subscriptions; Otter also puts a bot in your calls. nchova transcribes on your Mac, joins no call, and does dictation, meetings and notes in one app: free, or €29.99 once for Pro.'],
       ['Which video call apps does it work with?', 'All of them: Zoom, Meet, Teams, Slack, in the browser too. It notices an app using the microphone and asks whether to transcribe.'],
+      ['Does it work with my Google or Outlook calendar?', 'Yes, once the account is on your Mac: nchova reads the calendars macOS knows, so you never sign in to Google or Microsoft inside nchova. You can add the account for its calendar alone, without mail or contacts.', 'help/calendar/'],
       ['Where do transcripts go?', 'On your Mac, and in your own iCloud if you turn on sync (Pro), so they reach your other Macs. Audio never leaves the Mac.'],
       ['And after the 30 days?', 'nchova stays free: dictation, transcripts, notes with Apple’s models, AI assistants and export. Pro adds Parakeet, voices, names, the best notes and sync between your Macs: €29.99, once, up to 3 Macs.'],
       ['How do I buy Pro?', 'From this site: Polar handles the payment and your licence key arrives by email. No account to create.'],
@@ -399,6 +401,41 @@ const en: Dict = {
       'Paste the key in nchova › Settings › Licence. That’s it.',
     ],
     signed: 'Rudy, who makes nchova',
+  },
+  calendarPage: {
+    metaTitle: 'Add your Google or Outlook calendar — nchova',
+    description: 'nchova reads the calendars your Mac knows. How to add a Google or Outlook account to macOS for its calendar alone, without mail or contacts.',
+    title: 'Your Google or Outlook calendar, *in nchova*.',
+    lead: 'nchova reads the calendars your Mac already knows, the ones in the Calendar app. It never asks you to sign in to Google or Microsoft, and your events never reach us. If you use your calendar only in the browser or in the Outlook app, your Mac does not know it yet: add the account once, for its calendar alone.',
+    providers: [
+      {
+        id: 'google',
+        name: 'Google',
+        steps: [
+          'Open **System Settings** and click **Internet Accounts** in the sidebar. You may need to scroll down.',
+          'Click **Add Account**, then type your Google address, or click **choose from a list** and pick **Google**.',
+          'Sign in to Google as you usually do.',
+          'Your Mac asks which apps should use the account: turn on **Calendars** alone, and leave **Mail**, **Contacts** and **Notes** off.',
+        ],
+      },
+      {
+        id: 'outlook',
+        name: 'Outlook and Microsoft 365',
+        steps: [
+          'Open **System Settings** and click **Internet Accounts** in the sidebar. You may need to scroll down.',
+          'Click **Add Account**, then type your work or Outlook address, or click **choose from a list** and pick **Microsoft Exchange**.',
+          'Enter your name and address, click **Sign In**, and sign in with Microsoft as you do in Outlook.',
+          'Your Mac asks which apps should use the account: turn on **Calendars** alone, and leave **Mail**, **Contacts**, **Reminders** and **Notes** off.',
+        ],
+      },
+    ],
+    sections: [
+      ['Already on your Mac, with mail and all?', 'In **Internet Accounts**, click the account and turn off everything but **Calendars**. That only takes the account out of the Mac’s own apps, such as Mail and Contacts: nothing is deleted from the account itself, which stays as it is at Google or Microsoft and in Outlook.'],
+      ['Then, in nchova', 'Open **Settings › Meetings** and, under **Calendars to read**, tick your own calendars. Leave a colleague’s shared calendar unticked: its meetings would look like yours, with you as a guest.'],
+      ['Still not there?', 'Open the Calendar app once and give it a minute to fetch your events. With a work account, your company decides which apps may read it: since October 2026 Microsoft has been switching off, company by company, the connection the Mac uses for Microsoft 365, and Apple has said a macOS 27 update will move to the new one. Until then, your IT team can keep it on for Apple’s apps.'],
+      ['Anything else', 'Write to us:'],
+    ],
+    back: '← Back to the site',
   },
   termsPage: {
     title: 'Terms',

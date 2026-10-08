@@ -352,12 +352,14 @@ const it = {
     title: 'Domande, *a voce*.',
     you: 'Tu',
     us: 'nchova',
+    more: 'Ecco come',
     items: [
       ['Funziona senza internet?', 'Sì: dettatura e meeting girano sul Mac. La rete serve per scaricare i modelli la prima volta, per gli aggiornamenti e per attivare Pro.'],
       ['Che lingue capisce?', '{nFree} gratis, coi modelli Apple; con Pro, le {nPro} lingue europee di Parakeet. Quelle che conosce solo Parakeet, come {proOnly}, richiedono Pro. Ne scegli fino a tre e nchova sente da sola quale stai parlando. L’app invece è in italiano e in inglese.'],
       ['Devo invitare un bot nella call?', 'No. nchova sente la call dal tuo Mac, come la senti tu. Nella call non entra nessuno.'],
       ['In cosa è diversa da Wispr Flow, Otter o Granola?', 'Quelli mandano la tua voce nel cloud per trascriverla, e i loro piani a pagamento sono abbonamenti; Otter in più mette un bot nelle tue call. nchova trascrive sul tuo Mac, non entra in nessuna call e fa dettatura, meeting e note in un’app sola: gratis, o 29,99 € una volta per Pro.'],
       ['Con quali app di videochiamata funziona?', 'Con tutte: Zoom, Meet, Teams, Slack, anche nel browser. Si accorge che un’app sta usando il microfono e ti chiede se trascrivere.'],
+      ['Funziona col mio calendario Google o Outlook?', 'Sì, una volta che l’account è sul Mac: nchova legge i calendari che macOS conosce, quindi non accedi mai a Google o Microsoft dentro nchova. Puoi aggiungere l’account solo per il calendario, senza posta né contatti.', 'help/calendar/'],
       ['Dove finiscono le trascrizioni?', 'Sul tuo Mac, e nel tuo iCloud se attivi la sync (Pro), così arrivano sugli altri tuoi Mac. L’audio non lascia mai il Mac.'],
       ['E dopo i 30 giorni?', 'nchova resta gratis: dettatura, transcript, note coi modelli Apple, assistenti AI ed export. Pro aggiunge Parakeet, le voci, i nomi, le note migliori e la sync fra i tuoi Mac: 29,99 €, una volta sola, fino a 3 Mac.'],
       ['Come si compra Pro?', 'Dal sito: il pagamento lo gestisce Polar e la chiave di licenza ti arriva per email. Nessun account da creare.'],
@@ -407,6 +409,41 @@ const it = {
       'Incolla la chiave in nchova › Impostazioni › Licenza. Fatto.',
     ],
     signed: 'Rudy, che fa nchova',
+  },
+  calendarPage: {
+    metaTitle: 'Aggiungi il calendario Google o Outlook — nchova',
+    description: 'nchova legge i calendari che il Mac conosce. Come aggiungere a macOS un account Google o Outlook solo per il calendario, senza posta né contatti.',
+    title: 'Il tuo calendario Google o Outlook, *in nchova*.',
+    lead: 'nchova legge i calendari che il Mac conosce già, quelli dell’app Calendario. Non ti chiede mai di accedere a Google o Microsoft, e i tuoi eventi non arrivano mai a noi. Se il calendario lo usi solo nel browser o nell’app Outlook, il Mac non lo conosce ancora: aggiungi l’account una volta, solo per il calendario.',
+    providers: [
+      {
+        id: 'google',
+        name: 'Google',
+        steps: [
+          'Apri **Impostazioni di Sistema** e fai clic su **Account internet** nella barra laterale. Forse devi scorrere in basso.',
+          'Fai clic su **Aggiungi account**, poi scrivi il tuo indirizzo Google, oppure fai clic su **scegli da un elenco** e scegli **Google**.',
+          'Accedi a Google come fai sempre.',
+          'Il Mac chiede quali app devono usare l’account: accendi solo **Calendari**, e lascia spente **Mail**, **Contatti** e **Note**.',
+        ],
+      },
+      {
+        id: 'outlook',
+        name: 'Outlook e Microsoft 365',
+        steps: [
+          'Apri **Impostazioni di Sistema** e fai clic su **Account internet** nella barra laterale. Forse devi scorrere in basso.',
+          'Fai clic su **Aggiungi account**, poi scrivi il tuo indirizzo di lavoro o di Outlook, oppure fai clic su **scegli da un elenco** e scegli **Microsoft Exchange**.',
+          'Scrivi nome e indirizzo, fai clic su **Accedi** ed entra con Microsoft come fai in Outlook.',
+          'Il Mac chiede quali app devono usare l’account: accendi solo **Calendari**, e lascia spente **Mail**, **Contatti**, **Promemoria** e **Note**.',
+        ],
+      },
+    ],
+    sections: [
+      ['È già sul Mac, con la posta e tutto?', 'In **Account internet** fai clic sull’account e spegni tutto tranne **Calendari**. Così l’account esce solo dalle app del Mac, come Mail e Contatti: dall’account non si cancella niente, resta com’è su Google o Microsoft e in Outlook.'],
+      ['Poi, in nchova', 'Apri **Impostazioni › Meeting** e, sotto **Calendari da leggere**, spunta i tuoi calendari. Lascia senza spunta il calendario condiviso di un collega: i suoi meeting sembrerebbero tuoi, con te come invitato.'],
+      ['Ancora non c’è?', 'Apri l’app Calendario una volta e lasciale un minuto per scaricare gli eventi. Con un account di lavoro decide la tua azienda quali app possono leggerlo: da ottobre 2026 Microsoft sta spegnendo, un’azienda alla volta, il collegamento che il Mac usa per Microsoft 365, e Apple ha detto che un aggiornamento di macOS 27 passerà a quello nuovo. Fino ad allora, il tuo reparto IT può tenerlo acceso per le app di Apple.'],
+      ['Altro', 'Scrivici:'],
+    ],
+    back: '← Torna al sito',
   },
   termsPage: {
     title: 'Termini',
