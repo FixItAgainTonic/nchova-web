@@ -15,7 +15,7 @@ export const DOWNLOAD_URL = '/download';
 /** Polar checkout of nchova Pro (organisation nchova, 29.99 EUR tax included). Today the same link as the app's. */
 export const CHECKOUT_URL = 'https://buy.polar.sh/polar_cl_ZECtqsONpN8DgSE6iOJmWdMOqu2iQ7VyAfYGM2Rqn9s';
 
-export const CONTACT_EMAIL = 'ciao@nchova.com';
+export const CONTACT_EMAIL = 'hello@nchova.com';
 
 /** Who sells nchova. Italian law (art. 35 DPR 633/1972) wants the VAT number on the site. */
 export const COMPANY = { name: 'Forcelab', vat: '14481340967' };
