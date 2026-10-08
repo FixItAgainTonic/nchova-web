@@ -1,0 +1,11 @@
+---
+import MeetPage from '../../../components/MeetPage.astro';
+import { LANGUAGES } from '../../../config';
+import type { Lang } from '../../../i18n';
+
+export function getStaticPaths() {
+  return LANGUAGES.slice(1).map((lang) => ({ params: { lang } }));
+}
+---
+
+<MeetPage lang={Astro.params.lang as Lang} />

@@ -15,6 +15,10 @@ export const DOWNLOAD_URL = '/download';
 /** Polar checkout of nchova Pro (organisation nchova, 29.99 EUR tax included). Today the same link as the app's. */
 export const CHECKOUT_URL = 'https://buy.polar.sh/polar_cl_ZECtqsONpN8DgSE6iOJmWdMOqu2iQ7VyAfYGM2Rqn9s';
 
+/** The Polar code behind nchova.com/meet, the page on the card Rudy hands out at events: 100% off Pro, with its own
+ *  limit and end date on Polar. Another event, another code. */
+export const MEET_CODE = 'MEETNCHOVA';
+
 export const CONTACT_EMAIL = 'hello@nchova.com';
 
 /** Who sells nchova. Italian law (art. 35 DPR 633/1972) wants the VAT number on the site. */

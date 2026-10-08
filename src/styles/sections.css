@@ -1312,6 +1312,122 @@
   color: var(--ink-2);
 }
 
+/* ---------- Meet (nchova.com/meet, from the card handed out at events) ---------- */
+
+.meet {
+  padding: 48px 0 90px;
+}
+
+.meet__in {
+  max-width: calc(1080px + 2 * var(--gutter));
+}
+
+.meet__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+.meet .feature__title {
+  margin: 18px 0 0;
+}
+
+.meet .feature__lead {
+  margin-top: 20px;
+}
+
+.meet__act {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.meet__phone {
+  margin: 18px 0 0;
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+}
+
+.meet__receipt {
+  max-width: 400px;
+  justify-self: center;
+  width: 100%;
+}
+
+.meet__receipt.receipt--pro {
+  transform: rotate(1.1deg);
+}
+
+.meet__line {
+  margin-top: 0;
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+
+.meet__receipt .meet__line span:last-child {
+  font-family: var(--mono);
+  font-size: inherit;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--ink);
+}
+
+.meet__line:first-of-type {
+  margin-top: 12px;
+}
+
+.meet__line + .receipt__total:not(.meet__line) {
+  margin-top: 6px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--rule-strong);
+}
+
+.meet__how {
+  margin-top: clamp(56px, 8vw, 96px);
+  padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  max-width: 640px;
+}
+
+.meet__how h2 {
+  margin: 0 0 12px;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  color: var(--violet-ink);
+}
+
+.meet__how ol {
+  margin: 0;
+  padding-left: 1.3em;
+  color: var(--ink-2);
+}
+
+.meet__how li {
+  padding: 4px 0;
+}
+
+.meet__signed {
+  margin: 20px 0 0;
+  font-style: italic;
+  font-variation-settings: 'SOFT' 100, 'WONK' 1;
+  color: var(--ink-2);
+}
+
+@media (max-width: 860px) {
+  .meet {
+    padding-top: 32px;
+  }
+  .meet__grid {
+    grid-template-columns: 1fr;
+  }
+  .meet__act .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* The fish that wander the whole page. */
 .ocean {
   position: fixed;

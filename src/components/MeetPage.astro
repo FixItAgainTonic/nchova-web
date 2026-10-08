@@ -1,0 +1,69 @@
+---
+// nchova.com/meet, where the card Rudy hands out at events leads (8 Oct 2026). Opened on a phone more often than not:
+// who made it and what it is, Pro on a receipt that comes to €0, the licence to claim now and nchova to download,
+// on the Mac, now or later.
+import Base from '../layouts/Base.astro';
+import Mark from './Mark.astro';
+import Bracket from './Bracket.astro';
+import Footer from './Footer.astro';
+import { DOWNLOAD_URL, MEET_CODE } from '../config';
+import { dicts, path, rich, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+}
+const t = dicts[Astro.props.lang];
+const m = t.meetPage;
+const features = t.price.pro.lines.slice(1);
+---
+
+<Base lang={Astro.props.lang} title={m.metaTitle} description={t.meta.description} page="meet/" ocean={false}>
+  <main id="main" class="meet">
+    <div class="wrap meet__in">
+      <a class="legal__home" href={path(Astro.props.lang)}><Mark class="nav__mark" /> <span class="nav__word">nchova</span></a>
+
+      <div class="meet__grid">
+        <div class="meet__text">
+          <p class="kicker"><Bracket>{m.kicker}</Bracket></p>
+          <h1 class="feature__title" set:html={rich(m.title)} />
+          <p class="feature__lead">{m.lead}</p>
+
+          <div class="meet__act">
+            <a class="btn btn--lg" href="/meet/claim"><Bracket>{m.claim}</Bracket></a>
+            <a class="btn btn--ghost" href={`${DOWNLOAD_URL}?from=meet`}>{m.download}</a>
+          </div>
+          <p class="meet__phone mono">{m.phone}</p>
+        </div>
+
+        <div class="receipt receipt--pro meet__receipt">
+          <div class="receipt__paper">
+            <Mark class="receipt__mark" />
+            <p class="receipt__head">{t.price.pro.head}</p>
+            <p class="receipt__sub">{m.sub}</p>
+            <ul class="receipt__lines">
+              {
+                features.map(([item, value]) => (
+                  <li>
+                    <span>{item}</span>
+                    <i />
+                    <span>{value}</span>
+                  </li>
+                ))
+              }
+            </ul>
+            <p class="receipt__total meet__line"><span>nchova Pro</span><i /><span>€29.99</span></p>
+            <p class="receipt__total meet__line"><span>{MEET_CODE}</span><i /><span>−100%</span></p>
+            <p class="receipt__total"><span>{m.today}</span><i /><span>€0.00</span></p>
+          </div>
+        </div>
+      </div>
+
+      <section class="meet__how">
+        <h2 class="mono">{m.howTitle}</h2>
+        <ol>{m.how.map((step) => <li>{step}</li>)}</ol>
+        <p class="meet__signed">{m.signed}</p>
+      </section>
+    </div>
+  </main>
+  <Footer t={t} />
+</Base>
