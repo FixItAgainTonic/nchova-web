@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /download
-Disallow: /meet
+Disallow: /meet/claim
 Sitemap: https://nchova.com/sitemap-index.xml

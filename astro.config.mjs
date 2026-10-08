@@ -11,6 +11,7 @@ export default defineConfig({
   // from this domain (/_vercel/insights), visitors told apart by a hash that changes every day.
   adapter: vercel({ webAnalytics: { enabled: true } }),
   integrations: [
-    sitemap(),
+    // nchova.com/meet is for the people Rudy meets, not for search engines (noindex on the page too).
+    sitemap({ filter: (page) => !/\/meet\/?$/.test(new URL(page).pathname) }),
   ],
 });
