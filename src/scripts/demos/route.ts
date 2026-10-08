@@ -24,7 +24,7 @@ function setup(root: HTMLElement) {
   const data: Data = JSON.parse(root.querySelector('[data-script]')!.textContent!);
   const $ = <T extends Element = HTMLElement>(s: string) => root.querySelector<T>(s)!;
   const scene = $('.route__scene'), svg = $<SVGSVGElement>('[data-wires]'), dots = $<SVGGElement>('[data-packets]');
-  const pill = $('[data-pill]'), chip = $('[data-chip]');
+  const pill = $('[data-pill]'), chip = $('[data-chip]'), other = $('[data-other]');
   // The pill itself carries data-state: the words go in its state slot.
   const state = pill.querySelector<HTMLElement>('.pill__state [data-state]'), icon = pill.querySelector<HTMLElement>('[data-icon]');
   const cloud = $('[data-cloud]'), sent = $('[data-sent]'), sentLabel = $('[data-sent-label]'), busy = $('[data-busy]');
@@ -132,6 +132,12 @@ function setup(root: HTMLElement) {
   let flip = false;
   let seconds = 0;
   const setPill = (s: '' | 'rec' | keyof Data['states']) => {
+    // The other app's way shows its own plain indicator, never nchova's pill: bars while you speak, a wait for the
+    // servers, gone once the text comes back.
+    if (mode === 'them') {
+      other.dataset.state = s === 'rec' ? 'rec' : s === 'transcribing' ? 'wait' : '';
+      s = '';
+    } else other.dataset.state = '';
     // The meeting pill has no words: it shows while the meeting is on, until the transcript is written.
     if (data.meeting) return pill.classList.toggle('show', s !== '' && s !== 'done');
     pill.dataset.state = s;

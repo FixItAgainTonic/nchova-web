@@ -3,6 +3,7 @@
 // the other app's servers. Their way: while you speak your voice leaves the Mac along the wire, the seconds sent add up,
 // the text comes back and is typed. nchova's way: the voice goes to the model on the Mac and straight into the note, and
 // the servers outside get nothing. The switch picks one; left alone the film shows both (scripts/demos/route.ts).
+// In the other app's way nothing of nchova is on screen: its indicator is a plain one, with no fish and no words.
 import { json } from '../../lib/json';
 import type { Dict } from '../../i18n';
 import type { Route } from '../../i18n/guides/types';
@@ -68,6 +69,15 @@ const modes = [
             </div>
           )
         }
+
+        {/* The other app's own indicator, in its mode: a red dot and plain bars, no words and nothing of nchova's. */}
+        <div class="route__other" data-other data-state="">
+          <i class="pill__dot" />
+          <span class="route__bars">
+            <i /><i /><i /><i /><i />
+          </span>
+          <i class="route__wait" />
+        </div>
 
         <span class="route__mac mono">{r.words.mac}</span>
       </div>
