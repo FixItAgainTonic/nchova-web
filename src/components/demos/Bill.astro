@@ -13,7 +13,8 @@ interface Props {
 }
 const { bill: b, t } = Astro.props;
 const pro = t.price.pro;
-const money = (n: number) => `${b.currency.before ?? ''}${n.toFixed(2)}${b.currency.after ?? ''}`;
+const money = (n: number) =>
+  new Intl.NumberFormat(t.lang, { style: 'currency', currency: b.currency, currencyDisplay: 'narrowSymbol' }).format(n);
 const plan = b.plans[0];
 const years = Math.ceil(b.months / 12);
 // The last frame, written out: each year's charges summed, and the total.
@@ -24,6 +25,10 @@ const yearly = Array.from({ length: years }, (_, y) => {
 });
 const total = yearly.reduce((a, s) => a + s, 0);
 const year = (n: number) => b.words.year.replace('{n}', String(n));
+// Their charges are dated, as the film dates them: from this month on (the film redoes it with the visitor's month).
+const monthName = new Intl.DateTimeFormat(t.lang, { month: 'short', year: 'numeric' });
+const start = new Date();
+const charged = (y: number) => monthName.format(new Date(start.getFullYear(), start.getMonth() + y * 12, 1));
 ---
 
 <div class="bill" data-bill>
@@ -52,7 +57,7 @@ const year = (n: number) => b.words.year.replace('{n}', String(n));
           {
             yearly.map((sum, y) => (
               <li>
-                <span>{year(y + 1)}</span>
+                <span>{charged(y)}</span>
                 <i />
                 <span>{money(sum)}</span>
               </li>

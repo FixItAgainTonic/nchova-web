@@ -9,6 +9,7 @@ import type { NFish } from '../fish/element';
 type Mode = 'them' | 'us';
 type Wire = 'out' | 'back' | 'local';
 interface Data {
+  lang: string;
   meeting?: boolean;
   words: { written: string };
   them: { sent: string };
@@ -33,6 +34,7 @@ function setup(root: HTMLElement) {
   // The meeting pill swims instead of drawing a waveform.
   const levelsOn = !data.meeting;
   const chipFish = $('[data-chip-fish]') as unknown as NFish;
+  const tenths = new Intl.NumberFormat(data.lang, { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   const wires = Object.fromEntries(
     (['out', 'back', 'local'] as Wire[]).map((w) => [w, $<SVGPathElement>(`[data-wire="${w}"]`)]),
   ) as Record<Wire, SVGPathElement>;
@@ -163,7 +165,7 @@ function setup(root: HTMLElement) {
       if (!run.fast) send(wire);
       if (out) {
         seconds += 0.14;
-        sent.textContent = seconds.toFixed(1);
+        sent.textContent = tenths.format(seconds);
       }
       await run.wait(140);
     }
@@ -181,7 +183,7 @@ function setup(root: HTMLElement) {
       seconds = 0;
       said.classList.remove('show', 'gone');
       text.textContent = '';
-      sent.textContent = '0.0';
+      sent.textContent = tenths.format(0);
       busy.classList.remove('on');
       cloud.classList.remove('lit');
       chip.classList.remove('lit');

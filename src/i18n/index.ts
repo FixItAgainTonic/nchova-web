@@ -1,10 +1,12 @@
 import it, { type Dict } from './it';
 import en from './en';
+import de from './de';
+import fr from './fr';
+import es from './es';
 import { languageTokens } from './languages';
-import { COMPANY, LANGUAGES } from '../config';
+import { COMPANY, LANGUAGES, type Lang } from '../config';
 
-export type Lang = 'it' | 'en';
-export type { Dict };
+export type { Dict, Lang };
 
 /** Fills `{token}`s (the language lists, the company) in every string of the dictionary. */
 export function fill<T>(value: T, tokens: Record<string, string>): T {
@@ -24,10 +26,10 @@ export const path = (lang: Lang, page = '') => (lang === DEFAULT ? '/' : `/${lan
 /** What `{token}`s become in a language. */
 export const tokens = (lang: Lang) => ({ ...languageTokens(lang), company: COMPANY.name, vat: COMPANY.vat });
 
-export const dicts: Record<Lang, Dict> = {
-  it: fill(it, tokens('it')),
-  en: fill(en, tokens('en')),
-};
+const raw: Record<Lang, Dict> = { en, it, de, fr, es };
+export const dicts = Object.fromEntries(
+  Object.entries(raw).map(([lang, dict]) => [lang, fill(dict, tokens(lang as Lang))]),
+) as Record<Lang, Dict>;
 
 const escape = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 

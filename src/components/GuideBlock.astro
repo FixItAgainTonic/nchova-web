@@ -130,7 +130,7 @@ const stamp = (s: number) => `00:${String(Math.floor(s / 60)).padStart(2, '0')}:
 
     {b.kind === 'bill' && <Bill bill={b.bill} t={t} />}
     {b.kind === 'route' && <Route route={b.route} t={t} />}
-    {b.kind === 'bot' && <Bot bot={b.bot} />}
+    {b.kind === 'bot' && <Bot bot={b.bot} lang={lang} />}
     {b.kind === 'connect' && <Connect connect={b.connect} />}
 
     {

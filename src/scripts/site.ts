@@ -39,3 +39,11 @@ if (nav) {
   update();
   window.addEventListener('scroll', update, { passive: true });
 }
+
+// The language switch closes when you click elsewhere.
+const langs = document.querySelector<HTMLDetailsElement>('[data-langs]');
+if (langs) {
+  document.addEventListener('click', (e) => {
+    if (langs.open && !langs.contains(e.target as Node)) langs.open = false;
+  });
+}

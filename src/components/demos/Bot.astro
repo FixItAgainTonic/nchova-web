@@ -9,8 +9,9 @@ import type { Bot } from '../../i18n/guides/types';
 
 interface Props {
   bot: Bot;
+  lang: string;
 }
-const { bot: b } = Astro.props;
+const { bot: b, lang } = Astro.props;
 const w = b.words;
 const modes = [
   ['them', b.them.tab],
@@ -68,7 +69,7 @@ const modes = [
         </div>
       </div>
 
-      <Dock />
+      <Dock lang={lang} />
 
       <div class="mpill" data-pill>
         <i class="pill__dot"></i>

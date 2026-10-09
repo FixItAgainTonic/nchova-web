@@ -13,6 +13,7 @@ interface Props {
   t: Dict;
 }
 const { route: r, t } = Astro.props;
+const seconds = (n: number) => new Intl.NumberFormat(t.lang, { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(n);
 const modes = [
   ['them', r.them.tab],
   ['us', r.us.tab],
@@ -20,7 +21,7 @@ const modes = [
 ---
 
 <div class:list={['route', r.meeting && 'route--meeting']} data-route data-mode="them">
-  <script type="application/json" data-script set:html={json({ ...r, states: t.dictation.demo.states })} />
+  <script type="application/json" data-script set:html={json({ ...r, lang: t.lang, states: t.dictation.demo.states })} />
   <div class="ia__switch mono" role="group" aria-label={r.words.switchLabel}>
     {
       modes.map(([id, tab], i) => (
@@ -89,7 +90,7 @@ const modes = [
       </svg>
       <p class="route__place">{r.them.place}</p>
       <p class="route__what mono" data-what>{r.them.what}</p>
-      <p class="route__sent mono"><b data-sent>0.0</b> <span data-sent-label>{r.them.sent}</span></p>
+      <p class="route__sent mono"><b data-sent>{seconds(0)}</b> <span data-sent-label>{r.them.sent}</span></p>
       <i class="route__busy" data-busy></i>
     </div>
 

@@ -13,7 +13,7 @@ interface Data {
   lang: string;
   ours: string;
   plans: Plan[];
-  currency: { before?: string; after?: string };
+  currency: string;
   months: number;
   words: { month: string; months: string; year: string; nothing: string };
 }
@@ -40,7 +40,8 @@ function setup(root: HTMLElement) {
   const feed = $('[data-feed]'), ours = $('[data-ours]'), total = $('[data-total]'), sub = $('[data-sub]');
   const count = $('[data-count]'), unit = $('[data-unit]');
   const picks = [...root.querySelectorAll<HTMLButtonElement>('[data-plan]')];
-  const money = (n: number) => `${data.currency.before ?? ''}${n.toFixed(2)}${data.currency.after ?? ''}`;
+  const money = (n: number) =>
+    new Intl.NumberFormat(data.lang, { style: 'currency', currency: data.currency, currencyDisplay: 'narrowSymbol' }).format(n);
   const monthName = new Intl.DateTimeFormat(data.lang, { month: 'short', year: 'numeric' });
   const start = new Date();
   start.setDate(1);

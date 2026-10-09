@@ -10,7 +10,10 @@ export const PARAKEET = ['bg', 'cs', 'hr', 'da', 'et', 'fi', 'fr', 'el', 'en', '
 /** Two of the Parakeet-only languages, named as examples. */
 const EXAMPLES = ['pl', 'nl'];
 
-const NAMES: Record<'it' | 'en', Record<string, string>> = {
+import type { Lang } from '../config';
+
+/** Hand-written for the first two languages; the others ask Intl (names as written mid-sentence, as the table's). */
+const NAMES: Partial<Record<Lang, Record<string, string>>> = {
   it: {
     it: 'italiano', en: 'inglese', fr: 'francese', de: 'tedesco', es: 'spagnolo', pt: 'portoghese',
     ja: 'giapponese', ko: 'coreano', zh: 'cinese', yue: 'cantonese',
@@ -27,12 +30,20 @@ const NAMES: Record<'it' | 'en', Record<string, string>> = {
   },
 };
 
-const join = (names: string[], lang: 'it' | 'en') =>
+const nameIn = (lang: Lang) => {
+  const table = NAMES[lang];
+  if (table) return (code: string) => table[code];
+  const intl = new Intl.DisplayNames([lang], { type: 'language' });
+  return (code: string) => intl.of(code) ?? code;
+};
+
+const join = (names: string[], lang: Lang) =>
   new Intl.ListFormat(lang, { style: 'long', type: 'conjunction' }).format(names);
 
 /** The two short lists: Apple's languages, then the ones only Parakeet (Pro) adds, as ISO codes. */
-export function languageCodes(lang: 'it' | 'en') {
-  const named = (code: string) => ({ code, name: NAMES[lang][code] });
+export function languageCodes(lang: Lang) {
+  const name = nameIn(lang);
+  const named = (code: string) => ({ code, name: name(code) });
   return {
     free: APPLE.map(named),
     proOnly: PARAKEET.filter((c) => !APPLE.includes(c)).sort().map(named),
@@ -41,8 +52,8 @@ export function languageCodes(lang: 'it' | 'en') {
 
 /** The tokens the copy uses: {free}, {pro}, {nFree}, {nPro}, {proOnly}, {nProOnly}, and {nAll}, every language either
  *  engine knows (Apple's and Parakeet's together, each counted once). */
-export function languageTokens(lang: 'it' | 'en'): Record<string, string> {
-  const name = (code: string) => NAMES[lang][code];
+export function languageTokens(lang: Lang): Record<string, string> {
+  const name = nameIn(lang);
   const byName = (a: string, b: string) => name(a).localeCompare(name(b), lang);
   const proOnly = PARAKEET.filter((code) => !APPLE.includes(code));
   return {

@@ -32,7 +32,7 @@ const canonical = new URL(path(lang, page), SITE).href;
 // The same page in every language it is published in, once there is more than one.
 const alternates = langs.length > 1 ? langs.map((l) => ({ l, href: new URL(path(l, page), SITE).href })) : [];
 const ogImage = new URL(`/og-${lang}.png`, SITE).href;
-const locale = { en: 'en_GB', it: 'it_IT' }[lang];
+const locale = { en: 'en_GB', it: 'it_IT', de: 'de_DE', fr: 'fr_FR', es: 'es_ES' }[lang];
 const org = { '@type': 'Organization', '@id': `${SITE}/#org`, name: COMPANY.name, vatID: `IT${COMPANY.vat}`, email: CONTACT_EMAIL, url: `${SITE}/` };
 const app = {
   '@type': 'SoftwareApplication',

@@ -1,5 +1,5 @@
 <!doctype html>
-<!-- The link preview (1200×630). Rendered by tools/og.sh into public/og-en.png and public/og-it.png. -->
+<!-- The link preview (1200×630), one per language (?en, ?it, ?de…). Rendered by tools/og.sh into public/og-<lang>.png. -->
 <html>
 <head>
 <meta charset="utf-8">
@@ -41,13 +41,23 @@
   </div>
   <div class="foot" id="foot"></div>
 <script>
-  const en = location.search.includes('en');
-  const t = en
-    ? { k: 'Dictation and meeting transcription for Mac', s: 'You talk,', w: 'nchova writes.', f: 'nchova.com · audio never leaves your Mac',
-        lines: [['Me', 'Let’s start with the launch.'], ['Julia', 'The page copy is done, only the fish animation is missing.'], ['Mark', 'I’ll finish it by Thursday, no wait, Friday.'], ['Sarah', 'I’ll send the newsletter Monday at ten.']] }
-    : { k: 'Dettatura e trascrizione dei meeting per Mac', s: 'Tu parli,', w: 'nchova scrive.', f: 'nchova.com · l’audio non lascia mai il tuo Mac',
-        lines: [['Io', 'Partiamo dal lancio.'], ['Giulia', 'Il testo è pronto, mancano solo le animazioni del pesce.'], ['Marco', 'Le chiudo entro giovedì, anzi no, venerdì.'], ['Sara', 'La newsletter la mando lunedì alle dieci.']] };
+  const texts = {
+    en: { k: 'Dictation and meeting transcription for Mac', s: 'You talk,', w: 'nchova writes.', f: 'nchova.com · audio never leaves your Mac',
+          lines: [['Me', 'Let’s start with the launch.'], ['Julia', 'The page copy is done, only the fish animation is missing.'], ['Mark', 'I’ll finish it by Thursday, no wait, Friday.'], ['Sarah', 'I’ll send the newsletter Monday at ten.']] },
+    it: { k: 'Dettatura e trascrizione dei meeting per Mac', s: 'Tu parli,', w: 'nchova scrive.', f: 'nchova.com · l’audio non lascia mai il tuo Mac',
+          lines: [['Io', 'Partiamo dal lancio.'], ['Giulia', 'Il testo è pronto, manca solo l’animazione del pesce.'], ['Marco', 'La chiudo entro giovedì, anzi no, venerdì.'], ['Sara', 'La newsletter la mando lunedì alle dieci.']] },
+    de: { k: 'Diktieren und Meeting-Transkription für den Mac', s: 'Du sprichst,', w: 'nchova schreibt.', f: 'nchova.com · das Audio verlässt nie deinen Mac',
+          lines: [['Me', 'Fangen wir mit dem Launch an.'], ['Julia', 'Der Text steht, es fehlt nur noch die Fisch-Animation.'], ['Markus', 'Die mache ich bis Donnerstag fertig, nee, warte, bis Freitag.'], ['Sarah', 'Den Newsletter schicke ich Montag um zehn.']] },
+    fr: { k: 'Dictée vocale et transcription de réunions pour Mac', s: 'Vous parlez,', w: 'nchova écrit.', f: 'nchova.com · l’audio ne quitte jamais votre Mac',
+          lines: [['Me', 'On commence par le lancement.'], ['Julie', 'Les textes sont prêts, il ne manque que l’animation du poisson.'], ['Marc', 'Je la finis d’ici jeudi, enfin non, vendredi.'], ['Sophie', 'J’envoie la newsletter lundi à dix heures.']] },
+    es: { k: 'Dictado y transcripción de reuniones para Mac', s: 'Tú hablas,', w: 'nchova escribe.', f: 'nchova.com · el audio nunca sale de tu Mac',
+          lines: [['Me', 'Empezamos por el lanzamiento.'], ['Julia', 'Los textos están listos, solo falta la animación del pez.'], ['Marcos', 'La termino para el jueves, no, espera, el viernes.'], ['Sara', 'La newsletter la envío el lunes a las diez.']] },
+  };
+  const t = texts[location.search.slice(1)] || texts.en;
   kicker.textContent = t.k; spoken.textContent = t.s; written.textContent = t.w; foot.textContent = t.f;
+  // The title stays clear of the mark on the right: a longer line in another language gets a smaller size.
+  const h1 = document.querySelector('h1');
+  for (let size = 148; size > 90 && document.querySelector('.w').getBoundingClientRect().right > 880; size -= 4) h1.style.fontSize = size - 4 + 'px';
   let html = '', n = 0;
   while (html.length < 9000) for (const [who, line] of t.lines) html += `00:0${n % 10}:${String((n++ * 7) % 60).padStart(2, '0')} <b>${who}</b> ${line} `;
   field.innerHTML = html;

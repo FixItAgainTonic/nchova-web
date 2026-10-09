@@ -1,0 +1,24 @@
+---
+// The guides in every published language but the default one: /it/alternatives/otter/, /de/transcribe/zoom/… Same
+// paths as in English, so each page knows its translations. A language without guides yet has none of these pages.
+import Guide from '../../components/Guide.astro';
+import GuideHub from '../../components/GuideHub.astro';
+import { LANGUAGES } from '../../config';
+import type { Lang } from '../../i18n';
+import { guides } from '../../i18n/guides';
+
+export function getStaticPaths() {
+  return LANGUAGES.slice(1).flatMap((lang) => {
+    const g = guides(lang);
+    if (!g) return [];
+    return [
+      { params: { lang, guide: g.hub.page.replace(/\/$/, '') }, props: { id: 'hub' } },
+      ...g.list.map((guide) => ({ params: { lang, guide: guide.page.replace(/\/$/, '') }, props: { id: guide.id } })),
+    ];
+  });
+}
+const lang = Astro.params.lang as Lang;
+const guide = guides(lang)!.list.find((x) => x.id === Astro.props.id);
+---
+
+{guide ? <Guide lang={lang} guide={guide} /> : <GuideHub lang={lang} />}

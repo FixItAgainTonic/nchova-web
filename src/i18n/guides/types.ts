@@ -50,8 +50,8 @@ export interface Bill {
   head: string;
   /** The way it is billed, one per tab: every how many months, how much each time. */
   plans: { tab: string; sub: string; every: number; amount: number }[];
-  /** How their price is written: '$' before, or ' €' after. */
-  currency: { before?: string; after?: string };
+  /** Their currency, ISO 4217 ('USD'): amounts are written the page language's way. */
+  currency: string;
   /** Months the film runs for. */
   months: number;
   /** 'Month', 'Year 2', 'Total'… */

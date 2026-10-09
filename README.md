@@ -1,10 +1,14 @@
 # nchova.com
 
-Il sito di **nchova**: dettatura e meeting trascritti sul Mac. Oggi in inglese, su `/`.
+Il sito di **nchova**: dettatura e meeting trascritti sul Mac. In inglese su `/`, poi in italiano, tedesco,
+francese e spagnolo (`/it/`, `/de/`, `/fr/`, `/es/`).
 
 Le lingue pubblicate sono in `LANGUAGES` (`src/config.ts`): la prima sta alla radice, ogni altra
-nella sua cartella. I testi italiani sono già pronti in `src/i18n/it.ts`: per pubblicarli su `/it/`
-basta `LANGUAGES = ['en', 'it']`.
+nella sua cartella. Ogni lingua ha i suoi testi in `src/i18n/<lingua>.ts` e le guide in
+`src/i18n/guides/<lingua>.ts` (una lingua senza file di guide non le pubblica). Le pagine hanno lo stesso
+indirizzo in ogni lingua, così gli hreflang si trovano da soli. L'app parla solo inglese e italiano: nelle
+altre lingue le voci di nchova restano in inglese, quelle di macOS sono nella lingua del sistema, e la pulizia
+dei ripensamenti (solo inglese e italiano) non si promette. Le anteprime dei link: `tools/og.sh`.
 
 Il logo è fatto di segni tipografici (una graffa, quattro barre, una parentesi), quindi il sito è
 tipografico: carta e inchiostro viola, *Fraunces corsivo* per la voce, Fraunces tondo e DM Mono per

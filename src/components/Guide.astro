@@ -49,7 +49,7 @@ const related = [...all.list.filter((o) => o.group === g.group), ...all.list.fil
 ---
 
 <Base lang={lang} title={g.metaTitle} description={g.description} page={g.page} langs={guideLangs(g.id)} graph={graph}>
-  <Nav t={t} away from={`${g.id}-nav`} />
+  <Nav t={t} away from={`${g.id}-nav`} page={g.page} langs={guideLangs(g.id)} />
   <main id="main" class="guide">
     <header class="ghero">
       <div class="wrap">

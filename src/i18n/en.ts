@@ -19,6 +19,7 @@ const en: Dict = {
     ],
     cta: 'Try it free',
     skip: 'Skip to content',
+    language: 'Language',
   },
   hero: {
     kicker: 'Dictation and meeting transcription for Mac',

@@ -7,8 +7,12 @@ import Mark from '../Mark.astro';
 interface Props {
   /** The call runs in the browser (Google Meet), not in an app of its own. */
   browser?: boolean;
+  /** The page's language: the Calendar icon writes the day the way macOS does in it. */
+  lang?: string;
 }
-const { browser = false } = Astro.props;
+const { browser = false, lang = 'en' } = Astro.props;
+// Tuesday 22 September 2026, the day of every demo meeting.
+const weekday = new Intl.DateTimeFormat(lang, { weekday: 'short' }).format(new Date(2026, 8, 22)).replace('.', '').toUpperCase();
 ---
 
 <div class="dock" aria-hidden="true">
@@ -24,7 +28,7 @@ const { browser = false } = Astro.props;
     <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#3b8bf5" /><rect x="8" y="12" width="24" height="16" rx="2.5" fill="#fff" /><path d="M8.8 13 20 21.5 31.2 13" stroke="#3b8bf5" stroke-width="2" fill="none" /></svg>
   </span>
   <span class="dock__app">
-    <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#fff" /><text x="20" y="13" text-anchor="middle" font-size="7" font-weight="700" fill="#ff3b30" font-family="system-ui">TUE</text><text x="20" y="32" text-anchor="middle" font-size="19" font-weight="300" fill="#1d1d1f" font-family="system-ui">22</text></svg>
+    <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#fff" /><text x="20" y="13" text-anchor="middle" font-size="7" font-weight="700" fill="#ff3b30" font-family="system-ui">{weekday}</text><text x="20" y="32" text-anchor="middle" font-size="19" font-weight="300" fill="#1d1d1f" font-family="system-ui">22</text></svg>
   </span>
   <span class="dock__app">
     <svg viewBox="0 0 40 40"><rect width="40" height="40" rx="9" fill="#2e7ff6" /><rect x="8" y="14" width="16" height="12" rx="3" fill="#fff" /><path d="M25 18.5 32 14.5v11l-7-4z" fill="#fff" /></svg>

@@ -6,7 +6,7 @@ const it = {
   meta: {
     title: 'nchova — Dettatura e trascrizione dei meeting per Mac',
     description:
-      'Detta in qualsiasi app e trascrivi i meeting senza bot nella call. nchova riconosce chi parla e scrive le note, sul tuo Mac. Prova gratuita di 30 giorni.',
+      'Detta in qualsiasi app e trascrivi le riunioni senza bot nella call. nchova riconosce chi parla e scrive le note, sul tuo Mac. Prova gratuita di 30 giorni.',
   },
   nav: {
     items: [
@@ -19,6 +19,7 @@ const it = {
     ],
     cta: 'Prova gratis',
     skip: 'Vai al contenuto',
+    language: 'Lingua',
   },
   hero: {
     kicker: 'Dettatura e trascrizione dei meeting per Mac',
@@ -31,8 +32,8 @@ const it = {
     meta: 'macOS 26 · Mac con chip Apple',
     field: [
       ['00:00:03', 'Io', 'Partiamo dal lancio, così chiudiamo in mezz’ora.'],
-      ['00:00:09', 'Giulia', 'Il testo della pagina è pronto, mancano solo le animazioni del pesce.'],
-      ['00:00:16', 'Marco', 'Le chiudo entro giovedì, anzi no, venerdì mattina.'],
+      ['00:00:09', 'Giulia', 'Il testo della pagina è pronto, manca solo l’animazione del pesce.'],
+      ['00:00:16', 'Marco', 'La chiudo entro giovedì, anzi no, venerdì mattina.'],
       ['00:00:24', 'Io', 'Va bene. Sara, la newsletter?'],
       ['00:00:28', 'Sara', 'La preparo io, la mando lunedì alle dieci.'],
       ['00:00:35', 'Io', 'Mettiamo il prezzo in alto, si deve vedere subito.'],
@@ -145,10 +146,10 @@ const it = {
     title: 'Sa *chi* sta parlando.',
     lead: 'Distingue le voci degli altri mentre parlano e, se le ha già sentite, le chiama per nome.',
     notes: [
-      ['Voce 1, Voce 2…', 'nell’ordine in cui parlano, dal vivo.'],
-      ['Solo fra gli invitati', 'mai qualcuno che non era nel meeting. Una voce che somiglia soltanto viene proposta, non nominata: «forse Marco?»'],
+      ['Voce 1, Voce 2…', 'nell’ordine in cui parlano per la prima volta, dal vivo.'],
+      ['Solo fra gli invitati', 'mai qualcuno che non era nel meeting. Una voce solo simile viene proposta, non nominata: «forse Marco?»'],
       ['Impara da te', 'dalle call a due e dai nomi che dai alle voci. Alla fine ti chiede di chi erano quelle che non conosceva.'],
-      ['Restano sul tuo Mac', 'le impronte vocali non lasciano mai il tuo Mac. Dimentichi chi vuoi, quando vuoi.'],
+      ['Restano sul tuo Mac', 'le impronte vocali non lasciano mai il tuo Mac. nchova dimentica chi vuoi, quando vuoi.'],
     ],
     demo: {
       event: 'Sync prodotto',
@@ -169,7 +170,7 @@ const it = {
   notes: {
     id: 'notes',
     kicker: 'note',
-    title: 'Le note si scrivono *quando chiudi* la call.',
+    title: 'Le note si scrivono *quando chiudi la call*.',
     lead: 'Note dei meeting scritte dall’AI: gli argomenti, cosa si è deciso, chi fa cosa. Attorno ai tuoi appunti, col modello che scegli tu.',
     notes: [
       ['Attorno ai tuoi appunti', 'due parole durante la call bastano: le note crescono da lì.'],
@@ -320,7 +321,7 @@ const it = {
       head: 'NCHOVA PRO',
       sub: 'una tantum',
       lines: [
-        ['Tutto il gratuito', 'sì'],
+        ['Tutta la versione gratuita', 'sì'],
         ['Parakeet, il modello di NVIDIA sul Mac', 'sì'],
         ['Lingue europee, con Parakeet', '{nPro}'],
         ['Le voci degli altri, distinte', 'sì'],
@@ -342,7 +343,7 @@ const it = {
     needs: [
       'macOS 26 o successivo',
       'un Mac con chip Apple',
-      'Apple Intelligence attivo, per le note gratuite e per pulire i ripensamenti',
+      'Apple Intelligence attiva, per le note gratuite e per pulire i ripensamenti',
     ],
   },
   faq: {
@@ -356,13 +357,13 @@ const it = {
       ['Funziona senza internet?', 'Sì: dettatura e meeting girano sul Mac. La rete serve per scaricare i modelli la prima volta, per gli aggiornamenti e per attivare Pro.'],
       ['Che lingue capisce?', '{nFree} gratis, coi modelli Apple; con Pro, le {nPro} lingue europee di Parakeet. Quelle che conosce solo Parakeet, come {proOnly}, richiedono Pro. Ne scegli fino a tre e nchova sente da sola quale stai parlando. L’app invece è in italiano e in inglese.'],
       ['Devo invitare un bot nella call?', 'No. nchova sente la call dal tuo Mac, come la senti tu. Nella call non entra nessuno.'],
-      ['In cosa è diversa da Wispr Flow, Otter o Granola?', 'Quelli mandano la tua voce nel cloud per trascriverla, e i loro piani a pagamento sono abbonamenti; Otter in più mette un bot nelle tue call. nchova trascrive sul tuo Mac, non entra in nessuna call e fa dettatura, meeting e note in un’app sola: gratis, o 29,99 € una volta per Pro.'],
+      ['In cosa è diversa da Wispr Flow, Otter o Granola?', 'Quelle app mandano la tua voce nel cloud per trascriverla, e i loro piani a pagamento sono abbonamenti; Otter in più mette un bot nelle tue call. nchova trascrive sul tuo Mac, non entra in nessuna call e fa dettatura, meeting e note in un’app sola: gratis, o 29,99 € una volta per Pro.', 'alternatives/', 'Tutti i confronti'],
       ['Con quali app di videochiamata funziona?', 'Con tutte: Zoom, Meet, Teams, Slack, anche nel browser. Si accorge che un’app sta usando il microfono e ti chiede se trascrivere.'],
       ['Funziona col mio calendario Google o Outlook?', 'Sì, una volta che l’account è sul Mac: nchova legge i calendari che macOS conosce, quindi non accedi mai a Google o Microsoft dentro nchova. Puoi aggiungere l’account solo per il calendario, senza posta né contatti.', 'help/calendar/'],
       ['Dove finiscono le trascrizioni?', 'Sul tuo Mac, e nel tuo iCloud se attivi la sync (Pro), così arrivano sugli altri tuoi Mac. L’audio non lascia mai il Mac.'],
       ['E dopo i 30 giorni?', 'nchova resta gratis: dettatura, transcript, note coi modelli Apple, assistenti AI ed export. Pro aggiunge Parakeet, le voci, i nomi, le note migliori e la sync fra i tuoi Mac: 29,99 €, una volta sola, fino a 3 Mac.'],
       ['Come si compra Pro?', 'Dal sito: il pagamento lo gestisce Polar e la chiave di licenza ti arriva per email. Nessun account da creare.'],
-      ['Che Mac serve?', 'Un Mac con chip Apple e macOS 26 o successivo. Per le note gratuite serve Apple Intelligence attivo.'],
+      ['Che Mac serve?', 'Un Mac con chip Apple e macOS 26 o successivo. Per le note gratuite serve Apple Intelligence attiva.'],
     ],
   },
   closing: {
@@ -381,7 +382,7 @@ const it = {
     title: 'Privacy',
     metaTitle: 'Privacy — nchova',
     sections: [
-      ['Chi siamo', 'nchova è fatta da {company} (P.IVA {vat}), titolare dei dati di cui parla questa pagina.'],
+      ['Chi siamo', 'nchova è fatta da {company} (P.IVA {vat}), titolare del trattamento dei dati di cui parla questa pagina.'],
       ['Questo sito', 'Non usa cookie e non carica niente da altri: i caratteri sono serviti da qui. Conta visite e download con Vercel Web Analytics, che distingue una visita dall’altra con un codice che cambia ogni giorno e non salva indirizzi IP, cookie o altro che ti identifichi. Vercel, che ospita il sito, può tenere i normali log tecnici, come l’indirizzo IP, per farlo funzionare.'],
       ['L’app', 'nchova non ha server propri e non chiede un account. L’audio e le impronte vocali non lasciano mai il tuo Mac. Transcript e note restano sul Mac, e vanno nel tuo iCloud solo se attivi la sync (Pro).'],
       ['Cosa esce dal Mac', 'Per la licenza Pro, nchova manda a Polar la chiave e il nome del Mac. Se le note le scrive il tuo Claude Code o il tuo Codex, il transcript del meeting va ad Anthropic o a OpenAI, col tuo abbonamento. Se colleghi un assistente AI col server MCP, quell’assistente legge i tuoi meeting (mai le dettature). Se attivi la sync iCloud (Pro), transcript e note vanno nel tuo iCloud.'],
@@ -404,13 +405,13 @@ const it = {
     howTitle: 'Come funziona',
     how: [
       'Prendi la licenza gratis: la chiave arriva per email.',
-      'Scarica nchova sul Mac (Apple silicon, macOS 26 o successivo).',
+      'Scarica nchova sul Mac (con chip Apple, macOS 26 o successivo).',
       'Incolla la chiave in nchova › Impostazioni › Licenza. Fatto.',
     ],
     signed: 'Rudy, che fa nchova',
   },
   calendarPage: {
-    metaTitle: 'Aggiungi il calendario Google o Outlook — nchova',
+    metaTitle: 'Aggiungi il calendario Google o Outlook al Mac — nchova',
     description: 'nchova legge i calendari che il Mac conosce. Come aggiungere a macOS un account Google o Outlook solo per il calendario, senza posta né contatti.',
     title: 'Il tuo calendario Google o Outlook, *in nchova*.',
     lead: 'nchova legge i calendari che il Mac conosce già, quelli dell’app Calendario. Non ti chiede mai di accedere a Google o Microsoft, e i tuoi eventi non arrivano mai a noi. Se il calendario lo usi solo nel browser o nell’app Outlook, il Mac non lo conosce ancora: aggiungi l’account una volta, solo per il calendario.',
@@ -420,8 +421,8 @@ const it = {
       search: 'Cerca',
       me: 'Il tuo nome',
       apple: 'Apple Account',
-      side: ['Schermata di blocco', 'Privacy e sicurezza', 'Touch ID e password', 'Utenti e gruppi', '', 'Password', 'Account internet', 'Game Center', 'Wallet e Apple Pay'],
-      pane: 'Account internet',
+      side: ['Schermata di blocco', 'Privacy e sicurezza', 'Touch ID e Password', 'Utenti e gruppi', '', 'Password', 'Account Internet', 'Game Center', 'Wallet e Apple Pay'],
+      pane: 'Account Internet',
       before: 'Utenti e gruppi',
       icloud: 'iCloud',
       icloudApps: 'Safari, Note, Wallet, Trova il mio Mac, Portachiavi e Siri',
@@ -456,8 +457,8 @@ const it = {
         id: 'google',
         name: 'Google',
         steps: [
-          'Apri **Impostazioni di Sistema** e fai clic su **Account internet** nella barra laterale. Forse devi scorrere in basso.',
-          'Fai clic su **Aggiungi account**, poi scrivi il tuo indirizzo Google, oppure fai clic su **scegli da un elenco** e scegli **Google**.',
+          'Apri **Impostazioni di Sistema** e fai clic su **Account Internet** nella barra laterale. Forse devi scorrere in basso.',
+          'Fai clic su **Aggiungi account**, poi scrivi il tuo indirizzo Google, oppure fai clic su **scegli da un elenco** e seleziona **Google**.',
           'Accedi a Google come fai sempre.',
           'Il Mac chiede quali app devono usare l’account: accendi solo **Calendari**, e lascia spente **Mail**, **Contatti** e **Note**.',
         ],
@@ -466,15 +467,15 @@ const it = {
         id: 'outlook',
         name: 'Outlook e Microsoft 365',
         steps: [
-          'Apri **Impostazioni di Sistema** e fai clic su **Account internet** nella barra laterale. Forse devi scorrere in basso.',
-          'Fai clic su **Aggiungi account**, poi scrivi il tuo indirizzo di lavoro o di Outlook, oppure fai clic su **scegli da un elenco** e scegli **Microsoft Exchange**.',
+          'Apri **Impostazioni di Sistema** e fai clic su **Account Internet** nella barra laterale. Forse devi scorrere in basso.',
+          'Fai clic su **Aggiungi account**, poi scrivi il tuo indirizzo di lavoro o di Outlook, oppure fai clic su **scegli da un elenco** e seleziona **Microsoft Exchange**.',
           'Scrivi nome e indirizzo, fai clic su **Accedi** ed entra con Microsoft come fai in Outlook.',
           'Il Mac chiede quali app devono usare l’account: accendi solo **Calendari**, e lascia spente **Mail**, **Contatti**, **Promemoria** e **Note**.',
         ],
       },
     ],
     sections: [
-      ['È già sul Mac, con la posta e tutto?', 'In **Account internet** fai clic sull’account e spegni tutto tranne **Calendari**. Così l’account esce solo dalle app del Mac, come Mail e Contatti: dall’account non si cancella niente, resta com’è su Google o Microsoft e in Outlook.'],
+      ['È già sul Mac, con la posta e tutto?', 'In **Account Internet** fai clic sull’account e spegni tutto tranne **Calendari**. Così l’account esce solo dalle app del Mac, come Mail e Contatti: dall’account non si cancella niente, resta com’è su Google o Microsoft e in Outlook.'],
       ['Poi, in nchova', 'Apri **Impostazioni › Meeting** e, sotto **Calendari da leggere**, spunta i tuoi calendari. Lascia senza spunta il calendario condiviso di un collega: i suoi meeting sembrerebbero tuoi, con te come invitato.', 'app'],
       ['Ancora non c’è?', 'Apri l’app Calendario una volta e lasciale un minuto per scaricare gli eventi. Con un account di lavoro decide la tua azienda quali app possono leggerlo: da ottobre 2026 Microsoft sta spegnendo, un’azienda alla volta, il collegamento che il Mac usa per Microsoft 365, e Apple ha detto che un aggiornamento di macOS 27 passerà a quello nuovo. Fino ad allora, il tuo reparto IT può tenerlo acceso per le app di Apple.'],
       ['Altro', 'Scrivici:'],

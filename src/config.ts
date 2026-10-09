@@ -1,10 +1,14 @@
 // Links that live outside the copy, in one place.
 
+/** Every language the site has copy for, in src/i18n/ (the guides, in src/i18n/guides/, may lag behind). */
+export const ALL_LANGUAGES = ['en', 'it', 'de', 'fr', 'es'] as const;
+export type Lang = (typeof ALL_LANGUAGES)[number];
+
 /**
  * The languages the site publishes. The first is the default, at /; each other one gets its own
- * folder (/it/…). The copy for each is in src/i18n/. Today: English only.
+ * folder (/it/…). The copy for each is in src/i18n/.
  */
-export const LANGUAGES: ('en' | 'it')[] = ['en'];
+export const LANGUAGES: Lang[] = ['en', 'it', 'de', 'fr', 'es'];
 
 /** The trial DMG: always the latest release, with the same file name every time. Sparkle's updates go straight here. */
 export const DMG_URL = 'https://github.com/FixItAgainTonic/nchova-web/releases/latest/download/Nchova.dmg';

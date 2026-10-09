@@ -10,12 +10,16 @@ interface Props {
   away?: boolean;
   /** The download button's source, for the count (src/pages/download.ts). */
   from?: string;
+  /** This page within its language, and the languages it exists in: the switch leads to the same page elsewhere. */
+  page?: string;
+  langs?: Lang[];
 }
-const { t, away = false, from = 'nav' } = Astro.props;
-const home = path(t.lang as Lang);
+const { t, away = false, from = 'nav', page = '', langs = LANGUAGES } = Astro.props;
+const lang = t.lang as Lang;
+const home = path(lang);
 const to = away ? home : '';
-// The language switch appears once there is more than one language.
-const others = LANGUAGES.filter((l) => l !== t.lang);
+// The language switch appears once there is more than one language; a language without this page leads to its home.
+const others = LANGUAGES.filter((l) => l !== lang);
 ---
 
 <a class="skip" href="#main">{t.nav.skip}</a>
@@ -30,11 +34,20 @@ const others = LANGUAGES.filter((l) => l !== t.lang);
     </nav>
     <div class="nav__end">
       {
-        others.map((l) => (
-          <a class="nav__lang mono" href={path(l)} hreflang={l} lang={l} title={dicts[l].langName}>
-            {l.toUpperCase()}
-          </a>
-        ))
+        others.length > 0 && (
+          <details class="nav__langs mono" data-langs>
+            <summary aria-label={t.nav.language}>{lang.toUpperCase()}</summary>
+            <ul>
+              {others.map((l) => (
+                <li>
+                  <a href={langs.includes(l) ? path(l, page) : path(l)} hreflang={l} lang={l}>
+                    {dicts[l].langName}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </details>
+        )
       }
       <a class="btn btn--sm" href={`${DOWNLOAD_URL}?from=${from}`}><Bracket>{t.nav.cta}</Bracket></a>
     </div>

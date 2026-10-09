@@ -34,7 +34,7 @@ const uses = all.list.filter((g) => g.group === 'use');
 ---
 
 <Base lang={lang} title={h.metaTitle} description={h.description} page={h.page} langs={guideLangs('hub')} graph={graph}>
-  <Nav t={t} away from="alternatives-nav" />
+  <Nav t={t} away from="alternatives-nav" page={h.page} langs={guideLangs('hub')} />
   <main id="main" class="guide">
     <header class="ghero">
       <div class="wrap">
