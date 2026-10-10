@@ -50,13 +50,17 @@ lì (`{free}`, `{pro}`, `{nFree}`… nei testi).
 - `CHECKOUT_URL` in `src/config.ts`: il checkout Polar di nchova Pro.
 - I pulsanti di download puntano a `/download` (`src/pages/download.ts`): conta il download in Vercel Web
   Analytics e rimanda a `releases/latest/download/Nchova.dmg` di questa repo (`DMG_URL`).
-- `public/updates/appcast.xml` → `https://nchova.com/updates/appcast.xml`, definitivo: è dentro
-  l'app. Lo riscrive lo script di rilascio dell'app a ogni versione. Il sito non usa nient'altro sotto `/updates/`.
+- `src/updates/appcast.xml` → `https://nchova.com/updates/appcast.xml`, definitivo: è dentro
+  l'app. Lo riscrive lo script di rilascio dell'app a ogni versione. Lo serve `src/pages/updates/appcast.xml.ts`, che
+  conta ogni controllo di Sparkle (evento «Update check», con la sola versione: ogni copia accesa chiede una volta al
+  giorno). Fino al 10 ottobre 2026 era un file statico in `public/updates/`, che nessuno poteva contare. Il sito non usa
+  nient'altro sotto `/updates/`.
 
 ## Pubblicazione
 
 Dal lancio (7 ottobre 2026) il sito sta su **Vercel** (progetto `nchova-web`, team Pro di FixItAgainTonic): ogni push
 su `main` lo ripubblica, appcast compreso. DNS su Register.it: `A @ 216.150.1.1`, `CNAME www
 b5322d7f22c6c5cd.vercel-dns-016.com.`; gli MX della posta restano quelli di Register.it. Statistiche: Vercel ›
-progetto › Analytics (visite, provenienze, evento «Download» con il pulsante di partenza). GitHub conta a parte ogni
+progetto › Analytics (visite, provenienze, evento «Download» con il pulsante di partenza, evento «Update check» con
+la versione dell'app). GitHub conta a parte ogni
 download del DMG, aggiornamenti di Sparkle compresi.
