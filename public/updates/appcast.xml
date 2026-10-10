@@ -8,6 +8,50 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.1.0</title>
+      <pubDate>Sat, 10 Oct 2026 07:36:27 +0000</pubDate>
+      <sparkle:version>195</sparkle:version>
+      <sparkle:shortVersionString>1.1.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- nchova parla francese, tedesco e spagnolo: tutta l'app, le richieste dei permessi e la finestra degli aggiornamenti. Segue la lingua del Mac, oppure la scegli in Impostazioni › Generali › Interfaccia.
+- Su un Mac nuovo nchova parte dalle lingue del Mac, più l'inglese.
+- Dettando in francese, tedesco o spagnolo: una parolina detta due volte se ne va, abbreviazioni come «bzw.» tengono il punto, il francese ha il suo spazio prima di ? ! : ; e una domanda spagnola rimasta aperta prende il suo «?».
+- La pulizia delle auto-correzioni conosce anche francese, tedesco e spagnolo, e ascolta solo le lingue in cui detti.
+- Meeting: transcript ed esportazioni dicono «Moi», «Ich», «Yo» nella tua lingua, le risposte brevi come «oui merci» non si perdono più, e le call di Zoom e Teams aperte nel browser in francese, tedesco o spagnolo vengono riconosciute.
+- Le scorciatoie Fn seguono le lettere della tua tastiera: Fn+M funziona anche su una tastiera francese.
+- Corretto: cambiare più volte le lingue di dettatura poteva fermare il riconoscimento di Apple.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- nchova speaks French, German and Spanish: the whole app, the permission requests and the updates window. It follows your Mac's language, or pick one in Settings › General › Interface.
+- On a new Mac, nchova starts with your Mac's languages, plus English.
+- Dictating in French, German or Spanish: a little word said twice goes, abbreviations like "bzw." keep their full stop, French gets its space before ? ! : ; and a Spanish question left open gets its "?".
+- Self-correction cleanup now knows French, German and Spanish too, and listens only for the languages you dictate in.
+- Meetings: transcripts and exports say "Moi", "Ich", "Yo" in your language, short replies like "oui merci" are no longer dropped, and Zoom and Teams calls in a French, German or Spanish browser are recognised.
+- The Fn shortcuts follow the letters on your keyboard: Fn+M works on a French keyboard too.
+- Fixed: changing your dictation languages a few times could stop Apple's recognition.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- nchova parle français, allemand et espagnol : toute l'app, les demandes d'autorisation et la fenêtre des mises à jour. Elle suit la langue de votre Mac, ou choisissez-en une dans Réglages › Général › Interface.
+- Sur un nouveau Mac, nchova démarre avec les langues de votre Mac, plus l'anglais.
+- En dictée en français, allemand ou espagnol : un petit mot dit deux fois disparaît, les abréviations comme « bzw. » gardent leur point, le français a son espace avant ? ! : ; et une question espagnole restée ouverte reçoit son « ? ».
+- Le nettoyage des autocorrections connaît aussi le français, l'allemand et l'espagnol, et n'écoute que les langues dans lesquelles vous dictez.
+- Réunions : les transcriptions et les exports disent « Moi », « Autres », « Voix 2 » en français, les réponses courtes comme « oui merci » ne se perdent plus, et les appels Zoom et Teams ouverts dans un navigateur en français, allemand ou espagnol sont reconnus.
+- Les raccourcis Fn suivent les lettres de votre clavier : Fn+M fonctionne aussi sur un clavier AZERTY.
+- Corrigé : changer plusieurs fois de langues de dictée pouvait arrêter la reconnaissance d'Apple.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- nchova spricht Französisch, Deutsch und Spanisch: die ganze App, die Berechtigungsanfragen und das Update-Fenster. Sie folgt der Sprache deines Mac, oder du wählst eine unter Einstellungen › Allgemein › Oberfläche.
+- Auf einem neuen Mac startet nchova mit den Sprachen deines Mac, dazu Englisch.
+- Beim Diktieren auf Französisch, Deutsch oder Spanisch: Ein doppelt gesagtes kurzes Wort verschwindet, Abkürzungen wie „bzw.“ behalten ihren Punkt, Französisch bekommt sein Leerzeichen vor ? ! : ; und eine offen gebliebene spanische Frage ihr „?“.
+- Das Bereinigen von Selbstkorrekturen funktioniert jetzt auch auf Französisch, Deutsch und Spanisch und hört nur auf die Sprachen, in denen du diktierst.
+- Meetings: Transkripte und Exporte sagen „Ich“, „Andere“, „Stimme 2“ auf Deutsch, kurze Antworten wie „ja genau“ gehen nicht mehr verloren, und Zoom- und Teams-Calls in einem Browser auf Französisch, Deutsch oder Spanisch werden erkannt.
+- Die Fn-Kurzbefehle folgen den Buchstaben deiner Tastatur: Fn+M funktioniert auch auf einer französischen Tastatur.
+- Behoben: Mehrmaliges Wechseln der Diktiersprachen konnte die Spracherkennung von Apple stoppen.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- nchova habla francés, alemán y español: toda la app, las solicitudes de permisos y la ventana de actualizaciones. Sigue el idioma de tu Mac, o elige uno en Ajustes › General › Interfaz.
+- En un Mac nuevo, nchova empieza con los idiomas de tu Mac, más el inglés.
+- Al dictar en francés, alemán o español: una palabra corta dicha dos veces desaparece, abreviaturas como «bzw.» conservan su punto, el francés tiene su espacio antes de ? ! : ; y una pregunta en español que quedó abierta recibe su «?».
+- La limpieza de rectificaciones ahora también conoce el francés, el alemán y el español, y solo escucha los idiomas en los que dictas.
+- Reuniones: las transcripciones y las exportaciones dicen «Yo», «Otros», «Voz 2» en español, las respuestas cortas como «sí vale» ya no se pierden, y se reconocen las llamadas de Zoom y Teams abiertas en un navegador en francés, alemán o español.
+- Los atajos Fn siguen las letras de tu teclado: Fn+M también funciona en un teclado francés.
+- Corregido: cambiar varias veces los idiomas de dictado podía detener el reconocimiento de Apple.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.1.0/Nchova.dmg" length="21577698" type="application/octet-stream" sparkle:edSignature="T3nhz6fo9VsNYfYbVgu4VVFaUt795FyIJJ//BLkGupnHC7HON9gVP+Nl2wsmeRwjaXHKh6qSkqFmweD4zCnmDQ=="/>
+    </item>
+    <item>
       <title>nchova 1.0.3</title>
       <pubDate>Thu, 08 Oct 2026 16:41:50 +0000</pubDate>
       <sparkle:version>194</sparkle:version>
