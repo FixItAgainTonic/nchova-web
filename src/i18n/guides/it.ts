@@ -175,7 +175,7 @@ const multilingual: Guide = {
       items: [
         ['Gratis, col modello di Apple', '{free}.'],
         ['Con Pro, Parakeet', '{pro}.', 'pro'],
-        ['L’app', 'menu e impostazioni di nchova sono in italiano e in inglese, in qualunque lingua tu detti.'],
+        ['L’app', 'menu e impostazioni di nchova sono in italiano, inglese, tedesco, francese e spagnolo, in qualunque lingua tu detti.'],
       ],
     },
     {

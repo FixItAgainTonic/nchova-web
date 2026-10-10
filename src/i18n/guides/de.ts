@@ -1,6 +1,6 @@
 // The guides, in German. Types and markup in ./types.ts.
-// nchova's own labels on screen stay in English (the app has no German interface and falls back to English); macOS's
-// labels are written as macOS 26 shows them in German.
+// nchova's own labels on screen are the app's German ones (de.lproj/Localizable.strings, and the meeting labels of
+// MeetingExporter.swift); macOS's labels are written as macOS 26 shows them in German.
 
 import base from '../de';
 import type { Bot, Guide, Guides } from './types';
@@ -68,7 +68,7 @@ const offline: Guide = {
       kind: 'prose',
       h: 'Was auf dem Mac läuft, und wofür es *einmal* Internet braucht',
       p: [
-        'Alles, was nchova mit deiner Stimme macht, passiert auf deinem Mac: das Diktieren, die Transkription von Meetings, die Notizen, wenn Apples Modell oder Qwen sie schreibt. Nichts davon ruft einen Server auf, also ist es egal, ob du online bist.',
+        'Alles, was nchova mit deiner Stimme macht, passiert auf deinem Mac: das Diktieren, die Transkription von Meetings, das Bereinigen von Selbstkorrekturen, die Notizen, wenn Apples Modell oder Qwen sie schreibt. Nichts davon ruft einen Server auf, also ist es egal, ob du online bist.',
         'Internet brauchst du nur ein paar Mal, und nie für deine Stimme: um ein Modell beim ersten Mal zu laden (macOS holt jede Sprache für Apples Spracherkennung; Parakeet hat rund 480 MB, einmalig), um Pro zu aktivieren und um nach Updates zu suchen. Danach: WLAN aus, und nicht mehr dran denken.',
         'Drei Dinge sind von Natur aus online, und nur, wenn du sie wählst: Notizen von deinem eigenen Claude Code oder Codex, für die das Transkript des Meetings an Anthropic oder OpenAI geht; ein Cloud-Assistent wie Claude oder ChatGPT, mit deinen Meetings verbunden, der das Gelesene an sein eigenes Modell schickt; und die Synchronisierung deiner Meetings zwischen deinen Macs über iCloud (Pro).',
       ],
@@ -76,7 +76,7 @@ const offline: Guide = {
     {
       kind: 'points',
       h: 'Zwei Engines, *beide* auf dem Mac',
-      lead: 'Wähl eine unter Settings › Dictation. Die gewählte transkribiert auch deine Meetings.',
+      lead: 'Wähl eine unter Einstellungen › Diktieren. Die gewählte transkribiert auch deine Meetings.',
       items: [
         ['Spracherkennung von Apple', 'in macOS eingebaut: Von uns musst du nichts laden, sie diktiert ab der ersten Minute, in {nFree} Sprachen. Kostenlos, dauerhaft.'],
         ['Parakeet', 'das Spracherkennungsmodell von NVIDIA, einmalig rund 480 MB, in {nPro} europäischen Sprachen, auch in solchen, die Apple fehlen, etwa {proOnly}. Während es lädt, diktiert Apple weiter.', 'pro'],
@@ -87,7 +87,7 @@ const offline: Guide = {
       kind: 'steps',
       h: 'Richte es ein, bevor das Netz weg ist',
       steps: [
-        '[Lade nchova herunter](/download?from=offline-steps) und öffne es. Es fragt nach **Microphone** und **Accessibility** und bittet dich, **Beim Drücken der 🌐-Taste** auf **Keine Aktion** zu stellen, damit Fn zu nchova gehört und nicht zur Diktierfunktion von macOS.',
+        '[Lade nchova herunter](/download?from=offline-steps) und öffne es. Es fragt nach dem **Mikrofon** und nach **Bedienungshilfen** und bittet dich, **Beim Drücken der 🌐-Taste** auf **Keine Aktion** zu stellen, damit Fn zu nchova gehört und nicht zur Diktierfunktion von macOS.',
         'Wähl deine Sprachen, bis zu drei. Lass macOS sie laden, oder lade Parakeet, solange du noch online bist.',
         'Schalt das WLAN aus und probier es: **Fn** halten, sprechen, loslassen.',
       ],
@@ -160,7 +160,7 @@ const multilingual: Guide = {
       },
       notes: [
         ['Automatisch', 'nchova hört auf alle deine Sprachen gleichzeitig und schreibt die, die du gesprochen hast.'],
-        ['Oder fest', 'leg eine Sprache fest und wechsle sie unter Settings, wenn du eine andere brauchst.'],
+        ['Oder fest', 'leg eine Sprache fest und wechsle sie in den Einstellungen, wenn du eine andere brauchst.'],
         ['Dein Vokabular', 'Namen und Abkürzungen so geschrieben, wie du willst: Aus „Gira“ wird Jira, und du kannst hinzufügen, wie die Engine sie hört.'],
       ],
     },
@@ -179,7 +179,7 @@ const multilingual: Guide = {
       items: [
         ['Kostenlos, mit Apples Modell', '{free}.'],
         ['Mit Pro, Parakeet', '{pro}.', 'pro'],
-        ['Die App selbst', 'Menüs und Einstellungen von nchova gibt es auf Englisch und Italienisch, egal, in welchen Sprachen du diktierst.'],
+        ['Die App selbst', 'Menüs und Einstellungen von nchova gibt es auf Englisch, Italienisch, Deutsch, Französisch und Spanisch, egal, in welchen Sprachen du diktierst.'],
       ],
     },
     {
@@ -194,8 +194,8 @@ const multilingual: Guide = {
       kind: 'steps',
       h: 'Deine Sprachen einstellen',
       steps: [
-        'Öffne in nchova **Settings › Dictation** und klick unter **Recognition** auf **Add a language…**. Wähl bis zu drei.',
-        'Lass **Language** auf **Automatic**: nchova hört auf alle gleichzeitig.',
+        'Öffne in nchova **Einstellungen › Diktieren** und klick unter **Erkennung** auf **Sprache hinzufügen …**. Wähl bis zu drei.',
+        'Lass **Sprache** auf **Automatisch**: nchova hört auf alle gleichzeitig.',
         'Halt **Fn** gedrückt und sprich, wie du eben sprichst.',
       ],
     },
@@ -205,7 +205,7 @@ const multilingual: Guide = {
       items: [
         ['Kann ich zwei Sprachen im selben Satz mischen?', 'Ja, wenn jeder Teil mehr als ein paar Wörter hat: nchova entscheidet Abschnitt für Abschnitt. Ein einzelnes fremdes Wort mitten im Satz bringst du besser dem Vokabular bei.'],
         ['Welche Sprachen sind kostenlos?', '{free}, mit Apples Modell. Pro bringt Parakeet und die Sprachen, die nur Parakeet kennt, etwa {proOnly}.'],
-        ['Warum höchstens drei?', 'Mit Apples Engine ist jede Sprache auf Automatic eine Erkennung mehr, die bei jedem Diktat mithört; mit Parakeet eine Sprache mehr, die auseinandergehalten werden muss. Bei drei bleibt die Wahl sicher und der Mac schnell: Für eine andere Sprache entfernst du eine der drei.'],
+        ['Warum höchstens drei?', 'Mit Apples Engine ist jede Sprache bei „Automatisch“ eine Erkennung mehr, die bei jedem Diktat mithört; mit Parakeet eine Sprache mehr, die auseinandergehalten werden muss. Bei drei bleibt die Wahl sicher und der Mac schnell: Für eine andere Sprache entfernst du eine der drei.'],
         ['Funktioniert es offline in jeder Sprache?', 'Ja: Beide Engines laufen auf dem Mac. Beim ersten Mal lädt macOS eine Sprache für Apples Engine, oder nchova lädt Parakeet einmalig herunter.'],
       ],
     },
@@ -224,7 +224,7 @@ const mcp: Guide = {
   title: 'Frag deinen Assistenten *nach deinen Meetings*.',
   lead: 'nchova transkribiert deine Calls auf dem Mac und gibt sie über einen lokalen MCP-Server an deinen KI-Assistenten weiter. Claude, ChatGPT, Cursor und die anderen durchsuchen, was gesagt wurde, fassen deine Woche zusammen, sagen dir, wer was zu erledigen hat, und speichern Notizen zurück. Dazwischen steht kein Server von uns: Wir haben keine.',
   short3: [
-    ['*Ein* Klick', 'Settings › Assistants › Connect: nchova trägt sich in die Konfiguration deines Assistenten ein und sichert jede Datei, die es ändert.'],
+    ['*Ein* Klick', 'Einstellungen › Assistenten › Verbinden: nchova trägt sich in die Konfiguration deines Assistenten ein und sichert jede Datei, die es ändert.'],
     ['Meetings, *nie* Diktate', 'der Assistent liest Transkripte und Notizen; was du diktierst, bleibt außer Reichweite.'],
     ['Kostenlos', 'der MCP-Server gehört zur kostenlosen Version, für immer, mit oder ohne Pro.'],
   ],
@@ -235,21 +235,21 @@ const mcp: Guide = {
       lead: 'nchova findet die Assistenten auf deinem Mac und richtet jeden mit einem Klick ein. Wo es nicht selbst schreiben kann, bekommst du eine Konfiguration zum Einfügen.',
       connect: {
         tabs: settingsTabs,
-        tab: 'Assistants',
-        section: 'Your meetings in your assistant',
+        tab: 'Assistenten',
+        section: 'Deine Meetings in deinem Assistenten',
         rows: [
-          { name: 'Claude', after: 'Quit and reopen Claude to see the Nchova tools.', click: true },
-          { name: 'Claude Code', after: 'Claude Code sees the Nchova tools from its next session.' },
-          { name: 'ChatGPT / Codex', after: 'In the ChatGPT app press Restart under Settings → MCP servers; Codex sees the tools from its next session.' },
-          { name: 'Cursor', after: 'Cursor picks it up by itself: check Settings → MCP.', click: true },
+          { name: 'Claude', after: 'Beende Claude und öffne es erneut, um die Nchova-Tools zu sehen.', click: true },
+          { name: 'Claude Code', after: 'Claude Code sieht die Nchova-Tools ab der nächsten Sitzung.' },
+          { name: 'ChatGPT / Codex', after: 'Klicke in der ChatGPT-App unter Settings → MCP servers auf „Restart“; Codex sieht die Tools ab der nächsten Sitzung.' },
+          { name: 'Cursor', after: 'Cursor übernimmt es von selbst: Sieh unter Settings → MCP nach.', click: true },
         ],
-        others: 'Others Nchova can connect',
-        button: 'Connect',
-        again: 'Reconnect',
-        connected: 'Connected',
+        others: 'Weitere, die Nchova verbinden kann',
+        button: 'Verbinden',
+        again: 'Neu verbinden',
+        connected: 'Verbunden',
         footer:
-          'Lets the assistant list, search and read your meeting transcripts, follow a meeting in progress and save summaries back, through a local MCP server. Only meetings are shared, never your dictations, and nothing goes through Nchova’s servers: there are none.',
-        label: 'Settings › Assistants in nchova: Connect wird neben Claude geklickt, dann neben Cursor, und bei beiden steht danach Connected.',
+          'Damit kann der Assistent über einen lokalen MCP-Server deine Meeting-Transkripte auflisten, durchsuchen und lesen, ein laufendes Meeting verfolgen und Zusammenfassungen in Nchova speichern. Geteilt werden nur Meetings, nie deine Diktate, und nichts läuft über Server von Nchova: Es gibt keine.',
+        label: 'Einstellungen › Assistenten in nchova: Neben Claude wird auf „Verbinden“ geklickt, dann neben Cursor, und bei beiden steht danach „Verbunden“.',
       },
     },
     {
@@ -296,10 +296,10 @@ const mcp: Guide = {
       h: 'Verbinde deinen Assistenten',
       steps: [
         '[Lade nchova herunter](/download?from=mcp-steps) und lass es ein, zwei Meetings transkribieren.',
-        'Öffne **Settings › Assistants**. Die Assistenten auf deinem Mac stehen oben.',
-        'Klick neben deinem auf **Connect**. nchova trägt sich in die Konfiguration des Assistenten ein: Es sichert eine Datei, bevor es sie ändert, oder führt bei Claude Code und Codex deren eigenen Befehl aus.',
+        'Öffne **Einstellungen › Assistenten**. Die Assistenten auf deinem Mac stehen oben.',
+        'Klick neben deinem auf **Verbinden**. nchova trägt sich in die Konfiguration des Assistenten ein: Es sichert eine Datei, bevor es sie ändert, oder führt bei Claude Code und Codex deren eigenen Befehl aus.',
         'Mach, was nchova dir als Nächstes sagt (bei Claude: beenden und neu öffnen), dann frag nach deinen Meetings.',
-        'Für Perplexity, Raycast, Zed, Goose und jede andere App, die MCP spricht, legt **Copy setup** in die Zwischenablage, was du einfügen musst.',
+        'Für Perplexity, Raycast, Zed, Goose und jede andere App, die MCP spricht, legt **Konfiguration kopieren** in die Zwischenablage, was du einfügen musst.',
       ],
     },
     {
@@ -420,8 +420,8 @@ const wisprFlow: Guide = {
       h: 'Von Wispr Flow umsteigen',
       steps: [
         'Beende Wispr Flow, damit nicht zwei Apps auf dieselbe Taste hören.',
-        '[Lade nchova herunter](/download?from=wispr-flow-steps) und folge der Einrichtung: **Microphone**, **Accessibility** und **Beim Drücken der 🌐-Taste** auf **Keine Aktion**.',
-        'Wähl deine Sprachen, bis zu drei, und trag die Namen und Abkürzungen, die du benutzt, unter **Settings › Vocabulary** ein.',
+        '[Lade nchova herunter](/download?from=wispr-flow-steps) und folge der Einrichtung: **Mikrofon**, **Bedienungshilfen** und **Beim Drücken der 🌐-Taste** auf **Keine Aktion**.',
+        'Wähl deine Sprachen, bis zu drei, und trag die Namen und Abkürzungen, die du benutzt, unter **Einstellungen › Vokabular** ein.',
         'Halt **Fn** oder die rechte Wahltaste gedrückt und sprich.',
       ],
     },
@@ -483,11 +483,11 @@ const superwhisper: Guide = {
         ['Wo transkribiert wird', 'Auf dem Mac mit lokalen Modellen oder in der Cloud (das eigene S1 oder Modelle von Deepgram und ElevenLabs), je nach Modus', 'Auf deinem Mac, immer'],
         ['Kostenloser Plan', 'Lokale Whisper-Modelle, zwei Modi ohne KI-Verarbeitung', 'Diktieren, Meetings und Notizen mit Apples Modellen'],
         ['Meetings', 'Ein Meeting-Modus, den du startest; die andere Seite des Calls braucht Pro', 'Bemerkt den Call, fragt, kennt deinen Kalender'],
-        ['Wer spricht', 'Sprechertrennung (Pro), nicht genutzt in den KI-Zusammenfassungen', 'Voice 1, Voice 2…, per Stimme unter den Eingeladenen benannt (Pro)'],
+        ['Wer spricht', 'Sprechertrennung (Pro), nicht genutzt in den KI-Zusammenfassungen', 'Stimme 1, Stimme 2 …, am Klang unter den Eingeladenen benannt (Pro)'],
         ['Notizen', 'Aus einem KI-Modus, lokal oder in der Cloud', 'Geschrieben, wenn der Call endet, rund um deine eigenen Notizen'],
         ['KI-Assistenten (MCP)', 'Lokaler Server für deinen Diktatverlauf (macOS)', 'Lokaler Server für deine Meetings; nie deine Diktate'],
         ['Sprachen', 'Über 100, je nach Modell', '{nAll}, davon {nFree} kostenlos; bis zu drei gleichzeitig, Wechsel mitten im Satz'],
-        ['Umschreiben', 'KI-Modi, die formatieren und umschreiben, was du gesagt hast', 'Schreibt, was du gesagt hast, und fügt kein Wort hinzu'],
+        ['Umschreiben', 'KI-Modi, die formatieren und umschreiben, was du gesagt hast', 'Schreibt, was du gesagt hast; die Bereinigung kann nur Wörter entfernen'],
         ['Bezahlplan', 'Pro: 8,49 $ im Monat, 84,99 $ im Jahr oder 249,99 $ auf Lebenszeit', 'Pro: 29,99 € einmalig, bis zu 3 Macs'],
         ['Läuft auf', 'Mac (auch Intel), Windows, iPhone, Android', 'Mac mit Apple Chip und macOS 26'],
       ],
@@ -582,11 +582,11 @@ const otter: Guide = {
           label: 'Ein Call, in den Otters Notetaker als Gast kommt, neben demselben Call mit nchova: Niemand kommt dazu, und das Transkript erscheint auf deinem eigenen Bildschirm.',
           call: sync,
           tiles: ['Julia', 'Markus', 'Sarah', 'Tobias', 'Alex'],
-          live: 'Live transcript',
+          live: 'Live-Transkript',
           bubbles: [
-            ['Julia', 'Der Text für die Seite steht.', 'Voice 1'],
+            ['Julia', 'Der Text für die Seite steht.', 'Stimme 1'],
             ['', 'Super. Und die Animationen?'],
-            ['Markus', 'Bis Donnerstag, nein, Moment, Freitag.', 'Voice 2'],
+            ['Markus', 'Bis Donnerstag, nein, Moment, Freitag.', 'Stimme 2'],
           ],
         },
       },
@@ -600,7 +600,7 @@ const otter: Guide = {
         ['Wo transkribiert wird', 'In Otters Cloud, in den USA', 'Auf deinem Mac'],
         ['Das Audio', 'Wird mit dem Gespräch gespeichert, als MP3 exportierbar', 'Nie gespeichert: nur der Text'],
         ['Training', 'Die Datenschutzerklärung erlaubt Training mit de-identifiziertem Audio und Transkripten', 'Bei uns kommt nichts an, womit man trainieren könnte'],
-        ['Wer spricht', 'Benannt über Stimmprofile, die Otter speichert, geteilt in einem Workspace', 'Mit Pro Voice 1, Voice 2…, benannt über Stimmprofile auf deinem Mac; kostenlos „Me“ und „Others“'],
+        ['Wer spricht', 'Benannt über Stimmprofile, die Otter speichert, geteilt in einem Workspace', 'Mit Pro Stimme 1, Stimme 2 …, benannt über Stimmprofile auf deinem Mac; kostenlos „Ich“ und „Andere“'],
         ['Sprachen', '6, eine pro Gespräch (Französisch kann zu Englisch wechseln)', '{nAll}, davon {nFree} kostenlos; bis zu drei gleichzeitig, Satz für Satz'],
         ['Diktieren', 'Keins', 'Fn halten, in jeder App'],
         ['Ohne Internet', 'Nimmt auf und transkribiert nach dem Hochladen', 'Transkribiert wie immer'],
@@ -613,7 +613,7 @@ const otter: Guide = {
     {
       kind: 'demo',
       h: 'Das Transkript, *live*, auf deinem Bildschirm',
-      lead: 'Der Call taucht auf, nchova fragt einmal, und das Transkript schreibt sich in einer Karte, die nur du siehst: Dein Mikrofon ist „Me“, der Call sind alle anderen.',
+      lead: 'Der Call taucht auf, nchova fragt einmal, und das Transkript schreibt sich in einer Karte, die nur du siehst: Dein Mikrofon ist „Ich“, der Call sind alle anderen.',
       flip: true,
       demo: { name: 'meeting' },
       notes: base.meeting.notes as [string, string, 'pro'?][],
@@ -715,7 +715,7 @@ const granola: Guide = {
         ['Deine Transkripte', 'Auf AWS in den USA gespeichert, bis du sie löschst; automatisches Löschen optional', 'Auf deinem Mac, und in deiner eigenen iCloud, wenn du die Synchronisierung einschaltest'],
         ['Training', 'Anonymisierte Daten werden in Basic und Business standardmäßig genutzt, mit Opt-out', 'Bei uns kommt nichts an, womit man trainieren könnte'],
         ['Wann es startet', 'Es meldet den Call; es startet, wenn du klickst oder die Notiz zum Meeting öffnest', 'Es bemerkt den Call und fragt, oder startet von selbst'],
-        ['Wer spricht', '„Me“ und „Them“; auf dem Desktop Namen aus den Teilnehmenden der Call-App', 'Voice 1, Voice 2…, per Stimme unter den Eingeladenen benannt (Pro)'],
+        ['Wer spricht', '„Me“ und „Them“; auf dem Desktop Namen aus den Teilnehmenden der Call-App', 'Stimme 1, Stimme 2 …, am Klang unter den Eingeladenen benannt (Pro)'],
         ['Diktieren', 'Nur, um seinem Chat eine Frage zu stellen', 'Fn halten, in jeder App'],
         ['Ohne Internet', 'Die Transkription braucht eine Verbindung', 'Funktioniert genauso'],
         ['Kostenloser Plan', 'Unbegrenzt viele Meetings; Notizen der letzten 30 Tage sichtbar', 'Unbegrenzt, mit Apples Modellen; nichts wird ausgeblendet'],
@@ -754,7 +754,7 @@ const granola: Guide = {
       h: 'Wann Granola *die bessere Wahl* ist',
       p: [
         'Wenn dein Team Notizen in Granolas Spaces teilt und an Notion, HubSpot oder Attio weiterschickt, ist Granola dafür gemacht, und es läuft auch unter Windows, auf dem iPhone und unter Android. nchova behält die Meetings jeder Person auf ihrem eigenen Mac.',
-        'Wenn du willst, dass die stärksten Cloud-Modelle jede Notiz schreiben, ohne dass du etwas einrichten musst, macht Granola das ab Werk. In nchova kommen die besten Notizen von deinem eigenen Claude Code oder Codex, mit deinem Abo: Das Transkript geht dann an Anthropic oder OpenAI, und wer schreibt, wählst du unter **Settings › Notes**.',
+        'Wenn du willst, dass die stärksten Cloud-Modelle jede Notiz schreiben, ohne dass du etwas einrichten musst, macht Granola das ab Werk. In nchova kommen die besten Notizen von deinem eigenen Claude Code oder Codex, mit deinem Abo: Das Transkript geht dann an Anthropic oder OpenAI, und wer schreibt, wählst du unter **Einstellungen › Notizen**.',
         'Wenn du Granola wegen „kein Bot“ gewählt hast: Das bleibt bei nchova so, und die Cloud fällt auch noch weg.',
       ],
     },
@@ -764,7 +764,7 @@ const granola: Guide = {
       items: [
         ['Funktioniert nchova mit Google Kalender und Outlook?', 'Ja, über die Kalender, die dein Mac kennt: Füg den Account nur für seinen Kalender zu macOS hinzu. [So geht’s](@help/calendar/).'],
         ['Kann ich mein eigenes Claude für die Notizen nutzen?', 'Ja, mit Pro: nchova startet dein eigenes Claude Code oder Codex, angemeldet mit deinem Abo, und die Notizen dauern Sekunden. Kein Schlüssel geht durch nchova.'],
-        ['Startet es von selbst?', 'Es bemerkt den Call, sobald Zoom, Meet, Teams oder Slack das Mikrofon übernimmt, und fragt. Oder stell **When a call starts** auf **Start transcribing by itself**.'],
+        ['Startet es von selbst?', 'Es bemerkt den Call, sobald Zoom, Meet, Teams oder Slack das Mikrofon übernimmt, und fragt. Oder stell **Wenn ein Call beginnt** auf **Automatisch transkribieren**.'],
         ['Kann ich Claude oder ChatGPT nach meinen Meetings fragen?', 'Ja: Der MCP-Server von nchova läuft auf deinem Mac und verbindet sich mit einem Klick. Siehe [Meetings in deinem Assistenten](@mcp/).'],
       ],
     },
@@ -813,7 +813,7 @@ const macwhisper: Guide = {
         ['Wo transkribiert wird', 'Standardmäßig auf deinem Mac; Cloud-Dienste mit deinen eigenen Schlüsseln, wenn du willst', 'Auf deinem Mac, immer'],
         ['Meetings', 'Erkennt den Call und nimmt ihn auf, mit Live-Transkript (Pro; laut Doku ist die Erkennung noch in der Beta)', 'Bemerkt den Call und fragt; kostenlos'],
         ['Kalender', 'In der Doku nicht beschrieben', 'Benennt das Meeting nach dem Termin und listet, wer eingeladen war'],
-        ['Wer spricht', 'Sprecher werden unterschieden (Pro)', 'Voice 1, Voice 2…, per Stimme unter den Eingeladenen benannt (Pro)'],
+        ['Wer spricht', 'Sprecher werden unterschieden (Pro)', 'Stimme 1, Stimme 2 …, am Klang unter den Eingeladenen benannt (Pro)'],
         ['Notizen und Chat', 'Mit deinen eigenen API-Schlüsseln oder einem lokalen Modell über Ollama oder LM Studio (Pro)', 'Geschrieben, wenn der Call endet: Apples Modell, kostenlos; Qwen auf dem Mac oder dein eigenes Claude Code oder Codex (Pro)'],
         ['Das Audio', 'Die Aufnahme wird mit dem Transkript gespeichert', 'Nie gespeichert: nur der Text'],
         ['Diktieren', 'Einfaches Diktieren kostenlos; bessere Qualität und KI-Prompts in Pro', 'Fn halten, in jeder App; Parakeet mit Pro'],
@@ -880,24 +880,24 @@ const anyBot = (call: string): Bot => ({
     label: `Ein ${call}-Call, in den ein Notetaker-Bot als Gast kommt, neben demselben Call mit nchova, in den niemand kommt.`,
     call: sync,
     tiles: ['Julia', 'Markus', 'Sarah', 'Tobias', 'Alex'],
-    live: 'Live transcript',
+    live: 'Live-Transkript',
     bubbles: [
-      ['Julia', 'Der Text für die Seite steht.', 'Voice 1'],
+      ['Julia', 'Der Text für die Seite steht.', 'Stimme 1'],
       ['', 'Super. Und die Animationen?'],
-      ['Markus', 'Bis Donnerstag, nein, Moment, Freitag.', 'Voice 2'],
+      ['Markus', 'Bis Donnerstag, nein, Moment, Freitag.', 'Stimme 2'],
     ],
   },
 });
 
-/** The meeting demo with another call app in the prompt, as the app writes it with a calendar event (in English: the
- *  app has no German). */
-const callIn = (service: string) => ({ ...base.meeting.demo, promptTitle: sync, promptSub: `Call in ${service}. Transcribe it?` });
+/** The meeting demo with another call app in the prompt, as the app writes it with a calendar event ("Call in %@.
+ *  Transkribieren?"). */
+const callIn = (service: string) => ({ ...base.meeting.demo, promptTitle: sync, promptSub: `Call in ${service}. Transkribieren?` });
 
 /** What the meeting demo's notes say on the pages about one call app. */
 const callNotes = (service: string): [string, string][] => [
   ['Es bemerkt den Call', `sobald ${service} ein paar Sekunden lang das Mikrofon nutzt, fragt nchova, ob es transkribieren soll.`],
   ['Mit deinem Kalender', 'das Meeting bekommt den Namen des Termins und seine Eingeladenen, und die Frage kommt zwei Minuten vorher.'],
-  ['Du und die anderen', `dein Mikrofon ist „Me“; was dein Mac abspielt, ${service} inklusive, sind alle anderen.`],
+  ['Du und die anderen', `dein Mikrofon ist „Ich“; was dein Mac abspielt, ${service} inklusive, sind alle anderen.`],
   ['Nur auf deinem Bildschirm', 'die Kapsel und das Transkript sind auf deinem Mac, nicht im Call: Niemand sieht sie, außer du teilst deinen ganzen Bildschirm.'],
 ];
 
@@ -943,9 +943,9 @@ const zoom: Guide = {
       kind: 'steps',
       h: 'Transkribiere deinen nächsten *Zoom*-Call',
       steps: [
-        '[Lade nchova herunter](/download?from=zoom-steps) und öffne es. Verbinde bei der Einrichtung unter **For meetings** den **Calendar**, damit Meetings nach ihren Terminen benannt werden, und klick neben **System audio** auf **Ask now**: So hört nchova die anderen.',
+        '[Lade nchova herunter](/download?from=zoom-steps) und öffne es. Verbinde bei der Einrichtung unter **Für Meetings** den **Kalender**, damit Meetings nach ihren Terminen benannt werden, und klick neben **Systemaudio** auf **Jetzt fragen**: So hört nchova die anderen.',
         'Tritt dem Zoom-Call wie gewohnt bei, in der Zoom-App oder im Browser.',
-        'Wenn nchova fragt, klick auf **Transcribe**. Klick auf die Kapsel unten am Bildschirm, um das Transkript mitzulesen oder eigene Notizen zu machen.',
+        'Wenn nchova fragt, klick auf **Transkribieren**. Klick auf die Kapsel unten am Bildschirm, um das Transkript mitzulesen oder eigene Notizen zu machen.',
         'Leg auf. nchova merkt, dass der Call vorbei ist, schreibt die Notizen und legt das Meeting unter **Meetings** ab (Fn+M).',
       ],
     },
@@ -963,7 +963,7 @@ const zoom: Guide = {
         ['Muss ich Host sein oder einen bezahlten Zoom-Plan haben?', 'Nein. nchova transkribiert jeden Call, in dem du bist, egal welcher Plan und wer der Host ist.'],
         ['Funktioniert es mit Zoom im Browser?', 'Ja. nchova unterscheidet ein Zoom-Meeting am Fenstertitel von anderen Tabs, die das Mikrofon nutzen, und fragt.'],
         ['Mit Kopfhörern oder ohne?', 'Beides. Ohne Kopfhörer entfernt nchova das Echo der Lautsprecher selbst aus deinem Mikrofon, ohne anzufassen, was Zoom sendet.'],
-        ['Kann es von selbst starten?', 'Ja: Stell unter **Settings › Meetings** die Option **When a call starts** auf **Start transcribing by itself**.'],
+        ['Kann es von selbst starten?', 'Ja: Stell unter **Einstellungen › Meetings** die Option **Wenn ein Call beginnt** auf **Automatisch transkribieren**.'],
         ['Kann ich Claude nach meinen Zoom-Calls fragen?', 'Ja: Der MCP-Server von nchova läuft auf deinem Mac und verbindet sich mit einem Klick. Siehe [Meetings in deinem Assistenten](@mcp/).'],
       ],
     },
@@ -1020,9 +1020,9 @@ const meet: Guide = {
       kind: 'steps',
       h: 'Transkribiere dein nächstes *Meet*',
       steps: [
-        '[Lade nchova herunter](/download?from=google-meet-steps) und öffne es. Erlaube bei der Einrichtung **Accessibility** (nchova liest damit auch die Fenstertitel des Browsers), verbinde den **Calendar** und klick neben **System audio** auf **Ask now**.',
+        '[Lade nchova herunter](/download?from=google-meet-steps) und öffne es. Erlaube bei der Einrichtung **Bedienungshilfen** (nchova liest damit auch die Fenstertitel des Browsers), verbinde den **Kalender** und klick neben **Systemaudio** auf **Jetzt fragen**.',
         'Tritt dem Meet wie gewohnt in deinem Browser bei.',
-        'nchova sieht, dass das Fenster mit dem Titel „Meet – …“ das Mikrofon nutzt, und fragt: Klick auf **Transcribe**.',
+        'nchova sieht, dass das Fenster mit dem Titel „Meet – …“ das Mikrofon nutzt, und fragt: Klick auf **Transkribieren**.',
         'Leg auf. Die Notizen werden geschrieben, und das Meeting wartet unter **Meetings** (Fn+M).',
       ],
     },
@@ -1032,7 +1032,7 @@ const meet: Guide = {
       items: [
         ['Welche Browser?', 'Chrome, Safari, Arc, Dia, Edge, Firefox, Brave, Vivaldi, Opera und Zen.'],
         ['Brauche ich eine Chrome-Erweiterung?', 'Nein. nchova unterscheidet einen Call am Fenstertitel von den anderen Tabs, über die Berechtigung für Bedienungshilfen, die es schon hat: keine Erweiterung, keine URL gelesen, kein Netzwerk.'],
-        ['Meldet es sich, wenn ich in ChatGPT oder Google Docs die Spracheingabe nutze?', 'Nicht, solange ChatGPT, Claude, Gemini, Google Docs, YouTube oder Ähnliches der aktive Tab ist. nchova fragt, wenn ein Fenster sagt, dass es ein Call ist, und auch, wenn nichts in die eine oder andere Richtung deutet; jedes „Not now“ hält es danach länger ruhig.'],
+        ['Meldet es sich, wenn ich in ChatGPT oder Google Docs die Spracheingabe nutze?', 'Nicht, solange ChatGPT, Claude, Gemini, Google Docs, YouTube oder Ähnliches der aktive Tab ist. nchova fragt, wenn ein Fenster sagt, dass es ein Call ist, und auch, wenn nichts in die eine oder andere Richtung deutet; jedes „Nicht jetzt“ hält es danach länger ruhig.'],
         ['Sagt Google den anderen Bescheid?', 'Nein: nchova ist nicht im Meeting. Wo das Gesetz es verlangt, sag den Leuten im Call, dass du transkribierst.'],
         ['Funktioniert es mit einem kostenlosen Gmail-Konto?', 'Ja. nchova hängt nicht von deinem Google-Plan ab, und nicht von dem des Hosts.'],
       ],
@@ -1088,9 +1088,9 @@ const teams: Guide = {
       kind: 'steps',
       h: 'Transkribiere deinen nächsten *Teams*-Call',
       steps: [
-        '[Lade nchova herunter](/download?from=teams-steps) und öffne es. Verbinde bei der Einrichtung den **Calendar** und klick neben **System audio** auf **Ask now**.',
+        '[Lade nchova herunter](/download?from=teams-steps) und öffne es. Verbinde bei der Einrichtung den **Kalender** und klick neben **Systemaudio** auf **Jetzt fragen**.',
         'Wenn dein Teams-Kalender zu einem beruflichen Microsoft-365-Account gehört, füg den Account nur für seinen Kalender zu deinem Mac hinzu: [So geht’s](@help/calendar/).',
-        'Tritt dem Teams-Call bei, in der App oder im Browser. Wenn nchova fragt, klick auf **Transcribe**.',
+        'Tritt dem Teams-Call bei, in der App oder im Browser. Wenn nchova fragt, klick auf **Transkribieren**.',
         'Leg auf. Die Notizen werden geschrieben, mit den nächsten Schritten, und das Meeting wartet unter **Meetings** (Fn+M).',
       ],
     },
@@ -1108,7 +1108,7 @@ const teams: Guide = {
         ['Funktioniert es mit Teams im Browser?', 'Ja: nchova erkennt ein Teams-Meeting am Titel des Browserfensters und fragt.'],
         ['Funktioniert es mit Teams für den privaten Gebrauch?', 'Ja. nchova hängt nicht vom Teams-Plan ab, weder von deinem noch von dem des Organisators.'],
         ['Mein Outlook-Kalender ist nicht in nchova. Warum?', 'nchova liest die Kalender, die dein Mac kennt. Füg deinen Arbeitsaccount nur für seinen Kalender zu macOS hinzu: [So geht’s](@help/calendar/).'],
-        ['Kann es von selbst starten?', 'Ja: Stell unter **Settings › Meetings** die Option **When a call starts** auf **Start transcribing by itself**.'],
+        ['Kann es von selbst starten?', 'Ja: Stell unter **Einstellungen › Meetings** die Option **Wenn ein Call beginnt** auf **Automatisch transkribieren**.'],
       ],
     },
   ],

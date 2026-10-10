@@ -63,7 +63,7 @@ const en: Dict = {
     lead: 'Speech to text that runs on your Mac, even offline. The text appears where your cursor is: an email, Slack, Notion, the terminal. Any app, without switching windows.',
     notes: [
       ['Your languages', 'pick up to three and nchova works out which one you are speaking, even mid-sentence.'],
-      ['Second thoughts', '“Thursday, no wait, Friday” becomes “Friday”. The cleanup can only take words out, never put any in.'],
+      ['Second thoughts', '“Thursday, no wait, Friday” becomes “Friday”, once you turn the cleanup on in Settings › Dictation. It can only take words out, never put any in.'],
       ['Your vocabulary', 'names and acronyms written your way: “jeera” becomes Jira, “Jason” becomes JSON.'],
       ['Parakeet', 'NVIDIA’s speech model, on your Mac, in {nPro} European languages.', 'pro'],
     ],
@@ -158,7 +158,7 @@ const en: Dict = {
       yes: 'Yes',
       no: 'No',
       ask: 'Who was this voice?',
-      askHint: 'Name the one you know: next time it gets there by itself.',
+      askHint: 'Nchova did not recognise them. Name the ones you know: next time it will, by itself.',
       save: 'Save',
       known: 'heard before',
       footnote: 'voices.json · on this Mac only',
@@ -348,7 +348,7 @@ const en: Dict = {
     more: 'Here’s how',
     items: [
       ['Does it work offline?', 'Yes: dictation and meetings run on the Mac. It needs the network to download the models the first time, for updates and to activate Pro.'],
-      ['Which languages?', '{nFree} free, with Apple’s models; with Pro, Parakeet’s {nPro} European languages. Those only Parakeet knows, like {proOnly}, need Pro. You pick up to three and nchova hears which one you are speaking. The app itself is in English and Italian.'],
+      ['Which languages?', '{nFree} free, with Apple’s models; with Pro, Parakeet’s {nPro} European languages. Those only Parakeet knows, like {proOnly}, need Pro. You pick up to three and nchova hears which one you are speaking. The app itself is in English, Italian, German, French and Spanish.'],
       ['Do I have to invite a bot to the call?', 'No. nchova hears the call from your Mac, the way you do. Nobody joins the call.'],
       ['How is it different from Wispr Flow, Otter or Granola?', 'Those send your voice to the cloud to transcribe it, and their paid plans are subscriptions; Otter also puts a bot in your calls. nchova transcribes on your Mac, joins no call, and does dictation, meetings and notes in one app: free, or €29.99 once for Pro.', 'alternatives/', 'All the comparisons'],
       ['Which video call apps does it work with?', 'All of them: Zoom, Meet, Teams, Slack, in the browser too. It notices an app using the microphone and asks whether to transcribe.'],

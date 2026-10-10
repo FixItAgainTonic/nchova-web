@@ -64,7 +64,7 @@ const it = {
       'Da voce a testo sul tuo Mac, anche offline. Il testo compare dove c’è il cursore: una mail, Slack, Notion, il terminale. Qualsiasi app, senza cambiare finestra.',
     notes: [
       ['Le tue lingue', 'ne scegli fino a tre e nchova capisce da sola quale stai parlando, anche a metà frase.'],
-      ['Ripensamenti', '«giovedì, anzi no, venerdì» diventa «venerdì». La pulizia può solo togliere parole, mai aggiungerne.'],
+      ['Ripensamenti', '«giovedì, anzi no, venerdì» diventa «venerdì», se attivi la pulizia in Impostazioni › Dettatura. Può solo togliere parole, mai aggiungerne.'],
       ['Il tuo vocabolario', 'nomi e sigle scritti come vuoi tu: «gira» diventa Jira, «Jason» diventa JSON.'],
       ['Parakeet', 'il modello vocale di NVIDIA, sul tuo Mac, in {nPro} lingue europee.', 'pro'],
     ],
@@ -161,7 +161,7 @@ const it = {
       yes: 'Sì',
       no: 'No',
       ask: 'Di chi era questa voce?',
-      askHint: 'Dai un nome a quella che conosci: la prossima volta ci arriva da sola.',
+      askHint: 'Nchova non le ha riconosciute. Dai un nome a quelle che conosci: la prossima volta ci arriva da solo.',
       save: 'Salva',
       known: 'già sentita',
       footnote: 'voices.json · solo su questo Mac',
@@ -355,7 +355,7 @@ const it = {
     more: 'Ecco come',
     items: [
       ['Funziona senza internet?', 'Sì: dettatura e meeting girano sul Mac. La rete serve per scaricare i modelli la prima volta, per gli aggiornamenti e per attivare Pro.'],
-      ['Che lingue capisce?', '{nFree} gratis, coi modelli Apple; con Pro, le {nPro} lingue europee di Parakeet. Quelle che conosce solo Parakeet, come {proOnly}, richiedono Pro. Ne scegli fino a tre e nchova sente da sola quale stai parlando. L’app invece è in italiano e in inglese.'],
+      ['Che lingue capisce?', '{nFree} gratis, coi modelli Apple; con Pro, le {nPro} lingue europee di Parakeet. Quelle che conosce solo Parakeet, come {proOnly}, richiedono Pro. Ne scegli fino a tre e nchova sente da sola quale stai parlando. L’app invece è in italiano, inglese, tedesco, francese e spagnolo.'],
       ['Devo invitare un bot nella call?', 'No. nchova sente la call dal tuo Mac, come la senti tu. Nella call non entra nessuno.'],
       ['In cosa è diversa da Wispr Flow, Otter o Granola?', 'Quelle app mandano la tua voce nel cloud per trascriverla, e i loro piani a pagamento sono abbonamenti; Otter in più mette un bot nelle tue call. nchova trascrive sul tuo Mac, non entra in nessuna call e fa dettatura, meeting e note in un’app sola: gratis, o 29,99 € una volta per Pro.', 'alternatives/', 'Tutti i confronti'],
       ['Con quali app di videochiamata funziona?', 'Con tutte: Zoom, Meet, Teams, Slack, anche nel browser. Si accorge che un’app sta usando il microfono e ti chiede se trascrivere.'],
