@@ -21,6 +21,9 @@ const de: Dict = {
     cta: 'Gratis testen',
     skip: 'Zum Inhalt springen',
     language: 'Sprache',
+
+    /** Only for a visitor sent by a creator (nchova.com/with/<slug>): the strip under the nav. */
+    partner: { line: 'Von {name}? 20 % auf Pro mit dem Code {code}, beim Kauf schon eingetragen. Heb ihn dir für nach dem Test auf.', mcp: 'Deine Meetings in Claude' },
   },
   hero: {
     kicker: 'Diktieren und Meeting-Transkription für den Mac',

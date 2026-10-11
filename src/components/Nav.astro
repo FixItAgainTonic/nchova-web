@@ -52,4 +52,8 @@ const others = LANGUAGES.filter((l) => l !== lang);
       <a class="btn btn--sm" href={`${DOWNLOAD_URL}?from=${from}`}><Bracket>{t.nav.cta}</Bracket></a>
     </div>
   </div>
+  <p class="nav__partner mono" data-partner data-line={t.nav.partner.line} hidden>
+    <span></span>
+    <a href={`${to}#assistants`}>{t.nav.partner.mcp} →</a>
+  </p>
 </header>

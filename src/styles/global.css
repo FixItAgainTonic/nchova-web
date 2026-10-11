@@ -46,7 +46,12 @@ html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-behavior: smooth;
-  scroll-padding-top: 84px;
+  /* --partner: the height of the strip a creator's visitor sees under the nav (src/scripts/site.ts), else 0. */
+  scroll-padding-top: calc(84px + var(--partner, 0px));
+}
+
+body {
+  padding-top: var(--partner, 0px);
 }
 
 @media (prefers-reduced-motion: reduce) {

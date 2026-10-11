@@ -21,6 +21,9 @@ const fr: Dict = {
     cta: 'Essayer gratuitement',
     skip: 'Aller au contenu',
     language: 'Langue',
+
+    /** Only for a visitor sent by a creator (nchova.com/with/<slug>): the strip under the nav. */
+    partner: { line: 'Vous venez de la part de {name} ? 20 % sur Pro avec le code {code}, déjà appliqué à l’achat. Gardez-le pour après l’essai.', mcp: 'Vos réunions dans Claude' },
   },
   hero: {
     kicker: 'Dictée vocale et transcription de réunions pour Mac',

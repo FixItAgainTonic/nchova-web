@@ -14,6 +14,35 @@
   box-shadow: 0 1px 0 var(--rule);
 }
 
+.nav__partner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 16px;
+  margin: 0;
+  padding: 8px var(--gutter);
+  background: var(--violet-ink);
+  color: var(--paper);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.nav__partner[hidden] {
+  display: none;
+}
+
+.nav__partner strong {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: rgba(242, 238, 230, 0.16);
+}
+
+.nav__partner a {
+  color: var(--lilac);
+}
+
 .nav__in {
   display: flex;
   align-items: center;

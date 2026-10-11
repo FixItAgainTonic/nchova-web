@@ -22,6 +22,9 @@ const es: Dict = {
     cta: 'Pruébalo gratis',
     skip: 'Saltar al contenido',
     language: 'Idioma',
+
+    /** Only for a visitor sent by a creator (nchova.com/with/<slug>): the strip under the nav. */
+    partner: { line: '¿Vienes de {name}? Un 20 % en Pro con el código {code}, ya aplicado al comprar. Guárdalo para cuando acabe la prueba.', mcp: 'Tus reuniones dentro de Claude' },
   },
   hero: {
     kicker: 'Dictado y transcripción de reuniones para Mac',

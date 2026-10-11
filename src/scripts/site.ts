@@ -3,6 +3,7 @@
 
 import './fish/element';
 import { Tank } from './fish/tank';
+import { CHECKOUT_URL, PARTNERS } from '../config';
 
 const ocean = document.querySelector<HTMLElement>('[data-ocean]');
 if (ocean) {
@@ -46,4 +47,31 @@ if (langs) {
   document.addEventListener('click', (e) => {
     if (langs.open && !langs.contains(e.target as Node)) langs.open = false;
   });
+}
+
+// Arrived through a creator's link (nchova.com/with/<slug>, src/pages/with/[partner].ts): on this visit Buy opens the
+// checkout with their code already in, and the downloads say who sent them. Only in the address, never stored.
+const slug = new URLSearchParams(location.search).get('with') ?? '';
+const partner = Object.hasOwn(PARTNERS, slug) ? PARTNERS[slug] : undefined;
+if (partner) {
+  const strip = document.querySelector<HTMLElement>('[data-partner]');
+  if (strip) {
+    const [before, after] = (strip.dataset.line ?? '').replace('{name}', partner.name).split('{code}');
+    const code = document.createElement('strong');
+    code.textContent = partner.code;
+    strip.querySelector('span')?.replaceChildren(before, code, after ?? '');
+    strip.hidden = false;
+    // Room for it under the nav, kept as the strip grows: fonts arriving late, a narrower window.
+    const room = () => document.documentElement.style.setProperty('--partner', `${strip.offsetHeight}px`);
+    room();
+    new ResizeObserver(room).observe(strip);
+  }
+  for (const a of document.querySelectorAll<HTMLAnchorElement>(`a[href^="${CHECKOUT_URL}"]`)) {
+    a.href = `${CHECKOUT_URL}?discount_code=${partner.code}`;
+  }
+  for (const a of document.querySelectorAll<HTMLAnchorElement>('a[href^="/download"]')) {
+    const url = new URL(a.href);
+    url.searchParams.set('partner', slug);
+    a.href = url.pathname + url.search;
+  }
 }

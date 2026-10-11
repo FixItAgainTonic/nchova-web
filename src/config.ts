@@ -23,6 +23,14 @@ export const CHECKOUT_URL = 'https://buy.polar.sh/polar_cl_ZECtqsONpN8DgSE6iOJmW
  *  limit and end date on Polar. Another event, another code. */
 export const MEET_CODE = 'MEETNCHOVA';
 
+/** The creators who talk about nchova, at nchova.com/with/<slug>: the visit is counted (event "Partner"), the browser
+ *  lands on the home page in the creator's language, and on that visit Buy opens the checkout with their Polar code
+ *  already in (20% off; they get 60% of the net). Nothing is stored in the browser: buy later, or from the app, and the
+ *  code is typed by hand. Each code is made on Polar first. */
+export const PARTNERS: Record<string, { name: string; code: string; lang: Lang }> = {
+  rubenloan: { name: 'Ruben Loan', code: 'RUBENLOAN', lang: 'es' },
+};
+
 export const CONTACT_EMAIL = 'hello@nchova.com';
 
 /** Who sells nchova. Italian law (art. 35 DPR 633/1972) wants the VAT number on the site. */

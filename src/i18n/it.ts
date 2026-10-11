@@ -20,6 +20,9 @@ const it = {
     cta: 'Prova gratis',
     skip: 'Vai al contenuto',
     language: 'Lingua',
+
+    /** Only for a visitor sent by a creator (nchova.com/with/<slug>): the strip under the nav. */
+    partner: { line: 'Arrivi da {name}: 20% su Pro col codice {code}, già applicato quando compri. Tienilo da parte se compri dopo la prova.', mcp: 'Le tue riunioni dentro Claude' },
   },
   hero: {
     kicker: 'Dettatura e trascrizione dei meeting per Mac',
