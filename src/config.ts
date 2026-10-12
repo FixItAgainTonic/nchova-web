@@ -23,6 +23,9 @@ export const CHECKOUT_URL = 'https://buy.polar.sh/polar_cl_ZECtqsONpN8DgSE6iOJmW
  *  limit and end date on Polar. Another event, another code. */
 export const MEET_CODE = 'MEETNCHOVA';
 
+/** The Polar code behind nchova.com/ironhack/claim, the link Rudy gives to colleagues at Ironhack. */
+export const IRONHACK_CODE = 'ironhack';
+
 /** The creators who talk about nchova, at nchova.com/with/<slug>: the visit is counted (event "Partner"), the browser
  *  lands on the home page in the creator's language, and on that visit Buy opens the checkout with their Polar code
  *  already in (20% off; they get 60% of the net). Nothing is stored in the browser: buy later, or from the app, and the
