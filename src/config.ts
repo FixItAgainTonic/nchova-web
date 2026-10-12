@@ -29,6 +29,7 @@ export const MEET_CODE = 'MEETNCHOVA';
  *  code is typed by hand. Each code is made on Polar first. */
 export const PARTNERS: Record<string, { name: string; code: string; lang: Lang }> = {
   rubenloan: { name: 'Ruben Loan', code: 'RUBENLOAN', lang: 'es' },
+  aprenden5: { name: 'Aprende N5', code: 'APRENDEN5', lang: 'es' },
 };
 
 export const CONTACT_EMAIL = 'hello@nchova.com';
