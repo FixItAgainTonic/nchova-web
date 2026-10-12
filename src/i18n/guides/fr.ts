@@ -84,7 +84,7 @@ const offline: Guide = {
       items: [
         ['Reconnaissance vocale d’Apple', 'intégrée à macOS : rien à télécharger de notre côté, elle dicte dès la première minute, en {nFree} langues. Gratuite, pour toujours.'],
         ['Parakeet', 'le modèle vocal de NVIDIA, environ 480 Mo une seule fois, en {nPro} langues européennes, dont certaines qu’Apple ne propose pas ({proOnly}, par exemple). Pendant le téléchargement, Apple continue de dicter.', 'pro'],
-        ['Pas de limite de durée', 'maintenez la touche tant que vous parlez ; nchova transcrit tout quand vous relâchez.'],
+        ['Dix minutes à la fois', 'jusqu’à dix minutes par dictée, trois pendant la transcription d’une réunion ; dans les 30 dernières secondes, la pastille fait le compte à rebours.'],
       ],
     },
     {
@@ -103,7 +103,7 @@ const offline: Guide = {
         ['nchova fonctionne-t-elle en avion ?', 'Oui. La dictée et la transcription des réunions tournent sur le Mac : une fois les modèles téléchargés, aucune connexion n’est nécessaire.'],
         ['La dictée hors ligne est-elle moins précise ?', 'C’est la même dictée : nchova n’a pas de mode en ligne. Le modèle qui écrit dans l’avion est celui qui écrit à votre bureau.'],
         ['Envoie-t-elle quelque chose quand je retrouve le réseau ?', 'Jamais votre voix. De retour en ligne, nchova cherche les mises à jour et, de temps en temps, vérifie votre licence Pro : la clé et le nom du Mac, rien d’autre. Tout le reste, c’est vous qui l’avez activé : la synchronisation iCloud envoie vos réunions à vos autres Mac, et Claude Code ou Codex, s’ils écrivent vos notes, reçoivent la transcription de chaque nouvelle réunion.'],
-        ['Y a-t-il une limite de durée ?', 'Non. Maintenez la touche tant que vous parlez ; nchova transcrit tout quand vous relâchez.'],
+        ['Y a-t-il une limite de durée ?', 'Dix minutes par dictée, trois pendant la transcription d’une réunion. Dans les 30 dernières secondes, la pastille fait le compte à rebours.'],
         ['Et les réunions, hors ligne ?', 'Elles fonctionnent de la même façon : une réunion autour d’une table, le Mac au milieu, est transcrite sans réseau, et ses notes sont écrites sur le Mac.'],
       ],
     },
@@ -526,7 +526,7 @@ const superwhisper: Guide = {
       h: 'Quand Superwhisper est le *meilleur choix*',
       p: [
         'Si vous dictez sur Windows, sur iPhone ou sur Android, ou sur un Mac Intel, Superwhisper les couvre, avec une seule licence. nchova demande un Mac avec puce Apple et macOS 26.',
-        'Si vous voulez que vos mots soient réécrits pendant que vous dictez, sur le ton d’un e-mail ou dans la forme d’une note, les modes IA de Superwhisper le font, et il transcrit aussi des fichiers audio et vidéo. nchova écrit ce que vous avez dit et transcrit ce que vous entendez, en direct.',
+        'Si vous voulez que vos mots soient réécrits pendant que vous dictez, sur le ton d’un e-mail ou dans la forme d’une note, les modes IA de Superwhisper le font. nchova écrit ce que vous avez dit.',
         'Si vos journées sont faites d’appels, nchova s’occupe toute seule de ce qui les entoure : elle repère l’appel, sait qui était invité et écrit les notes quand vous raccrochez ; avec Pro, elle nomme aussi les voix.',
       ],
     },
@@ -659,7 +659,7 @@ const otter: Guide = {
       h: 'Questions, *à voix haute*',
       items: [
         ['Les participants savent-ils que nchova transcrit ?', 'Rien n’apparaît dans l’appel, puisque nchova n’y est pas. Là où la loi l’exige, prévenez vos interlocuteurs que vous transcrivez.'],
-        ['nchova peut-elle importer mes conversations Otter ?', 'Non. nchova part de votre prochaine réunion ; vos exports Otter restent à vous.'],
+        ['nchova peut-elle importer mes conversations Otter ?', 'Ni les conversations ni leurs notes. Mais un enregistrement exporté d’Otter en mp3 peut être glissé sur la fenêtre **Réunions** : nchova le transcrit sur votre Mac, jusqu’à quatre heures.'],
         ['Fonctionne-t-elle avec Zoom, Meet et Teams ?', 'Avec les trois, ainsi qu’avec Slack, FaceTime, Webex et les appels dans le navigateur : nchova remarque quand l’un d’eux prend le micro, et tout autre appel se lance depuis la barre des menus. Voir [Zoom](@transcribe/zoom/), [Google Meet](@transcribe/google-meet/) et [Teams](@transcribe/teams/).'],
         ['Puis-je interroger Claude ou ChatGPT sur mes réunions ?', 'Oui : le serveur MCP de nchova tourne sur votre Mac et se connecte d’un clic. Voir [vos réunions dans votre assistant](@mcp/).'],
       ],
@@ -798,7 +798,7 @@ const macwhisper: Guide = {
   lead: 'MacWhisper et nchova sont d’accord sur l’essentiel : la transcription sur votre Mac, pas de bot, pas d’abonnement. Ils sont faits pour des moments différents. MacWhisper brille avec les enregistrements et les fichiers que vous avez déjà ; nchova vit dans les appels que vous allez passer, et dans chaque champ de texte où vous dictez.',
   short3: [
     ['Sur le Mac, *tous les deux*', 'les deux transcrivent sur votre Mac et se paient une seule fois. Aucun n’envoie de bot.'],
-    ['*Fichiers* ou *appels*', 'MacWhisper est pensé pour les fichiers, les lots et les liens YouTube ; nchova pour les appels, en direct, avec votre calendrier.'],
+    ['*Par lots* ou *en appel*', 'MacWhisper est pensé pour les fichiers, les lots et les liens YouTube ; nchova pour les appels, en direct, avec votre calendrier, et elle transcrit aussi un fichier, quand vous en avez un.'],
     ['29,99 € *ou* 64 €', 'nchova Pro coûte 29,99 € une seule fois ; MacWhisper Pro, 64 € une seule fois sur son site. La version gratuite de nchova transcrit aussi les réunions.'],
   ],
   blocks: [
@@ -815,7 +815,7 @@ const macwhisper: Guide = {
       h: 'Côte à côte',
       them: 'MacWhisper',
       rows: [
-        ['Fait pour', 'Fichiers audio et vidéo, traitement par lots, liens YouTube, sous-titres', 'Les appels en direct, et la dictée dans n’importe quelle app'],
+        ['Fait pour', 'Fichiers audio et vidéo, traitement par lots, liens YouTube, sous-titres', 'Les appels en direct, la dictée dans n’importe quelle app ; des fichiers audio et vidéo aussi, un à la fois'],
         ['Où il transcrit', 'Sur votre Mac par défaut ; des services cloud avec vos propres clés, si vous le souhaitez', 'Sur votre Mac, toujours'],
         ['Réunions', 'Détecte l’appel et l’enregistre, avec une transcription en direct (Pro ; sa documentation qualifie la détection de bêta)', 'Repère l’appel et demande ; gratuit'],
         ['Calendrier', 'Non décrit dans sa documentation', 'Donne à la réunion le nom de l’événement et la liste des invités'],
@@ -846,16 +846,16 @@ const macwhisper: Guide = {
       kind: 'prose',
       h: 'Quand MacWhisper est le *meilleur choix*',
       p: [
-        'Si votre travail, ce sont des enregistrements (interviews, podcasts, cours, un dossier de mémos vocaux), MacWhisper est l’outil qu’il vous faut : déposez les fichiers, récupérez transcriptions et sous-titres. nchova ne transcrit pas de fichiers ; elle transcrit ce que vous dites et les appels auxquels vous participez, en direct.',
+        'Si votre travail, ce sont des enregistrements (interviews, podcasts, cours, un dossier de mémos vocaux), MacWhisper est l’outil qu’il vous faut : déposez une série de fichiers, ou un lien YouTube, et récupérez les transcriptions. nchova transcrit un fichier quand vous lui en donnez un, jusqu’à quatre heures, mais elle est faite pour ce que vous dites et les appels auxquels vous participez, en direct.',
         'Si vous êtes sur un Mac Intel ou sous macOS 15, MacWhisper y fonctionne ; nchova demande une puce Apple et macOS 26. Et si vous voulez réécouter l’enregistrement, MacWhisper garde l’audio ; nchova ne garde que les mots.',
-        'Beaucoup voudront les deux : MacWhisper pour les fichiers, nchova pour les appels et la dictée.',
+        'Beaucoup voudront les deux : MacWhisper pour les lots et les liens YouTube, nchova pour les appels, la dictée et un fichier de temps en temps.',
       ],
     },
     {
       kind: 'faq',
       h: 'Questions, *à voix haute*',
       items: [
-        ['nchova peut-elle transcrire un fichier audio ?', 'Non. nchova transcrit en direct : votre dictée, et les appels et réunions qu’elle entend. Pour les fichiers que vous avez déjà, MacWhisper est fait pour ça.'],
+        ['nchova peut-elle transcrire un fichier audio ?', 'Oui, un fichier audio ou vidéo à la fois, jusqu’à quatre heures : choisissez **Transcrire un fichier…** dans la barre des menus, glissez-le sur la fenêtre **Réunions** ou utilisez **Ouvrir avec › nchova** dans le Finder. C’est aussi dans la version gratuite, avec les modèles d’Apple. Pour un lot de fichiers ou un lien YouTube, MacWhisper est fait pour ça.'],
         ['Les deux utilisent-ils Parakeet ?', 'Oui : les deux peuvent faire tourner Parakeet de NVIDIA sur le Mac avec Pro. nchova s’en sert pour la dictée comme pour les réunions, en {nPro} langues européennes.'],
         ['nchova a-t-elle besoin d’une clé d’API pour les notes ?', 'Non. Le modèle d’Apple et Qwen tournent sur le Mac ; Claude Code et Codex utilisent votre propre abonnement, connecté une fois. Aucune clé ne passe par nchova.'],
         ['Puis-je l’essayer d’abord ?', 'Trente jours avec tout inclus, sans carte et sans compte. Ensuite, elle reste gratuite avec les modèles d’Apple.'],

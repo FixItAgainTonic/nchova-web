@@ -76,7 +76,7 @@ const offline: Guide = {
       items: [
         ['Apple speech recognition', 'built into macOS: nothing of ours to download, it dictates from the very first minute, in {nFree} languages. Free, for good.'],
         ['Parakeet', 'NVIDIA’s speech model, about 480 MB once, in {nPro} European languages, including those Apple lacks, like {proOnly}. While it downloads, Apple keeps dictating.', 'pro'],
-        ['No time limit', 'hold the key as long as you are talking; nchova transcribes the whole thing when you let go.'],
+        ['Ten minutes at a time', 'up to ten minutes per dictation, three while a meeting is being transcribed; in the last 30 seconds the pill counts down.'],
       ],
     },
     {
@@ -95,7 +95,7 @@ const offline: Guide = {
         ['Does nchova work on a plane?', 'Yes. Dictation and meeting transcription run on the Mac: with the models downloaded, it needs no connection at all.'],
         ['Is offline dictation less accurate?', 'It is the same dictation: nchova has no online mode. The model that types on the plane is the one that types at your desk.'],
         ['Does it send anything once I am back online?', 'Never your voice. Back online, nchova looks for updates and, now and then, checks your Pro licence: the key and the Mac’s name, nothing else. Anything more is something you turned on: iCloud sync sends your meetings to your other Macs, and Claude Code or Codex, if they write your notes, get each new meeting’s transcript.'],
-        ['Is there a time limit?', 'No. Hold the key as long as you are talking; nchova transcribes the whole thing when you let go.'],
+        ['Is there a time limit?', 'Ten minutes per dictation, three while a meeting is being transcribed. In the last 30 seconds the pill counts down.'],
         ['And meetings, offline?', 'They work the same way: a meeting around a table, with the Mac in the middle, is transcribed with no network, and its notes written on the Mac.'],
       ],
     },
@@ -515,7 +515,7 @@ const superwhisper: Guide = {
       h: 'When Superwhisper is the *better choice*',
       p: [
         'If you dictate on Windows, an iPhone or Android, or on an Intel Mac, Superwhisper covers them, with one licence. nchova needs a Mac with Apple silicon and macOS 26.',
-        'If you want your words rewritten as you dictate, in an email’s tone or a note’s shape, Superwhisper’s AI modes do that, and it transcribes audio and video files too. nchova writes what you said and transcribes what you hear live.',
+        'If you want your words rewritten as you dictate, in an email’s tone or a note’s shape, Superwhisper’s AI modes do that. nchova writes what you said.',
         'If your days are made of calls, nchova does the part around them by itself: it notices the call, knows who was invited and writes the notes when you hang up; with Pro, it names the voices too.',
       ],
     },
@@ -648,7 +648,7 @@ const otter: Guide = {
       h: 'Questions, *out loud*',
       items: [
         ['Does anyone in the call know nchova is transcribing?', 'Nothing appears in the call, because nchova is not in it. Where the law asks you to, tell the people you are talking to that you are transcribing.'],
-        ['Can nchova import my Otter conversations?', 'No. nchova starts from your next meeting; your Otter exports stay yours.'],
+        ['Can nchova import my Otter conversations?', 'Not the conversations or their notes. But a recording you export from Otter as mp3 can be dropped on the **Meetings** window: nchova transcribes it on your Mac, up to four hours.'],
         ['Does it work with Zoom, Meet and Teams?', 'With all of them, and with Slack, FaceTime, Webex and calls in the browser: nchova notices when one of them takes the microphone, and any other call starts from the menu bar. See [Zoom](@transcribe/zoom/), [Google Meet](@transcribe/google-meet/) and [Teams](@transcribe/teams/).'],
         ['Can I ask Claude or ChatGPT about my meetings?', 'Yes: nchova’s MCP server runs on your Mac and connects with one click. See [meetings in your assistant](@mcp/).'],
       ],
@@ -787,7 +787,7 @@ const macwhisper: Guide = {
   lead: 'MacWhisper and nchova agree on the important part: transcription on your Mac, no bot, no subscription. They are made for different moments. MacWhisper shines with the recordings and files you already have; nchova lives in the calls you are about to have, and in every text field you dictate into.',
   short3: [
     ['On the Mac, *both*', 'both transcribe on your Mac and are paid once. Neither sends a bot.'],
-    ['*Files* or *calls*', 'MacWhisper is built around files, batches and YouTube links; nchova around calls, live, with your calendar.'],
+    ['*In batches* or *in calls*', 'MacWhisper is built around files, batches and YouTube links; nchova around calls, live, with your calendar, and it transcribes a file too, when you have one.'],
     ['€29.99 *or* €64', 'nchova Pro is €29.99 once; MacWhisper Pro is €64 once on its site. nchova’s free version transcribes meetings too.'],
   ],
   blocks: [
@@ -804,7 +804,7 @@ const macwhisper: Guide = {
       h: 'Side by side',
       them: 'MacWhisper',
       rows: [
-        ['Made for', 'Audio and video files, batches, YouTube links, subtitles', 'Calls as they happen, and dictation in any app'],
+        ['Made for', 'Audio and video files, batches, YouTube links, subtitles', 'Calls as they happen, dictation in any app; audio and video files too, one at a time'],
         ['Where it transcribes', 'On your Mac by default; cloud services with your own keys, if you want', 'On your Mac, always'],
         ['Meetings', 'Detects the call and records it, with a live transcript (Pro; its docs call detection beta)', 'Notices the call and asks; free'],
         ['Calendar', 'Not described in its docs', 'Names the meeting after the event and lists who was invited'],
@@ -835,16 +835,16 @@ const macwhisper: Guide = {
       kind: 'prose',
       h: 'When MacWhisper is the *better choice*',
       p: [
-        'If your work is recordings, interviews, podcasts, lectures, a folder of voice memos, MacWhisper is the tool: drop the files in, get transcripts and subtitles out. nchova does not transcribe files; it transcribes what you say and the calls you are in, as they happen.',
+        'If your work is recordings, interviews, podcasts, lectures, a folder of voice memos, MacWhisper is the tool: drop in a batch of files, or a YouTube link, and the transcripts come out. nchova transcribes a file when you give it one, up to four hours, but it is built for what you say and the calls you are in, as they happen.',
         'If you are on an Intel Mac or on macOS 15, MacWhisper runs there; nchova needs Apple silicon and macOS 26. And if you want to play the recording back, MacWhisper keeps the audio; nchova keeps only the words.',
-        'Plenty of people will want both: MacWhisper for the files, nchova for the calls and the dictation.',
+        'Plenty of people will want both: MacWhisper for batches and YouTube links, nchova for the calls, the dictation and the odd file.',
       ],
     },
     {
       kind: 'faq',
       h: 'Questions, *out loud*',
       items: [
-        ['Can nchova transcribe an audio file?', 'No. nchova transcribes live: your dictation, and the calls and meetings it hears. For files you already have, MacWhisper is made for it.'],
+        ['Can nchova transcribe an audio file?', 'Yes, one audio or video file at a time, up to four hours: choose **Transcribe a File…** in the menu bar, drop it on the **Meetings** window, or use **Open With › nchova** in the Finder. It is in the free version too, with Apple’s models. For a batch of files or a YouTube link, MacWhisper is made for it.'],
         ['Do both use Parakeet?', 'Yes: both can run NVIDIA’s Parakeet on the Mac with Pro. nchova uses it for dictation and meetings alike, in {nPro} European languages.'],
         ['Does nchova need an API key for the notes?', 'No. Apple’s model and Qwen run on the Mac; Claude Code and Codex use your own subscription, signed in once. No key passes through nchova.'],
         ['Can I try it first?', 'Thirty days with everything, no card and no account. Then it stays free with Apple’s models.'],

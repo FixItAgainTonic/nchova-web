@@ -69,7 +69,7 @@ const fr: Dict = {
       ['Vos langues', 'choisissez-en jusqu’à trois : nchova reconnaît celle que vous parlez, même en pleine phrase.'],
       ['Les changements d’avis', '« jeudi, non attends, vendredi » devient « vendredi » si vous activez le nettoyage dans Réglages › Dictée. Ce nettoyage peut seulement retirer des mots, jamais en ajouter.'],
       ['Votre vocabulaire', 'les noms et les sigles écrits à votre façon : « gira » devient Jira, « Jason » devient JSON.'],
-      ['Mains libres', 'en maintenant Fn, appuyez sur Espace et lâchez : parlez jusqu’à dix minutes, puis une pression sur Fn et le texte arrive. Les « euh » restent dehors.'],
+      ['Mains libres', 'en maintenant Fn, appuyez sur Espace et lâchez : parlez jusqu’à dix minutes, puis une pression sur Fn et le texte arrive. Les « euh » disparaissent.'],
       ['Parakeet', 'le modèle vocal de NVIDIA, sur votre Mac, en {nPro} langues européennes.', 'pro'],
     ],
     languages: { title: 'Langues', free: 'Gratuit', pro: 'Pro ajoute' },
@@ -118,7 +118,7 @@ const fr: Dict = {
       ['Avec votre calendrier', 'la réunion prend le nom de l’événement et la liste des invités, et la question arrive deux minutes avant.'],
       ['En direct', 'la transcription défile comme une conversation, à côté de vos notes. Un appel qui coupe puis reprend reste une seule réunion.'],
       ['Pas besoin de casque', 'nchova retire l’écho des haut-parleurs, uniquement dans son propre enregistrement.'],
-      ['Les fichiers aussi', 'un audio ou une vidéo, un mémo vocal de l’iPhone, un message vocal WhatsApp : glissez-le sur la fenêtre Réunions et il est transcrit comme un appel, jusqu’à quatre heures.'],
+      ['Les fichiers aussi', 'un audio ou une vidéo, un mémo vocal de l’iPhone, un message vocal WhatsApp : glissez-le sur la fenêtre Réunions et il est transcrit comme un appel, jusqu’à quatre heures.'],
     ],
     demo: {
       menubar: 'Point produit · dans 2 min',

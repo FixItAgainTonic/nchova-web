@@ -76,7 +76,7 @@ const offline: Guide = {
       items: [
         ['Riconoscimento vocale di Apple', 'integrato in macOS: niente da scaricare da noi, detta dal primo minuto, in {nFree} lingue. Gratis, per sempre.'],
         ['Parakeet', 'il modello vocale di NVIDIA, circa 480 MB una volta sola, in {nPro} lingue europee, comprese quelle che Apple non ha, come {proOnly}. Mentre si scarica, continua a dettare Apple.', 'pro'],
-        ['Nessun limite di tempo', 'tieni premuto il tasto finché parli; quando rilasci, nchova trascrive tutto.'],
+        ['Dieci minuti alla volta', 'fino a dieci minuti per dettatura, tre mentre si trascrive un meeting; negli ultimi 30 secondi la pillola fa il conto alla rovescia.'],
       ],
     },
     {
@@ -95,7 +95,7 @@ const offline: Guide = {
         ['nchova funziona in aereo?', 'Sì. Dettatura e trascrizione dei meeting girano sul Mac: con i modelli scaricati, non serve nessuna connessione.'],
         ['La dettatura offline è meno precisa?', 'È la stessa dettatura: nchova non ha una modalità online. Il modello che scrive in aereo è lo stesso che scrive alla tua scrivania.'],
         ['Quando torno online, manda qualcosa?', 'Mai la tua voce. Tornata online, nchova cerca gli aggiornamenti e, ogni tanto, controlla la tua licenza Pro: la chiave e il nome del Mac, nient’altro. Tutto il resto lo hai acceso tu: la sync iCloud manda i tuoi meeting agli altri tuoi Mac, e Claude Code o Codex, se scrivono le tue note, ricevono la trascrizione di ogni nuovo meeting.'],
-        ['C’è un limite di tempo?', 'No. Tieni premuto il tasto finché parli; quando rilasci, nchova trascrive tutto.'],
+        ['C’è un limite di tempo?', 'Dieci minuti per dettatura, tre mentre si trascrive un meeting. Negli ultimi 30 secondi la pillola fa il conto alla rovescia.'],
         ['E i meeting, offline?', 'Funzionano allo stesso modo: un meeting attorno a un tavolo, col Mac al centro, si trascrive senza rete, e le note si scrivono sul Mac.'],
       ],
     },
@@ -515,7 +515,7 @@ const superwhisper: Guide = {
       h: 'Quando Superwhisper è la *scelta migliore*',
       p: [
         'Se detti su Windows, su iPhone o su Android, o su un Mac Intel, Superwhisper li copre, con una licenza sola. nchova ha bisogno di un Mac con chip Apple e macOS 26.',
-        'Se vuoi che le tue parole vengano riscritte mentre detti, col tono di una mail o la forma di un appunto, le modalità AI di Superwhisper lo fanno, e l’app trascrive anche file audio e video. nchova scrive quello che hai detto e trascrive quello che senti dal vivo.',
+        'Se vuoi che le tue parole vengano riscritte mentre detti, col tono di una mail o la forma di un appunto, le modalità AI di Superwhisper lo fanno. nchova scrive quello che hai detto.',
         'Se le tue giornate sono fatte di call, nchova fa da sola la parte che c’è attorno: si accorge della call, sa chi era invitato e scrive le note quando chiudi; con Pro, dà anche un nome alle voci.',
       ],
     },
@@ -648,7 +648,7 @@ const otter: Guide = {
       h: 'Domande, *a voce*',
       items: [
         ['Chi è nella call sa che nchova sta trascrivendo?', 'Nella call non compare niente, perché nchova non c’è. Dove la legge lo chiede, di’ alle persone con cui parli che stai trascrivendo.'],
-        ['nchova può importare le mie conversazioni di Otter?', 'No. nchova parte dal tuo prossimo meeting; le esportazioni di Otter restano tue.'],
+        ['nchova può importare le mie conversazioni di Otter?', 'Le conversazioni e le loro note no. Ma una registrazione che esporti da Otter in mp3 puoi trascinarla sulla finestra **Meeting**: nchova la trascrive sul tuo Mac, fino a quattro ore.'],
         ['Funziona con Zoom, Meet e Teams?', 'Con tutti, e anche con Slack, FaceTime, Webex e le call nel browser: nchova si accorge quando uno di loro prende il microfono, e qualsiasi altra call si avvia dalla barra dei menu. Guarda [Zoom](@transcribe/zoom/), [Google Meet](@transcribe/google-meet/) e [Teams](@transcribe/teams/).'],
         ['Posso chiedere a Claude o a ChatGPT dei miei meeting?', 'Sì: il server MCP di nchova gira sul tuo Mac e si collega con un clic. Guarda [i meeting nel tuo assistente](@mcp/).'],
       ],
@@ -787,7 +787,7 @@ const macwhisper: Guide = {
   lead: 'MacWhisper e nchova sono d’accordo sulla cosa più importante: trascrizione sul tuo Mac, nessun bot, nessun abbonamento. Sono fatte per momenti diversi. MacWhisper dà il meglio con le registrazioni e i file che hai già; nchova vive nelle call che stai per fare, e in ogni campo di testo in cui detti.',
   short3: [
     ['Sul Mac, *tutte e due*', 'tutte e due trascrivono sul tuo Mac e si pagano una volta. Nessuna delle due manda un bot.'],
-    ['*File* o *call*', 'MacWhisper è costruita attorno a file, elaborazioni in blocco e link di YouTube; nchova attorno alle call, dal vivo, col tuo calendario.'],
+    ['*In blocco* o *in call*', 'MacWhisper è costruita attorno a file, elaborazioni in blocco e link di YouTube; nchova attorno alle call, dal vivo, col tuo calendario, e trascrive anche un file, quando ne hai uno.'],
     ['29,99 € *o* 64 €', 'nchova Pro costa 29,99 € una volta; MacWhisper Pro 64 € una volta sul suo sito. La versione gratuita di nchova trascrive anche i meeting.'],
   ],
   blocks: [
@@ -804,7 +804,7 @@ const macwhisper: Guide = {
       h: 'A confronto',
       them: 'MacWhisper',
       rows: [
-        ['Fatta per', 'File audio e video, elaborazioni in blocco, link di YouTube, sottotitoli', 'Le call mentre succedono, e la dettatura in qualsiasi app'],
+        ['Fatta per', 'File audio e video, elaborazioni in blocco, link di YouTube, sottotitoli', 'Le call mentre succedono, la dettatura in qualsiasi app; anche file audio e video, uno alla volta'],
         ['Dove trascrive', 'Sul tuo Mac di default; servizi nel cloud con le tue chiavi, se vuoi', 'Sul tuo Mac, sempre'],
         ['Meeting', 'Rileva la call e la registra, con una trascrizione dal vivo (Pro; per la sua documentazione il rilevamento è in beta)', 'Si accorge della call e chiede; gratis'],
         ['Calendario', 'Non descritto nella sua documentazione', 'Dà al meeting il nome dell’evento ed elenca chi era invitato'],
@@ -835,16 +835,16 @@ const macwhisper: Guide = {
       kind: 'prose',
       h: 'Quando MacWhisper è la *scelta migliore*',
       p: [
-        'Se il tuo lavoro sono registrazioni, interviste, podcast, lezioni, una cartella di memo vocali, lo strumento giusto è MacWhisper: trascini dentro i file, escono trascrizioni e sottotitoli. nchova non trascrive file; trascrive quello che dici e le call in cui sei, mentre succedono.',
+        'Se il tuo lavoro sono registrazioni, interviste, podcast, lezioni, una cartella di memo vocali, lo strumento giusto è MacWhisper: trascini dentro una serie di file, o un link di YouTube, ed escono le trascrizioni. nchova trascrive un file quando glielo dai, fino a quattro ore, ma è fatta per quello che dici e per le call in cui sei, mentre succedono.',
         'Se hai un Mac Intel o macOS 15, MacWhisper ci gira; nchova ha bisogno di un chip Apple e di macOS 26. E se vuoi riascoltare la registrazione, MacWhisper conserva l’audio; nchova tiene solo le parole.',
-        'In tanti vorranno tutte e due: MacWhisper per i file, nchova per le call e la dettatura.',
+        'In tanti vorranno tutte e due: MacWhisper per le elaborazioni in blocco e i link di YouTube, nchova per le call, la dettatura e un file ogni tanto.',
       ],
     },
     {
       kind: 'faq',
       h: 'Domande, *a voce*',
       items: [
-        ['nchova può trascrivere un file audio?', 'No. nchova trascrive dal vivo: la tua dettatura, e le call e i meeting che sente. Per i file che hai già, MacWhisper è fatta apposta.'],
+        ['nchova può trascrivere un file audio?', 'Sì, un file audio o video alla volta, fino a quattro ore: scegli **Trascrivi un file…** nella barra dei menu, trascinalo sulla finestra **Meeting** o usa **Apri con › nchova** nel Finder. C’è anche nella versione gratuita, coi modelli di Apple. Per tanti file in blocco o un link di YouTube, MacWhisper è fatta apposta.'],
         ['Usano tutte e due Parakeet?', 'Sì: con Pro, tutte e due possono usare Parakeet di NVIDIA sul Mac. nchova lo usa sia per la dettatura sia per i meeting, in {nPro} lingue europee.'],
         ['nchova ha bisogno di una chiave API per le note?', 'No. Il modello di Apple e Qwen girano sul Mac; Claude Code e Codex usano il tuo abbonamento, collegato una volta. Nessuna chiave passa da nchova.'],
         ['Posso provarla prima?', 'Trenta giorni con tutto, senza carta e senza account. Poi resta gratis coi modelli di Apple.'],
