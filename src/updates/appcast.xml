@@ -8,6 +8,60 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.2.0</title>
+      <pubDate>Mon, 12 Oct 2026 09:59:16 +0000</pubDate>
+      <sparkle:version>229</sparkle:version>
+      <sparkle:shortVersionString>1.2.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Dettatura a mani libere: tenendo Fn premi Spazio e puoi lasciare il tasto. Un tocco di Fn chiude e scrive il testo dove c'è il cursore, Esc lo butta. Fino a 10 minuti, 3 durante un meeting, col tempo che scorre nella pillola.
+- Trascrivi file audio e video: «Trascrivi un file…» dal menu, trascinandoli sulla finestra Meeting o con Apri con › nchova dal Finder. Anche i memo vocali dell'iPhone, dall'app Memo Vocali del Mac o via AirDrop, e i vocali di WhatsApp.
+- Esporta le note in Word, PDF o Markdown; la trascrizione si esporta a parte, anche come sottotitoli (.srt). «Copia» mette le note formattate negli appunti, pronte per Google Docs, Notion, Pages o Slack.
+- «Manda per email…», o la busta sopra le note, apre una bozza con gli invitati, l'oggetto e le note. nchova non invia niente.
+- Via le esitazioni: «ehm», «uh», «um», «äh», «euh» non finiscono più nel testo, né nelle dettature né nei meeting. Si spegne in Impostazioni › Dettatura.
+- Lista dei meeting: i giorni si chiudono con un clic (⌥-clic per tutti) e due filtri, «Quando» e «Con chi», si sommano alla ricerca.
+- Le voci rimaste senza nome si nominano anche dopo: dalla pagina del meeting, «Dai un nome» riapre la scheda con tutto quello che hanno detto.
+- Corretto: una dettatura poteva finire su un pulsante invece che nel campo, e perdersi; ora va negli appunti, con l'avviso.
+- Corretto: dopo un po' alcune voci del menu nella barra restavano vuote.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- Hands-free dictation: while holding Fn, press Space and let go of the key. A tap of Fn ends it and types the text where your cursor is; Esc throws it away. Up to 10 minutes, 3 during a meeting, with the time running in the pill.
+- Transcribe audio and video files: «Transcribe a File…» in the menu, drag them onto the Meetings window, or Open With › nchova in Finder. iPhone voice memos too, from the Voice Memos app on your Mac or over AirDrop, and WhatsApp voice notes.
+- Export the notes to Word, PDF or Markdown; the transcript exports on its own, subtitles (.srt) included. «Copy» puts the formatted notes on the clipboard, ready for Google Docs, Notion, Pages or Slack.
+- «Send by Email…», or the envelope above the notes, opens a draft with the invitees, the subject and the notes. nchova sends nothing.
+- No more hesitations: "um", "uh", "ehm", "äh", "euh" stay out of the text, in dictation and in meetings. Turn it off in Settings › Dictation.
+- Meetings list: days collapse with a click (⌥-click for all) and two filters, «When» and «With», add to the search.
+- Voices left without a name can be named later: on the meeting's page, «Name them» brings back the card with everything they said.
+- Fixed: a dictation could land on a button instead of the text field and be lost; it now goes to the clipboard, with a notice.
+- Fixed: after a while some items in the menu bar menu went blank.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- Dictée mains libres : en maintenant Fn, appuyez sur Espace et lâchez la touche. Une pression sur Fn termine et écrit le texte là où se trouve le curseur ; Esc le supprime. Jusqu'à 10 minutes, 3 pendant une réunion, avec le temps qui défile dans la pastille.
+- Transcrivez des fichiers audio et vidéo : « Transcrire un fichier… » dans le menu, en les faisant glisser sur la fenêtre Réunions, ou avec Ouvrir avec › nchova dans le Finder. Les mémos vocaux de l'iPhone aussi, depuis l'app Dictaphone du Mac ou par AirDrop, et les messages vocaux WhatsApp.
+- Exportez les notes en Word, PDF ou Markdown ; la transcription s'exporte à part, sous-titres (.srt) compris. « Copier » met les notes mises en forme dans le presse-papiers, prêtes pour Google Docs, Notion, Pages ou Slack.
+- « Envoyer par e-mail… », ou l'enveloppe au-dessus des notes, ouvre un brouillon avec les invités, l'objet et les notes. nchova n'envoie rien.
+- Fini les hésitations : « euh », « um », « ehm », « äh » ne finissent plus dans le texte, ni en dictée ni en réunion. Se désactive dans Réglages › Dictée.
+- Liste des réunions : les jours se replient d'un clic (⌥-clic pour tous) et deux filtres, « Date » et « Avec qui », s'ajoutent à la recherche.
+- Les voix restées sans nom peuvent être nommées plus tard : sur la page de la réunion, « Les nommer » rouvre la fiche avec tout ce qu'elles ont dit.
+- Corrigé : une dictée pouvait atterrir sur un bouton au lieu du champ de texte et se perdre ; elle va maintenant dans le presse-papiers, avec un avis.
+- Corrigé : au bout d'un moment, certains éléments du menu de la barre restaient vides.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Diktieren ohne Halten: Halte Fn, drück die Leertaste und lass die Taste los. Ein Tippen auf Fn beendet das Diktat und schreibt den Text an die Cursorposition; Esc verwirft es. Bis zu 10 Minuten, 3 während eines Meetings, mit der laufenden Zeit in der Pille.
+- Transkribiere Audio- und Videodateien: „Datei transkribieren …“ im Menü, per Drag-and-drop auf das Meetings-Fenster oder mit Öffnen mit › nchova im Finder. Auch Sprachmemos vom iPhone, aus der App Sprachmemos auf dem Mac oder per AirDrop, und WhatsApp-Sprachnachrichten.
+- Exportiere die Notizen als Word, PDF oder Markdown; das Transkript lässt sich separat exportieren, auch als Untertitel (.srt). „Kopieren“ legt die formatierten Notizen in die Zwischenablage, bereit für Google Docs, Notion, Pages oder Slack.
+- „Per E-Mail senden …“ oder der Umschlag über den Notizen öffnet einen Entwurf mit den Eingeladenen, dem Betreff und den Notizen. nchova sendet nichts.
+- Keine Füllwörter mehr: „äh“, „ähm“, „um“, „uh“, „euh“ landen nicht mehr im Text, weder beim Diktieren noch in Meetings. Abschalten unter Einstellungen › Diktieren.
+- Meeting-Liste: Tage lassen sich mit einem Klick einklappen (⌥-Klick für alle), und zwei Filter, „Datum“ und „Mit wem“, kommen zur Suche dazu.
+- Stimmen ohne Namen kannst du auch später benennen: Auf der Seite des Meetings öffnet „Benennen“ wieder die Karte mit allem, was sie gesagt haben.
+- Behoben: Ein Diktat konnte auf einer Schaltfläche statt im Textfeld landen und verloren gehen; jetzt kommt es mit einem Hinweis in die Zwischenablage.
+- Behoben: Nach einer Weile blieben einige Einträge im Menü der Menüleiste leer.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- Dictado manos libres: mientras mantienes Fn, pulsa espacio y suelta la tecla. Un toque de Fn termina y escribe el texto donde está el cursor; Esc lo descarta. Hasta 10 minutos, 3 durante una reunión, con el tiempo corriendo en la píldora.
+- Transcribe archivos de audio y vídeo: «Transcribir un archivo…» en el menú, arrastrándolos a la ventana Reuniones o con Abrir con › nchova en el Finder. También las notas de voz del iPhone, desde la app Notas de Voz del Mac o por AirDrop, y los audios de WhatsApp.
+- Exporta las notas a Word, PDF o Markdown; la transcripción se exporta aparte, también como subtítulos (.srt). «Copiar» pone las notas con formato en el portapapeles, listas para Google Docs, Notion, Pages o Slack.
+- «Enviar por correo…», o el sobre encima de las notas, abre un borrador con los invitados, el asunto y las notas. nchova no envía nada.
+- Adiós a las vacilaciones: «em», «mmm», «um», «uh», «euh» ya no acaban en el texto, ni al dictar ni en las reuniones. Se desactiva en Ajustes › Dictado.
+- Lista de reuniones: los días se pliegan con un clic (⌥-clic para todos) y dos filtros, «Fecha» y «Con quién», se suman a la búsqueda.
+- Las voces que quedaron sin nombre se pueden nombrar después: en la página de la reunión, «Ponerles nombre» vuelve a abrir la ficha con todo lo que dijeron.
+- Corregido: un dictado podía acabar en un botón en lugar del campo de texto y perderse; ahora va al portapapeles, con un aviso.
+- Corregido: al cabo de un rato, algunas opciones del menú de la barra se quedaban vacías.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.2.0/Nchova.dmg" length="22365341" type="application/octet-stream" sparkle:edSignature="6T5y68+l3g1RL5jUkSkCkdaqU+fGiZIG8Dkl6HsPoIqi7NYlkRBZ7rMXL2fArEsEfyc3SoAhSJ0ljtn0QZq8DQ=="/>
+    </item>
+    <item>
       <title>nchova 1.1.0</title>
       <pubDate>Sat, 10 Oct 2026 07:36:27 +0000</pubDate>
       <sparkle:version>195</sparkle:version>
