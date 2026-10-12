@@ -69,6 +69,7 @@ const fr: Dict = {
       ['Vos langues', 'choisissez-en jusqu’à trois : nchova reconnaît celle que vous parlez, même en pleine phrase.'],
       ['Les changements d’avis', '« jeudi, non attends, vendredi » devient « vendredi » si vous activez le nettoyage dans Réglages › Dictée. Ce nettoyage peut seulement retirer des mots, jamais en ajouter.'],
       ['Votre vocabulaire', 'les noms et les sigles écrits à votre façon : « gira » devient Jira, « Jason » devient JSON.'],
+      ['Mains libres', 'en maintenant Fn, appuyez sur Espace et lâchez : parlez jusqu’à dix minutes, puis une pression sur Fn et le texte arrive. Les « euh » restent dehors.'],
       ['Parakeet', 'le modèle vocal de NVIDIA, sur votre Mac, en {nPro} langues européennes.', 'pro'],
     ],
     languages: { title: 'Langues', free: 'Gratuit', pro: 'Pro ajoute' },
@@ -117,6 +118,7 @@ const fr: Dict = {
       ['Avec votre calendrier', 'la réunion prend le nom de l’événement et la liste des invités, et la question arrive deux minutes avant.'],
       ['En direct', 'la transcription défile comme une conversation, à côté de vos notes. Un appel qui coupe puis reprend reste une seule réunion.'],
       ['Pas besoin de casque', 'nchova retire l’écho des haut-parleurs, uniquement dans son propre enregistrement.'],
+      ['Les fichiers aussi', 'un audio ou une vidéo, un mémo vocal de l’iPhone, un message vocal WhatsApp : glissez-le sur la fenêtre Réunions et il est transcrit comme un appel, jusqu’à quatre heures.'],
     ],
     demo: {
       menubar: 'Point produit · dans 2 min',
@@ -178,7 +180,7 @@ const fr: Dict = {
     notes: [
       ['À partir de vos notes', 'quelques mots pendant l’appel suffisent : le compte rendu part de là.'],
       ['Interrogez la réunion', '« Qu’avons-nous décidé ? », « Qu’est-ce que je dois faire ? », « Écris le message de suivi ».'],
-      ['En Markdown', 'chaque réunion existe aussi en fichier, à exporter quand vous voulez.'],
+      ['Là où il faut', 'Word, PDF ou Markdown, la transcription aussi en sous-titres. Ou un brouillon d’e-mail aux invités, que vous envoyez vous-même.'],
     ],
     demo: {
       window: 'Réunions',
@@ -316,7 +318,8 @@ const fr: Dict = {
         ['Notes avec les modèles d’Apple', 'oui'],
         ['Langues, modèles d’Apple', '{nFree}'],
         ['Assistants IA (MCP)', 'oui'],
-        ['Export en Markdown', 'oui'],
+        ['Fichiers audio et vidéo', 'oui'],
+        ['Export en Word, PDF, Markdown', 'oui'],
       ],
       total: ['Total', '0,00 €'],
     },

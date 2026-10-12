@@ -69,6 +69,7 @@ const de: Dict = {
       ['Deine Sprachen', 'wähl bis zu drei, und nchova erkennt selbst, welche du gerade sprichst, sogar mitten im Satz.'],
       ['Selbstkorrekturen', '„Donnerstag, nein warte, Freitag“ wird zu „Freitag“, sobald du die Bereinigung unter Einstellungen › Diktieren einschaltest. Sie kann nur Wörter entfernen, nie welche hinzufügen.'],
       ['Dein Vokabular', 'Namen und Abkürzungen, so geschrieben, wie du willst: Aus „Gira“ wird Jira, aus „Jason“ JSON.'],
+      ['Ohne Halten', 'halte Fn, drück die Leertaste und lass los: sprich bis zu zehn Minuten, dann ein Tippen auf Fn und der Text ist da. „Äh“ und „ähm“ bleiben draußen.'],
       ['Parakeet', 'das Spracherkennungsmodell von NVIDIA, auf deinem Mac, in {nPro} europäischen Sprachen.', 'pro'],
     ],
     languages: { title: 'Sprachen', free: 'Gratis', pro: 'Pro ergänzt' },
@@ -116,6 +117,7 @@ const de: Dict = {
       ['Mit deinem Kalender', 'das Meeting bekommt den Namen des Termins und seine Teilnehmer, und die Frage kommt zwei Minuten vorher.'],
       ['Live', 'das Transkript läuft wie ein Chat, neben deinen eigenen Stichpunkten. Bricht der Call kurz ab und geht dann weiter, bleibt es ein einziges Meeting.'],
       ['Ohne Kopfhörer', 'das Echo der Lautsprecher nimmt nchova selbst heraus, nur aus dem eigenen Signal.'],
+      ['Auch Dateien', 'eine Audio- oder Videodatei, ein Sprachmemo vom iPhone, eine WhatsApp-Sprachnachricht: zieh sie auf das Meetings-Fenster, und sie wird wie ein Call transkribiert, bis zu vier Stunden.'],
     ],
     demo: {
       menubar: 'Produkt-Sync · in 2 min',
@@ -177,7 +179,7 @@ const de: Dict = {
     notes: [
       ['Aus deinen Stichpunkten', 'ein paar Worte während des Calls reichen: Daraus entstehen die Notizen.'],
       ['Frag das Meeting', '„Was haben wir entschieden?“, „Was muss ich tun?“, „Schreib eine Follow-up-Nachricht“.'],
-      ['In Markdown', 'jedes Meeting auch als Datei, exportiert, wann immer du willst.'],
+      ['Wohin du willst', 'Word, PDF oder Markdown, das Transkript auch als Untertitel. Oder ein E-Mail-Entwurf an die Eingeladenen, den du selbst abschickst.'],
     ],
     demo: {
       window: 'Meetings',
@@ -315,7 +317,8 @@ const de: Dict = {
         ['Notizen mit Apples Modellen', 'ja'],
         ['Sprachen, Apples Modelle', '{nFree}'],
         ['KI-Assistenten (MCP)', 'ja'],
-        ['Export als Markdown', 'ja'],
+        ['Audio- und Videodateien', 'ja'],
+        ['Export als Word, PDF, Markdown', 'ja'],
       ],
       total: ['Gesamt', '0,00 €'],
     },

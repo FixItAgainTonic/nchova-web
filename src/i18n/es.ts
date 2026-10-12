@@ -71,6 +71,7 @@ const es: Dict = {
       ['Tus idiomas', 'eliges hasta tres y nchova detecta cuál estás hablando, incluso a mitad de frase.'],
       ['Rectificaciones', '«jueves, mejor dicho, viernes» se convierte en «viernes» si activas la limpieza en Ajustes › Dictado. Solo puede quitar palabras, nunca añadirlas.'],
       ['Tu vocabulario', 'nombres y siglas escritos a tu manera: «gira» se convierte en Jira, «Jason» en JSON.'],
+      ['Manos libres', 'mientras mantienes Fn, pulsa espacio y suelta: habla hasta diez minutos, luego un toque de Fn y llega el texto. Los «em» y «mmm» se quedan fuera.'],
       ['Parakeet', 'el modelo de voz de NVIDIA, en tu Mac, en {nPro} idiomas europeos.', 'pro'],
     ],
     languages: { title: 'Idiomas', free: 'Gratis', pro: 'Pro añade' },
@@ -119,6 +120,7 @@ const es: Dict = {
       ['Con tu calendario', 'la reunión toma el nombre del evento y sus invitados, y el aviso llega dos minutos antes.'],
       ['En tiempo real', 'la transcripción avanza como un chat, junto a tus apuntes. Una llamada que se corta y vuelve sigue siendo una sola reunión.'],
       ['Sin auriculares', 'nchova elimina por su cuenta el eco de los altavoces, solo en su propia señal.'],
+      ['También archivos', 'un audio o un vídeo, una nota de voz del iPhone, un audio de WhatsApp: arrástralo a la ventana Reuniones y se transcribe como una llamada, hasta cuatro horas.'],
     ],
     demo: {
       menubar: 'Reunión de producto · en 2 min',
@@ -180,7 +182,7 @@ const es: Dict = {
     notes: [
       ['A partir de tus apuntes', 'basta con un par de palabras durante la llamada: las notas crecen desde ahí.'],
       ['Pregúntale a la reunión', '«¿Qué hemos decidido?», «¿Qué tengo que hacer yo?», «Escribe un mensaje de seguimiento».'],
-      ['En Markdown', 'cada reunión también como archivo, exportada cuando quieras.'],
+      ['Adonde haga falta', 'Word, PDF o Markdown, la transcripción también como subtítulos. O un borrador de correo a los invitados, que envías tú.'],
     ],
     demo: {
       window: 'Reuniones',
@@ -318,7 +320,8 @@ const es: Dict = {
         ['Notas con los modelos de Apple', 'sí'],
         ['Idiomas, modelos de Apple', '{nFree}'],
         ['Asistentes de IA (MCP)', 'sí'],
-        ['Exportación a Markdown', 'sí'],
+        ['Archivos de audio y vídeo', 'sí'],
+        ['Exportación a Word, PDF, Markdown', 'sí'],
       ],
       total: ['Total', '0,00 €'],
     },

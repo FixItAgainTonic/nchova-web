@@ -69,6 +69,7 @@ const it = {
       ['Le tue lingue', 'ne scegli fino a tre e nchova capisce da sola quale stai parlando, anche a metà frase.'],
       ['Ripensamenti', '«giovedì, anzi no, venerdì» diventa «venerdì», se attivi la pulizia in Impostazioni › Dettatura. Può solo togliere parole, mai aggiungerne.'],
       ['Il tuo vocabolario', 'nomi e sigle scritti come vuoi tu: «gira» diventa Jira, «Jason» diventa JSON.'],
+      ['A mani libere', 'tenendo Fn premi Spazio e lascia: parli fino a dieci minuti, poi un tocco di Fn e il testo arriva. «Ehm» e «uh» restano fuori.'],
       ['Parakeet', 'il modello vocale di NVIDIA, sul tuo Mac, in {nPro} lingue europee.', 'pro'],
     ],
     languages: { title: 'Lingue', free: 'Gratis', pro: 'Pro aggiunge' },
@@ -117,6 +118,7 @@ const it = {
       ['Col calendario', 'il meeting prende il nome dell’evento e gli invitati, e l’avviso arriva due minuti prima.'],
       ['Dal vivo', 'il transcript scorre come una chat, accanto ai tuoi appunti. Una call che cade e torna resta un meeting solo.'],
       ['Anche senza cuffie', 'l’eco degli altoparlanti la toglie nchova, solo sul suo segnale.'],
+      ['Anche i file', 'un audio o un video, un memo vocale dell’iPhone, un vocale di WhatsApp: lo trascini sulla finestra Meeting e viene trascritto come una call, fino a quattro ore.'],
     ],
     demo: {
       menubar: 'Sync prodotto · tra 2m',
@@ -178,7 +180,7 @@ const it = {
     notes: [
       ['Attorno ai tuoi appunti', 'due parole durante la call bastano: le note crescono da lì.'],
       ['Chiedi al meeting', '«Cosa abbiamo deciso?», «Cosa devo fare io?», «Scrivi il follow-up».'],
-      ['In Markdown', 'ogni meeting anche come file, esportato quando vuoi.'],
+      ['Dove servono', 'Word, PDF o Markdown, la trascrizione anche come sottotitoli. Oppure una bozza di email agli invitati, che mandi tu.'],
     ],
     demo: {
       window: 'Meeting',
@@ -316,7 +318,8 @@ const it = {
         ['Note coi modelli Apple', 'sì'],
         ['Lingue, coi modelli Apple', '{nFree}'],
         ['Assistenti AI (MCP)', 'sì'],
-        ['Export in Markdown', 'sì'],
+        ['File audio e video', 'sì'],
+        ['Export in Word, PDF, Markdown', 'sì'],
       ],
       total: ['Totale', '0,00 €'],
     },

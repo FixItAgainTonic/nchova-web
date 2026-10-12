@@ -68,6 +68,7 @@ const en: Dict = {
       ['Your languages', 'pick up to three and nchova works out which one you are speaking, even mid-sentence.'],
       ['Second thoughts', '“Thursday, no wait, Friday” becomes “Friday”, once you turn the cleanup on in Settings › Dictation. It can only take words out, never put any in.'],
       ['Your vocabulary', 'names and acronyms written your way: “jeera” becomes Jira, “Jason” becomes JSON.'],
+      ['Hands free', 'hold Fn, press Space and let go: talk for up to ten minutes, then tap Fn and the text arrives. “Um” and “uh” stay out.'],
       ['Parakeet', 'NVIDIA’s speech model, on your Mac, in {nPro} European languages.', 'pro'],
     ],
     languages: { title: 'Languages', free: 'Free', pro: 'Pro adds' },
@@ -114,6 +115,7 @@ const en: Dict = {
       ['With your calendar', 'the meeting takes the event’s name and its invitees, and the prompt comes two minutes early.'],
       ['Live', 'the transcript scrolls like a chat, next to your own notes. A call that drops and comes back is still one meeting.'],
       ['No headphones needed', 'nchova takes the loudspeakers’ echo out itself, on its own signal only.'],
+      ['Files too', 'an audio or video file, an iPhone voice memo, a WhatsApp voice note: drop it on the Meetings window and it is transcribed like a call, up to four hours.'],
     ],
     demo: {
       menubar: 'Product sync · in 2m',
@@ -175,7 +177,7 @@ const en: Dict = {
     notes: [
       ['Around your notes', 'a couple of words during the call are enough: the notes grow from there.'],
       ['Ask the meeting', '“What did we decide?”, “What do I have to do?”, “Write the follow-up”.'],
-      ['In Markdown', 'every meeting as a file too, exported whenever you want it.'],
+      ['Wherever they go next', 'Word, PDF or Markdown, the transcript as subtitles too. Or an email draft to the invitees, which you send yourself.'],
     ],
     demo: {
       window: 'Meetings',
@@ -313,7 +315,8 @@ const en: Dict = {
         ['Notes with Apple’s models', 'yes'],
         ['Languages, Apple’s models', '{nFree}'],
         ['AI assistants (MCP)', 'yes'],
-        ['Markdown export', 'yes'],
+        ['Audio and video files', 'yes'],
+        ['Export to Word, PDF, Markdown', 'yes'],
       ],
       total: ['Total', '€0.00'],
     },
