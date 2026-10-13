@@ -8,6 +8,40 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.2.2</title>
+      <pubDate>Tue, 13 Oct 2026 19:41:46 +0000</pubDate>
+      <sparkle:version>238</sparkle:version>
+      <sparkle:shortVersionString>1.2.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- La pulizia delle auto-correzioni capisce meglio come si parla davvero: quando ti correggi ripartendo da qualche parola prima («…che i progetti sono 4, scusa, che le priorità sono 4…»), la parte sbagliata se ne va. In italiano, inglese, francese, tedesco e spagnolo; prima restava lì.
+- «Scusa», «sorry», «Entschuldigung», «perdón» all'inizio di una dettatura sono cortesia e restano dove sono.
+- Impostazioni › Dettatura: la sezione ora si chiama «Pulizia e AI», e l'interruttore con l'esempio «Pulizia delle auto-correzioni».
+- Il menu della barra ha il sottomenu «Pulizia e AI», con gli stessi tre interruttori delle Impostazioni: parole dette due volte, esitazioni, auto-correzioni.
+- Impostazioni › Generali › «Software e modelli open source» › «Mostra le licenze…»: chi ha fatto il software open source dentro nchova e i modelli aperti che scarica, con le loro licenze.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- Self-correction cleanup now follows how people really speak: when you correct yourself by starting again a few words back ("…that the projects are 4, sorry, that the priorities are 4…"), the wrong part goes. In English, Italian, French, German and Spanish; before, it stayed.
+- "Sorry", "scusa", "Entschuldigung", "perdón" at the start of a dictation are politeness and stay where they are.
+- Settings › Dictation: the section is now called «Cleanup & AI», and the switch with the example «Self-correction cleanup».
+- The menu bar menu has a «Cleanup & AI» submenu, with the same three switches as Settings: words said twice, hesitations, self-corrections.
+- Settings › General › «Open-source software and models» › «Show Licences…»: who made the open-source software inside nchova and the open models it downloads, with their licences.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- Le nettoyage des autocorrections suit mieux la façon dont on parle vraiment : quand vous vous corrigez en reprenant quelques mots plus tôt (« …que la démo est lundi, je veux dire, que la démo est mercredi »), la partie fausse disparaît. En français, anglais, italien, allemand et espagnol ; avant, elle restait.
+- Une excuse au début d'une dictée (« Sorry, … », « Perdón, … ») est de la politesse et reste à sa place.
+- Réglages › Dictée : la section s'appelle maintenant « Nettoyage et IA », et l'interrupteur avec l'exemple « Nettoyage des autocorrections ».
+- Le menu de la barre des menus a un sous-menu « Nettoyage et IA », avec les trois mêmes interrupteurs que les Réglages : mots dits deux fois, hésitations, autocorrections.
+- Réglages › Général › « Logiciels et modèles open source » › « Afficher les licences… » : qui a créé les logiciels open source intégrés à nchova et les modèles ouverts qu'il télécharge, avec leurs licences.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Selbstkorrekturen bereinigen folgt jetzt besser, wie man wirklich spricht: Wenn du dich korrigierst und ein paar Wörter vorher neu ansetzt („…dass die Demo am Montag ist, nein warte, dass die Demo am Mittwoch ist“), verschwindet der falsche Teil. Auf Deutsch, Englisch, Italienisch, Französisch und Spanisch; vorher blieb er stehen.
+- Eine Entschuldigung am Anfang eines Diktats („Entschuldigung, …“, „Sorry, …“) ist Höflichkeit und bleibt, wo sie ist.
+- Einstellungen › Diktieren: Der Abschnitt heißt jetzt „Bereinigung und KI“, der Schalter mit dem Beispiel „Selbstkorrekturen bereinigen“.
+- Das Menü in der Menüleiste hat ein Untermenü „Bereinigung und KI“ mit denselben drei Schaltern wie die Einstellungen: doppelt gesagte Wörter, Fülllaute, Selbstkorrekturen.
+- Einstellungen › Allgemein › „Open-Source-Software und -Modelle“ › „Lizenzen anzeigen …“: wer die Open-Source-Software in nchova und die offenen Modelle, die es lädt, gemacht hat, mit ihren Lizenzen.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- La limpieza de rectificaciones sigue mejor cómo se habla de verdad: cuando te corriges volviendo a empezar unas palabras antes («…que la demo es el lunes, perdón, que la demo es el miércoles»), la parte equivocada desaparece. En español, inglés, italiano, francés y alemán; antes se quedaba.
+- Una disculpa al principio de un dictado («Perdón, …», «Sorry, …») es cortesía y se queda donde está.
+- Ajustes › Dictado: la sección ahora se llama «Limpieza e IA», y el interruptor con el ejemplo, «Limpieza de rectificaciones».
+- El menú de la barra de menús tiene un submenú «Limpieza e IA», con los mismos tres interruptores que los Ajustes: palabras repetidas, vacilaciones, rectificaciones.
+- Ajustes › General › «Software y modelos de código abierto» › «Mostrar licencias…»: quién hizo el software de código abierto que lleva nchova y los modelos abiertos que descarga, con sus licencias.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.2.2/Nchova.dmg" length="21396132" type="application/octet-stream" sparkle:edSignature="KupSfN5n+ad+06qYYr851EtrbkvtNjwwIdgRsDgS1FxUtECrAtQaLYzq/zlvqyEay8216TKV6K2iMCMxlxt2Dw=="/>
+    </item>
+    <item>
       <title>nchova 1.2.1</title>
       <pubDate>Mon, 12 Oct 2026 20:34:04 +0000</pubDate>
       <sparkle:version>231</sparkle:version>
