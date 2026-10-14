@@ -8,6 +8,25 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.2.3</title>
+      <pubDate>Wed, 14 Oct 2026 11:10:48 +0000</pubDate>
+      <sparkle:version>244</sparkle:version>
+      <sparkle:shortVersionString>1.2.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Le note dei meeting dicono dove è arrivato ogni argomento: cosa si è deciso, cosa resta aperto e i fatti che servono, con gli argomenti più importanti per primi, invece di raccontare in ordine chi ha detto cosa. E sono più corte. Per un meeting passato: «Riscrivi».
+- In «Da fare» c'è solo quello che qualcuno ha detto che farà o ha accettato di fare, non quello che è stato solo proposto.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- Meeting notes now say where each topic landed: what was decided, what is still open and the facts behind it, with the most important topics first, instead of retelling who said what, in order. They are shorter, too. For a past meeting: «Rewrite».
+- «Next steps» holds only what someone said they would do or agreed to do, not what was merely suggested.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- Les notes de réunion disent où en est chaque sujet : ce qui a été décidé, ce qui reste ouvert et les faits utiles, les sujets les plus importants en premier, au lieu de raconter dans l'ordre qui a dit quoi. Elles sont aussi plus courtes. Pour une réunion passée : « Réécrire ».
+- « À faire » ne contient que ce que quelqu'un a dit qu'il ferait ou a accepté de faire, pas ce qui a seulement été suggéré.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Meeting-Notizen sagen jetzt, wo jedes Thema steht: was entschieden wurde, was offen bleibt und die Fakten dahinter, die wichtigsten Themen zuerst, statt der Reihe nach zu erzählen, wer was gesagt hat. Außerdem sind sie kürzer. Für ein früheres Meeting: „Neu schreiben“.
+- Unter „Nächste Schritte“ steht nur, was jemand übernommen oder zugesagt hat, nicht, was nur vorgeschlagen wurde.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- Las notas de las reuniones dicen en qué quedó cada tema: qué se decidió, qué sigue abierto y los hechos que importan, con los temas más importantes primero, en lugar de contar por orden quién dijo qué. Además son más cortas. Para una reunión pasada: «Reescribir».
+- En «Tareas pendientes» solo está lo que alguien dijo que haría o aceptó hacer, no lo que solo se propuso.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.2.3/Nchova.dmg" length="21409177" type="application/octet-stream" sparkle:edSignature="9ZymgNg3cB6PoFF9xtp96GWYQCSa+YW4Ne4uqiRDUfIQ2vd1FdASnpSVDqO34b0pD7nmOLxCpN7AI0TSUVq0Cg=="/>
+    </item>
+    <item>
       <title>nchova 1.2.2</title>
       <pubDate>Tue, 13 Oct 2026 19:41:46 +0000</pubDate>
       <sparkle:version>238</sparkle:version>
