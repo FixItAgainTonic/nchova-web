@@ -1,0 +1,36 @@
+# After every production deployment, tell the IndexNow engines (Bing and the others; not Google) which pages changed:
+# tools/indexnow.mjs. Vercel marks each commit it deploys with the commit status "Vercel"; on main that deployment is
+# production. The hashes of the pages as last sent live in the Actions cache, so only what changed is sent.
+name: IndexNow
+
+on:
+  status:
+  workflow_dispatch:
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.context == 'Vercel' && github.event.state == 'success' &&
+       contains(github.event.branches.*.name, 'main'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: tools
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/cache@v4
+        with:
+          path: .indexnow
+          key: indexnow-${{ github.run_id }}
+          restore-keys: indexnow-
+      # The new deployment takes a moment to answer on nchova.com once Vercel says it is ready.
+      - run: sleep 30
+      - run: node tools/indexnow.mjs
