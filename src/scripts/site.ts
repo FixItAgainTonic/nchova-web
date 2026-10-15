@@ -3,6 +3,7 @@
 
 import './fish/element';
 import { Tank } from './fish/tank';
+import { track } from '@vercel/analytics';
 import { CHECKOUT_URL, PARTNERS } from '../config';
 
 const ocean = document.querySelector<HTMLElement>('[data-ocean]');
@@ -75,3 +76,15 @@ if (partner) {
     a.href = url.pathname + url.search;
   }
 }
+
+// A click on a download button is counted here too (event "Download click", with the same button and creator as
+// /download's "Download"): on the visitor of the page view, so set against the visitors it says how many download.
+// /download counts on the server, from outside the site and past blockers, and is the more easily fooled (src/lib/count.ts).
+document.addEventListener('click', (e) => {
+  const a = (e.target as Element | null)?.closest<HTMLAnchorElement>('a[href^="/download"]');
+  if (!a) return;
+  const url = new URL(a.href);
+  const from = url.searchParams.get('from') ?? 'link';
+  const partner = url.searchParams.get('partner');
+  track('Download click', { from, ...(partner && { partner }) });
+});

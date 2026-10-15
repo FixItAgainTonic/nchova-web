@@ -62,8 +62,11 @@ Dal lancio (7 ottobre 2026) il sito sta su **Vercel** (progetto `nchova-web`, te
 su `main` lo ripubblica, appcast compreso. DNS su Register.it: `A @ 216.150.1.1`, `CNAME www
 b5322d7f22c6c5cd.vercel-dns-016.com.`; gli MX della posta restano quelli di Register.it. Statistiche: Vercel ›
 progetto › Analytics (visite, provenienze, evento «Download» con il pulsante di partenza e, se c'è, il creator che ha
-portato la visita, evento «Partner» per ogni visita da `nchova.com/with/<creator>`, evento «Voucher» con il codice
-per ogni clic su `nchova.com/meet/claim` e `nchova.com/ironhack/claim`, evento «Update check» con
+portato la visita, contato dal server su ogni `/download` aperto da un browser, link da fuori sito e ad blocker compresi;
+evento «Download click», gli stessi clic sui pulsanti del sito contati dal browser sul visitatore della pagina, il numero
+da mettere accanto ai visitatori; dal 15 ottobre 2026, quando un bot ha fatto 70 «Download» in un giorno di 8 visitatori.
+Della riga «Download» vale il totale: i visitatori degli eventi dal server passano tutti da Francoforte. Evento
+«Partner» per ogni visita da `nchova.com/with/<creator>`, evento «Voucher» con il codice per ogni clic su `nchova.com/meet/claim` e `nchova.com/ironhack/claim`, evento «Update check» con
 la versione dell'app). I creator e i loro codici Polar stanno in `PARTNERS` (`src/config.ts`): il codice si crea
 prima su Polar, poi si aggiunge una riga. GitHub conta a parte ogni
 download del DMG, aggiornamenti di Sparkle compresi.

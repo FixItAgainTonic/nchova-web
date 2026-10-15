@@ -4,6 +4,11 @@ import { track } from '@vercel/analytics/server';
  *  The polite ones are kept out by robots.txt already. */
 const NOT_A_PERSON = /bot|crawl|spider|slurp|preview|scan|fetch|curl|wget|python|go-http|java\/|okhttp|headless|lighthouse|facebookexternalhit|whatsapp|telegram|discord|slack/i;
 
+/** A browser following a link says so: Sec-Fetch-Mode «navigate» (Chrome, Edge, Firefox, and Safari since 16.4). Scrapers
+ *  that borrow a browser's name often leave it out: on 15 Oct 2026 one followed every download button of every page, at
+ *  night, in bursts, as Chrome on Mac, Android and Windows: 70 downloads on a day of 8 visitors. */
+export const isNavigation = (request: Request) => request.headers.get('sec-fetch-mode') === 'navigate';
+
 /** Counts a click in Vercel Web Analytics as `event`, from a function that then redirects. A failed count is never
  *  worth a lost visitor: it fails quietly. */
 export async function count(request: Request, event: string, properties: Record<string, string>) {
