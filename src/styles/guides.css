@@ -1046,8 +1046,16 @@
 }
 
 .fd__search svg {
+  flex: none;
   width: 1em;
   height: 1em;
+}
+
+.fd__search span {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .fd__day {
