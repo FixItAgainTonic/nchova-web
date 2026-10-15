@@ -6,7 +6,7 @@ import '@fontsource/dm-mono/500.css';
 import '../styles/global.css';
 import '../styles/sections.css';
 import '../styles/demos.css';
-import { COMPANY, CONTACT_EMAIL, LANGUAGES, PRO_PRICE, SITE } from '../config';
+import { COMPANY, CONTACT_EMAIL, LANGUAGES, PRO_PRICE, PROFILES, SITE } from '../config';
 import { json } from '../lib/json';
 import { path, type Lang } from '../i18n';
 
@@ -47,6 +47,7 @@ const app = {
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'macOS 26 or later',
   publisher: { '@id': org['@id'] },
+  sameAs: PROFILES,
   offers: [
     { '@type': 'Offer', name: 'nchova', price: '0', priceCurrency: PRO_PRICE.currency },
     { '@type': 'Offer', name: 'nchova Pro', price: PRO_PRICE.amount, priceCurrency: PRO_PRICE.currency },
