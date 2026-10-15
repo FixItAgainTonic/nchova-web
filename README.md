@@ -73,3 +73,9 @@ Della riga «Download» vale il totale: i visitatori degli eventi dal server pas
 la versione dell'app). I creator e i loro codici Polar stanno in `PARTNERS` (`src/config.ts`): il codice si crea
 prima su Polar, poi si aggiunge una riga. GitHub conta a parte ogni
 download del DMG, aggiornamenti di Sparkle compresi.
+
+Dopo ogni pubblicazione su `main`, `.github/workflows/indexnow.yml` avvisa Bing e gli altri motori di IndexNow (non Google, che
+non lo usa) delle pagine cambiate: `tools/indexnow.mjs` legge la sitemap dal sito, confronta quello che ogni pagina dice
+(testi, title, description, hreflang, dati strutturati) con l'ultimo invio, tenuto nella cache di Actions, e manda solo
+le pagine cambiate o sparite. La chiave è `public/7cc785b2312772595f7b0c314cd207c4.txt` (non è un segreto: i motori la
+leggono lì). `node tools/indexnow.mjs --dry-run` dice cosa manderebbe, senza mandare niente.
