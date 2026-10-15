@@ -42,6 +42,8 @@ export type Block =
   | { kind: 'bot'; id?: string; h: string; lead?: string; bot: Bot }
   /** nchova's Settings › Assistants, connecting two apps with a click each. */
   | { kind: 'connect'; id?: string; h: string; lead?: string; connect: Connect }
+  /** A file dragged from the desktop onto the Meetings window, transcribed there, then its notes. */
+  | { kind: 'files'; id?: string; h?: string; lead?: string; files: Files }
   /** Questions and answers, the home page's way; also told to search engines. */
   | { kind: 'faq'; id?: string; h: string; items: [q: string, a: string][] };
 
@@ -88,6 +90,56 @@ export interface Connect {
   connected: string;
   footer: string;
   label: string;
+}
+
+export interface Files {
+  /** One file each time the film starts, in turn, and a tab each. */
+  files: {
+    tab: string;
+    /** The icon it has on the desktop. */
+    kind: 'memo' | 'whatsapp' | 'video';
+    /** Its name in the Finder, extension included. */
+    file: string;
+    /** The meeting's title while it is read: the file's name without the extension. */
+    title: string;
+    /** The title the Mac's own model gives the meeting at the end, when the file's name says nothing (WhatsApp's). */
+    named?: string;
+    /** The row's time, the line under the title (when it was recorded, how long), its length as the app writes it
+     *  ('23 min', '1h 32m') and in minutes, for the time left. */
+    time: string;
+    meta: string;
+    length: string;
+    minutes: number;
+    /** What was said: the voice and when ('Voice 1 · 0:04'), and the words. */
+    lines: [who: string, text: string][];
+    /** The notes once it is read: a heading and its points. */
+    notes: [heading: string, points: string[]][];
+    /** Under the scene: what this file is and where it came from. */
+    caption: string;
+  }[];
+  /** The app's words, in the page's language. `%d` is a number and `%%` a per cent sign, as in the app's strings. */
+  words: {
+    window: string;
+    search: string;
+    today: string;
+    yesterday: string;
+    /** Meetings already in the list, under Yesterday: the title, and 'time · length'. */
+    earlier: [string, string][];
+    choose: string;
+    drop: string;
+    progress: string;
+    row: string;
+    about: string;
+    underMinute: string;
+    cancel: string;
+    transcribing: string;
+    writing: string;
+    notes: string;
+    chat: string;
+    transcript: string;
+    switchLabel: string;
+    label: string;
+  };
 }
 
 export interface Guide {

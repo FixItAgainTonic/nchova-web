@@ -10,6 +10,7 @@ import Bill from './demos/Bill.astro';
 import Route from './demos/Route.astro';
 import Bot from './demos/Bot.astro';
 import Connect from './demos/Connect.astro';
+import Files from './demos/Files.astro';
 import { md, rich, type Dict, type Lang } from '../i18n';
 import type { Block } from '../i18n/guides';
 
@@ -132,6 +133,7 @@ const stamp = (s: number) => `00:${String(Math.floor(s / 60)).padStart(2, '0')}:
     {b.kind === 'route' && <Route route={b.route} t={t} />}
     {b.kind === 'bot' && <Bot bot={b.bot} lang={lang} />}
     {b.kind === 'connect' && <Connect connect={b.connect} />}
+    {b.kind === 'files' && <Files files={b.files} />}
 
     {
       b.kind === 'faq' && (

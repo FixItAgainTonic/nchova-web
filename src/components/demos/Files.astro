@@ -1,0 +1,120 @@
+---
+// A file on the desktop, dragged onto the Meetings window and transcribed there, as the app does it (FileImports,
+// MeetingsView): the window's violet edge and "Drop to transcribe" while it is over it; then the meeting under Today,
+// named after the file, "transcribing… 42%" in its row, the line and the thin bar over its notes, the transcript filling
+// in on the right; then the notes. A file the name of which says nothing (WhatsApp's) gets a title from the Mac's model
+// at the end. One file each time the film starts, in turn; the switch picks one.
+import { json } from '../../lib/json';
+import type { Files } from '../../i18n/guides/types';
+
+interface Props {
+  files: Files;
+}
+const { files: f } = Astro.props;
+const w = f.words;
+---
+
+<div class="fd" data-files data-kind={f.files[0].kind}>
+  <script type="application/json" data-script set:html={json(f)} />
+  <div class="ia__switch mono" role="group" aria-label={w.switchLabel}>
+    {
+      f.files.map((file, i) => (
+        <button type="button" data-pick={i} aria-pressed={i === 0 ? 'true' : 'false'}>
+          {file.tab}
+        </button>
+      ))
+    }
+  </div>
+
+  <div class="stage fd__stage" role="img" aria-label={w.label}>
+    <div class="stage__in" aria-hidden="true">
+      <div class="win fd__win">
+        <div class="win__bar">
+          <span class="lights"><i></i><i></i><i></i></span>
+          <span class="win__title">{w.window}</span>
+        </div>
+        <div class="fd__body">
+          <aside class="fd__side">
+            <div class="fd__search">
+              <svg viewBox="0 0 16 16"><circle cx="6.8" cy="6.8" r="4.6"></circle><path d="M10.3 10.3 14 14"></path></svg>
+              {w.search}
+            </div>
+            <div class="fd__today" data-today>
+              <p class="fd__day">{w.today}</p>
+              <div class="fd__row on">
+                <span class="fd__rtitle" data-row-title></span>
+                <span class="fd__rmeta">
+                  <span data-row-meta></span>
+                  <svg class="fd__rnotes" viewBox="0 0 12 10"><path d="M1 1.5h10M1 4h10M1 6.5h10M1 9h6"></path></svg>
+                </span>
+              </div>
+            </div>
+            <p class="fd__day">{w.yesterday}</p>
+            {
+              w.earlier.map(([title, meta]) => (
+                <div class="fd__row">
+                  <span class="fd__rtitle">{title}</span>
+                  <span class="fd__rmeta">
+                    {meta}
+                    <svg class="fd__rnotes" viewBox="0 0 12 10"><path d="M1 1.5h10M1 4h10M1 6.5h10M1 9h6"></path></svg>
+                  </span>
+                </div>
+              ))
+            }
+          </aside>
+
+          <div class="fd__detail" data-detail data-state="empty">
+            <p class="fd__choose">{w.choose}</p>
+            <article class="fd__doc">
+              <p class="fd__title" data-title></p>
+              <p class="fd__meta" data-meta></p>
+              <hr class="fd__rule" />
+              <div class="fd__progress">
+                <p class="fd__pline"><span data-pline></span><span class="fd__cancel">{w.cancel}</span></p>
+                <span class="fd__bar"><i data-bar></i></span>
+              </div>
+              <div class="fd__notes">
+                <p class="fd__nhead"><b>{w.notes}</b><i class="nd__spin fd__spin"></i></p>
+                <div data-notes></div>
+              </div>
+            </article>
+            <section class="fd__panel">
+              <p class="fd__seg"><span>{w.chat}</span><span class="on">{w.transcript}</span></p>
+              <div class="fd__turns" data-turns>
+                <p class="fd__wait">{w.transcribing}</p>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="fd__drop">
+          <span>
+            <svg viewBox="0 0 20 20"><path d="M3 8.5v3M6.5 6v8M10 3.5v13M13.5 6v8M17 8.5v3"></path></svg>
+            {w.drop}
+          </span>
+        </div>
+      </div>
+
+      <div class="fd__file" data-file>
+        <span class="fd__icon">
+          <svg viewBox="0 0 48 60">
+            <path class="fd__page" d="M6 2h25l13 13v39a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4z"></path>
+            <path class="fd__fold" d="M31 2v9a4 4 0 0 0 4 4h9"></path>
+            <g class="fd__glyph" data-only="memo"><path d="M14 30v6M18.5 26v14M23 22v22M27.5 26v14M32 30v6"></path></g>
+            <g class="fd__glyph" data-only="whatsapp"><rect x="19" y="20" width="10" height="16" rx="5"></rect><path d="M15 32a9 9 0 0 0 18 0M24 41v4"></path></g>
+            <g class="fd__glyph" data-only="video"><path d="M19 23.5v15l12-7.5z"></path></g>
+          </svg>
+          <b class="fd__ext" data-ext></b>
+        </span>
+        <span class="fd__fname" data-fname>{f.files[0].file}</span>
+        <svg class="fd__cursor" viewBox="0 0 24 24"><path d="M5 2.5v17.2l4.3-4.1 2.9 6.6 2.7-1.2-2.9-6.5 6-.4z"></path></svg>
+      </div>
+    </div>
+  </div>
+  <p class="fd__caption mono" aria-hidden="true">
+    {f.files.map((file, i) => <span data-caption={i} hidden={i !== 0}>{file.caption}</span>)}
+  </p>
+</div>
+
+<script>
+  import '../../scripts/demos/files';
+</script>

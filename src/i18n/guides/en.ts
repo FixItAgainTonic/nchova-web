@@ -1115,6 +1115,366 @@ const teams: Guide = {
   checked: 'on 8 October 2026',
 };
 
+const dragon: Guide = {
+  id: 'dragon',
+  page: 'alternatives/dragon/',
+  group: 'compare',
+  short: 'Dragon',
+  metaTitle: 'A Dragon for Mac alternative, offline, in any app — nchova',
+  description: '__DESC__',
+  kicker: 'nchova vs Dragon',
+  title: 'Dragon left the Mac. *Dictation didn’t.*',
+  lead: '__LEAD__',
+  short3: [
+    ['*Any* app', 'Word, Pages, Mail, a form in the browser, the terminal: the text arrives where the cursor is.'],
+    ['*On* the Mac', 'speech turns into text on the Mac itself, offline: no account, nothing uploaded.'],
+    ['*€29.99* once', 'for Pro, on up to three Macs; or free for good with Apple’s speech model.'],
+  ],
+  blocks: [
+    {
+      kind: 'demo',
+      demo: {
+        name: 'dictation',
+        data: {
+          ...dictation,
+          app: 'Microsoft Word',
+          doc: 'Site visit report',
+          scripts: [
+            {
+              spoken: 'the visit took place on tuesday morning with the owner present',
+              marks: [],
+              written: 'The visit took place on Tuesday morning, with the owner present.',
+            },
+            {
+              spoken: 'the damp in the north wall comes from the gutter as sinead pointed out',
+              marks: [{ kind: 'fix', from: 'sinead', to: 'Sinéad' }],
+              written: 'The damp in the north wall comes from the gutter, as Sinéad pointed out.',
+            },
+            {
+              spoken: 'we will send the quote on friday, no wait, monday',
+              marks: [{ kind: 'strike', from: 'friday, no wait,' }],
+              written: 'We will send the quote on Monday.',
+            },
+          ],
+        },
+      },
+      notes: [
+        ['Where the cursor is', 'Word, Pages, Mail, Notes, a browser: any app, with no plug-in to install.'],
+        ['Punctuation', 'written for you, from the way you speak: no “comma” or “full stop” to say.'],
+        ['Your vocabulary', 'names and terms written your way, offline too: “sinead” becomes Sinéad.'],
+        ['Hands free', 'hold Fn, press Space and let go: talk for up to ten minutes, then tap Fn.'],
+      ],
+    },
+    '__TABLE__' as never,
+    {
+      kind: 'points',
+      h: 'Coming *from Dragon*',
+      lead: 'What works the way you are used to, and what works differently.',
+      items: [
+        ['No training', 'nothing to read aloud before you start: nchova types from the first sentence, with Apple’s model or NVIDIA’s Parakeet.'],
+        ['Your words', 'in **Settings › Vocabulary**: names, acronyms, terms of your trade, and how the engine hears them.'],
+        ['No commands', 'you do not say “comma”, “new paragraph” or “select that”: the punctuation is written for you, and you correct with the keyboard.'],
+        ['Second thoughts', '“Friday, no wait, Monday” becomes “Monday”, once you turn the cleanup on in **Settings › Dictation**, with Apple Intelligence on. It only takes words out, never adds any.'],
+        ['Languages', '{nAll}, up to three at once, sentence by sentence: {nFree} free with Apple’s model, {nPro} European ones with Parakeet (Pro).'],
+      ],
+    },
+    {
+      kind: 'demo',
+      h: 'And your *meetings*, written out',
+      lead: 'The same voice engine transcribes your calls and the meetings around a table, with no bot and no upload, and writes the notes when they end.',
+      flip: true,
+      demo: { name: 'meeting' },
+      notes: base.meeting.notes as [string, string, 'pro'?][],
+    },
+    '__BETTER__' as never,
+    {
+      kind: 'steps',
+      h: 'Dictating in *two minutes*',
+      steps: [
+        '[Download nchova](/download?from=dragon-steps) and open it. It asks for the **Microphone** and **Accessibility**, and to set **Press 🌐 key to** to **Do Nothing**, so that Fn is nchova’s and not macOS’s own dictation.',
+        'Pick your languages, up to three, and add the names and terms you use most in **Settings › Vocabulary**.',
+        'Click in a document, hold **Fn**, speak, let go.',
+      ],
+    },
+    '__FAQ__' as never,
+  ],
+};
+
+const noBot: Guide = {
+  id: 'ai-note-taker',
+  page: 'ai-note-taker/',
+  group: 'use',
+  short: 'AI note taker, no bot',
+  metaTitle: 'An AI note taker without a bot, on your Mac — nchova',
+  description:
+    'AI meeting notes with no bot in the call: nchova transcribes Zoom, Meet and Teams from your Mac and writes the notes when you hang up. Free, nothing uploaded.',
+  kicker: 'AI note taker, no bot',
+  title: 'AI meeting notes, *without a bot in the call*.',
+  lead: '__LEAD__',
+  short3: [
+    ['*No* bot', 'nothing joins the meeting: nchova hears what your Mac plays and what your microphone hears, in any call app.'],
+    ['*No* upload', 'the transcript is written on your Mac and the audio is never kept. The notes too, unless you choose your own Claude Code or Codex.'],
+    ['Free', 'transcripts and notes with Apple’s models, with no limit on minutes or meetings. Pro, €29.99 once, tells the voices apart and writes better notes.'],
+  ],
+  blocks: [
+    {
+      kind: 'bot',
+      h: 'A guest in the call, *or nobody*',
+      lead: 'A notetaker bot gets the meeting by joining it, as a participant everyone sees. nchova needs no seat: it is on your Mac, where the call already is.',
+      bot: {
+        them: {
+          tab: 'A notetaker bot',
+          name: 'Notetaker',
+          joined: 'Notetaker joined the meeting',
+          banner: '',
+          caption: 'The bot joins as a guest: everyone in the call sees it, and the recording goes to its company’s cloud.',
+        },
+        us: { tab: 'nchova', caption: 'Nobody joins. nchova listens from your Mac, and the transcript stays on it.' },
+        words: {
+          switchLabel: 'Show',
+          label: 'A call with a notetaker bot joining as a guest, next to the same call with nchova, where nobody joins and the transcript appears on your own screen.',
+          call: 'Product sync',
+          tiles: ['Julia', 'Mark', 'Sarah', 'Tom', 'Alex'],
+          live: 'Live transcript',
+          bubbles: [
+            ['Julia', 'The page copy is done.', 'Voice 1'],
+            ['', 'Great. And the animations?'],
+            ['Mark', 'By Thursday, no wait, Friday.', 'Voice 2'],
+          ],
+        },
+      },
+    },
+    '__THEM__' as never,
+    {
+      kind: 'demo',
+      h: 'What happens *on your Mac*',
+      lead: 'The call takes the microphone, nchova asks once, and the transcript writes itself in a card only you can see: your microphone is “Me”, the call is everyone else.',
+      flip: true,
+      demo: { name: 'meeting' },
+      notes: [
+        ['Any call app', 'Zoom, Google Meet, Teams, Slack, FaceTime, Webex, and calls in the browser: nchova notices when one of them takes the microphone.'],
+        ['With your calendar', 'the meeting takes the event’s name and its invitees, and the question comes two minutes early. Or let it start by itself.'],
+        ['On your screen only', 'the pill and the transcript are on your Mac, not in the call: nobody sees them unless you share your whole screen.'],
+        ['No headphones needed', 'the loudspeakers’ echo is taken out of your microphone, without touching what the call sends.'],
+      ],
+    },
+    {
+      kind: 'demo',
+      h: 'The notes, *when you hang up*',
+      lead: 'Written around what you jotted down during the call: the topics, what was decided, who does what. Then ask the meeting: what did we decide, what do I have to do, write the follow-up.',
+      demo: { name: 'notes' },
+    },
+    {
+      kind: 'points',
+      h: 'Who writes *the notes*',
+      lead: 'You choose, in **Settings › Notes**. Only the last one leaves the Mac, and only if you pick it.',
+      items: [
+        ['Apple Intelligence', 'on the Mac, free: short notes, the topics and the decisions.'],
+        ['Qwen3.5 4B or 9B', 'on the Mac too, downloaded once (2.7 or 5.7 GB): better notes, and nothing leaves the Mac.', 'pro'],
+        ['Your Claude Code or Codex', 'the best notes, in seconds, with your own subscription: the transcript, never the audio, goes to Anthropic or OpenAI.', 'pro'],
+      ],
+    },
+    {
+      kind: 'prose',
+      h: 'Meetings in a room, *too*',
+      p: [
+        'A bot needs a call to join. nchova only needs to hear: with the Mac on the table, a meeting in the room is transcribed like a call, offline, and its notes written when it ends. Start it from the menu bar, with **Start meeting transcription**.',
+        'With Pro, the voices are told apart, Voice 1, Voice 2…, and named from the voiceprints of the invitees, kept on your Mac.',
+      ],
+    },
+    '__BETTER__' as never,
+    {
+      kind: 'steps',
+      h: 'Your next meeting, *with notes*',
+      steps: [
+        '[Download nchova](/download?from=ai-note-taker-steps) and open it. In the setup, under **For meetings**, connect the **Calendar** and press **Ask now** next to **System audio**: that is how nchova hears the others.',
+        'Join your call as usual, in its app or in the browser. When nchova asks, click **Transcribe**.',
+        'Jot a word or two in the card if you like. Hang up: the notes are written, and the meeting waits in **Meetings** (Fn+M).',
+      ],
+    },
+    {
+      kind: 'faq',
+      h: 'Questions, *out loud*',
+      items: [
+        ['Do the others know nchova is transcribing?', 'Nothing appears in the call, because nchova is not in it. Where the law, or your company, asks you to, tell the people you are talking to that you are transcribing.'],
+        ['Is it really free?', 'Yes: transcripts and notes with Apple’s models, in {nFree} languages, with no limit on minutes or meetings. Pro, €29.99 once, adds the voices told apart, Parakeet’s {nPro} European languages and better notes.'],
+        ['Can it take notes in a meeting I am not in?', 'No. nchova transcribes what your Mac hears, so you, or your Mac, have to be in the call. A bot can attend for you; nchova cannot.'],
+        ['Which call apps does it work with?', 'Zoom, Google Meet, Microsoft Teams, Slack, FaceTime, Webex and calls in the browser; any other call starts from the menu bar. See [Zoom](@transcribe/zoom/), [Google Meet](@transcribe/google-meet/) and [Teams](@transcribe/teams/).'],
+        ['Can I ask Claude or ChatGPT about my meetings?', 'Yes: nchova’s MCP server runs on your Mac and connects with one click. See [meetings in your assistant](@mcp/).'],
+        ['And a recording I already have?', 'Drop it on the **Meetings** window: it is transcribed on your Mac, up to four hours, and gets its notes like a call. See [audio files](@transcribe/audio-files/).'],
+      ],
+    },
+  ],
+};
+
+/** The Meetings window's words, for the scene of a file dropped on it. */
+const fileWords = {
+  window: base.notes.demo.window,
+  search: base.notes.demo.search,
+  today: base.notes.demo.days[0],
+  yesterday: base.notes.demo.days[1],
+  earlier: base.notes.demo.list.filter(([day]) => day === 1).map(([, title, meta]) => [title, meta] as [string, string]),
+  choose: 'Choose a meeting',
+  drop: 'Drop to transcribe',
+  progress: 'Transcribing the file · %d%%',
+  row: 'transcribing… %d%%',
+  about: 'about %d min',
+  underMinute: 'less than a minute',
+  cancel: 'Cancel',
+  transcribing: 'Transcribing…',
+  writing: base.notes.demo.writingRow,
+  notes: base.notes.demo.notesH,
+  chat: base.notes.demo.chat,
+  transcript: base.notes.demo.transcript,
+  switchLabel: 'Show',
+};
+
+const audioFiles: Guide = {
+  id: 'audio-files',
+  page: 'transcribe/audio-files/',
+  group: 'use',
+  short: 'Transcribe audio files',
+  metaTitle: 'Transcribe audio and voice memos on your Mac, free — nchova',
+  description:
+    'Turn recordings into text on your Mac: voice memos, WhatsApp voice messages, interviews, lectures and videos up to four hours. Free, offline, nothing uploaded.',
+  kicker: 'audio to text',
+  title: 'Drop a recording. *Get the words.*',
+  lead: 'A memo from your iPhone, a WhatsApp voice message, an interview, a lecture, the sound of a video: drop it on nchova and it is transcribed on your Mac, then summed up in notes. Nothing is uploaded, no minutes are counted, and it is free with Apple’s speech model.',
+  short3: [
+    ['Up to *four hours*', 'audio or video, one file at a time: drop several and they wait their turn.'],
+    ['*Free*, on the Mac', 'with Apple’s speech model, in {nFree} languages: no account, no upload, no limit on how many.'],
+    ['Then *notes*', 'the topics and what was decided, written when the file ends, and a chat to ask it questions.'],
+  ],
+  blocks: [
+    {
+      kind: 'files',
+      files: {
+        files: [
+          {
+            tab: 'Voice memo',
+            kind: 'memo',
+            file: 'Interview with Anna.m4a',
+            title: 'Interview with Anna',
+            time: '16:40',
+            meta: 'Tuesday 13 October at 16:40 · 23 min',
+            length: '23 min',
+            minutes: 23,
+            lines: [
+              ['Voice 1 · 0:04', 'Thanks for making time. Let’s start with how the bakery began.'],
+              ['Voice 2 · 0:11', 'My grandmother opened it in 1962. Bread, and nothing else.'],
+              ['Voice 2 · 0:26', 'The pastries came in the eighties, when my mother took over.'],
+              ['Voice 1 · 0:41', 'And since you took over?'],
+              ['Voice 2 · 0:47', 'Online orders and a second oven. The recipes haven’t changed.'],
+            ],
+            notes: [
+              ['The bakery', ['Opened in 1962 by Anna’s grandmother, bread only.', 'Pastries since the eighties; online orders and a second oven today.']],
+              ['For the article', ['The recipes are the same after three generations.']],
+            ],
+            caption: 'A memo recorded on the iPhone, from Voice Memos on the Mac.',
+          },
+          {
+            tab: 'WhatsApp',
+            kind: 'whatsapp',
+            file: 'WhatsApp Audio 2026-10-13 at 19.02.11.opus',
+            title: 'WhatsApp Audio 2026-10-13 at 19.02.11',
+            named: 'Saturday dinner at Marco’s',
+            time: '19:02',
+            meta: 'Tuesday 13 October at 19:02 · 1 min',
+            length: '1 min',
+            minutes: 1,
+            lines: [
+              ['Voice 1 · 0:00', 'Hi! So, Saturday: dinner at Marco’s, at eight.'],
+              ['Voice 1 · 0:06', 'He’s cooking. We bring dessert and something to drink.'],
+              ['Voice 1 · 0:14', 'Can you pick up Giulia on the way? Her car’s at the garage.'],
+            ],
+            notes: [['Saturday', ['Dinner at Marco’s at eight; bring dessert and drinks.', 'Pick up Giulia on the way.']]],
+            caption: 'A WhatsApp voice message: its name said nothing, so the Mac’s own model titled it.',
+          },
+          {
+            tab: 'Video',
+            kind: 'video',
+            file: 'Lecture 7 – Photosynthesis.mp4',
+            title: 'Lecture 7 – Photosynthesis',
+            time: '09:00',
+            meta: 'Tuesday 13 October at 09:00 · 1h 32m',
+            length: '1h 32m',
+            minutes: 92,
+            lines: [
+              ['Voice 1 · 0:12', 'Last week, the cell. Today: how a leaf makes its food.'],
+              ['Voice 1 · 0:31', 'Light, water and carbon dioxide go in. Sugar and oxygen come out.'],
+              ['Voice 2 · 41:05', 'Where does the oxygen come from, the water or the CO₂?'],
+              ['Voice 1 · 41:12', 'From the water. That one will be on the exam.'],
+            ],
+            notes: [
+              ['Photosynthesis', ['Light, water and CO₂ become sugar and oxygen.', 'The oxygen comes from the water, not from the CO₂.']],
+              ['Exam', ['Where the oxygen comes from will be asked.']],
+            ],
+            caption: 'A recorded lecture: the sound of the video is transcribed, the questions from the room too.',
+          },
+        ],
+        words: {
+          ...fileWords,
+          label: 'A file dragged from the desktop onto nchova’s Meetings window: the window shows where it goes, the meeting appears under Today and fills in as the file is read, voice by voice, then its notes are written.',
+        },
+      },
+    },
+    {
+      kind: 'steps',
+      h: 'Three ways *in*',
+      lead: 'Whichever you use, the file stays where it is: nchova reads it, and copies nothing.',
+      steps: [
+        'Choose **Transcribe a File…** in nchova’s menu, in the menu bar, and pick one or more files.',
+        'Drop files on the **Meetings** window (Fn+M). A memo can come straight out of Voice Memos on the Mac.',
+        'In the Finder, right-click a file and choose **Open With › nchova**.',
+      ],
+    },
+    {
+      kind: 'points',
+      h: 'What it reads',
+      lead: 'Anything the Mac itself can play, audio or video, up to four hours a file.',
+      items: [
+        ['Audio', 'm4a, mp3, wav, aiff, flac, caf, aac: voice memos, recorders, podcasts, the mp3 exported from another app.'],
+        ['Voice messages', 'WhatsApp’s, saved on the Mac or sent over with AirDrop: their opus files open as they are.'],
+        ['Video', 'mp4 and mov, a recorded lecture, a call recorded by Zoom or QuickTime: nchova transcribes the sound.'],
+        ['Not', 'WebM files, films protected by DRM, and links: a YouTube video has to be a file on the Mac first.'],
+      ],
+    },
+    {
+      kind: 'points',
+      h: 'Each file becomes *a meeting*',
+      lead: 'In the **Meetings** window, like your calls: under the day it was recorded, with its transcript, its notes and its chat.',
+      items: [
+        ['Its title', 'the file’s name. When the name says nothing, like “New Recording 12” or WhatsApp’s, the Mac’s own model gives it one from what was said, with Apple Intelligence on.'],
+        ['Its date', 'when it was recorded, taken from the file itself: a memo from Tuesday goes under Tuesday.'],
+        ['The voices', 'told apart, Voice 1, Voice 2…, and named with a click.', 'pro'],
+        ['The notes', 'the topics and what was decided, by the model you choose, as after a call. Then ask: “What did she say about the prices?”'],
+        ['Where it goes next', 'Word, PDF or Markdown, or the transcript as subtitles. Or ask Claude and ChatGPT about it, through [nchova’s MCP server](@mcp/).'],
+      ],
+    },
+    {
+      kind: 'prose',
+      h: 'Lectures and interviews, *written out*',
+      p: [
+        'A two-hour lecture or a long interview is just a longer file: nchova reads it on the Mac, at its own pace, while you do something else. If you record a meeting or start a long dictation in the meantime, the file waits and picks up again when you are done.',
+        'With Pro, the voices are told apart, so the lecturer and the questions from the room, or you and the person you interviewed, are not one block of text. With {nPro} European languages from Parakeet, a lecture in Polish or Dutch is transcribed too.',
+        'Next time, you can skip the recording: with the Mac on the desk, nchova transcribes a lecture or a meeting in the room as it happens, offline.',
+      ],
+    },
+    {
+      kind: 'faq',
+      h: 'Questions about *files*',
+      items: [
+        ['Is it really free?', 'Yes. Transcribing files is in the free version, with Apple’s speech model, in {nFree} languages, with no limit on how many. Pro adds the voices told apart, Parakeet’s {nPro} European languages and better notes.'],
+        ['Is my recording uploaded anywhere?', 'No. The file is read and transcribed on your Mac, and stays where it was: nchova copies nothing. Only if you choose your own Claude Code or Codex to write the notes does the transcript, not the audio, go to Anthropic or OpenAI.'],
+        ['How do I get a WhatsApp voice message onto the Mac?', 'Save it from WhatsApp on the Mac, or share it from the iPhone with AirDrop. Then drop the file on the **Meetings** window.'],
+        ['How long can a file be?', 'Up to four hours. Drop several and they are transcribed one after another.'],
+        ['Which languages?', '{nAll}: {nFree} free with Apple’s model, {nPro} European ones with Parakeet (Pro). A recording that switches between two of your languages is transcribed in both.'],
+        ['Can I play the audio back next to the transcript?', 'Not in nchova: it keeps the words, and your file stays yours, where it was. For a transcript you correct while listening, MacWhisper is made for that.'],
+      ],
+    },
+  ],
+};
+
 // ---------- All together ----------
 
 const guides: Guides = {
@@ -1149,7 +1509,7 @@ const guides: Guides = {
       { id: 'granola', does: 'Meeting notes', where: 'In the cloud', bot: 'None', price: 'Free; Business $14 a month' },
     ],
   },
-  list: [wisprFlow, otter, granola, superwhisper, macwhisper, zoom, meet, teams, offline, multilingual, mcp],
+  list: [wisprFlow, otter, granola, superwhisper, macwhisper, zoom, meet, teams, audioFiles, offline, multilingual, mcp],
 };
 
 export default guides;
