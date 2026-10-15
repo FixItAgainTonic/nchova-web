@@ -33,6 +33,9 @@ const canonical = new URL(path(lang, page), SITE).href;
 const alternates = langs.length > 1 ? langs.map((l) => ({ l, href: new URL(path(l, page), SITE).href })) : [];
 const ogImage = new URL(`/og-${lang}.png`, SITE).href;
 const locale = { en: 'en_GB', it: 'it_IT', de: 'de_DE', fr: 'fr_FR', es: 'es_ES' }[lang];
+// The site's own name, which Google reads from the home page to name it in results: nchova, not the company that sells
+// it (Organization) nor the bare domain. One site in every language, so the same node on every home page.
+const site = { '@type': 'WebSite', '@id': `${SITE}/#site`, name: 'nchova', url: `${SITE}/`, publisher: { '@id': `${SITE}/#org` } };
 const org = { '@type': 'Organization', '@id': `${SITE}/#org`, name: COMPANY.name, vatID: `IT${COMPANY.vat}`, email: CONTACT_EMAIL, url: `${SITE}/` };
 const app = {
   '@type': 'SoftwareApplication',
@@ -49,7 +52,7 @@ const app = {
     { '@type': 'Offer', name: 'nchova Pro', price: PRO_PRICE.amount, priceCurrency: PRO_PRICE.currency },
   ],
 };
-const nodes = [...(product ? [org, app] : []), ...graph];
+const nodes = [...(product ? [site, org, app] : []), ...graph];
 const structured = nodes.length > 0 && { '@context': 'https://schema.org', '@graph': nodes };
 ---
 
