@@ -10,6 +10,7 @@
 //
 //   node tools/indexnow.mjs            sends what changed and keeps the new hashes
 //   node tools/indexnow.mjs --dry-run  says what it would send, sends nothing, keeps nothing
+//   node tools/indexnow.mjs --seed     keeps the hashes, sends nothing (after the cache was lost)
 
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -24,6 +25,7 @@ const ENDPOINT = 'https://api.indexnow.org/indexnow';
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const store = join(root, '.indexnow', 'hashes.json');
 const dryRun = process.argv.includes('--dry-run');
+const seed = process.argv.includes('--seed');
 
 async function get(url) {
   for (let attempt = 1; ; attempt++) {
@@ -92,7 +94,8 @@ for (const url of send) console.log(`  ${url}`);
 if (dryRun) process.exit(0);
 
 // One request takes up to 10,000 URLs.
-if (send.length > 0) {
+if (seed) console.log('Seed: hashes kept, nothing sent.');
+else if (send.length > 0) {
   const res = await fetch(ENDPOINT, {
     method: 'POST',
     headers: { 'content-type': 'application/json; charset=utf-8' },
