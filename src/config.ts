@@ -43,4 +43,8 @@ export const COMPANY = { name: 'Forcelab', vat: '14481340967' };
 /** Pro's price, for search engines (the copy writes it in each language). */
 export const PRO_PRICE = { amount: '29.99', currency: 'EUR' };
 
+/** Pages about nchova elsewhere, for search engines (sameAs of the app in the home page's structured data): the same
+ *  app, so they help tell it apart from other things called nchova. One line each, as they are made. */
+export const PROFILES = ['https://alternativeto.net/software/nchova/'];
+
 export const SITE = 'https://nchova.com';
