@@ -1121,10 +1121,11 @@ const dragon: Guide = {
   group: 'compare',
   short: 'Dragon',
   metaTitle: 'A Dragon for Mac alternative, offline, in any app — nchova',
-  description: '__DESC__',
+  description:
+    'Dragon for Mac was discontinued in 2018. nchova dictates into any Mac app, offline, with your own vocabulary: free with Apple’s model, or Pro at €29.99 once.',
   kicker: 'nchova vs Dragon',
   title: 'Dragon left the Mac. *Dictation didn’t.*',
-  lead: '__LEAD__',
+  lead: 'Nuance stopped selling Dragon for Mac on 22 October 2018 and has not updated it since; today’s Dragon runs on Windows. nchova is dictation for the Mac you have now: hold Fn and speak into any app, offline, with names and terms written your way. What it does not do is drive the Mac by voice: for that, macOS has Voice Control.',
   short3: [
     ['*Any* app', 'Word, Pages, Mail, a form in the browser, the terminal: the text arrives where the cursor is.'],
     ['*On* the Mac', 'speech turns into text on the Mac itself, offline: no account, nothing uploaded.'],
@@ -1165,7 +1166,19 @@ const dragon: Guide = {
         ['Hands free', 'hold Fn, press Space and let go: talk for up to ten minutes, then tap Fn.'],
       ],
     },
-    '__TABLE__' as never,
+    {
+      kind: 'table',
+      h: 'Side by side',
+      them: 'Dragon',
+      rows: [
+        ['On the Mac', 'Dragon Professional Individual for Mac: no longer sold or updated since 22 October 2018. Dragon Medical One reaches a Mac only through Citrix or a Windows virtual machine', 'A Mac app, for Apple silicon and macOS 26'],
+        ['Dragon today', 'Professional and Legal v16 on Windows 10 and 11; Professional Anywhere in Microsoft’s cloud, for Windows; Anywhere on iPhone and Android, in the US and Canada', 'On your Mac, offline'],
+        ['Dictation', 'Live, and from recorded audio files', 'Live in any Mac app, and from audio or video files up to four hours'],
+        ['Voice commands', 'Custom commands and macros, editing and formatting by voice', 'None: for commands, macOS Voice Control'],
+        ['Your words', 'Custom words and word lists; Dragon Legal has a legal vocabulary built in', '**Settings › Vocabulary**, with how the engine hears each word'],
+        ['Price', 'Not listed: Nuance’s page asks you to get in touch', 'Free with Apple’s model; Pro €29.99 once, up to 3 Macs'],
+      ],
+    },
     {
       kind: 'points',
       h: 'Coming *from Dragon*',
@@ -1186,7 +1199,15 @@ const dragon: Guide = {
       demo: { name: 'meeting' },
       notes: base.meeting.notes as [string, string, 'pro'?][],
     },
-    '__BETTER__' as never,
+    {
+      kind: 'prose',
+      h: 'When Dragon, or Voice Control, is the *better choice*',
+      p: [
+        'If you need to work the Mac by voice, opening apps, clicking, selecting and editing, macOS has Voice Control built in: commands for the desktop and the apps, dictation and editing by voice, offline once it is downloaded. nchova only types.',
+        'If your practice runs on Windows, with word lists, macros and commands shared across a team, Dragon Professional and Dragon Legal are built for that.',
+        'For clinical notes inside a hospital’s systems, Dragon Medical One is made for it, though on a Mac it runs only through Citrix or a Windows virtual machine.',
+      ],
+    },
     {
       kind: 'steps',
       h: 'Dictating in *two minutes*',
@@ -1196,8 +1217,30 @@ const dragon: Guide = {
         'Click in a document, hold **Fn**, speak, let go.',
       ],
     },
-    '__FAQ__' as never,
+    {
+      kind: 'faq',
+      h: 'Questions, *out loud*',
+      items: [
+        ['Is there still a Dragon for Mac?', 'No. Nuance stopped selling Dragon Professional Individual for Mac on 22 October 2018 and has released no updates since; whoever bought it keeps a perpetual licence. Dragon Professional runs on Windows, and Nuance does not support it in Parallels on a Mac.'],
+        ['Does nchova need training?', 'No: there is nothing to read aloud first. Add the names and terms you use in **Settings › Vocabulary**, with how the engine hears them.'],
+        ['Can I dictate punctuation?', 'You do not need to: nchova writes the punctuation from the way you speak. There are no spoken commands.'],
+        ['Does it work in Word?', 'Yes, and in any other app: the text arrives where the cursor is, in Word, Pages, Google Docs in the browser, Mail or the terminal. With nowhere to type, it waits on the clipboard.'],
+        ['Is it private enough for legal or medical work?', 'Your voice turns into text on the Mac and is never uploaded: nchova has no online mode for dictation. Whether that meets the rules of your profession is for you, or your firm, to judge.'],
+        ['Can I try it first?', 'Thirty days with everything, no card and no account. Then it stays free with Apple’s model.'],
+      ],
+    },
   ],
+  sources: [
+    ['End of Dragon for Mac', 'https://nuance.custhelp.com/app/answers/detail/a_id/27843'],
+    ['Dragon Professional v16', 'https://dragon.nuance.com/en-us/dragon-professional'],
+    ['Dragon Legal v16', 'https://dragon.nuance.com/en-us/dragon-legal'],
+    ['Dragon Professional Anywhere', 'https://dragon.nuance.com/en-us/dragon-professional-anywhere'],
+    ['Dragon Anywhere', 'https://dragon.nuance.com/en-us/dragon-anywhere-mobile'],
+    ['Dragon Medical One on a Mac', 'https://learn.microsoft.com/en-us/industry/healthcare/dragon-medical-one/admin/using-dragon-medical-one-with-mac'],
+    ['Dragon and Parallels', 'https://nuance.custhelp.com/app/answers/detail/a_id/29905'],
+    ['Voice Control', 'https://support.apple.com/guide/mac-help/mh40719/26/mac/26'],
+  ],
+  checked: 'on 15 October 2026',
 };
 
 const noBot: Guide = {
@@ -1210,7 +1253,7 @@ const noBot: Guide = {
     'AI meeting notes with no bot in the call: nchova transcribes Zoom, Meet and Teams from your Mac and writes the notes when you hang up. Free, nothing uploaded.',
   kicker: 'AI note taker, no bot',
   title: 'AI meeting notes, *without a bot in the call*.',
-  lead: '__LEAD__',
+  lead: 'Most AI note takers get your meeting by joining it: a Notetaker turns up in Zoom, Meet or Teams as one more participant, often on its own from your calendar, and the recording goes to its company’s cloud. nchova listens from your Mac instead, the way you do: it transcribes there, writes the notes when you hang up, and nobody joins.',
   short3: [
     ['*No* bot', 'nothing joins the meeting: nchova hears what your Mac plays and what your microphone hears, in any call app.'],
     ['*No* upload', 'the transcript is written on your Mac and the audio is never kept. The notes too, unless you choose your own Claude Code or Codex.'],
@@ -1244,7 +1287,20 @@ const noBot: Guide = {
         },
       },
     },
-    '__THEM__' as never,
+    {
+      kind: 'points',
+      h: 'How the others *get into* your meeting',
+      lead: 'The best-known note takers, from their own pages. Most now have a way in without the bot as well, through a desktop app; the audio still goes to their cloud.',
+      items: [
+        ['Otter', 'its Notetaker joins Zoom, Meet and Teams as a participant, “[your name]’s Notetaker (Otter.ai)”, and can join every meeting in your calendar on its own. The desktop app records without it. Recordings are kept in its cloud, in the US.'],
+        ['Fireflies', '“Fireflies.ai Notetaker” joins as a participant, always visible in the list, and can join from your calendar. Its desktop app can take notes from the computer’s audio, without the bot. Data is stored and processed in its cloud, in the US.'],
+        ['Fathom', 'the Fathom Notetaker joins your Zoom, Meet and Teams calls by itself once your calendar is connected. A mode without the bot is in beta, on Mac only. Recordings are kept, in the US.'],
+        ['tl;dv', 'its bot joins your scheduled meetings as an attendee, and asks to join even when you are not there. The desktop app records without it; the recordings go to your tl;dv library, hosted in the EU.'],
+        ['Read AI', 'Read Assistant joins Zoom, Teams and Meet as a participant, on its own once your calendar is connected. The desktop app can record the computer’s audio; data is stored on AWS, in Virginia.'],
+        ['Granola', 'no bot: like nchova, it takes the audio on your computer. But it sends it to its transcription provider in the cloud, then deletes it; the transcripts are kept on AWS, in the US.'],
+        ['Zoom, Teams and Meet', 'their own notes (AI Companion, intelligent recap, “Take notes for me”) need paid plans, are started by the host or people in their organisation, and everyone in the call is shown that they are on.'],
+      ],
+    },
     {
       kind: 'demo',
       h: 'What happens *on your Mac*',
@@ -1282,7 +1338,15 @@ const noBot: Guide = {
         'With Pro, the voices are told apart, Voice 1, Voice 2…, and named from the voiceprints of the invitees, kept on your Mac.',
       ],
     },
-    '__BETTER__' as never,
+    {
+      kind: 'prose',
+      h: 'When a bot is the *better choice*',
+      p: [
+        'If you want notes from meetings you cannot attend, a bot can go for you: tl;dv’s asks to join even when you are not there. nchova transcribes what your Mac hears, so you have to be in the call.',
+        'If the recording should belong to the team, with the video, shared in a workspace and sent on to a CRM, Otter, Fireflies and Fathom are built for that. nchova keeps each person’s meetings on their own Mac.',
+        'If you are not on a Mac, or want your notes on a phone, they run on Windows, on the web and on mobile. nchova is a Mac app, for Apple silicon and macOS 26.',
+      ],
+    },
     {
       kind: 'steps',
       h: 'Your next meeting, *with notes*',
@@ -1305,6 +1369,29 @@ const noBot: Guide = {
       ],
     },
   ],
+  sources: [
+    ['Otter Notetaker', 'https://help.otter.ai/hc/en-us/articles/4425393298327-Otter-Notetaker-Overview'],
+    ['Otter desktop app', 'https://help.otter.ai/hc/en-us/articles/35973988280215-Otter-Desktop-App-Mac-Windows'],
+    ['How Fireflies joins', 'https://guide.fireflies.ai/articles/9554534786-how-fireflies-joins-and-records-your-meetings-faqs'],
+    ['Fireflies desktop app', 'https://guide.fireflies.ai/articles/1208704416-getting-started-with-the-fireflies-desktop-app'],
+    ['Fireflies data storage', 'https://guide.fireflies.ai/articles/9596505232-learn-about-data-storage-and-transfer'],
+    ['Fathom', 'https://www.fathom.ai/overview'],
+    ['Fathom without a bot', 'https://help.fathom.video/en/articles/296576'],
+    ['Fathom data', 'https://help.fathom.video/en/articles/296512'],
+    ['The tl;dv bot', 'https://intercom.help/tldv/en/articles/5946261-why-do-we-use-a-bot'],
+    ['tl;dv and your calendar', 'https://intercom.help/tldv/en/articles/10256819-calendar-integration-and-why-it-matters'],
+    ['tl;dv without a bot', 'https://intercom.help/tldv/en/articles/14433337-recording-without-a-bot'],
+    ['tl;dv pricing', 'https://tldv.io/app/pricing/'],
+    ['Read Assistant', 'https://www.read.ai/assistant'],
+    ['Read desktop recording', 'https://support.read.ai/hc/en-us/articles/45911611006995'],
+    ['Read data', 'https://support.read.ai/hc/en-us/articles/25702259763091'],
+    ['Granola privacy', 'https://docs.granola.ai/help-center/consent-security-privacy/security-privacy-data-faqs'],
+    ['Granola transcription', 'https://docs.granola.ai/help-center/taking-notes/transcription'],
+    ['Zoom meeting summary', 'https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058013'],
+    ['Teams intelligent recap', 'https://learn.microsoft.com/en-us/microsoftteams/intelligent-recap-calls-meetings'],
+    ['Meet: Take notes for me', 'https://support.google.com/meet/answer/14754931'],
+  ],
+  checked: 'on 15 October 2026',
 };
 
 /** The Meetings window's words, for the scene of a file dropped on it. */
@@ -1461,18 +1548,34 @@ const audioFiles: Guide = {
       ],
     },
     {
+      kind: 'prose',
+      h: 'When something else is *enough*',
+      p: [
+        'Voice Memos on the Mac transcribes its own recordings, with macOS 15 or later and Apple silicon, where Apple offers transcription. For a memo you will read once, that is enough; nchova adds the voices told apart, the notes, the chat, the export, and files that did not come from Voice Memos.',
+        'Notes records audio with a live transcript on Macs with M1 or later, in ten languages, and sums it up with Apple Intelligence. It is good for what you record in Notes; it does not take a file you already have.',
+        'WhatsApp transcribes voice messages itself, on the device: on the iPhone in twenty languages, on Android in four. On the Mac, its help page says it may not be available yet.',
+        'For a batch of files, a YouTube link, or a transcript you correct while you listen, MacWhisper is made for that.',
+      ],
+    },
+    {
       kind: 'faq',
       h: 'Questions about *files*',
       items: [
         ['Is it really free?', 'Yes. Transcribing files is in the free version, with Apple’s speech model, in {nFree} languages, with no limit on how many. Pro adds the voices told apart, Parakeet’s {nPro} European languages and better notes.'],
         ['Is my recording uploaded anywhere?', 'No. The file is read and transcribed on your Mac, and stays where it was: nchova copies nothing. Only if you choose your own Claude Code or Codex to write the notes does the transcript, not the audio, go to Anthropic or OpenAI.'],
-        ['How do I get a WhatsApp voice message onto the Mac?', 'Save it from WhatsApp on the Mac, or share it from the iPhone with AirDrop. Then drop the file on the **Meetings** window.'],
+        ['How do I get a WhatsApp voice message onto the Mac?', 'On the iPhone, share it from WhatsApp with AirDrop: it reaches the Mac as a file. Then drop it on the **Meetings** window.'],
         ['How long can a file be?', 'Up to four hours. Drop several and they are transcribed one after another.'],
         ['Which languages?', '{nAll}: {nFree} free with Apple’s model, {nPro} European ones with Parakeet (Pro). A recording that switches between two of your languages is transcribed in both.'],
         ['Can I play the audio back next to the transcript?', 'Not in nchova: it keeps the words, and your file stays yours, where it was. For a transcript you correct while listening, MacWhisper is made for that.'],
       ],
     },
   ],
+  sources: [
+    ['Transcripts in Voice Memos', 'https://support.apple.com/guide/voice-memos/vm4a03609f0d/3.2/mac/26'],
+    ['Audio in Notes', 'https://support.apple.com/guide/notes/apdb5106e334/4.13/mac/26'],
+    ['WhatsApp voice message transcripts', 'https://faq.whatsapp.com/241617298315321'],
+  ],
+  checked: 'on 15 October 2026',
 };
 
 // ---------- All together ----------
@@ -1507,9 +1610,10 @@ const guides: Guides = {
       { id: 'macwhisper', does: 'Files; meetings and dictation', where: 'On the Mac; cloud with your own keys', bot: 'None', price: 'Free; Pro €64 once' },
       { id: 'otter', does: 'Meeting notes', where: 'In its cloud', bot: 'Notetaker joins as a guest; botless on desktop', price: 'Free; Pro $16.99 a month, or $99.99 a year' },
       { id: 'granola', does: 'Meeting notes', where: 'In the cloud', bot: 'None', price: 'Free; Business $14 a month' },
+      { id: 'dragon', does: 'Dictation and voice commands', where: 'On a Windows PC, or in Microsoft’s cloud; the Mac edition ended in 2018', bot: 'None', price: 'On request' },
     ],
   },
-  list: [wisprFlow, otter, granola, superwhisper, macwhisper, zoom, meet, teams, audioFiles, offline, multilingual, mcp],
+  list: [wisprFlow, otter, granola, superwhisper, macwhisper, dragon, noBot, zoom, meet, teams, audioFiles, offline, multilingual, mcp],
 };
 
 export default guides;
