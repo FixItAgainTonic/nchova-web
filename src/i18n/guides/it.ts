@@ -1115,6 +1115,469 @@ const teams: Guide = {
   checked: 'l’8 ottobre 2026',
 };
 
+const dragon: Guide = {
+  id: 'dragon',
+  page: 'alternatives/dragon/',
+  group: 'compare',
+  short: 'Dragon',
+  metaTitle: 'Alternativa a Dragon per Mac, offline, in ogni app — nchova',
+  description:
+    'Dragon per Mac è finito nel 2018. Con nchova detti in ogni app del Mac, offline, col tuo vocabolario: gratis col modello di Apple, o Pro a 29,99 € una volta.',
+  kicker: 'nchova vs Dragon',
+  title: 'Dragon ha lasciato il Mac. *La dettatura no.*',
+  lead: 'Nuance ha smesso di vendere Dragon per Mac il 22 ottobre 2018 e da allora non l’ha più aggiornato; il Dragon di oggi gira su Windows. nchova è un programma di dettatura per il Mac che hai adesso: tieni premuto Fn e parla in qualsiasi app, offline, con nomi e termini scritti come vuoi tu. Quello che non fa è comandare il Mac con la voce: per quello, macOS ha Controllo vocale.',
+  short3: [
+    ['*Qualsiasi* app', 'Word, Pages, Mail, un modulo nel browser, il terminale: il testo arriva dov’è il cursore.'],
+    ['*Sul* Mac', 'la voce diventa testo sul Mac stesso, offline: nessun account, non si carica niente.'],
+    ['*29,99 €* una volta', 'per Pro, fino a tre Mac; o gratis per sempre col modello vocale di Apple.'],
+  ],
+  blocks: [
+    {
+      kind: 'demo',
+      demo: {
+        name: 'dictation',
+        data: {
+          ...dictation,
+          app: 'Microsoft Word',
+          doc: 'Verbale di sopralluogo',
+          scripts: [
+            {
+              spoken: 'il sopralluogo si è svolto martedì mattina alla presenza del proprietario',
+              marks: [],
+              written: 'Il sopralluogo si è svolto martedì mattina, alla presenza del proprietario.',
+            },
+            {
+              spoken: 'l’umidità sulla parete nord viene dalla grondaia come ha fatto notare nicolo',
+              marks: [{ kind: 'fix', from: 'nicolo', to: 'Nicolò' }],
+              written: 'L’umidità sulla parete nord viene dalla grondaia, come ha fatto notare Nicolò.',
+            },
+            {
+              spoken: 'manderemo il preventivo venerdì, anzi no, lunedì',
+              marks: [{ kind: 'strike', from: 'venerdì, anzi no,' }],
+              written: 'Manderemo il preventivo lunedì.',
+            },
+          ],
+        },
+      },
+      notes: [
+        ['Dov’è il cursore', 'Word, Pages, Mail, Note, un browser: qualsiasi app, senza plug-in da installare.'],
+        ['Punteggiatura', 'la scrive nchova per te, da come parli: niente «virgola» o «punto» da dire.'],
+        ['Il tuo vocabolario', 'nomi e termini scritti come vuoi tu, anche offline: «nicolo» diventa Nicolò.'],
+        ['A mani libere', 'tenendo Fn premi Spazio e lascia: parli fino a dieci minuti, poi un tocco di Fn.'],
+      ],
+    },
+    {
+      kind: 'table',
+      h: 'A confronto',
+      them: 'Dragon',
+      rows: [
+        ['Sul Mac', 'Dragon Professional Individual for Mac: non più venduto né aggiornato dal 22 ottobre 2018. Dragon Medical One arriva su un Mac solo attraverso Citrix o una macchina virtuale Windows', 'Un’app per i Mac con chip Apple e macOS 26'],
+        ['Dragon oggi', 'Professional e Legal v16 su Windows 10 e 11; Professional Anywhere nel cloud di Microsoft, per Windows; Anywhere su iPhone e Android, negli USA e in Canada', 'Sul tuo Mac, offline'],
+        ['Dettatura', 'Dal vivo, e da file audio registrati', 'Dal vivo in qualsiasi app del Mac, e da file audio o video fino a quattro ore'],
+        ['Comandi vocali', 'Comandi e macro personalizzati, modifica e formattazione a voce', 'Nessuno: per i comandi, Controllo vocale di macOS'],
+        ['Le tue parole', 'Parole ed elenchi di parole personalizzati; Dragon Legal ha un vocabolario giuridico integrato', '**Impostazioni › Vocabolario**, e per ogni parola come la sente il motore'],
+        ['Prezzo', 'Non indicato: la pagina di Nuance ti chiede di contattarli', 'Gratis col modello di Apple; Pro 29,99 € una volta, fino a 3 Mac'],
+      ],
+    },
+    {
+      kind: 'points',
+      h: 'Se arrivi *da Dragon*',
+      lead: 'Cosa funziona come sei abituato, e cosa funziona in un altro modo.',
+      items: [
+        ['Nessun addestramento', 'niente da leggere ad alta voce prima di cominciare: nchova scrive dalla prima frase, col modello di Apple o con Parakeet di NVIDIA.'],
+        ['Le tue parole', 'in **Impostazioni › Vocabolario**: nomi, sigle, termini del tuo mestiere, e come li sente il motore.'],
+        ['Nessun comando', 'non dici «virgola», «nuovo paragrafo» o «seleziona questo»: la punteggiatura la scrive nchova per te, e correggi con la tastiera.'],
+        ['Ripensamenti', '«venerdì, anzi no, lunedì» diventa «lunedì», se attivi la pulizia in **Impostazioni › Dettatura**, con Apple Intelligence attiva. Può solo togliere parole, mai aggiungerne.'],
+        ['Lingue', '{nAll}, fino a tre insieme, frase per frase: {nFree} gratis col modello di Apple, {nPro} europee con Parakeet (Pro).'],
+      ],
+    },
+    {
+      kind: 'demo',
+      h: 'E i tuoi *meeting*, messi per iscritto',
+      lead: 'Lo stesso motore vocale trascrive le tue call e i meeting attorno a un tavolo, senza bot e senza caricare niente, e scrive le note quando finiscono.',
+      flip: true,
+      demo: { name: 'meeting' },
+      notes: base.meeting.notes as [string, string, 'pro'?][],
+    },
+    {
+      kind: 'prose',
+      h: 'Quando Dragon, o Controllo vocale, è la *scelta migliore*',
+      p: [
+        'Se ti serve usare il Mac con la voce, aprire app, fare clic, selezionare e modificare, macOS ha Controllo vocale integrato: comandi per la scrivania e per le app, dettatura e modifica a voce, offline una volta scaricato. nchova scrive e basta.',
+        'Se il tuo studio lavora su Windows, con elenchi di parole, macro e comandi condivisi nel team, Dragon Professional e Dragon Legal sono fatti per questo.',
+        'Per le note cliniche dentro i sistemi di un ospedale, Dragon Medical One è fatto apposta, anche se su un Mac gira solo attraverso Citrix o una macchina virtuale Windows.',
+      ],
+    },
+    {
+      kind: 'steps',
+      h: 'Dettatura vocale *in due minuti*',
+      steps: [
+        '[Scarica nchova](/download?from=dragon-steps) e aprila. Ti chiede l’accesso al **Microfono** e all’**Accessibilità**, e di impostare **Premi il tasto 🌐 per** su **Non fare nulla**, così Fn è di nchova e non della dettatura di macOS.',
+        'Scegli le tue lingue, fino a tre, e aggiungi i nomi e i termini che usi di più in **Impostazioni › Vocabolario**.',
+        'Fai clic in un documento, tieni premuto **Fn**, parla, rilascia.',
+      ],
+    },
+    {
+      kind: 'faq',
+      h: 'Domande, *a voce*',
+      items: [
+        ['Esiste ancora Dragon per Mac?', 'No. Nuance ha smesso di vendere Dragon Professional Individual for Mac il 22 ottobre 2018 e da allora non ha rilasciato aggiornamenti; chi l’ha comprato conserva una licenza perpetua. Dragon Professional gira su Windows, e Nuance non lo supporta in Parallels su un Mac.'],
+        ['nchova va addestrata?', 'No: non c’è niente da leggere ad alta voce prima. Aggiungi i nomi e i termini che usi in **Impostazioni › Vocabolario**, e come li sente il motore.'],
+        ['Posso dettare la punteggiatura?', 'Non serve: nchova scrive la punteggiatura da come parli. Non ci sono comandi vocali.'],
+        ['Funziona in Word?', 'Sì, e in qualsiasi altra app: il testo arriva dov’è il cursore, in Word, Pages, Documenti Google nel browser, Mail o il terminale. Se non c’è dove scrivere, il testo ti aspetta negli appunti.'],
+        ['È abbastanza riservata per il lavoro legale o medico?', 'La tua voce diventa testo sul Mac e non viene mai caricata: nchova non ha una modalità online per la dettatura. Se questo rispetta le regole della tua professione, lo valuti tu, o il tuo studio.'],
+        ['Posso provarla prima?', 'Trenta giorni con tutto, senza carta e senza account. Poi resta gratis col modello di Apple.'],
+      ],
+    },
+  ],
+  sources: [
+    ['La fine di Dragon per Mac', 'https://nuance.custhelp.com/app/answers/detail/a_id/27843'],
+    ['Dragon Professional v16', 'https://dragon.nuance.com/en-us/dragon-professional'],
+    ['Dragon Legal v16', 'https://dragon.nuance.com/en-us/dragon-legal'],
+    ['Dragon Professional Anywhere', 'https://dragon.nuance.com/en-us/dragon-professional-anywhere'],
+    ['Dragon Anywhere', 'https://dragon.nuance.com/en-us/dragon-anywhere-mobile'],
+    ['Dragon Medical One su un Mac', 'https://learn.microsoft.com/en-us/industry/healthcare/dragon-medical-one/admin/using-dragon-medical-one-with-mac'],
+    ['Dragon e Parallels', 'https://nuance.custhelp.com/app/answers/detail/a_id/29905'],
+    ['Controllo vocale', 'https://support.apple.com/guide/mac-help/mh40719/26/mac/26'],
+  ],
+  checked: 'il 15 ottobre 2026',
+};
+
+const noBot: Guide = {
+  id: 'ai-note-taker',
+  page: 'ai-note-taker/',
+  group: 'use',
+  short: 'Note con l’AI, senza bot',
+  metaTitle: 'Note delle riunioni con l’AI, senza bot, sul Mac — nchova',
+  description:
+    'Trascrizione delle riunioni con l’AI, senza bot nella call: nchova trascrive Zoom, Meet e Teams dal Mac e scrive le note quando chiudi. Gratis, niente caricato.',
+  kicker: 'note dei meeting senza bot',
+  title: 'Le note delle riunioni con l’AI, *senza un bot nella call*.',
+  lead: 'Quasi tutti i notetaker AI arrivano al tuo meeting entrandoci: un Notetaker compare in Zoom, Meet o Teams come un partecipante in più, spesso da solo, dal tuo calendario, e la registrazione va nel cloud della sua azienda. nchova invece ascolta dal tuo Mac, come fai tu: trascrive lì, scrive le note quando chiudi, e non entra nessuno.',
+  short3: [
+    ['*Nessun* bot', 'nel meeting non entra niente: nchova sente quello che suona il tuo Mac e quello che sente il tuo microfono, in qualsiasi app di call.'],
+    ['*Niente* da caricare', 'la trascrizione si scrive sul tuo Mac, e l’audio non viene mai conservato. Lì si scrivono anche le note, a meno che tu non scelga il tuo Claude Code o Codex.'],
+    ['Gratis', 'trascrizioni e note coi modelli di Apple, senza limiti di minuti o di meeting. Pro, 29,99 € una volta, distingue le voci e scrive note migliori.'],
+  ],
+  blocks: [
+    {
+      kind: 'bot',
+      h: 'Un ospite nella call, *o nessuno*',
+      lead: 'Un bot notetaker ottiene il meeting entrandoci, come un partecipante che vedono tutti. A nchova non serve un posto: è sul tuo Mac, dove la call c’è già.',
+      bot: {
+        them: {
+          tab: 'Un bot notetaker',
+          name: 'Notetaker',
+          joined: 'Notetaker è entrato nel meeting',
+          banner: '',
+          caption: 'Il bot entra come ospite: nella call lo vedono tutti, e la registrazione va nel cloud della sua azienda.',
+        },
+        us: { tab: 'nchova', caption: 'Non entra nessuno. nchova ascolta dal tuo Mac, e la trascrizione resta lì.' },
+        words: {
+          switchLabel: 'Mostra',
+          label: 'Una call in cui un bot notetaker entra come ospite, accanto alla stessa call con nchova, dove non entra nessuno e la trascrizione compare sul tuo schermo.',
+          call: 'Sync prodotto',
+          tiles: ['Giulia', 'Marco', 'Sara', 'Tommaso', 'Alessio'],
+          live: 'Transcript dal vivo',
+          bubbles: [
+            ['Giulia', 'Il testo della pagina è pronto.', 'Voce 1'],
+            ['', 'Perfetto. E le animazioni?'],
+            ['Marco', 'Entro giovedì, anzi no, venerdì.', 'Voce 2'],
+          ],
+        },
+      },
+    },
+    {
+      kind: 'points',
+      h: 'Come gli altri *entrano* nel tuo meeting',
+      lead: 'I notetaker più noti, dalle loro pagine. Ormai quasi tutti hanno anche una via senza bot, con un’app desktop; l’audio va comunque nel loro cloud.',
+      items: [
+        ['Otter', 'il suo Notetaker entra in Zoom, Meet e Teams come partecipante, «[tuo nome]’s Notetaker (Otter.ai)», e può entrare da solo in ogni meeting del tuo calendario. L’app desktop registra senza. Le registrazioni restano nel suo cloud, negli USA.'],
+        ['Fireflies', '«Fireflies.ai Notetaker» entra come partecipante, sempre visibile nell’elenco, e può entrare partendo dal tuo calendario. La sua app desktop può prendere note dall’audio del computer, senza il bot. I dati sono conservati ed elaborati nel suo cloud, negli USA.'],
+        ['Fathom', 'il Fathom Notetaker entra da solo nelle tue call su Zoom, Meet e Teams, una volta collegato il calendario. Una modalità senza bot è in beta, solo su Mac. Le registrazioni vengono conservate, negli USA.'],
+        ['tl;dv', 'il suo bot entra nei meeting in calendario come partecipante, e chiede di entrare anche quando tu non ci sei. L’app desktop registra senza; le registrazioni vanno nella tua libreria di tl;dv, ospitata nell’UE.'],
+        ['Read AI', 'Read Assistant entra in Zoom, Teams e Meet come partecipante, da solo una volta collegato il calendario. L’app desktop può registrare l’audio del computer; i dati sono conservati su AWS, in Virginia.'],
+        ['Granola', 'nessun bot: come nchova, prende l’audio sul tuo computer. Ma lo manda al suo fornitore di trascrizione nel cloud, poi lo cancella; le trascrizioni sono conservate su AWS, negli USA.'],
+        ['Zoom, Teams e Meet', 'le loro note (AI Companion, il riepilogo intelligente, «Prendi appunti per me») richiedono piani a pagamento, le avvia l’host o chi è nella sua organizzazione, e tutti nella call vedono che sono attive.'],
+      ],
+    },
+    {
+      kind: 'demo',
+      h: 'Cosa succede *sul tuo Mac*',
+      lead: 'La call prende il microfono, nchova chiede una volta, e la trascrizione si scrive da sola in una scheda che vedi solo tu: il tuo microfono è «Io», la call sono tutti gli altri.',
+      flip: true,
+      demo: { name: 'meeting' },
+      notes: [
+        ['Qualsiasi app di call', 'Zoom, Google Meet, Teams, Slack, FaceTime, Webex e le call nel browser: nchova si accorge quando una di loro prende il microfono.'],
+        ['Col calendario', 'il meeting prende il nome dell’evento e gli invitati, e la domanda arriva due minuti prima. Oppure lascia che parta da sola.'],
+        ['Solo sul tuo schermo', 'la pillola e la trascrizione sono sul tuo Mac, non nella call: non le vede nessuno, a meno che tu non condivida tutto lo schermo.'],
+        ['Anche senza cuffie', 'l’eco degli altoparlanti viene tolta dal tuo microfono, senza toccare quello che manda la call.'],
+      ],
+    },
+    {
+      kind: 'demo',
+      h: 'Il verbale, *quando chiudi la call*',
+      lead: 'Le note si scrivono attorno a quello che hai annotato durante la call: gli argomenti, cosa si è deciso, chi fa cosa. Poi chiedi al meeting: cosa abbiamo deciso, cosa devo fare io, scrivi il follow-up.',
+      demo: { name: 'notes' },
+    },
+    {
+      kind: 'points',
+      h: 'Chi scrive *le note*',
+      lead: 'Lo scegli tu, in **Impostazioni › Note**. Solo l’ultimo lascia il Mac, e solo se lo scegli.',
+      items: [
+        ['Apple Intelligence', 'sul Mac, gratis: note brevi, gli argomenti e le decisioni.'],
+        ['Qwen3.5 4B o 9B', 'anche lui sul Mac, scaricato una volta (2,7 o 5,7 GB): note migliori, e niente lascia il Mac.', 'pro'],
+        ['Il tuo Claude Code o Codex', 'le note migliori, in pochi secondi, col tuo abbonamento: la trascrizione, mai l’audio, va ad Anthropic o a OpenAI.', 'pro'],
+      ],
+    },
+    {
+      kind: 'prose',
+      h: 'Anche i meeting *in sala*',
+      p: [
+        'Un bot ha bisogno di una call in cui entrare. A nchova basta sentire: col Mac sul tavolo, un meeting in sala si trascrive come una call, offline, e le note si scrivono quando finisce. Avvialo dalla barra dei menu, con **Avvia trascrizione meeting**.',
+        'Con Pro, le voci vengono distinte, Voce 1, Voce 2…, e chiamate per nome grazie alle impronte vocali degli invitati, tenute sul tuo Mac.',
+      ],
+    },
+    {
+      kind: 'prose',
+      h: 'Quando un bot è la *scelta migliore*',
+      p: [
+        'Se vuoi le note dei meeting a cui non puoi partecipare, un bot può andarci al posto tuo: quello di tl;dv chiede di entrare anche quando tu non ci sei. nchova trascrive quello che sente il tuo Mac, quindi nella call devi esserci tu.',
+        'Se la registrazione deve appartenere al team, col video, condivisa in un workspace e mandata a un CRM, Otter, Fireflies e Fathom sono fatti per questo. nchova tiene i meeting di ognuno sul suo Mac.',
+        'Se non usi un Mac, o vuoi le note sul telefono, loro girano su Windows, sul web e su smartphone. nchova è un’app per Mac, per i Mac con chip Apple e macOS 26.',
+      ],
+    },
+    {
+      kind: 'steps',
+      h: 'Il tuo prossimo meeting, *con le note*',
+      steps: [
+        '[Scarica nchova](/download?from=ai-note-taker-steps) e aprila. Nella configurazione, sotto **Per i meeting**, collega il **Calendario** e premi **Chiedi ora** accanto ad **Audio di sistema**: è così che nchova sente gli altri.',
+        'Entra nella call come sempre, nella sua app o nel browser. Quando nchova chiede, fai clic su **Trascrivi**.',
+        'Se vuoi, annota una parola o due nella scheda. Chiudi la call: le note si scrivono, e il meeting ti aspetta in **Meeting** (Fn+M).',
+      ],
+    },
+    {
+      kind: 'faq',
+      h: 'Domande, *a voce*',
+      items: [
+        ['Gli altri sanno che nchova sta trascrivendo?', 'Nella call non compare niente, perché nchova non c’è. Dove la legge, o la tua azienda, lo chiede, di’ alle persone con cui parli che stai trascrivendo.'],
+        ['È davvero gratis?', 'Sì: trascrizioni e note coi modelli di Apple, in {nFree} lingue, senza limiti di minuti o di meeting. Pro, 29,99 € una volta, aggiunge le voci distinte, le {nPro} lingue europee di Parakeet e note migliori.'],
+        ['Può prendere note in un meeting in cui non ci sono?', 'No. nchova trascrive quello che sente il tuo Mac, quindi nella call devi esserci tu, o il tuo Mac. Un bot può partecipare al posto tuo; nchova no.'],
+        ['Con quali app di call funziona?', 'Zoom, Google Meet, Microsoft Teams, Slack, FaceTime, Webex e le call nel browser; qualsiasi altra call si avvia dalla barra dei menu. Guarda [Zoom](@transcribe/zoom/), [Google Meet](@transcribe/google-meet/) e [Teams](@transcribe/teams/).'],
+        ['Posso chiedere a Claude o a ChatGPT dei miei meeting?', 'Sì: il server MCP di nchova gira sul tuo Mac e si collega con un clic. Guarda [i meeting nel tuo assistente](@mcp/).'],
+        ['E una registrazione che ho già?', 'Trascinala sulla finestra **Meeting**: viene trascritta sul tuo Mac, fino a quattro ore, e riceve le sue note come una call. Guarda [i file audio](@transcribe/audio-files/).'],
+      ],
+    },
+  ],
+  sources: [
+    ['Otter Notetaker', 'https://help.otter.ai/hc/en-us/articles/4425393298327-Otter-Notetaker-Overview'],
+    ['App desktop di Otter', 'https://help.otter.ai/hc/en-us/articles/35973988280215-Otter-Desktop-App-Mac-Windows'],
+    ['Come entra Fireflies', 'https://guide.fireflies.ai/articles/9554534786-how-fireflies-joins-and-records-your-meetings-faqs'],
+    ['App desktop di Fireflies', 'https://guide.fireflies.ai/articles/1208704416-getting-started-with-the-fireflies-desktop-app'],
+    ['Archiviazione dei dati di Fireflies', 'https://guide.fireflies.ai/articles/9596505232-learn-about-data-storage-and-transfer'],
+    ['Fathom', 'https://www.fathom.ai/overview'],
+    ['Fathom senza bot', 'https://help.fathom.video/en/articles/296576'],
+    ['I dati di Fathom', 'https://help.fathom.video/en/articles/296512'],
+    ['Il bot di tl;dv', 'https://intercom.help/tldv/en/articles/5946261-why-do-we-use-a-bot'],
+    ['tl;dv e il calendario', 'https://intercom.help/tldv/en/articles/10256819-calendar-integration-and-why-it-matters'],
+    ['tl;dv senza bot', 'https://intercom.help/tldv/en/articles/14433337-recording-without-a-bot'],
+    ['Prezzi di tl;dv', 'https://tldv.io/app/pricing/'],
+    ['Read Assistant', 'https://www.read.ai/assistant'],
+    ['Registrazione desktop di Read', 'https://support.read.ai/hc/en-us/articles/45911611006995'],
+    ['I dati di Read', 'https://support.read.ai/hc/en-us/articles/25702259763091'],
+    ['Privacy di Granola', 'https://docs.granola.ai/help-center/consent-security-privacy/security-privacy-data-faqs'],
+    ['Trascrizione di Granola', 'https://docs.granola.ai/help-center/taking-notes/transcription'],
+    ['Riassunto dei meeting di Zoom', 'https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0058013'],
+    ['Riepilogo intelligente di Teams', 'https://learn.microsoft.com/en-us/microsoftteams/intelligent-recap-calls-meetings'],
+    ['Meet: Prendi appunti per me', 'https://support.google.com/meet/answer/14754931'],
+  ],
+  checked: 'il 15 ottobre 2026',
+};
+
+/** Le parole della finestra Meeting, per la scena di un file trascinato lì sopra. */
+const fileWords = {
+  window: base.notes.demo.window,
+  search: base.notes.demo.search,
+  today: base.notes.demo.days[0],
+  yesterday: base.notes.demo.days[1],
+  earlier: base.notes.demo.list.filter(([day]) => day === 1).map(([, title, meta]) => [title, meta] as [string, string]),
+  choose: 'Scegli un meeting',
+  drop: 'Rilascia per trascrivere',
+  progress: 'Trascrivo il file · %d%%',
+  row: 'trascrivo… %d%%',
+  about: 'circa %d min',
+  underMinute: 'meno di un minuto',
+  cancel: 'Annulla',
+  transcribing: 'Trascrivo…',
+  writing: base.notes.demo.writingRow,
+  notes: base.notes.demo.notesH,
+  chat: base.notes.demo.chat,
+  transcript: base.notes.demo.transcript,
+  switchLabel: 'Mostra',
+};
+
+const audioFiles: Guide = {
+  id: 'audio-files',
+  page: 'transcribe/audio-files/',
+  group: 'use',
+  short: 'Trascrivere file audio',
+  metaTitle: 'Trascrivere audio e note vocali sul Mac, gratis — nchova',
+  description:
+    'Trascrivi audio in testo sul Mac: note vocali, audio di WhatsApp, interviste, lezioni da sbobinare e video fino a quattro ore. Gratis, offline, niente caricato.',
+  kicker: 'da audio a testo',
+  title: 'Trascina una registrazione. *Ecco il testo.*',
+  lead: 'Un memo vocale dell’iPhone, un audio di WhatsApp, un’intervista, una lezione da sbobinare, il sonoro di un video: trascinalo su nchova e viene trascritto sul tuo Mac, poi riassunto in note. Non si carica niente, non si contano i minuti, ed è gratis col modello vocale di Apple.',
+  short3: [
+    ['Fino a *quattro ore*', 'audio o video, un file alla volta: se ne trascini diversi, aspettano il loro turno.'],
+    ['*Gratis*, sul Mac', 'col modello vocale di Apple, in {nFree} lingue: nessun account, niente caricato, quanti file vuoi.'],
+    ['Poi le *note*', 'gli argomenti e cosa si è deciso, scritti quando il file finisce, e una chat per fargli domande.'],
+  ],
+  blocks: [
+    {
+      kind: 'files',
+      files: {
+        files: [
+          {
+            tab: 'Memo vocale',
+            kind: 'memo',
+            file: 'Intervista ad Anna.m4a',
+            title: 'Intervista ad Anna',
+            time: '16:40',
+            meta: 'martedì 13 ottobre alle ore 16:40 · 23 min',
+            length: '23 min',
+            minutes: 23,
+            lines: [
+              ['Voce 1 · 0:04', 'Grazie per il tempo. Partiamo da come è nato il panificio.'],
+              ['Voce 2 · 0:11', 'L’ha aperto mia nonna nel 1962. Pane, e nient’altro.'],
+              ['Voce 2 · 0:26', 'I dolci sono arrivati negli anni Ottanta, quando è subentrata mia madre.'],
+              ['Voce 1 · 0:41', 'E da quando ci sei tu?'],
+              ['Voce 2 · 0:47', 'Ordini online e un secondo forno. Le ricette non sono cambiate.'],
+            ],
+            notes: [
+              ['Il panificio', ['Aperto nel 1962 dalla nonna di Anna, solo pane.', 'Dolci dagli anni Ottanta; oggi ordini online e un secondo forno.']],
+              ['Per l’articolo', ['Le ricette sono le stesse dopo tre generazioni.']],
+            ],
+            caption: 'Un memo registrato sull’iPhone, preso da Memo Vocali sul Mac.',
+          },
+          {
+            tab: 'WhatsApp',
+            kind: 'whatsapp',
+            file: 'WhatsApp Audio 2026-10-13 alle 19.02.11.opus',
+            title: 'WhatsApp Audio 2026-10-13 alle 19.02.11',
+            named: 'Cena di sabato da Marco',
+            time: '19:02',
+            meta: 'martedì 13 ottobre alle ore 19:02 · 1 min',
+            length: '1 min',
+            minutes: 1,
+            lines: [
+              ['Voce 1 · 0:00', 'Ciao! Allora, sabato: cena da Marco, alle otto.'],
+              ['Voce 1 · 0:06', 'Cucina lui. Noi portiamo il dolce e qualcosa da bere.'],
+              ['Voce 1 · 0:14', 'Riesci a prendere Giulia per strada? Ha la macchina dal meccanico.'],
+            ],
+            notes: [['Sabato', ['Cena da Marco alle otto; portare il dolce e da bere.', 'Passare a prendere Giulia per strada.']]],
+            caption: 'Un audio di WhatsApp: il suo nome non diceva niente, così il titolo gliel’ha dato il modello del Mac.',
+          },
+          {
+            tab: 'Video',
+            kind: 'video',
+            file: 'Lezione 7 – Fotosintesi.mp4',
+            title: 'Lezione 7 – Fotosintesi',
+            time: '09:00',
+            meta: 'martedì 13 ottobre alle ore 09:00 · 1 h 32 min',
+            length: '1 h 32 min',
+            minutes: 92,
+            lines: [
+              ['Voce 1 · 0:12', 'La settimana scorsa, la cellula. Oggi: come una foglia produce il proprio nutrimento.'],
+              ['Voce 1 · 0:31', 'Entrano luce, acqua e anidride carbonica. Escono zuccheri e ossigeno.'],
+              ['Voce 2 · 41:05', 'L’ossigeno da dove viene, dall’acqua o dalla CO₂?'],
+              ['Voce 1 · 41:12', 'Dall’acqua. Questa la trovate all’esame.'],
+            ],
+            notes: [
+              ['Fotosintesi', ['Luce, acqua e CO₂ diventano zuccheri e ossigeno.', 'L’ossigeno viene dall’acqua, non dalla CO₂.']],
+              ['Esame', ['Verrà chiesto da dove viene l’ossigeno.']],
+            ],
+            caption: 'Una lezione registrata: si trascrive l’audio del video, comprese le domande dall’aula.',
+          },
+        ],
+        words: {
+          ...fileWords,
+          label: 'Un file trascinato dalla scrivania sulla finestra Meeting di nchova: la finestra mostra dove andrà, il meeting compare sotto Oggi e si riempie mentre il file viene letto, voce per voce, poi si scrivono le sue note.',
+        },
+      },
+    },
+    {
+      kind: 'steps',
+      h: 'Tre modi *per cominciare*',
+      lead: 'Qualunque usi, il file resta dov’è: nchova lo legge, e non copia niente.',
+      steps: [
+        'Scegli **Trascrivi un file…** nel menu di nchova, nella barra dei menu, e seleziona uno o più file.',
+        'Trascina i file sulla finestra **Meeting** (Fn+M). Un memo può arrivare direttamente da Memo Vocali sul Mac.',
+        'Nel Finder, fai clic col tasto destro su un file e scegli **Apri con › nchova**.',
+      ],
+    },
+    {
+      kind: 'points',
+      h: 'Cosa legge',
+      lead: 'Tutto quello che il Mac sa riprodurre da solo, audio o video, fino a quattro ore a file.',
+      items: [
+        ['Audio', 'm4a, mp3, wav, aiff, flac, caf, aac: memo vocali, registratori, podcast, l’mp3 esportato da un’altra app.'],
+        ['Audio di WhatsApp', 'i messaggi vocali, salvati sul Mac o mandati con AirDrop: i loro file opus si aprono così come sono.'],
+        ['Video', 'mp4 e mov, una lezione registrata, una call registrata da Zoom o QuickTime: nchova trascrive l’audio.'],
+        ['Non legge', 'i file WebM, i film protetti da DRM e i link: un video di YouTube deve prima diventare un file sul Mac.'],
+      ],
+    },
+    {
+      kind: 'points',
+      h: 'Ogni file diventa *un meeting*',
+      lead: 'Nella finestra **Meeting**, come le tue call: sotto il giorno in cui è stato registrato, con la sua trascrizione, le sue note e la sua chat.',
+      items: [
+        ['Il titolo', 'il nome del file. Quando il nome non dice niente, come «Nuova registrazione 12» o quello di WhatsApp, gliene dà uno il modello del Mac, da quello che è stato detto, con Apple Intelligence attiva.'],
+        ['La data', 'quando è stato registrato, presa dal file stesso: un memo di martedì va sotto martedì.'],
+        ['Le voci', 'distinte, Voce 1, Voce 2…, e chiamate per nome con un clic.', 'pro'],
+        ['Le note', 'gli argomenti e cosa si è deciso, dal modello che scegli tu, come dopo una call. Poi chiedi: «Cosa ha detto sui prezzi?»'],
+        ['Dove va dopo', 'Word, PDF o Markdown, o la trascrizione come sottotitoli. Oppure fanne domande a Claude e a ChatGPT, attraverso [il server MCP di nchova](@mcp/).'],
+      ],
+    },
+    {
+      kind: 'prose',
+      h: 'Sbobinare lezioni *e interviste*',
+      p: [
+        'Una lezione di due ore o una lunga intervista sono solo un file più lungo: nchova lo legge sul Mac, col suo ritmo, mentre fai altro. Se nel frattempo registri un meeting o cominci una lunga dettatura, il file aspetta e riprende quando hai finito.',
+        'Con Pro, le voci vengono distinte, così il docente e le domande dall’aula, o tu e la persona che hai intervistato, non sono un unico blocco di testo. Con le {nPro} lingue europee di Parakeet, si trascrive anche una lezione in polacco o in olandese.',
+        'La prossima volta puoi saltare la registrazione: col Mac sul banco, nchova trascrive una lezione o un meeting in sala mentre succede, offline.',
+      ],
+    },
+    {
+      kind: 'prose',
+      h: 'Quando *basta* qualcos’altro',
+      p: [
+        'Memo Vocali sul Mac trascrive le sue registrazioni, con macOS 15 o successivo e un chip Apple, dove Apple offre la trascrizione. Per un memo che leggerai una volta sola, basta quello; nchova aggiunge le voci distinte, le note, la chat, l’esportazione, e i file che non vengono da Memo Vocali.',
+        'L’app Note registra l’audio con una trascrizione dal vivo sui Mac con M1 o successivi, in dieci lingue, e la riassume con Apple Intelligence. Va bene per quello che registri in Note; non accetta un file che hai già.',
+        'WhatsApp trascrive da solo i messaggi vocali, sul dispositivo: sull’iPhone in venti lingue, su Android in quattro. Sul Mac, la sua pagina di aiuto dice che potrebbe non essere ancora disponibile.',
+        'Per molti file in una volta, un link di YouTube, o una trascrizione da correggere mentre ascolti, MacWhisper è fatta apposta.',
+      ],
+    },
+    {
+      kind: 'faq',
+      h: 'Domande sui *file*',
+      items: [
+        ['È davvero gratis?', 'Sì. La trascrizione dei file è nella versione gratuita, col modello vocale di Apple, in {nFree} lingue, senza limiti sul numero di file. Pro aggiunge le voci distinte, le {nPro} lingue europee di Parakeet e note migliori.'],
+        ['La mia registrazione viene caricata da qualche parte?', 'No. Il file viene letto e trascritto sul tuo Mac, e resta dov’era: nchova non copia niente. Solo se scegli il tuo Claude Code o Codex per scrivere le note, la trascrizione, non l’audio, va ad Anthropic o a OpenAI.'],
+        ['Come porto un audio di WhatsApp sul Mac?', 'Sull’iPhone, condividilo da WhatsApp con AirDrop: arriva sul Mac come file. Poi trascinalo sulla finestra **Meeting**.'],
+        ['Quanto può essere lungo un file?', 'Fino a quattro ore. Se ne trascini diversi, vengono trascritti uno dopo l’altro.'],
+        ['Quali lingue?', '{nAll}: {nFree} gratis col modello di Apple, {nPro} europee con Parakeet (Pro). Una registrazione che passa da una tua lingua all’altra viene trascritta in tutte e due.'],
+        ['Posso riascoltare l’audio accanto alla trascrizione?', 'Non in nchova: tiene le parole, e il tuo file resta tuo, dov’era. Per una trascrizione da correggere mentre ascolti, MacWhisper è fatta apposta.'],
+      ],
+    },
+  ],
+  sources: [
+    ['Trascrizioni in Memo Vocali', 'https://support.apple.com/guide/voice-memos/vm4a03609f0d/3.2/mac/26'],
+    ['Audio in Note', 'https://support.apple.com/guide/notes/apdb5106e334/4.13/mac/26'],
+    ['Trascrizione dei messaggi vocali di WhatsApp', 'https://faq.whatsapp.com/241617298315321'],
+  ],
+  checked: 'il 15 ottobre 2026',
+};
+
 // ---------- Tutto insieme ----------
 
 const guides: Guides = {
@@ -1147,9 +1610,10 @@ const guides: Guides = {
       { id: 'macwhisper', does: 'File; meeting e dettatura', where: 'Sul Mac; nel cloud con le tue chiavi', bot: 'Nessuno', price: 'Gratis; Pro 64 € una volta' },
       { id: 'otter', does: 'Note dei meeting', where: 'Nel suo cloud', bot: 'Il Notetaker entra come ospite; senza bot dal desktop', price: 'Gratis; Pro 16,99 $ al mese, o 99,99 $ all’anno' },
       { id: 'granola', does: 'Note dei meeting', where: 'Nel cloud', bot: 'Nessuno', price: 'Gratis; Business 14 $ al mese' },
+      { id: 'dragon', does: 'Dettatura e comandi vocali', where: 'Su un PC Windows, o nel cloud di Microsoft; l’edizione per Mac è finita nel 2018', bot: 'Nessuno', price: 'Su richiesta' },
     ],
   },
-  list: [wisprFlow, otter, granola, superwhisper, macwhisper, zoom, meet, teams, offline, multilingual, mcp],
+  list: [wisprFlow, otter, granola, superwhisper, macwhisper, dragon, noBot, zoom, meet, teams, audioFiles, offline, multilingual, mcp],
 };
 
 export default guides;
