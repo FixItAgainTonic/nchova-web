@@ -36,7 +36,10 @@ npm run check      # tipi e template
 | `src/styles/` | `global.css` (colori, caratteri), `sections.css`, `demos.css` |
 | `tools/og.sh` | rigenera le anteprime dei link (`public/og-en.png`, `public/og-it.png`) con Chrome headless |
 
-Niente cookie, niente statistiche, niente risorse di terzi: i caratteri sono serviti dal sito.
+Niente cookie e niente risorse di terzi: i caratteri sono serviti dal sito. Le statistiche sono Vercel Web Analytics,
+servite anche loro dal sito (`/_vercel/insights`): nessun cookie, niente salvato nel browser, il visitatore è
+un'impronta della richiesta che cambia ogni giorno (vedi «Pubblicazione»). Non usare `identify` di Analytics: scrive
+nel localStorage, e la home dice «This site uses no cookies and does not know who you are».
 Con «riduci movimento» attivo i pesci stanno fermi e le demo mostrano subito il risultato.
 
 ## Lingue di dettatura
