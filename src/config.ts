@@ -26,6 +26,10 @@ export const MEET_CODE = 'MEETNCHOVA';
 /** The Polar code behind nchova.com/ironhack/claim, the link Rudy gives to colleagues at Ironhack. */
 export const IRONHACK_CODE = 'ironhack';
 
+/** The Polar code behind nchova.com/press/claim, the link in the emails Rudy sends to the press: 100% off Pro, a code
+ *  of its own so the press's claims are counted apart from the events'. */
+export const PRESS_CODE = 'PRESSNCHOVA';
+
 /** The creators who talk about nchova, at nchova.com/with/<slug>: the visit is counted (event "Partner"), the browser
  *  lands on the home page in the creator's language, and on that visit Buy opens the checkout with their Polar code
  *  already in (20% off; they get 60% of the net). Nothing is stored in the browser: buy later, or from the app, and the
