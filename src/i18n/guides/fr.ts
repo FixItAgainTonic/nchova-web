@@ -912,7 +912,7 @@ const zoom: Guide = {
   page: 'transcribe/zoom/',
   group: 'use',
   short: 'Transcrire Zoom',
-  metaTitle: 'Transcrire vos réunions Zoom sur Mac, sans bot — nchova',
+  metaTitle: 'Transcrire une réunion Zoom en tant que participant — nchova',
   description:
     'Transcrivez tout appel Zoom sur votre Mac, hôte ou pas, offre gratuite ou payante : aucun bot, l’audio ne quitte pas le Mac, et les notes arrivent à la fin.',
   kicker: 'transcrire Zoom',
@@ -989,7 +989,7 @@ const meet: Guide = {
   page: 'transcribe/google-meet/',
   group: 'use',
   short: 'Transcrire Google Meet',
-  metaTitle: 'Transcrire Google Meet sur Mac, sans bot — nchova',
+  metaTitle: 'Transcrire Google Meet en tant qu’invité, sur Mac — nchova',
   description:
     'Transcrivez vos appels Google Meet sur votre Mac, avec un compte Gmail gratuit et même en invité : pas de bot, pas d’extension, l’audio reste sur le Mac.',
   kicker: 'transcrire Google Meet',
@@ -1057,7 +1057,7 @@ const teams: Guide = {
   page: 'transcribe/teams/',
   group: 'use',
   short: 'Transcrire Microsoft Teams',
-  metaTitle: 'Transcrire vos réunions Microsoft Teams sur Mac — nchova',
+  metaTitle: 'Transcription de réunion Teams gratuite, sur Mac — nchova',
   description:
     'Transcrivez vos réunions Microsoft Teams sur votre Mac, en invité ou sans Copilot : aucun bot, l’audio reste sur le Mac, et les notes arrivent à la fin.',
   kicker: 'transcrire Teams',
