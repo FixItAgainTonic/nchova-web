@@ -8,6 +8,35 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.2.4</title>
+      <pubDate>Tue, 20 Oct 2026 14:36:09 +0000</pubDate>
+      <sparkle:version>247</sparkle:version>
+      <sparkle:shortVersionString>1.2.4</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- «Entra e trascrivi» non blocca più Zoom: nchova apre la call e comincia a registrare qualche secondo dopo che la call ha preso il microfono, non prima. Nel frattempo il menu dice che sta aspettando la call.
+- Con due call ravvicinate, nel menu ognuna ha il suo pulsante col nome, così entri in quella che vuoi. Una call finita da meno di dieci minuti resta in cima al menu, per rientrare: il meeting continua lo stesso.
+- Un evento aggiunto o spostato nel Calendario del Mac compare subito in nchova.
+- Un file trascinato nella finestra Meeting si vede subito, insieme a quelli in coda. Ognuno si può togliere dalla coda, e lo stesso file dato due volte viene trascritto una volta sola.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- «Join and transcribe» no longer freezes Zoom: nchova opens the call and starts recording a few seconds after the call has taken the microphone, not before. Meanwhile the menu says it is waiting for the call.
+- With two calls close together, each one has its own button in the menu, with its name, so you join the one you mean. A call that ended less than ten minutes ago stays at the top of the menu, to get back in: the same meeting carries on.
+- An event added or moved in Calendar on your Mac shows up in nchova straight away.
+- A file dropped on the Meetings window shows up at once, with the ones waiting their turn. Each can be taken out of the queue, and the same file given twice is transcribed once.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- « Rejoindre et transcrire » ne bloque plus Zoom : nchova ouvre l’appel et commence à enregistrer quelques secondes après que l’appel a pris le micro, pas avant. En attendant, le menu indique qu’il attend l’appel.
+- Avec deux appels rapprochés, chacun a son propre bouton dans le menu, avec son nom : vous rejoignez celui que vous voulez. Un appel terminé depuis moins de dix minutes reste en haut du menu pour y revenir : la même réunion continue.
+- Un événement ajouté ou déplacé dans Calendrier sur votre Mac apparaît aussitôt dans nchova.
+- Un fichier déposé sur la fenêtre Réunions apparaît aussitôt, avec ceux qui attendent leur tour. Chacun peut être retiré de la file, et le même fichier donné deux fois n’est transcrit qu’une fois.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- „Beitreten und transkribieren“ friert Zoom nicht mehr ein: nchova öffnet den Call und nimmt erst ein paar Sekunden auf, nachdem der Call das Mikrofon übernommen hat, nicht vorher. Bis dahin zeigt das Menü, dass es auf den Call wartet.
+- Bei zwei Calls kurz hintereinander hat im Menü jeder seinen eigenen Button mit seinem Namen, so trittst du dem bei, den du meinst. Ein Call, der vor weniger als zehn Minuten geendet hat, bleibt oben im Menü, damit du wieder hineinkommst: Das Meeting geht einfach weiter.
+- Ein Termin, den du im Kalender auf deinem Mac hinzufügst oder verschiebst, erscheint sofort in nchova.
+- Eine Datei, die du auf das Meetings-Fenster ziehst, erscheint sofort, zusammen mit denen, die noch warten. Jede lässt sich aus der Warteschlange nehmen, und dieselbe Datei zweimal wird nur einmal transkribiert.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- «Unirse y transcribir» ya no bloquea Zoom: nchova abre la llamada y empieza a grabar unos segundos después de que la llamada tome el micrófono, no antes. Mientras tanto, el menú indica que está esperando la llamada.
+- Con dos llamadas seguidas, cada una tiene en el menú su propio botón con su nombre, así entras en la que quieres. Una llamada que terminó hace menos de diez minutos se queda arriba del menú para volver a entrar: la misma reunión continúa.
+- Un evento añadido o movido en Calendario en tu Mac aparece enseguida en nchova.
+- Un archivo arrastrado a la ventana Reuniones aparece al momento, junto con los que esperan su turno. Cada uno se puede quitar de la cola, y el mismo archivo dado dos veces se transcribe una sola vez.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.2.4/Nchova.dmg" length="21463838" type="application/octet-stream" sparkle:edSignature="QITwBdYywVkZ34ht9RuGfaqXjh9pf/JjTfW9HKEFao5s18JE8sKes1zsuib2QTEiahZ+EKUAe6WLnuD1JQx9Bw=="/>
+    </item>
+    <item>
       <title>nchova 1.2.3</title>
       <pubDate>Wed, 14 Oct 2026 11:10:48 +0000</pubDate>
       <sparkle:version>244</sparkle:version>
