@@ -900,7 +900,7 @@ const zoom: Guide = {
   page: 'transcribe/zoom/',
   group: 'use',
   short: 'Transcribe Zoom',
-  metaTitle: 'Transcribe Zoom meetings on your Mac, without a bot — nchova',
+  metaTitle: 'Transcribe a Zoom meeting as a participant, on Mac — nchova',
   description:
     'Transcribe any Zoom call on your Mac, host or not, free plan or paid: no bot joins, the audio never leaves your Mac, and the notes are written when you hang up.',
   kicker: 'transcribe Zoom',
@@ -1045,7 +1045,7 @@ const teams: Guide = {
   page: 'transcribe/teams/',
   group: 'use',
   short: 'Transcribe Microsoft Teams',
-  metaTitle: 'Transcribe Microsoft Teams calls on your Mac — nchova',
+  metaTitle: 'Transcribe Microsoft Teams meetings on Mac, free — nchova',
   description:
     'Transcribe Microsoft Teams calls on your Mac, as a guest or without Copilot: no bot joins, the audio never leaves your Mac, and the notes come when you hang up.',
   kicker: 'transcribe Teams',
