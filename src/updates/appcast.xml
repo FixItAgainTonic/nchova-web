@@ -8,6 +8,30 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.2.6</title>
+      <pubDate>Thu, 22 Oct 2026 13:03:58 +0000</pubDate>
+      <sparkle:version>255</sparkle:version>
+      <sparkle:shortVersionString>1.2.6</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Il microfono scelto nelle Impostazioni ora funziona anche quando è diverso da quello di sistema, per esempio gli AirPods mentre il Mac usa una webcam.
+- Con il MacBook chiuso, se il microfono scelto non c'è, nchova non registra dal microfono del Mac, che a coperchio chiuso non sente niente, ma da un altro collegato.
+- Durante un meeting, se nchova non sente il tuo microfono te lo dice: nella pillola compare un microfono barrato arancione, con una riga che spiega cosa succede. Quando il microfono torna, te lo dice.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- The microphone chosen in Settings now works even when it differs from the system one, for instance AirPods while the Mac uses a webcam.
+- With the MacBook closed, if the chosen microphone is not there, nchova no longer records from the Mac's own microphone, which hears nothing with the lid closed, but from another one that is connected.
+- During a meeting, if nchova cannot hear your microphone it tells you: an orange crossed-out microphone shows in the pill, with a line saying what is happening. When the microphone is back, it tells you.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- Le micro choisi dans les Réglages fonctionne désormais même s’il diffère de celui du système, par exemple des AirPods pendant que le Mac utilise une webcam.
+- MacBook fermé, si le micro choisi n’est pas là, nchova n’enregistre plus avec le micro du Mac, qui n’entend rien écran rabattu, mais avec un autre micro branché.
+- Pendant une réunion, si nchova n’entend pas votre micro, il vous le dit : un micro barré orange apparaît dans la pastille, avec une ligne qui explique ce qui se passe. Quand le micro revient, il vous le dit.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Das in den Einstellungen gewählte Mikrofon funktioniert jetzt auch, wenn es nicht das Systemmikrofon ist, zum Beispiel AirPods, während der Mac eine Webcam nutzt.
+- Bei zugeklapptem MacBook nimmt nchova, wenn das gewählte Mikrofon fehlt, nicht mehr über das Mikrofon des Mac auf, das bei geschlossenem Deckel nichts hört, sondern über ein anderes angeschlossenes.
+- Wenn nchova in einem Meeting dein Mikrofon nicht hört, sagt es dir das: In der Pille erscheint ein orange durchgestrichenes Mikrofon mit einer Zeile, die erklärt, was los ist. Wenn das Mikrofon wieder da ist, sagt es dir das auch.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- El micrófono elegido en Ajustes ahora funciona aunque sea distinto del del sistema, por ejemplo los AirPods mientras el Mac usa una webcam.
+- Con el MacBook cerrado, si el micrófono elegido no está, nchova ya no graba con el micrófono del Mac, que con la tapa cerrada no oye nada, sino con otro conectado.
+- Durante una reunión, si nchova no oye tu micrófono te lo dice: en la píldora aparece un micrófono tachado en naranja, con una línea que explica qué pasa. Cuando el micrófono vuelve, te lo dice.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.2.6/Nchova.dmg" length="21491939" type="application/octet-stream" sparkle:edSignature="gag0F8JF6IY9AS/v4Yx+UXhw3fOmDXmfAhkcCy3QJ+xs/OYI4jJNOg/0oM96vu0cB4UO2O6UbpY8fK5KTgOnAg=="/>
+    </item>
+    <item>
       <title>nchova 1.2.5</title>
       <pubDate>Thu, 22 Oct 2026 12:40:08 +0000</pubDate>
       <sparkle:version>252</sparkle:version>
