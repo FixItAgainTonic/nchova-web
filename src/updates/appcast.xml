@@ -8,6 +8,30 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.2.5</title>
+      <pubDate>Thu, 22 Oct 2026 12:40:08 +0000</pubDate>
+      <sparkle:version>252</sparkle:version>
+      <sparkle:shortVersionString>1.2.5</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Con gli AirPods scelti per nome come microfono nelle Impostazioni, nchova a volte non riusciva ad aprirli e nei meeting mancava la tua voce. Ora li apre come fa macOS, e se il microfono scelto non parte usa quello di sistema invece di perdere la tua voce.
+- Se all'inizio di un meeting il microfono non parte, nchova riprova da solo per qualche minuto. Così anche un microfono cambiato a metà call ha effetto subito.
+- Il menu nella barra non perde più le scorciatoie con fn mentre è aperto.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- With AirPods chosen by name as the microphone in Settings, nchova sometimes could not open them and your voice was missing from meetings. It now opens them the way macOS does, and if the chosen microphone will not start it uses the system one instead of losing your voice.
+- If the microphone does not start when a meeting begins, nchova tries again by itself for a few minutes. So a microphone changed in the middle of a call takes effect straight away.
+- The menu bar menu no longer loses its fn shortcuts while it is open.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- Avec des AirPods choisis par leur nom comme micro dans les Réglages, nchova n’arrivait parfois pas à les ouvrir et votre voix manquait dans les réunions. Désormais il les ouvre comme le fait macOS, et si le micro choisi ne démarre pas, il utilise celui du système au lieu de perdre votre voix.
+- Si le micro ne démarre pas au début d’une réunion, nchova réessaie tout seul pendant quelques minutes. Un micro changé en plein appel prend donc effet tout de suite.
+- Le menu de la barre ne perd plus ses raccourcis fn quand il est ouvert.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Wenn AirPods in den Einstellungen namentlich als Mikrofon ausgewählt waren, konnte nchova sie manchmal nicht öffnen, und deine Stimme fehlte in den Meetings. Jetzt öffnet nchova sie so wie macOS, und wenn das gewählte Mikrofon nicht startet, nimmt es das Systemmikrofon, statt deine Stimme zu verlieren.
+- Startet das Mikrofon zu Beginn eines Meetings nicht, versucht nchova es ein paar Minuten lang selbst erneut. So wirkt auch ein mitten im Call gewechseltes Mikrofon sofort.
+- Das Menü in der Menüleiste verliert seine fn-Kurzbefehle nicht mehr, solange es offen ist.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- Con los AirPods elegidos por su nombre como micrófono en Ajustes, a veces nchova no conseguía abrirlos y tu voz faltaba en las reuniones. Ahora los abre como lo hace macOS, y si el micrófono elegido no arranca usa el del sistema en lugar de perder tu voz.
+- Si el micrófono no arranca al empezar una reunión, nchova vuelve a intentarlo solo durante unos minutos. Así, un micrófono cambiado en mitad de una llamada funciona al momento.
+- El menú de la barra ya no pierde sus atajos con fn mientras está abierto.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.2.5/Nchova.dmg" length="21468063" type="application/octet-stream" sparkle:edSignature="ftf2Aa2jqDKF0Fvs0IBKNbvT+ZgA7PYG0hThM+KYFMi7nmQakOdKWuSImVnYQFhtqRWofYZ+7/EKuAOV5FCWCw=="/>
+    </item>
+    <item>
       <title>nchova 1.2.4</title>
       <pubDate>Tue, 20 Oct 2026 14:36:09 +0000</pubDate>
       <sparkle:version>247</sparkle:version>
