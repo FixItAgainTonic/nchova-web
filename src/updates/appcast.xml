@@ -8,6 +8,75 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.2.7</title>
+      <pubDate>Fri, 23 Oct 2026 14:01:28 +0000</pubDate>
+      <sparkle:version>271</sparkle:version>
+      <sparkle:shortVersionString>1.2.7</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- «I miei appunti» durante un meeting sono un testo solo, nella pillola e nella finestra Meeting: quello che scrivi nell'una lo vedi nell'altra, e alla fine del meeting non si perde più niente.
+- Nella finestra Meeting la «Trascrizione» del meeting in corso cresce frase per frase, invece di restare ferma a quando l'hai aperta.
+- Le note che un assistente salva in nchova mentre il meeting è ancora da riassumere restano: le note automatiche non le sovrascrivono più, e la scheda lo dice. «Riscrivi» le sostituisce come prima.
+- Una call che torna ma non riesce a registrare (microfono e audio di sistema fermi insieme) non cancella più il meeting precedente: viene richiuso com'era, con la sua trascrizione.
+- Niente più falso avviso «Il tuo microfono non sta registrando» alla fine di un meeting o in pausa. Se invece il microfono resta davvero muto dopo un problema dell'audio, il meeting lo dice e riprova finché non torna.
+- Quando una dettatura non può partire (il microfono non risponde), la pillola mostra l'errore invece di «Fatto» con la spunta verde.
+- Il microfono scelto nelle Impostazioni funziona anche con un'interfaccia audio a più di due ingressi, a qualunque frequenza.
+- La lettura durante la call tiene il modello caricato fra una lettura e l'altra, così le note finali partono subito.
+- Pulizia: «scusa il ritardo» e «sorry for the delay» non vengono più presi per correzioni; «provalo, lo vedi» e «Thank you. You…» tengono tutte e due le parole.
+- Cronologia: una ricerca resta dopo una dettatura o una cancellazione. Vocabolario: un termine imparato da una correzione non si perde più quando ne modifichi un altro.
+- Call nel browser: una riunione Zoom aperta nel browser col suo nome predefinito in inglese viene riconosciuta; meno falsi avvii da titoli di pagina che somigliano a un codice Meet; «Riunione» di Teams in italiano è di nuovo una call.
+- In una call che torna entro dieci minuti con più voci, le voci della seconda parte hanno numeri loro invece di prendere i nomi della prima.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- «My notes» during a meeting are one text, in the pill and in the Meetings window: what you write in one shows in the other, and nothing is lost when the meeting ends.
+- In the Meetings window the «Transcript» of the meeting in progress grows sentence by sentence, instead of staying as it was when you opened it.
+- Notes an assistant saves in nchova while the meeting is still being written up are kept: the automatic notes no longer overwrite them, and the card says so. «Rewrite» replaces them as before.
+- A call that comes back but cannot record (microphone and system audio both down) no longer deletes the earlier meeting: it is closed again as it was, transcript included.
+- No more false «Your microphone is not recording» at the end of a meeting or while paused. When the microphone really stays mute after an audio hiccup, the meeting says so and keeps trying until it is back.
+- When a dictation cannot start (the microphone does not answer), the pill shows the error instead of «Done» with a green tick.
+- The microphone chosen in Settings works with an audio interface of more than two inputs too, at any sample rate.
+- Reading along during the call keeps the model loaded between one reading and the next, so the final notes start at once.
+- Cleanup: «scusa il ritardo» and «sorry for the delay» are no longer taken for corrections; «Try it, it works» and «Thank you. You…» keep both words.
+- History: a search stays after a dictation or a deletion. Vocabulary: a term learnt from a correction is no longer lost when you edit another one.
+- Calls in the browser: a Zoom meeting opened in the browser with its default English name is recognised; fewer false starts from page titles that look like a Meet code; Teams' Italian «Riunione» is a call again.
+- In a call that comes back within ten minutes with several voices, the voices of the second part get numbers of their own instead of taking the names of the first.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- « Mes notes » pendant une réunion forment un seul texte, dans la pastille et dans la fenêtre Réunions : ce que vous écrivez dans l’une apparaît dans l’autre, et rien ne se perd plus à la fin de la réunion.
+- Dans la fenêtre Réunions, la « Transcription » de la réunion en cours s’allonge phrase après phrase, au lieu de rester telle qu’à l’ouverture.
+- Les notes qu’un assistant enregistre dans nchova pendant que la réunion est encore à résumer sont conservées : les notes automatiques ne les écrasent plus, et la fiche le dit. « Réécrire » les remplace comme avant.
+- Un appel qui revient mais ne peut pas enregistrer (micro et audio système arrêtés ensemble) ne supprime plus la réunion précédente : elle est refermée telle quelle, transcription comprise.
+- Plus de fausse alerte « Votre micro n’enregistre pas » à la fin d’une réunion ou en pause. Si le micro reste vraiment muet après un souci audio, la réunion le dit et réessaie jusqu’à ce qu’il revienne.
+- Quand une dictée ne peut pas démarrer (le micro ne répond pas), la pastille montre l’erreur au lieu de « Terminé » avec la coche verte.
+- Le micro choisi dans les Réglages fonctionne aussi avec une interface audio de plus de deux entrées, à n’importe quelle fréquence.
+- La lecture pendant l’appel garde le modèle chargé entre deux lectures : les notes finales démarrent tout de suite.
+- Nettoyage : « scusa il ritardo » et « sorry for the delay » ne sont plus pris pour des corrections ; « Essaie-le, il marche » et « Thank you. You… » gardent leurs deux mots.
+- Historique : une recherche reste après une dictée ou une suppression. Vocabulaire : un terme appris d’une correction ne se perd plus quand vous en modifiez un autre.
+- Appels dans le navigateur : une réunion Zoom ouverte dans le navigateur avec son nom anglais par défaut est reconnue ; moins de faux départs sur des titres de page qui ressemblent à un code Meet ; le « Riunione » italien de Teams est de nouveau un appel.
+- Dans un appel qui revient en moins de dix minutes avec plusieurs voix, les voix de la seconde partie ont leurs propres numéros au lieu de prendre les noms de la première.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- „Meine Notizen“ während eines Meetings sind ein einziger Text, in der Pille und im Meetings-Fenster: Was du im einen schreibst, siehst du im anderen, und am Ende des Meetings geht nichts mehr verloren.
+- Im Meetings-Fenster wächst das „Transkript“ des laufenden Meetings Satz für Satz, statt so zu bleiben wie beim Öffnen.
+- Notizen, die ein Assistent in nchova speichert, während das Meeting noch zusammengefasst wird, bleiben erhalten: Die automatischen Notizen überschreiben sie nicht mehr, und die Karte sagt es. „Neu schreiben“ ersetzt sie wie bisher.
+- Ein Call, der zurückkommt, aber nicht aufnehmen kann (Mikrofon und Systemaudio zugleich aus), löscht das vorherige Meeting nicht mehr: Es wird so wieder geschlossen, wie es war, mit seinem Transkript.
+- Kein falscher Hinweis „Dein Mikrofon nimmt nicht auf“ mehr am Ende eines Meetings oder in der Pause. Bleibt das Mikrofon nach einem Audioproblem wirklich stumm, sagt es das Meeting und versucht es weiter, bis es zurück ist.
+- Wenn ein Diktat nicht starten kann (das Mikrofon antwortet nicht), zeigt die Pille den Fehler statt „Fertig“ mit grünem Haken.
+- Das in den Einstellungen gewählte Mikrofon funktioniert auch mit einem Audio-Interface mit mehr als zwei Eingängen, bei jeder Abtastrate.
+- Das Mitlesen während des Calls hält das Modell zwischen zwei Lesungen geladen, so starten die Notizen am Ende sofort.
+- Bereinigung: „scusa il ritardo“ und „sorry for the delay“ gelten nicht mehr als Korrekturen; „Probier es, es geht“ und „Thank you. You…“ behalten beide Wörter.
+- Verlauf: Eine Suche bleibt nach einem Diktat oder einem Löschen bestehen. Vokabular: Ein aus einer Korrektur gelernter Begriff geht nicht mehr verloren, wenn du einen anderen bearbeitest.
+- Calls im Browser: Ein im Browser geöffnetes Zoom-Meeting mit seinem englischen Standardnamen wird erkannt; weniger Fehlstarts durch Seitentitel, die wie ein Meet-Code aussehen; das italienische „Riunione“ von Teams ist wieder ein Call.
+- In einem Call, der innerhalb von zehn Minuten mit mehreren Stimmen zurückkommt, bekommen die Stimmen des zweiten Teils eigene Nummern, statt die Namen des ersten zu übernehmen.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- «Mis notas» durante una reunión son un solo texto, en la píldora y en la ventana Reuniones: lo que escribes en una lo ves en la otra, y al terminar la reunión ya no se pierde nada.
+- En la ventana Reuniones, la «Transcripción» de la reunión en curso crece frase a frase, en vez de quedarse como estaba al abrirla.
+- Las notas que un asistente guarda en nchova mientras la reunión aún está por resumir se conservan: las notas automáticas ya no las sobrescriben, y la ficha lo dice. «Reescribir» las sustituye como antes.
+- Una llamada que vuelve pero no puede grabar (micrófono y audio del sistema parados a la vez) ya no borra la reunión anterior: se vuelve a cerrar tal como estaba, con su transcripción.
+- Se acabó el falso aviso «Tu micrófono no está grabando» al final de una reunión o en pausa. Si el micrófono se queda mudo de verdad tras un problema de audio, la reunión lo dice y lo reintenta hasta que vuelve.
+- Cuando un dictado no puede empezar (el micrófono no responde), la píldora muestra el error en vez de «Listo» con la marca verde.
+- El micrófono elegido en Ajustes funciona también con una interfaz de audio de más de dos entradas, a cualquier frecuencia.
+- La lectura durante la llamada mantiene el modelo cargado entre una lectura y la siguiente, así las notas finales empiezan al momento.
+- Limpieza: «scusa il ritardo» y «sorry for the delay» ya no se toman por correcciones; «pruébalo, funciona» y «Thank you. You…» conservan las dos palabras.
+- Historial: una búsqueda se mantiene tras un dictado o un borrado. Vocabulario: un término aprendido de una corrección ya no se pierde al editar otro.
+- Llamadas en el navegador: una reunión de Zoom abierta en el navegador con su nombre predeterminado en inglés se reconoce; menos falsos inicios por títulos de página que parecen un código de Meet; el «Riunione» italiano de Teams vuelve a ser una llamada.
+- En una llamada que vuelve en menos de diez minutos con varias voces, las voces de la segunda parte tienen números propios en vez de tomar los nombres de la primera.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.2.7/Nchova.dmg" length="21525597" type="application/octet-stream" sparkle:edSignature="z2PrcfFiEfbyBkyI5aJw3YxpVOQN1qnVPF+7NZ5hcwlF1IBzNnNRXj9I+JcnCSvKWt5CYG1CSjQ5ZqLcRsw9CQ=="/>
+    </item>
+    <item>
       <title>nchova 1.2.6</title>
       <pubDate>Thu, 22 Oct 2026 13:03:58 +0000</pubDate>
       <sparkle:version>255</sparkle:version>
