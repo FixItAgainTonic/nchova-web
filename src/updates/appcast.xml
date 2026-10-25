@@ -8,6 +8,35 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.2.8</title>
+      <pubDate>Sun, 25 Oct 2026 16:33:49 +0000</pubDate>
+      <sparkle:version>274</sparkle:version>
+      <sparkle:shortVersionString>1.2.8</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Quando dai un nome a una voce, nella scheda di fine meeting o nel transcript, mentre scrivi compaiono le persone dei tuoi meeting che corrispondono, con quanti meeting avete fatto e l'ultimo: basta «st» per trovare Stefano Moro. Scegli con le frecce e Invio, o con un clic, e il nome si salva com'è nell'archivio: una persona non si spacca più in «Ste» e «Stefano Moro».
+- Un nome che non corrisponde a nessuno si aggiunge come l'hai scritto, dalla riga «Aggiungo «…»?». Se corrispondono più persone, il primo Invio mostra chi sta per essere scelto e il secondo sceglie.
+- Rinominare una voce, o toglierle il nome, sposta anche l'impronta vocale: prima restava alla persona vecchia, e un nome sbagliato confondeva due persone per sempre.
+- Un nome dettato con Fn si salva senza il punto finale.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- When you name a voice, in the end-of-meeting card or in the transcript, the people from your meetings who match appear as you type, with how many meetings you had and the last one: «st» is enough to find Stefano Moro. Pick with the arrow keys and Return, or with a click, and the name is saved as the archive spells it: one person no longer splits into «Ste» and «Stefano Moro».
+- A name that matches nobody is added as you typed it, from the «Add “…”?» row. When several people match, the first Return shows who is about to be picked and the second picks.
+- Renaming a voice, or forgetting its name, now moves the voiceprint too: before, it stayed with the old person, and a wrong name mixed two people up for good.
+- A name dictated with Fn is saved without the final full stop.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- Quand vous nommez une voix, dans la fiche de fin de réunion ou dans la transcription, les personnes de vos réunions qui correspondent apparaissent pendant que vous écrivez, avec le nombre de réunions et la dernière : « st » suffit pour trouver Stefano Moro. Choisissez avec les flèches et Entrée, ou d’un clic, et le nom est enregistré tel qu’il est dans l’archive : une personne ne se divise plus en « Ste » et « Stefano Moro ».
+- Un nom qui ne correspond à personne s’ajoute tel que vous l’avez écrit, depuis la ligne « Ajouter « … » ? ». Si plusieurs personnes correspondent, la première Entrée montre qui va être choisi et la seconde choisit.
+- Renommer une voix, ou lui retirer son nom, déplace aussi l’empreinte vocale : avant, elle restait à l’ancienne personne, et un nom erroné mélangeait deux personnes pour toujours.
+- Un nom dicté avec Fn est enregistré sans le point final.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Wenn du einer Stimme einen Namen gibst, in der Karte am Ende des Meetings oder im Transkript, erscheinen beim Tippen die passenden Personen aus deinen Meetings, mit der Zahl der Meetings und dem letzten: „st“ genügt, um Stefano Moro zu finden. Wähle mit den Pfeiltasten und Return oder per Klick, und der Name wird so gespeichert, wie das Archiv ihn schreibt: Eine Person zerfällt nicht mehr in „Ste“ und „Stefano Moro“.
+- Ein Name, der zu niemandem passt, wird so hinzugefügt, wie du ihn geschrieben hast, über die Zeile „„…“ hinzufügen?“. Passen mehrere Personen, zeigt das erste Return, wer gewählt werden soll, und das zweite wählt.
+- Eine Stimme umzubenennen oder ihren Namen zu löschen verschiebt jetzt auch den Stimmabdruck: Bisher blieb er bei der alten Person, und ein falscher Name brachte zwei Personen für immer durcheinander.
+- Ein mit Fn diktierter Name wird ohne den Schlusspunkt gespeichert.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- Cuando pones nombre a una voz, en la ficha de fin de reunión o en la transcripción, mientras escribes aparecen las personas de tus reuniones que coinciden, con cuántas reuniones habéis tenido y la última: basta «st» para encontrar a Stefano Moro. Elige con las flechas e Intro, o con un clic, y el nombre se guarda tal como está en el archivo: una persona ya no se divide en «Ste» y «Stefano Moro».
+- Un nombre que no coincide con nadie se añade tal como lo escribiste, desde la fila «¿Añado «…»?». Si coinciden varias personas, el primer Intro muestra a quién se va a elegir y el segundo elige.
+- Renombrar una voz, o quitarle el nombre, ahora mueve también la huella de voz: antes se quedaba con la persona anterior, y un nombre equivocado confundía a dos personas para siempre.
+- Un nombre dictado con Fn se guarda sin el punto final.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.2.8/Nchova.dmg" length="21676071" type="application/octet-stream" sparkle:edSignature="mtuQwoEvHu10LywdI/xD/U0N6VL1IX0u+F0opSlCFwHIbW8V4DUuCd2MQ9q4ZIXYnZwNjbJx4nOVTsO3BrjyAA=="/>
+    </item>
+    <item>
       <title>nchova 1.2.7</title>
       <pubDate>Fri, 23 Oct 2026 14:01:28 +0000</pubDate>
       <sparkle:version>271</sparkle:version>
