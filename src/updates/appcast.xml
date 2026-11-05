@@ -8,6 +8,30 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.3.1</title>
+      <pubDate>Thu, 05 Nov 2026 17:24:13 +0000</pubDate>
+      <sparkle:version>303</sparkle:version>
+      <sparkle:shortVersionString>1.3.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Un meeting ora finisce quando finisce la sua call. Se un'altra app teneva il microfono, per esempio Slack con un invito a un huddle rimasto a metà, la registrazione poteva andare avanti ben oltre la fine della call.
+- Una call che comincia durante un meeting in un'altra app ha il suo turno quando quel meeting finisce, invece di finirci dentro.
+- Il Vocabolario (Fn+V) si vede di nuovo per intero. Con qualche riga in «Dalle tue correzioni» l'elenco dei termini spariva e la casella finiva sotto le schede. Ora la pagina scorre, l'elenco ha sempre il suo spazio e «Dalle tue correzioni» gli sta sotto.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- A meeting now ends when its own call does. If another app kept hold of the microphone, for instance Slack with a huddle invitation left half open, the recording could go on long after the call.
+- A call that starts during a meeting in another app gets its turn when that meeting ends, instead of ending up inside it.
+- The Vocabulary (Fn+V) shows in full again. With a few rows in «From your corrections», the list of terms disappeared and the checkbox slid under the tabs. Now the page scrolls, the list always has its room and «From your corrections» sits below it.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- Une réunion se termine désormais quand son appel se termine. Si une autre app gardait le micro, par exemple Slack avec une invitation à un huddle restée à moitié ouverte, l’enregistrement pouvait continuer bien après la fin de l’appel.
+- Un appel qui commence pendant une réunion dans une autre app a son tour quand cette réunion se termine, au lieu de s’y retrouver mêlé.
+- Le Vocabulaire (Fn+V) s’affiche de nouveau en entier. Avec quelques lignes dans « D’après vos corrections », la liste des termes disparaissait et la case passait sous les onglets. Désormais la page défile, la liste garde toujours sa place et « D’après vos corrections » se trouve en dessous.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Ein Meeting endet jetzt, wenn sein Call endet. Hielt eine andere App das Mikrofon, zum Beispiel Slack mit einer halb offenen Huddle-Einladung, konnte die Aufnahme noch lange nach dem Ende des Calls weiterlaufen.
+- Ein Call, der während eines Meetings in einer anderen App beginnt, ist an der Reihe, wenn dieses Meeting endet, statt darin zu landen.
+- Das Vokabular (Fn+V) ist wieder vollständig zu sehen. Mit ein paar Zeilen in „Aus deinen Korrekturen“ verschwand die Liste der Begriffe, und das Kästchen rutschte unter die Tabs. Jetzt scrollt die Seite, die Liste hat immer ihren Platz, und „Aus deinen Korrekturen“ steht darunter.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- Una reunión ahora termina cuando termina su llamada. Si otra app retenía el micrófono, por ejemplo Slack con una invitación a un huddle a medias, la grabación podía seguir mucho después del final de la llamada.
+- Una llamada que empieza durante una reunión en otra app tiene su turno cuando esa reunión termina, en lugar de acabar dentro de ella.
+- El Vocabulario (Fn+V) vuelve a verse entero. Con unas cuantas filas en «De tus correcciones», la lista de términos desaparecía y la casilla quedaba debajo de las pestañas. Ahora la página se desplaza, la lista siempre tiene su espacio y «De tus correcciones» queda debajo.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.3.1/Nchova.dmg" length="22521017" type="application/octet-stream" sparkle:edSignature="AeDN0eFdYkpvSb9Cq+s+JUuxGz74Xgr4N1xaBBU61hhebimrguWk2k3eB6CSVSl7D/QOvlyzbpic2gGIIjZ6Ag=="/>
+    </item>
+    <item>
       <title>nchova 1.3.0</title>
       <pubDate>Wed, 04 Nov 2026 15:50:48 +0000</pubDate>
       <sparkle:version>297</sparkle:version>
