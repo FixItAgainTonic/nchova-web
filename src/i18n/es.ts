@@ -70,7 +70,7 @@ const es: Dict = {
     notes: [
       ['Tus idiomas', 'eliges hasta tres y nchova detecta cuál estás hablando, incluso a mitad de frase.'],
       ['Rectificaciones', '«jueves, mejor dicho, viernes» se convierte en «viernes» si activas la limpieza en Ajustes › Dictado. Solo puede quitar palabras, nunca añadirlas.'],
-      ['Tu vocabulario', 'nombres y siglas escritos a tu manera: «gira» se convierte en Jira, «Jason» en JSON.'],
+      ['Tu vocabulario', 'corrige un nombre justo después de dictarlo y la próxima vez saldrá bien. O añádelo tú: «gira» se convierte en Jira, «Jason» en JSON.'],
       ['Manos libres', 'mientras mantienes Fn, pulsa espacio y suelta: habla hasta diez minutos, luego un toque de Fn y llega el texto. Los «em» y «mmm» se quedan fuera.'],
       ['Parakeet', 'el modelo de voz de NVIDIA, en tu Mac, en {nPro} idiomas europeos.', 'pro'],
     ],
@@ -388,7 +388,7 @@ const es: Dict = {
     sections: [
       ['Quiénes somos', 'nchova es obra de {company} (IVA IT{vat}), responsable de los datos que se describen en esta página.'],
       ['Esta web', 'Sin cookies y sin nada cargado desde terceros: las fuentes se sirven desde aquí. Cuenta las visitas y las descargas con Vercel Web Analytics, que distingue una visita de otra mediante un código que cambia cada día y no guarda direcciones IP, cookies ni nada que te identifique. Vercel, que aloja la web, puede conservar los registros técnicos habituales, como las direcciones IP, para hacerla funcionar.'],
-      ['La app', 'nchova no tiene servidores propios y no pide ninguna cuenta. El audio y las huellas de voz nunca salen de tu Mac. Las transcripciones y las notas se quedan en el Mac, y van a tu propio iCloud solo si activas la sincronización (Pro).'],
+      ['La app', 'nchova no tiene servidores propios y no pide ninguna cuenta. El audio y las huellas de voz nunca salen de tu Mac. Las transcripciones y las notas se quedan en el Mac, y van a tu propio iCloud solo si activas la sincronización (Pro). Para aprender de tus correcciones, nchova vuelve a leer el campo alrededor del texto que acaba de escribir, hasta que lo envías o pasas a otra cosa, como mucho un minuto y medio. Lo que lee se queda en memoria y nunca sale del Mac. De ese texto solo guarda los pares de palabras corregidas, con la app y la hora, y como mucho ocho frases de tus dictados. Nunca lee los terminales, los campos de contraseña ni Firefox. Para apagarlo, desmarca «Aprender de mis correcciones» en Ajustes › Vocabulario.'],
       ['Qué sale del Mac', 'Para la licencia Pro, nchova envía a Polar la clave y el nombre del Mac. Si las notas las escribe tu propio Claude Code o Codex, la transcripción de la reunión va a Anthropic o a OpenAI, con tu suscripción. Si conectas un asistente de IA mediante el servidor MCP, ese asistente lee tus reuniones (nunca tus dictados). Si activas la sincronización con iCloud (Pro), las transcripciones y las notas van a tu propio iCloud.'],
       ['Lo que solo entra', 'nchova descarga sus modelos de Hugging Face, una vez por modelo, y consulta nchova.com para buscar actualizaciones. Con estas peticiones no viaja nada tuyo, más allá de lo que lleva cualquier conexión, como la dirección IP.'],
       ['Compras', 'Pro se vende a través de Polar, que vende por cuenta nuestra (merchant of record): el pago, la factura y el IVA los gestiona Polar, según su propia política de privacidad.'],

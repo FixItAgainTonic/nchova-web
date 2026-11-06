@@ -67,7 +67,7 @@ const en: Dict = {
     notes: [
       ['Your languages', 'pick up to three and nchova works out which one you are speaking, even mid-sentence.'],
       ['Second thoughts', '“Thursday, no wait, Friday” becomes “Friday”, once you turn the cleanup on in Settings › Dictation. It can only take words out, never put any in.'],
-      ['Your vocabulary', 'names and acronyms written your way: “jeera” becomes Jira, “Jason” becomes JSON.'],
+      ['Your vocabulary', 'fix a name right after dictating it and the next time it comes out right. Or add it yourself: “jeera” becomes Jira, “Jason” becomes JSON.'],
       ['Hands free', 'hold Fn, press Space and let go: talk for up to ten minutes, then tap Fn and the text arrives. “Um” and “uh” stay out.'],
       ['Parakeet', 'NVIDIA’s speech model, on your Mac, in {nPro} European languages.', 'pro'],
     ],
@@ -383,7 +383,7 @@ const en: Dict = {
     sections: [
       ['Who we are', 'nchova is made by {company} (VAT IT{vat}), which is responsible for the data described on this page.'],
       ['This site', 'No cookies, and nothing loaded from anyone else: the fonts are served from here. It counts visits and downloads with Vercel Web Analytics, which tells one visit from another by a code that changes every day and stores no IP address, no cookie, nothing that identifies you. Vercel, which hosts the site, may keep the usual technical logs, such as IP addresses, to run it.'],
-      ['The app', 'nchova has no servers of its own and asks for no account. Audio and voiceprints never leave your Mac. Transcripts and notes stay on the Mac, and go to your own iCloud only if you turn on sync (Pro).'],
+      ['The app', 'nchova has no servers of its own and asks for no account. Audio and voiceprints never leave your Mac. Transcripts and notes stay on the Mac, and go to your own iCloud only if you turn on sync (Pro). To learn from your corrections, nchova rereads the text field around what it just wrote, until you send it or move on, a minute and a half at most. What it reads stays in memory and never leaves the Mac. Of that text it saves only the pairs of corrected words, with the app and the time, and at most eight sentences of your dictation. It never reads terminals, password fields or Firefox. To turn it off, uncheck “Learn from my corrections” in Settings › Vocabulary.'],
       ['What leaves the Mac', 'For the Pro licence, nchova sends Polar the key and the Mac’s name. If your own Claude Code or Codex writes the notes, the meeting’s transcript goes to Anthropic or OpenAI, under your subscription. If you connect an AI assistant through the MCP server, that assistant reads your meetings (never your dictation). If you turn on iCloud sync (Pro), transcripts and notes go to your own iCloud.'],
       ['What only comes in', 'nchova downloads its models from Hugging Face, once per model, and checks nchova.com for updates. Nothing of yours goes with these requests beyond what any connection carries, such as the IP address.'],
       ['Purchases', 'Pro is sold through Polar, which sells on our behalf (merchant of record): payment, invoice and VAT are handled by Polar, under its own privacy policy.'],
