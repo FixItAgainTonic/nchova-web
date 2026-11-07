@@ -8,6 +8,20 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.3.2</title>
+      <pubDate>Sat, 07 Nov 2026 17:04:50 +0000</pubDate>
+      <sparkle:version>306</sparkle:version>
+      <sparkle:shortVersionString>1.3.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- La dettatura arriva intera in Herdr e nelle altre app aperte da un terminale. Prima ne arrivava solo l'ultimo pezzo: un'app avviata così non dice chi è, e nchova la scriveva a tasti invece di incollare.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- Dictation now arrives in full in Herdr and other apps started from a terminal. Before, only the last piece got through: an app started that way does not say which app it is, and nchova typed into it key by key instead of pasting.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- La dictée arrive désormais en entier dans Herdr et dans les autres apps lancées depuis un terminal. Avant, seul le dernier morceau passait : une app lancée ainsi ne dit pas qui elle est, et nchova y tapait touche par touche au lieu de coller.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Diktate kommen jetzt vollständig in Herdr und anderen Apps an, die aus einem Terminal gestartet wurden. Vorher kam nur das letzte Stück an: Eine so gestartete App sagt nicht, welche App sie ist, und nchova tippte Taste für Taste, statt einzufügen.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- El dictado llega ahora entero a Herdr y a otras apps abiertas desde un terminal. Antes solo llegaba el último trozo: una app abierta así no dice qué app es, y nchova escribía tecla a tecla en lugar de pegar.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.3.2/Nchova.dmg" length="22522107" type="application/octet-stream" sparkle:edSignature="PtCOT1WOUavLAINy0DwkxE8M4QV4eUZzBwwz+Xaajzq1r3PnQD4VZ3N5bZ03jOzUIEpOoTiO5KgxSOA6AcAzAA=="/>
+    </item>
+    <item>
       <title>nchova 1.3.1</title>
       <pubDate>Thu, 05 Nov 2026 17:24:13 +0000</pubDate>
       <sparkle:version>303</sparkle:version>
