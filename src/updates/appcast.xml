@@ -8,6 +8,35 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.3.3</title>
+      <pubDate>Tue, 10 Nov 2026 09:55:17 +0000</pubDate>
+      <sparkle:version>310</sparkle:version>
+      <sparkle:shortVersionString>1.3.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Il tasto della dettatura si sceglie: Fn, Opzione destra o Comando destro, nelle Impostazioni. Per le tastiere il cui tasto Fn non arriva al Mac, come le Logitech. Con ognuno funzionano anche le mani libere (tasto + Spazio) ed Esc.
+- Con Opzione destra la dettatura parte anche quando davanti c'è una finestra di nchova. Prima partiva solo sopra le altre app.
+- Opzione destra più un tasto scrive ancora il suo carattere (@, #, [ ]). Con Comando destro, il tasto più M, H, V e S apre Meeting, Cronologia, Vocabolario e Impostazioni, e il menu lo indica.
+- Le Impostazioni dicono «Tasto attivo» solo quando nchova lo sta ascoltando davvero.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- You can now choose the key you hold to dictate: Fn, Right Option or Right Command, in Settings. For keyboards whose Fn key never reaches the Mac, such as Logitech's. Hands-free (the key + Space) and Esc work with each of them.
+- With Right Option, dictation now starts with an nchova window in front too. Before, it only started over other apps.
+- Right Option plus a key still types its character (@, #, [ ]). With Right Command, the key plus M, H, V and S opens Meetings, History, Vocabulary and Settings, and the menu says so.
+- Settings say “Active key” only when nchova is really listening to it.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- Vous pouvez désormais choisir la touche à maintenir pour dicter : Fn, Option de droite ou Commande de droite, dans les Réglages. Pour les claviers dont la touche Fn n’arrive pas jusqu’au Mac, comme ceux de Logitech. Le mode mains libres (la touche + Espace) et Esc fonctionnent avec chacune.
+- Avec Option de droite, la dictée démarre aussi quand une fenêtre de nchova est au premier plan. Avant, elle ne démarrait que par-dessus les autres apps.
+- Option de droite plus une touche écrit toujours son caractère (@, #, [ ]). Avec Commande de droite, la touche plus M, H, V et S ouvre Réunions, Historique, Vocabulaire et Réglages, et le menu l’indique.
+- Les Réglages n’affichent « Touche active » que lorsque nchova l’écoute vraiment.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Die Taste, die du zum Diktieren hältst, ist jetzt wählbar: Fn, rechte Option-Taste oder rechte Befehlstaste, in den Einstellungen. Für Tastaturen, deren Fn-Taste nie beim Mac ankommt, etwa von Logitech. Freihändiges Diktieren (die Taste + Leertaste) und Esc funktionieren mit jeder davon.
+- Mit der rechten Option-Taste startet das Diktat jetzt auch, wenn ein nchova-Fenster vorne ist. Vorher startete es nur über anderen Apps.
+- Die rechte Option-Taste mit einer weiteren Taste schreibt weiterhin ihr Zeichen (@, [ ], { }). Mit der rechten Befehlstaste öffnet die Taste plus M, H, V und S Meetings, Verlauf, Vokabular und Einstellungen, und das Menü zeigt es an.
+- Die Einstellungen zeigen „Aktive Taste“ nur, wenn nchova sie wirklich abhört.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- Ahora puedes elegir la tecla que mantienes pulsada para dictar: Fn, Opción derecha o Comando derecha, en Ajustes. Para los teclados cuya tecla Fn no llega al Mac, como los de Logitech. El modo manos libres (la tecla + espacio) y Esc funcionan con cada una.
+- Con Opción derecha, el dictado empieza también cuando hay una ventana de nchova delante. Antes solo empezaba sobre las demás apps.
+- Opción derecha más una tecla sigue escribiendo su carácter (@, #, [ ]). Con Comando derecha, la tecla más M, H, V y S abre Reuniones, Historial, Vocabulario y Ajustes, y el menú lo indica.
+- Los Ajustes dicen «Tecla activa» solo cuando nchova la está escuchando de verdad.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.3.3/Nchova.dmg" length="22531456" type="application/octet-stream" sparkle:edSignature="5OgXNTgHDow1EM4vR9M/aTyOa4LaqmKrkKCQrxKrXm74LkihK2bvKFoCa7zbshlDF12hzJv/mmtxPvEgYUjJAQ=="/>
+    </item>
+    <item>
       <title>nchova 1.3.2</title>
       <pubDate>Sat, 07 Nov 2026 17:04:50 +0000</pubDate>
       <sparkle:version>306</sparkle:version>
