@@ -8,6 +8,25 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.3.4</title>
+      <pubDate>Thu, 12 Nov 2026 16:42:52 +0000</pubDate>
+      <sparkle:version>317</sparkle:version>
+      <sparkle:shortVersionString>1.3.4</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Le note di un meeting si modificano di nuovo normalmente: il cursore resta dove scrivi invece di saltare in fondo a ogni lettera.
+- Il Vocabolario dice per intero cosa salva l'apprendimento dalle correzioni: le coppie di parole corrette, la frase di ogni suggerimento finché non rispondi, e fino a otto frasi che usa come esempi. Tutto resta sul Mac.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- Editing a meeting's notes works again: the cursor stays where you type instead of jumping to the end after every letter.
+- Vocabulary now says in full what learning from your corrections saves: the corrected word pairs, the sentence of each suggestion until you answer it, and up to eight sentences it uses as examples. All of it stays on your Mac.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- La modification des notes d’une réunion fonctionne de nouveau : le curseur reste là où vous écrivez au lieu de sauter à la fin après chaque lettre.
+- Le Vocabulaire indique désormais en entier ce que l’apprentissage à partir de vos corrections enregistre : les paires de mots corrigés, la phrase de chaque suggestion jusqu’à ce que vous y répondiez, et jusqu’à huit phrases qu’il utilise comme exemples. Tout reste sur votre Mac.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Die Notizen eines Meetings lassen sich wieder normal bearbeiten: Der Cursor bleibt, wo du schreibst, statt nach jedem Buchstaben ans Ende zu springen.
+- Das Vokabular sagt jetzt vollständig, was das Lernen aus deinen Korrekturen speichert: die korrigierten Wortpaare, den Satz jedes Vorschlags, bis du darauf antwortest, und bis zu acht Sätze, die es als Beispiele verwendet. Alles bleibt auf deinem Mac.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- Las notas de una reunión vuelven a editarse con normalidad: el cursor se queda donde escribes en lugar de saltar al final con cada letra.
+- El Vocabulario dice ahora por completo lo que guarda el aprendizaje de tus correcciones: los pares de palabras corregidas, la frase de cada sugerencia hasta que respondes, y hasta ocho frases que usa como ejemplos. Todo se queda en tu Mac.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.3.4/Nchova.dmg" length="22530305" type="application/octet-stream" sparkle:edSignature="a9A3h360dTRChc1iZsU1K0HkgMGQJDrzo+ycX+WCuZdlniHVTzzAtr4cx5ewr7qbNbWaIq1FzIQVXhWumv+YDw=="/>
+    </item>
+    <item>
       <title>nchova 1.3.3</title>
       <pubDate>Tue, 10 Nov 2026 09:55:17 +0000</pubDate>
       <sparkle:version>310</sparkle:version>
