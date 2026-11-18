@@ -37,6 +37,7 @@ export const PRESS_CODE = 'PRESSNCHOVA';
 export const PARTNERS: Record<string, { name: string; code: string; lang: Lang }> = {
   rubenloan: { name: 'Ruben Loan', code: 'RUBENLOAN', lang: 'es' },
   aprenden5: { name: 'Aprende N5', code: 'APRENDEN5', lang: 'es' },
+  jairoduque: { name: 'Jairo Duque', code: 'JAIRODUQUE', lang: 'es' },
 };
 
 export const CONTACT_EMAIL = 'hello@nchova.com';
