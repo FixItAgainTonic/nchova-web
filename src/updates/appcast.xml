@@ -8,6 +8,20 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.4.1</title>
+      <pubDate>Thu, 26 Nov 2026 16:28:49 +0000</pubDate>
+      <sparkle:version>455</sparkle:version>
+      <sparkle:shortVersionString>1.4.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Note e chat dei meeting con Codex: Nchova non dice più che Codex non ha fatto l'accesso quando il problema è un altro, e mostra quello che Codex ha risposto davvero. Se il modello scritto nella configurazione di Codex non c'è nel tuo piano ChatGPT, Nchova usa il primo che Codex offre.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- Meeting notes and chat with Codex: Nchova no longer says Codex is not signed in when the problem is something else, and shows what Codex actually said. If the model set in your Codex config isn't available on your ChatGPT plan, Nchova uses the first model Codex offers.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- Notes et discussion des réunions avec Codex : Nchova ne dit plus que Codex n’est pas connecté quand le problème est ailleurs, et affiche ce que Codex a vraiment répondu. Si le modèle indiqué dans la configuration de Codex n’est pas disponible avec votre forfait ChatGPT, Nchova utilise le premier modèle que Codex propose.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Meeting-Notizen und Chat mit Codex: Nchova sagt nicht mehr, dass Codex nicht angemeldet ist, wenn das Problem ein anderes ist, und zeigt, was Codex wirklich geantwortet hat. Ist das Modell aus deiner Codex-Konfiguration in deinem ChatGPT-Tarif nicht verfügbar, nimmt Nchova das erste Modell, das Codex anbietet.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- Notas y chat de las reuniones con Codex: Nchova ya no dice que Codex no ha iniciado sesión cuando el problema es otro, y muestra lo que Codex respondió de verdad. Si el modelo indicado en la configuración de Codex no está disponible en tu plan de ChatGPT, Nchova usa el primer modelo que ofrece Codex.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.4.1/Nchova.dmg" length="23757779" type="application/octet-stream" sparkle:edSignature="BsRPg+KLkqfuDRS6JtqRcHNzyz1agqZFQSFeZpgGQJm/FMzakRkJKUdNj8wTR4E2HjPss/bX/X6lP6zaSat5Bg=="/>
+    </item>
+    <item>
       <title>nchova 1.4.0</title>
       <pubDate>Thu, 26 Nov 2026 14:19:20 +0000</pubDate>
       <sparkle:version>451</sparkle:version>
