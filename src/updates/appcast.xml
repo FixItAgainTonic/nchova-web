@@ -8,6 +8,20 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.4.2</title>
+      <pubDate>Thu, 26 Nov 2026 16:48:57 +0000</pubDate>
+      <sparkle:version>458</sparkle:version>
+      <sparkle:shortVersionString>1.4.2</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- «Copia diagnostica» dice anche se Nchova si è chiusa da sola o bloccata negli ultimi 30 giorni, e dove, e cosa sta facendo in quel momento. Se Nchova si incastra, copia la diagnostica prima di chiuderla e mandala col tuo messaggio: dentro non c'è niente di quello che hai dettato.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- Copy diagnostics also tells whether Nchova crashed or froze in the last 30 days, and where, and what it is doing right now. If Nchova ever gets stuck, copy the diagnostics before quitting it and send them with your message: nothing you dictated is in them.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- « Copier le diagnostic » indique aussi si Nchova a planté ou s’est figée ces 30 derniers jours, et où, ainsi que ce qu’elle est en train de faire. Si Nchova reste bloquée, copiez le diagnostic avant de la quitter et joignez-le à votre message : rien de ce que vous avez dicté n’y figure.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- „Diagnose kopieren“ sagt jetzt auch, ob Nchova in den letzten 30 Tagen abgestürzt oder hängen geblieben ist, und wo, und was sie gerade tut. Falls Nchova einmal hängt, kopiere die Diagnose, bevor du sie beendest, und schick sie mit deiner Nachricht: Nichts, was du diktiert hast, steht darin.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- «Copiar diagnóstico» indica también si Nchova se cerró de golpe o se quedó bloqueada en los últimos 30 días, y dónde, y qué está haciendo en ese momento. Si Nchova se queda atascada, copia el diagnóstico antes de cerrarla y envíalo con tu mensaje: no incluye nada de lo que has dictado.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.4.2/Nchova.dmg" length="23812760" type="application/octet-stream" sparkle:edSignature="kRCa3B6rvIwedYuvA316aiDQwUWhf4HgNLUK3cReIgAmGOx3Jgnm1y5WkjS87BM8d/2/fzSPbGCIXJYSwt0kBw=="/>
+    </item>
+    <item>
       <title>nchova 1.4.1</title>
       <pubDate>Thu, 26 Nov 2026 16:28:49 +0000</pubDate>
       <sparkle:version>455</sparkle:version>
