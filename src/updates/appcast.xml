@@ -8,6 +8,70 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.4.0</title>
+      <pubDate>Thu, 26 Nov 2026 14:19:20 +0000</pubDate>
+      <sparkle:version>451</sparkle:version>
+      <sparkle:shortVersionString>1.4.0</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Fn+C apre l'ultima dettatura per correggerla e insegnare le coppie di parole al Vocabolario, anche dopo che l'hai mandata.
+- L'apprendimento dalle correzioni funziona anche nei terminali: in Herdr, Terminal e Ghostty nchova legge il messaggio che hai mandato a Claude Code o Codex dal file della loro sessione, anche quando il pannello di Herdr gira su un altro Mac.
+- Il vocabolario si sincronizza fra i tuoi Mac attraverso iCloud (Pro), con un interruttore suo nelle Impostazioni. Un termine aggiunto su due Mac tiene gli alias di tutti e due, e un termine cancellato resta cancellato.
+- «Rimetti i termini iniziali», nel Vocabolario, rimette i termini iniziali che mancano.
+- L'apprendimento è più prudente:
+  - due parole vere corrette l'una nell'altra, come «della» → «dalla», restano una proposta per quante volte le correggi;
+  - un refuso nella correzione («berry» → «verry») e un nome che somiglia solo un po' a quello dettato («Marta» → «Marco») aspettano una seconda correzione;
+  - le coppie di parole comuni come «a» → «la» partono senza spunta, e un alias di una lettera sola non si applica mai.
+- Se rimetti quello che hai dettato sopra una sostituzione del Vocabolario, quella sostituzione smette; se il Vocabolario ha scelto il termine sbagliato, la tua correzione insegna quello giusto.
+- Il Vocabolario non cambia più la forma di una parola: «pull requests» resta al plurale.
+- In Herdr e nei terminali, dopo l'incolla di una dettatura ritrovi i tuoi appunti, e la tastiera non aspetta mai mentre nchova legge un messaggio lungo.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- Fn+C opens your last dictation so you can fix it and teach the word pairs to the Vocabulary, even after you've sent it.
+- Learning from your corrections now works in terminals too: in Herdr, Terminal and Ghostty, nchova reads the message you sent to Claude Code or Codex from their session file, also when the Herdr pane runs on another Mac.
+- Your vocabulary syncs between your Macs through iCloud (Pro), with its own switch in Settings. A term added on two Macs keeps the aliases of both, and a deleted term stays deleted.
+- “Restore Starter Terms”, in the Vocabulary, puts back the starter terms that are missing.
+- Learning is more careful:
+  - two real words corrected into each other, like “then” → “than”, stay a suggestion however many times you correct them;
+  - a typo in your correction (“berry” → “verry”) and a name only a little like the one you dictated (“Marta” → “Marco”) wait for a second correction;
+  - pairs of common words like “a” → “the” start unticked, and a one-letter alias never applies.
+- When you put back what you dictated over a Vocabulary replacement, that replacement stops; when the Vocabulary picked the wrong term, your fix teaches the right one.
+- The Vocabulary no longer changes the form of a word: “pull requests” stays plural.
+- In Herdr and terminals, pasting a dictation gives you your clipboard back afterwards, and the keyboard never waits while nchova reads a long message.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- Fn+C ouvre votre dernière dictée pour la corriger et apprendre les paires de mots au Vocabulaire, même après l’avoir envoyée.
+- L’apprentissage à partir de vos corrections fonctionne aussi dans les terminaux : dans Herdr, Terminal et Ghostty, nchova lit le message envoyé à Claude Code ou Codex dans le fichier de leur session, même quand le panneau Herdr tourne sur un autre Mac.
+- Votre vocabulaire se synchronise entre vos Mac via iCloud (Pro), avec son propre interrupteur dans les Réglages. Un terme ajouté sur deux Mac garde les alias des deux, et un terme supprimé le reste.
+- « Rétablir les termes de départ », dans le Vocabulaire, remet les termes de départ qui manquent.
+- L’apprentissage est plus prudent :
+  - deux vrais mots corrigés l’un en l’autre, comme « ces » → « ses », restent une suggestion, quel que soit le nombre de corrections ;
+  - une faute de frappe dans votre correction (« berry » → « verry ») et un prénom qui ne ressemble qu’un peu à celui dicté (« Marta » → « Marco ») attendent une deuxième correction ;
+  - les paires de mots courants comme « a » → « à » partent décochées, et un alias d’une seule lettre ne s’applique jamais.
+- Si vous remettez ce que vous aviez dicté à la place d’un remplacement du Vocabulaire, ce remplacement s’arrête ; si le Vocabulaire a choisi le mauvais terme, votre correction lui apprend le bon.
+- Le Vocabulaire ne change plus la forme d’un mot : « pull requests » reste au pluriel.
+- Dans Herdr et les terminaux, après le collage d’une dictée, vous retrouvez votre presse-papiers, et le clavier n’attend jamais pendant que nchova lit un long message.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Fn+C öffnet dein letztes Diktat, damit du es korrigieren und dem Vokabular die Wortpaare beibringen kannst, auch nachdem du es abgeschickt hast.
+- Das Lernen aus deinen Korrekturen funktioniert jetzt auch in Terminals: In Herdr, Terminal und Ghostty liest nchova die Nachricht, die du an Claude Code oder Codex geschickt hast, aus deren Sitzungsdatei, auch wenn der Herdr-Bereich auf einem anderen Mac läuft.
+- Dein Vokabular wird über iCloud zwischen deinen Macs synchronisiert (Pro), mit einem eigenen Schalter in den Einstellungen. Ein auf zwei Macs hinzugefügter Begriff behält die Aliasse von beiden, und ein gelöschter Begriff bleibt gelöscht.
+- „Startbegriffe wiederherstellen“ im Vokabular fügt die fehlenden Startbegriffe wieder hinzu.
+- Das Lernen ist vorsichtiger:
+  - zwei echte Wörter, die ineinander korrigiert werden, wie „das“ → „dass“, bleiben ein Vorschlag, egal wie oft du sie korrigierst;
+  - ein Tippfehler in deiner Korrektur („berry“ → „verry“) und ein Name, der dem diktierten nur ein wenig ähnelt („Marta“ → „Marco“), warten auf eine zweite Korrektur;
+  - Paare häufiger Wörter wie „in“ → „im“ starten ohne Häkchen, und ein Alias aus einem einzigen Buchstaben wird nie angewendet.
+- Wenn du über einer Ersetzung des Vokabulars wieder einsetzt, was du diktiert hast, hört diese Ersetzung auf; wenn das Vokabular den falschen Begriff gewählt hat, bringt ihm deine Korrektur den richtigen bei.
+- Das Vokabular ändert die Form eines Wortes nicht mehr: „pull requests“ bleibt im Plural.
+- In Herdr und in Terminals bekommst du nach dem Einfügen eines Diktats deine Zwischenablage zurück, und die Tastatur wartet nie, während nchova eine lange Nachricht liest.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- Fn+C abre tu último dictado para corregirlo y enseñar los pares de palabras al Vocabulario, incluso después de haberlo enviado.
+- El aprendizaje de tus correcciones funciona también en los terminales: en Herdr, Terminal y Ghostty, nchova lee el mensaje que enviaste a Claude Code o Codex en el archivo de su sesión, también cuando el panel de Herdr se ejecuta en otro Mac.
+- Tu vocabulario se sincroniza entre tus Mac a través de iCloud (Pro), con su propio interruptor en Ajustes. Un término añadido en dos Mac conserva los alias de ambos, y un término eliminado sigue eliminado.
+- «Restaurar los términos iniciales», en el Vocabulario, vuelve a poner los términos iniciales que faltan.
+- El aprendizaje es más prudente:
+  - dos palabras reales corregidas una en otra, como «echo» → «hecho», siguen siendo una sugerencia por muchas veces que las corrijas;
+  - una errata en tu corrección («berry» → «verry») y un nombre que solo se parece un poco al dictado («Marta» → «Marco») esperan una segunda corrección;
+  - los pares de palabras comunes como «a» → «ha» empiezan sin marcar, y un alias de una sola letra nunca se aplica.
+- Si vuelves a poner lo que dictaste sobre un reemplazo del Vocabulario, ese reemplazo deja de hacerse; si el Vocabulario eligió el término equivocado, tu corrección le enseña el correcto.
+- El Vocabulario ya no cambia la forma de una palabra: «pull requests» se queda en plural.
+- En Herdr y en los terminales, después de pegar un dictado recuperas tu portapapeles, y el teclado nunca espera mientras nchova lee un mensaje largo.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.4.0/Nchova.dmg" length="23743585" type="application/octet-stream" sparkle:edSignature="RtTqsDLo7o635xnYyCyby7Y3JxNl5YMjNKdKpxhrSg++SDhpebDRbcT10Piri2OMgKQQQO2qt65sX3tHx4FaCg=="/>
+    </item>
+    <item>
       <title>nchova 1.3.4</title>
       <pubDate>Thu, 12 Nov 2026 16:42:52 +0000</pubDate>
       <sparkle:version>317</sparkle:version>
