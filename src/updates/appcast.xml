@@ -8,6 +8,20 @@
     <description>Aggiornamenti di nchova</description>
     <language>it</language>
     <item>
+      <title>nchova 1.4.3</title>
+      <pubDate>Fri, 27 Nov 2026 14:18:05 +0000</pubDate>
+      <sparkle:version>462</sparkle:version>
+      <sparkle:shortVersionString>1.4.3</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>26.0.0</sparkle:minimumSystemVersion>
+      <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+      <description xml:lang="it" sparkle:format="markdown"><![CDATA[- Con le cuffie Bluetooth (AirPods e altre) come ingresso del Mac, la dettatura non perde più l'inizio di quello che dici: Nchova registra dal microfono del Mac, così ti sente subito e il suono in cuffia non cambia. A coperchio chiuso, durante un meeting o con le cuffie scelte per nome in Impostazioni › Dettatura, registra dalle cuffie come prima.]]></description>
+      <description xml:lang="en" sparkle:format="markdown"><![CDATA[- With Bluetooth headphones (AirPods and others) as the Mac's input, dictation no longer loses the start of what you say: Nchova records from the Mac's own microphone, so it hears you right away and the sound in your headphones doesn't change. With the lid closed, during a meeting, or with the headphones picked by name in Settings › Dictation, it records from the headphones as before.]]></description>
+      <description xml:lang="fr" sparkle:format="markdown"><![CDATA[- Avec des écouteurs Bluetooth (AirPods ou autres) comme entrée du Mac, la dictée ne perd plus le début de ce que vous dites : Nchova enregistre avec le micro du Mac, elle vous entend donc tout de suite et le son dans vos écouteurs ne change pas. Capot fermé, pendant une réunion ou avec les écouteurs choisis par leur nom dans Réglages › Dictée, elle enregistre avec les écouteurs comme avant.]]></description>
+      <description xml:lang="de" sparkle:format="markdown"><![CDATA[- Mit Bluetooth-Kopfhörern (AirPods und andere) als Eingabe des Mac verliert das Diktieren nicht mehr den Anfang dessen, was du sagst: Nchova nimmt mit dem Mikrofon des Mac auf, hört dich also sofort, und der Klang in den Kopfhörern bleibt, wie er ist. Bei geschlossenem Deckel, während eines Meetings oder mit den Kopfhörern, die du in Einstellungen › Diktieren beim Namen gewählt hast, nimmt sie wie bisher mit den Kopfhörern auf.]]></description>
+      <description xml:lang="es" sparkle:format="markdown"><![CDATA[- Con auriculares Bluetooth (AirPods u otros) como entrada del Mac, el dictado ya no pierde el principio de lo que dices: Nchova graba con el micrófono del Mac, así que te oye enseguida y el sonido de los auriculares no cambia. Con la tapa cerrada, durante una reunión o con los auriculares elegidos por su nombre en Ajustes › Dictado, graba con los auriculares como antes.]]></description>
+      <enclosure url="https://github.com/FixItAgainTonic/nchova-web/releases/download/v1.4.3/Nchova.dmg" length="23814570" type="application/octet-stream" sparkle:edSignature="n9rUUSYP6JRE+jdsdZ4je02vClgeOLRcqBl+qvlgcP4gYDUBbx1wm/UlqTt8JUfNoRL8jTpO3xmrpA83P6AtAg=="/>
+    </item>
+    <item>
       <title>nchova 1.4.2</title>
       <pubDate>Thu, 26 Nov 2026 16:48:57 +0000</pubDate>
       <sparkle:version>458</sparkle:version>
